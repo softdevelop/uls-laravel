@@ -1,0 +1,35 @@
+// pages sign
+.overview-tab{
+	.google-tittle{
+		margin-left:10px;
+		width:130px;
+	}
+	.item-gg{
+		a{
+			img{
+				width:20px;
+			}
+		}
+	}
+	.wrap-social-activity{
+		border:1px solid #ccc;
+		padding-bottom: 84px;
+	}
+}
+
+// page traffic
+.tab-traffic{
+	.wrap-main-chart{
+		text-align: center;
+		border:1px solid #ccc;
+	}
+	.wrap-chart-item{
+		border: 1px solid #ccc;
+		overflow: hidden;
+		.size-chart-item{
+			height: 150px;
+			margin: 0 auto;
+		}
+	}
+	
+}

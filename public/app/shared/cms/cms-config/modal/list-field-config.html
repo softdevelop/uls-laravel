@@ -1,0 +1,180 @@
+<style>
+	.modal-footer{
+	 	border-top:none!important; 
+	}
+	.table-responsive table{
+		margin-bottom: 1px;
+	}
+	td select{
+        margin:0px!important;
+    }
+</style>
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="cancel()" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">{{'title-list-field-config' | trans : 'directive-cms-config'}}</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="table-responsive wrap-box-content edit-fields">
+            <table class="table center-td fix-height-tb table-striped">
+	            <thead>
+				    <th class="text-center w200">{{'name' | trans : 'directive-cms-config'}}</th>
+				    <th class="text-center">{{'required' | trans : 'directive-cms-config'}}</th>
+				    <th class="text-center w370">{{'type' | trans : 'directive-cms-config'}}</th>
+				    <th class="text-center">{{'multiple' | trans : 'directive-cms-config'}}</th>
+				    <th class="w370">{{'sort' | trans : 'directive-cms-config'}}</th>
+				    <th class="text-center w135">{{'min-field' | trans : 'directive-cms-config'}}</th>
+				    <th class="text-center w135">{{'max-field' | trans : 'directive-cms-config'}}</th>
+				    <th class="text-center">{{'action' | trans : 'directive-cms-config'}}</th>
+	            </thead>
+
+	            <tbody>
+	                <tr ng-repeat="item in fields">
+	                    <td class="p-l-14">
+	                    	<span ng-if="!edit[$index]">{{item.name}}</span>
+	                    	<input ng-if="edit[$index]" type="text" ng-model="fields[$index]['name']" ng-change="hideValidate($index, 'name')"/>
+	                    	<small ng-show="validate[$index]['name']" class="help-inline pull-left ng-invalid"> {{validate[$index]['name']}}</small>
+
+	                    </td>
+	                    <td>
+	                    	<div ng-if="!edit[$index]" class="checkbox checkbox-success remember padding-none">
+						      <span class="check-oke" ng-if="item.required==true">
+						      	<i class="fa fa-check-square"></i>
+						      </span>
+						      <span class="not-check" ng-if="!item.required || item.required=='false'"></span>
+						    </div>
+	                    	<div ng-if="edit[$index]" class="checkbox checkbox-success remember">
+						      <input  ng-model="fields[$index]['required']" type="checkbox" name="remember" ng-false-value="false" ng-true-value="true" ng-checked="item.required==true" ng-disabled="item.multiple">
+						      <label for="check-required"></label>
+						    </div>
+	                    </td>
+	                    <td>
+                        	<span ng-if="(!edit[$index] || fields[$index].variable == 'field_title') && !item.multiple">
+                        		{{mapListType[fields[$index].field_type]}}
+                        	</span>
+                        	<span ng-if="!edit[$index] && item.multiple">Block</span>
+		                    <div class="wrap-select" ng-if="edit[$index] && item.outject">
+			                    <div class="wrap-select-left">
+		                    		<select class="form-control" ng-disabled="true" ng-model="fields[$index].field_type">
+		                    			<option value="img_object">{{'img-obj' | trans : 'golbal'}}</option>
+	                        		</select>	
+			                    </div>
+		                    </div>	
+
+							<div class='multiple-object' ng-if="!item.multiple && !item.outject">
+
+		                    	<div ng-if="edit[$index] && fields[$index].field_type != 'select' && !listIdCheck[fields[$index].field_type] && fields[$index].field_type != 'checkbox' && fields[$index].field_type != 'radio' && listMapType[fields[$index].field_type] != 'checkbox' && listMapType[fields[$index].field_type] != 'radio' && fields[$index].variable != 'field_title'">
+		                    		<select class="form-control" ng-options="item._id as item.name for item in listFieldType|orderBy:'name'" ng-model="fields[$index].field_type" ng-change="updateTitleCheck($index)">
+	                        		</select>
+		                        </div>
+
+		                        <div class="wrap-select" ng-if="edit[$index] && (fields[$index].field_type == 'select' || listIdCheck[fields[$index].field_type]) && !listMapTypeTextSpecial[fields[$index].field_type]">
+
+									<div class="wrap-select-left">
+										<select class="form-control" ng-options="item._id as item.name for item in listFieldType|orderBy:'name'" ng-model="fields[$index].field_type" ng-change="updateTitleCheck($index)">
+	                        			</select>
+									</div>
+
+		                        	<div class="wrap-select-right">
+		                        		<select class="form-control" ng-options="key as value for (key, value) in attributeDataOption" ng-model="fields[$index].option_id" ng-change="hideValidate($index, 'data-option')">
+		                        			<option value="" class="hide">{{'choose-option' | trans : 'golbal'}}</option>
+		                        		</select>
+		                        		<small ng-show="validate[$index]['data-option']" class="help-inline pull-left ng-invalid"> {{validate[$index]['data-option']}}</small>	
+		                        	</div>
+
+		                        </div>
+							
+		                        <div class="wrap-select" ng-if="edit[$index] && (fields[$index].field_type == 'checkbox' || fields[$index].field_type == 'radio' || listMapType[fields[$index].field_type] == 'checkbox' || listMapType[fields[$index].field_type] == 'radio')">
+
+									<div class="wrap-select-left">
+		                        		<select class="form-control" ng-options="item._id as item.name for item in listFieldType|orderBy:'name'" ng-model="fields[$index].field_type" ng-change="updateTitleCheck($index)">
+	                        			</select>
+	                        		</div>	
+									
+									<div class="wrap-select-right">
+										<input type="text" class="form-control" ng-model="fields[$index].ra_check_title" placeholder="enter a title" ng-change="hideValidate($index, 'ra_check_title')">
+										<small ng-show="validate[$index]['ra_check_title']" class="help-inline pull-left ng-invalid"> {{validate[$index]['ra_check_title']}}</small>
+									</div>
+		                        	
+		                        </div>
+		                    </div>
+
+		                    <div class="other-multiple-object" ng-if="edit[$index] && item.multiple">
+			                    <div class="other-wrap-select-left">
+		                    		<select class="form-control" ng-disabled="true" ng-model="fields[$index].field_type">
+		                    			<option value="block">{{'block' | trans : 'golbal'}}</option>
+	                        		</select>	
+			                    </div>
+	                        	<div class="other-wrap-select-right">
+	                        		<select class="form-control" ng-options="key as value.name for (key, value) in listBlocks" ng-model="fields[$index].option_id" ng-change="hideValidate($index, 'data-option')">
+	                        			<option value="" class="hide">{{'choose-block' | trans : 'golbal'}}</option>
+	                        		</select>
+	                        		<small ng-show="validate[$index]['data-option']" class="help-inline pull-left ng-invalid"> {{validate[$index]['data-option']}}</small>	
+	                        	</div>
+		                    </div>
+	                    </td>
+	                    <td>
+	                    	<div class="checkbox checkbox-success remember">
+						      <input disabled="true"  type="checkbox" name="remember" ng-checked="item.multiple==true">
+						      <label for="check-required"></label>
+						    </div>
+	                    </td>
+	                    <td>
+	                    	<div ng-if="!item.multiple">
+								{{'none' | trans : 'golbal'}}
+	                    	</div>
+
+	                    	<div ng-if="!edit[$index] && item.multiple">
+	                    		<p ng-if="fields[$index].key_sort"> 
+	                    			{{ blockMapFields[fields[$index].option_id][fields[$index].key_sort] }} | {{mapSort[fields[$index].order_by]}}
+	                    		</p>
+								<p ng-if="!fields[$index].key_sort">{{'none' | trans : 'golbal'}}</p>
+	                    	</div>	
+
+		                    <div class="sort" ng-if="edit[$index] && item.multiple">
+			                    <div class="left-sort">
+		                    		<select class="form-control" ng-options="value.variable as value.name for (key, value) in listBlocks[fields[$index].option_id].fields" ng-model="fields[$index].key_sort" ng-change="orderBySort(fields[$index].key_sort, $index)">
+		                    			<option value="">{{'choose-field' | trans : 'golbal'}}</option>
+	                        		</select>	
+			                    </div>
+	                        	<div class="right-sort">
+	                        		<select ng-disabled="!fields[$index].key_sort" class="form-control" ng-model="fields[$index].order_by" ng-init="fields[$index].order_by='asc'">
+	                        			<option value="asc">{{'asc' | trans : 'golbal'}}</option>
+	                        			<option value="desc" >{{'desc' | trans : 'golbal'}}</option>
+	                        		</select>	
+	                        	</div>
+		                    </div>	                    	
+	                    </td>
+	                    <td>
+	              	        <span ng-if="!item.multiple">{{'none' | trans : 'golbal'}}</span>
+	                    	<span ng-if="!edit[$index] && item.multiple">{{item.min_field}}</span>
+	                    	<input ng-if="edit[$index] && item.multiple" type="number" ng-model="fields[$index]['min_field']" ng-change="hideValidate($index, 'min_field')"/>
+	                    	<small ng-show="validate[$index]['min_field']"  class="help-inline pull-left ng-invalid">{{validate[$index]['min_field']}}</small>
+	                    </td>
+	                    <td>
+	                    	<span ng-if="!item.multiple">{{'none' | trans : 'golbal'}}</span>
+	                    	<span ng-if="!edit[$index] && item.multiple">{{item.max_field}}</span>
+	                    	<input ng-if="edit[$index] && item.multiple" type="number" ng-model="fields[$index]['max_field']" ng-change="hideValidate($index, 'max_field')"/>
+	                    	<small ng-show="validate[$index]['max_field']"  class="help-inline pull-left ng-invalid">{{validate[$index]['max_field']}}</small>
+	                    </td>
+	                    <td class="w80">
+	                    	<button title="Edit" href="javascript:void(0)" ng-if="!edit[$index]" ng-click="showEditField($index)" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
+
+	                    	<button title="Done" href="javascript:void(0)" ng-if="edit[$index]" ng-click="editField($index, fields[$index])" class="btn btn-primary btn-xs"><i class="fa fa-check"></i> </button>
+
+	                    	<button title="Cancel" href="javascript:void(0)" ng-if="edit[$index]" ng-click="rollbackItemField($index, fields[$index]['variable'])" class="btn btn-primary btn-xs"><i class="fa fa-times"></i> </button>
+	                    </td>
+	                </tr>
+	            </tbody>
+            </table>
+            <div class="clearfix"></div>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+    	<button type="button" class="btn btn-default" ng-click="cancel()" data-dismiss="modal"> <i class="fa fa-times"></i> {{'cancel' | trans : 'golbal'}}</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="checkValidateFields()"> <i class="fa fa-check"></i> {{'save' | trans : 'golbal'}}</button>
+        <a id="submit-field" confirm="'{{'confirm-save-template' | trans : 'directive-cms-config'}}'" on-confirm="updateContentField()"></a>
+      </div>
+    </div><!-- /.modal-content -->

@@ -1,0 +1,6 @@
+<div>
+    <select  class="form-control search-people search-group-select" ng-change="changeSelect()" ng-options="s.id as (s.first_name +' '+ s.last_name ) for s in items"  ng-model="ngModel" >
+    <option  value=""></option>
+    </select>
+    <a id="triggerSelect" ng-click="showListSelect()"></a>
+</div>

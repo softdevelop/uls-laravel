@@ -1,0 +1,86 @@
+/*Print Styles for Materials Library Material Detail Pages - written by MShearon*/
+
+/* Remove unwanted elements */
+#pagetitle,
+#details > #button,
+.redButtons,
+#mlSearch,
+footer,
+html body header img,
+html body header div#blacktop, 
+html body header div#page-wrap div#newsticker,
+html body header div#page-wrap br.clearall,
+html body header div#page-wrap nav
+{
+	display: none;
+}
+
+/*Show the logo*/
+html body header div#page-wrap div#logo a img
+{
+	margin-left: -12px;
+	display: block;
+}
+
+/* Expand Process Blocks */
+#laser-cutting,
+#laser-engraving,
+#laser-marking,
+#laser-imaging
+{
+	display: block;
+}
+
+/* Change text color to black and turn off border*/
+div#right,
+div#grey,
+a#cutting-click.active,
+a#engraving-click.active,
+a#marking-click.active,
+a#imaging-click.active,
+div h3,
+div#right h3,
+p,
+h1
+{
+	color: #000;
+	text-shadow: none;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom-color: #000;
+}
+
+/*Remove extra divider line*/
+div#line
+{
+	border: none;
+}
+
+/*Make H3s in processes black*/
+html body div#page-wrap div#material div#right div#details,
+html body div#page-wrap div#material div#right div#processes div#laser-cutting.procContent div#grey h3,
+html body div#page-wrap div#material div#right div#processes div#laser-engraving.procContent div#grey h3,
+html body div#page-wrap div#material div#right div#processes div#laser-marking.procContent div#grey h3,
+html body div#page-wrap div#material div#right div#processes div#laser-imaging.procContent div#grey h3
+{
+	color: #000;
+}
+
+/*Hide Inactive Processes*/
+html body div#page-wrap div#material div#right div#processes div#button.black a#cutting-click,
+html body div#page-wrap div#material div#right div#processes div#button.black a#engraving-click,
+html body div#page-wrap div#material div#right div#processes div#button.black a#marking-click,
+html body div#page-wrap div#material div#right div#processes div#button.black a#imaging-click
+{
+	display: none;
+}
+
+/*Show Active Processes*/
+html body div#page-wrap div#material div#right div#processes div#button.black a#cutting-click.active,
+html body div#page-wrap div#material div#right div#processes div#button.black a#engraving-click.active,
+html body div#page-wrap div#material div#right div#processes div#button.black a#marking-click.active,
+html body div#page-wrap div#material div#right div#processes div#button.black a#imaging-click.active
+{
+	display: block;
+}

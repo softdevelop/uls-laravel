@@ -1,0 +1,26 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" ng-click="cancel()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title">Enter the Folder Name</h4>
+</div>
+
+<div class="modal-body">
+    <form name="formData" id="form">
+        <div class="form-group" ng-class="{'has-error':submitted && formData.name.$invalid}">
+            <input ng-model="folder.name" required type="text" class="form-control" name="name" class="password-hint"  placeholder="Enter Folder Name">
+            <span class="control-label" ng-show="submitted && formData.name.$invalid">Name is Required</span>
+        </div> 
+
+    </form>
+
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="cancel()" data-dismiss="modal">
+        <i class="fa fa-times"></i> Cancel
+    </button>
+
+    <button type="submit" form="form" class="btn btn-primary" ng-click="addFolder(formData.$invalid)" id="add-folder-graphic">
+        <i class="fa fa-check"></i> Submit
+    </button>
+
+</div>

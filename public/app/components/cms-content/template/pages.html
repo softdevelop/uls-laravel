@@ -1,0 +1,175 @@
+<div ng-init="initTree()" class="wrap-content-management page-management">
+    <div class="top-content">
+        <h3 class="c-m content-management">CMS Page Manager
+            <a data-toggle="modal" ng-click="getModalCreatePage()" class="hidden-xs btn btn-primary fixed-add pull-right" >
+                <i class="fa fa-plus"></i> Propose new page
+            </a>
+            <a data-toggle="modal" ng-click="getModalCreatePage()" class="visible-xs page btn btn-primary fixed-add  pull-right">
+                <i class="fa fa-plus"></i> Page
+            </a>
+        </h3>
+
+    </div>
+
+    <div class="content margin-top-0">
+        <div id="resize-left">
+            <div data-toggle="tree" id="tree"></div>
+        </div>
+
+        <div id="resize-right" class="fix-td-tb">
+            <div class="resize-right_box-wrap-top-table">
+                <a href=""> <i class="fa fa-folder"></i> </a> {{titleItemSelected}}
+                 <a class='btn btn-sm btn-default pull-right' ng-click="hideOrShowAllNestedContent()">{{contentHideOrShowAllNestedContent}}</a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="table-responsive table-animate">
+                <a class="fixed-search" ng-click="btnSearch()">
+                    <i class="fa fa-search"></i>
+                </a>
+                <table class="table" show-filter="isSearch" ng-table="tableParams">
+                    <tbody class="tbody-animate">
+
+                        <tr class="parent-active page-{{page.data._id}}" ng-repeat-start="page in $data" ng-class="{highlight:page.data.timeout}">
+                            <td style="min-width:35px;" class="text-center" data-title="''" >
+                                <a class="c-000" href="javascript:void(0)" ng-if="page.openChild" ng-click="page.openChild = false"><i class="fa fa-minus"></i></a>
+                                <a class="c-000" href="javascript:void(0)" ng-if="!page.openChild" ng-click="page.openChild = true" data-toggle="collapse" data-target="#sub-tr" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-plus"></i></a>
+                            </td>
+
+                            <td style="width:194px" class="text-center" data-title="'Page Name'" filter="{ 'title': 'text' }" sortable="'title'">
+                                {{page.title}}
+                            </td>
+
+                            <td style="min-width:113px;" class="text-center" data-title="'Parent'"  sortable="'parent.title'">
+                                {{page.parent.title}}
+                            </td>
+
+                            <td style="width:105px" class="text-center" data-title="'Status'" sortable="'data.status'">
+
+                                    <span class="fa fa-circle yellow-status" title="Not Started" ng-if="page.data.status == 'Not Started'"></span>
+                                    <span class="fa fa-circle purple-status" title="In Process" ng-if="page.data.status == 'In Process'"></span>
+                                    <span class="fa fa-circle dark-blue-status" title="Approved" ng-if="page.data.status == 'Approved'"></span>
+                                    <span class="fa fa-circle red-status" title="Overdue" ng-if="page.data.status == 'Overdue'"></span>
+                                    <span class="fa fa-circle greens-status" title="Live" ng-if="page.data.status == 'live'"></span>
+                            </td>
+
+                            <td style="width:99px" class="text-center" data-title="'Languages'" sortable="'data.language'">
+                                {{page.data.language}}
+                            </td>
+
+                            <td style="width:98px" class="text-center" data-title="'Regions'" sortable="'data.region'">
+
+                                <span ng-if="page.data.region == 0">n/a</span>
+                                <span ng-if="page.data.region != 0">{{page.data.region}}</span>
+                            </td>
+
+                            <td style="width:158px;" class="text-center" data-title="'Due Date'" sortable="'data.due_date'">
+                                <span ng-if="page.data.status != 'Approved'&&page.data.status != 'live'&&page.data.status != 'Overdue'&&page.data.due_date">{{page.data.due_date | myDate}}</span>
+                                <span ng-if="page.data.status == 'Approved'||page.data.status == 'live'||page.data.status == 'Overdue'||!page.data.due_date">n/a</span>
+                            </td>
+
+                            <td style="width:67px" class="show-action text-left" data-title="'Action'">
+
+                                <div class="wrap-ac-group">
+                                    <i class="fa fa-ellipsis-v"></i>
+                                    <a href="javascript:void(0)" ng-click="showGroup($event)" class="ac-group btn"></a>
+                                    <ul class="group-btn-ac fix-missing-li">
+                                        <li ng-if="page.data.checkLiveOrApproved">
+                                            <a href="javascript:void(0)" ng-click="getModalRequestTranslation(page.data._id)" class="text-show-action" > Request Translation </a>
+                                        </li>
+                                        <li>
+                                            <select-multi-level items="labels" class="wrap-tag-content" text="Tag Content Type" title="Apply labels to this page" placeholder="Filter labels" ng-model="idLabels" index="$index"></select-multi-level>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="child-active" ng-show="page.openChild" ng-repeat-end="" ng-repeat="content in page.data.contents">
+                            <td colspan="8" style="padding: 0px!important;">
+                                <div class="show-animate">
+                                    <table style="width:100%">
+                                        <tr class="child-active">
+                                            <td style="min-width:35px;padding: 6.5px 0px;" class="text-center" data-title="''" ></td>
+
+                                            <td style="width:194px;padding: 6.5px 0px" class="text-center" data-title="'Page Name'" filter="{ 'title': 'text' }" sortable="'title'">
+                                                <!-- <a style="color:#fff" ng-if="content.status == 'live'" href="/pages/show-over-view/{{content._id}}"><i class="fa fa-eye"></i></a> -->
+                                            </td>
+
+                                            <td style="min-width:113px;padding: 6.5px 0px" class="text-center" data-title="'Parent'"></td>
+
+                                            <td style="width:105px;padding: 6.5px 0px" class="text-center" data-title="'Status'">
+                                                <span class="fa fa-circle yellow-status" title="Not Started" ng-if="content.status == 'Not Started'"></span>
+                                                <span class="fa fa-circle purple-status" title="In Process" ng-if="content.status == 'In Process'"></span>
+                                                <span class="fa fa-circle dark-blue-status" title="Approved" ng-if="content.status == 'Approved'"></span>
+                                                <span class="fa fa-circle red-status" title="Overdue" ng-if="content.status == 'Overdue'"></span>
+                                                <span class="fa fa-circle greens-status" title="Live" ng-if="content.status == 'live'"></span>
+                                            </td>
+
+                                            <td style="width:99px;padding: 6.5px 0px;" class="text-center" data-title="'Languages'">
+                                                <span>{{content.language}}</span>
+                                            </td>
+
+                                            <td style="width:98px;padding: 6.5px 0px;" class="text-center" data-title="'Region'">
+                                                <span ng-if="content.region != null">{{content.region}}</span>
+                                                <span ng-if="content.region == null">default</span>
+                                            </td>
+
+                                            <td style="width:158px;padding: 6.5px 0px;" class="text-center" data-title="'Due Date'">
+                                                <span ng-if="content.status != 'Approved'&&content.status != 'Overdue'&&content.status != 'live'&&content.due_date!='n/a'">{{content.due_date | myDate}}</span>
+                                                <span ng-if="content.status == 'Approved'||content.status == 'live'||content.status == 'Overdue'||content.due_date  =='n/a'">n/a</span>
+                                            </td>
+
+                                            <td style="width:67px;padding: 6.5px 0px;" class="show-action text-left" data-title="'Action'">
+                                                <div class="wrap-ac-group">
+                                                    <i class="fa fa-ellipsis-v"></i>
+                                                    <a href="javascript:void(0)" ng-click="showGroup($event)" class="ac-group btn"></a>
+                                                    <ul class="group-btn-ac">
+                                                        <li ng-if="content.status != 'live' && content.status != 'Not Started'">
+                                                            <a class="text-show-action" href="{{linkViewDraft()}}/cms/pages/view-draft/{{content._id}}" if(isProduction()) target="_blank" else target="_self" endif> View Draft</a>
+                                                        </li>
+                                                        <li ng-if="content.status == 'live'">
+                                                            <a class="text-show-action" href="{{linkViewDraft()}}/cms/pages/view-live/{{content._id}}" target="_blank"> View Live </a>
+                                                        </li>
+                                                        <li ng-if="content.status == 'live'&& content.version!=0">
+                                                            <a class="text-show-action" ng-href="{{baseUrl}}/cms/pages/view-revision/{{content._id}}" target="_self"> View Revision</a>
+                                                        </li>
+                                                        <!-- if(\Auth::user()->can('edit_page') ) -->
+                                                        <li ng-if="content.status != 'live'" >
+                                                            <a class="text-show-action" ng-href="{{baseUrl}}/cms/pages/edit-page/{{content._id}}" target="_self"> Edit Page</a>
+                                                        </li>
+                                                        <!-- endif -->
+
+                                                        <li ng-click="getModalRequestRevision(content._id)" ng-if="content.status == 'live'">
+                                                            <a class="text-show-action"> Request Revision </a>
+                                                        </li>
+
+                                                        <li ng-click="getModalRequestRegion(content._id)">
+                                                            <a class="text-show-action"> Request Region Variation </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+        <div id="sidebar-resizer" resizer="vertical" resizer-width="0" resizer-left="#resize-left" resizer-right="#resize-right" resizer-max="500" resizer-position-left="300">
+        </div>
+
+    </div>
+
+    <div class="clearfix"></div>
+
+
+
+</div>
+
+

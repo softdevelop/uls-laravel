@@ -1,0 +1,31 @@
+<table class="table set-padding table-min-1200" ng-init="size()" show-filter="isSearch"  ng-table="tableParams">
+	<tbody class="tbody-animate">
+		<tr class="parent-active" ng-repeat="item in $data">
+			<td data-title="'ID'" filter="{ 'id': 'text' }" sortable="'id'">{{item.id}}</td>
+			<td data-title="'Name'" filter="{ 'name': 'text' }" sortable="'name'">{{item.name}}</td>
+			<td data-title="'Fiber'" sortable="'fiber'">{{item.fiber ? 'YES' : 'NO'}}</td>
+			<td data-title="'Width'" filter="{ 'width': 'text' }" sortable="'width'">{{item.width}}</td>
+			<td data-title="'Height'" filter="{ 'height': 'text' }" sortable="'height'">{{item.height}}</td>
+			<td data-title="'Width Exceptions'" sortable="'width_exceptions'">{{item.width_exceptions ? 'YES' : 'NO'}}</td>
+			<td data-title="'Depth'" filter="{ 'depth': 'text' }" sortable="'depth'">{{item.depth}}</td>
+			<td data-title="'Max Co2 Lsrpwr'" filter="{ 'max_co2_lsrpwr': 'text' }" sortable="'max_co2_lsrpwr'">{{item.max_co2_lsrpwr}}</td>
+			<td data-title="'Productivity'" sortable="'productivity'">{{item.productivity ? 'TRUE' : 'FALSE'}}</td>
+			<td data-title="'Dual Laser'" sortable="'dual_laser'">{{item.dual_laser ? 'TRUE' : 'FALSE'}}</td>
+			<td data-title="'Multiple Laser'" sortable="'multiple_laser'">{{item.multiple_laser ? 'TRUE' : 'FALSE'}}</td>
+			<td class="show-action text-left parent-td9" data-title="'Action'">
+		        <div class="wrap-ac-group">
+		            <i class="fa fa-ellipsis-v"></i>
+		            <a href="javascript:void(0)" ng-click="showGroup($event)" class="ac-group btn"></a>
+					<ul class="group-btn-ac fix-missing-li">
+						<a href="/cms/database-manager/platform/{{item.id}}/edit" class="text-show-action" target="_self">
+							<li> Edit</li>
+						</a>
+						<!-- <a ng-click="deleteCategoryAndMaterial(item.id)" class="text-show-action" target="_self">
+							<li> Delete</li >
+						</a> -->
+					</ul>
+		        </div>
+		    </td>
+		</tr>
+	</tbody>
+</table>

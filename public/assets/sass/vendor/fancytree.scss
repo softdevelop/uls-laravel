@@ -1,0 +1,118 @@
+@import '../modules/variable.scss';
+@import '../modules/css3-mixins.scss';
+
+ul.fancytree-container:focus span.fancytree-title{
+    white-space: nowrap!important;
+}
+ul.fancytree-treefocus li{
+    overflow: hidden;
+}
+
+// update fancytree icon in content manager
+
+    span {
+        // &.fancytree-checkbox {
+        //     background-image: none;
+        //     &.icon-check-empty:before {
+        //         font-family: $font_0;
+        //         content: "\e6ab";
+        //         color: $color_silver_chalice_approx;
+        //         font-size: 19px;
+        //         cursor: pointer;
+        //         position: absolute;
+        //         top: -3px;
+        //         left: 16px;
+        //     }
+        // }
+        &.fancytree-icon {
+            background-image: none;
+            &.icon-folder-open-alt:before {
+                font-family: $font_1;
+                content: "\f07c";
+                color: $color_cerulean_approx;
+                font-size: 15px;
+                cursor: pointer;
+                position: absolute;
+                top: -3px;
+            }
+            &.icon-folder-close-alt:before {
+                font-family: $font_1;
+                content: "\f07b";
+                color: $color_cerulean_approx;
+                font-size: 15px;
+                cursor: pointer;
+                position: absolute;
+                top: -3px;
+            }
+            &.icon-file-alt:before {
+                font-family: $font_1;
+                content: "\f15b";
+                color: $color_pumice_approx;
+                font-size: 14px;
+                cursor: pointer;
+                position: absolute;
+                top: -3px;
+            }
+        }
+        // fix for file manager
+        &.fancytree-expander.glyphicon{
+            background-image: none;
+        }
+        // end
+        &.fancytree-expander [class^="icon-"]{
+            background-image: none;
+        }
+        &.fancytree-node {
+            position: relative;
+        }
+        &.fancytree-title {
+            position: absolute;
+            top: -3px;
+        }
+        &.fancytree-selected span.fancytree-title {
+            position: absolute;
+            top: -4px;
+        }
+    }
+    .icon-check:before {
+        font-family: $font_0;
+        content: "\e64d";
+        color: $color_blue_chill_approx;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    .fancytree-checkbox.icon-check {
+        font-family: $font_0;
+        content: "\e64d";
+        color: $color_blue_chill_approx;
+        font-size: 14px;
+        cursor: pointer;
+        &.icon-muted:before {
+            font-family: $font_1;
+            content: "\f04d";
+            color: $color_silver_approx;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    }
+    ul.fancytree-container li {
+        padding: 2px;
+    }
+
+.wrap-content-management {
+    span {
+        &.fancytree-checkbox {
+            background-image: none;
+            &.icon-check-empty:before {
+                font-family: $font_0;
+                content: "\e6ab";
+                color: $color_silver_chalice_approx;
+                font-size: 19px;
+                cursor: pointer;
+                position: absolute;
+                top: -3px;
+                left: 16px;
+            }
+        }
+    }
+} 

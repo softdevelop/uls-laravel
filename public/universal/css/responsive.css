@@ -1,0 +1,157 @@
+/* Responsive Design */
+
+@media screen and (max-device-width: 480px) {
+  #logo a img {width:290px;}
+  #search, #world-map, #ticker-wrapper {display:none;}
+  #page-wrap, #navigation {width:300px;}
+  #blacktop {height:30px;}
+  #header {position:static;}
+  #navigation li, #navigation ul {float:none;}
+  #newsticker {display:none;}
+  
+  #navigation ul {margin-top:-10px; margin-bottom:-10px;}
+  
+  #navigation ul ul {
+	visibility:hidden;
+}
+
+#navigation ul li {
+	margin:5px;
+	
+	-ms-border-radius: 		1em 1em 1em 1em;
+	-moz-border-radius: 	1em 1em 1em 1em;
+	-webkit-border-radius: 	1em 1em 1em 1em;
+	-o-border-radius: 		1em 1em 1em 1em;
+	border-radius: 			1em 1em 1em 1em;
+	
+	background-color:#000;
+	color:#fff;
+	
+	padding:5px;
+
+}
+
+#navigation a {color:#fff;}
+
+#navigation li.hover ul, #navigation li:hover ul {display:none;}
+#navigation li {
+	margin:5px;
+	font-size:18px; 
+	text-align:center; 
+	width:280px;
+	color:#fff;
+}
+
+#navigation li li {float:none; }
+#navigation li.hover span, #navigation li:hover span, #navigation li.focus span, #navigation li:focus span {
+	background:none;
+	box-shadow:none;
+	border-radius:none;
+	
+}
+
+#navigation ul li.hover, #navigation ul li:hover {
+	color:#fff;
+	
+	background-color:#b00000;
+	
+}
+
+#pagetitle {margin-top:0px;}
+
+#pagetitle h1 {font-size:22px; float:none;}
+#pagetitle span, #pagetitle p {float:none;}
+#subtitle {color:#ccc; font-size:14px; line-height:10px;}
+#subtitle strong {font-weight:normal; color:#fff;}
+
+#pagetitle-links {display:none;}
+
+#column-left, #column-right {font-size:14px; float:none; line-height:18px;}
+
+#column-left {width:280px;}
+#column-right {width:280px;}
+
+#main-content #tabs-content-img img {width:280px; margin-top:-10px;}
+#main-content #tabs-content-img {width:280px; height:100px;}
+
+#contact-form #left, #contact-form #left #privacy-policy, #contact-form #right{float:none;}
+#contact-form #right {background:none; border:none; height:400px;}
+#contact-form #left input, #contact-form #left textarea {width:250px;}
+
+/*#expert-main #address #map_canvas_paradise, #expert-main #address #map_canvas_vienna, #expert-main #address #map_canvas_yokohama, #expert-main #address #contactinfo {display:none;}*/
+
+#market-tabs, #material-tabs {float:none; width:300px;}
+
+#market-tabs h2, #material-tabs h2 {min-height:40px;}
+
+/* Home Message */
+
+#homepage-wrap h1 { margin:20px 15px; }
+#message1 {font-size:18px; color:#999; }
+#message2 {font-size:26px; margin-top:-10px; }
+#message3, #message5 {font-size:42px; color:#999; margin-top:-20px; }
+#message4 {font-size:30px; margin-top:-20px;  }
+
+#message3 ul, #message5 ul {list-style:none;}
+
+ 
+#homepage-wrap { width: 320px; padding: 0 0 0 0px; margin: 0 auto; overflow: hidden; height:150px; background-image:url(/imgs/home.png); background-position:center; }
+#homepage-tabs {float:none; margin:5px; width:310px;}
+
+#homepage-tabs #tabs-text {height:60px;}
+
+/*#darkgrey-zigzag {background: #333 url(../imgs/homeback.jpg); padding:40px 0px; font-size:12px; line-height:24px; color:#ccc; border-top:3px solid #ccc;
+	-ms-box-shadow: 	inset 0 0 12px #000;
+	-moz-box-shadow: 	inset 0 0 12px #000;
+	-webkit-box-shadow: inset 0 0 12px #000;
+	-o-box-shadow: 		inset 0 0 12px #000;
+	box-shadow: 		inner 0 0 12px #000;
+}
+
+#home-left h2 {font-size:24px; margin:10px 0px; text-shadow: 0 -1px 1px rgba(0,0,0, 1);}
+
+#home-left {float:left; width:600px; padding-right:40px; padding-left:10px; border-right:1px dotted #666;}
+#home-right {float:right; width:320px;}
+
+#home-left #learnmore {}
+
+#darkgrey-zigzag #learnmore a, #bottom-white #learnmore a{width:250px; margin:10px 0px; padding:10px; font-size:14px;}
+
+#home-right ul {list-style:none;}
+#home-right li {padding:2px 10px; font-size:12px; color:#fff; text-shadow: 0 -1px 2px rgba(255,255,255,.5);}
+
+#bottom-white {padding:20px 0px; font-size:12px; line-height:24px; color:#666; margin-bottom:-20px; border-top:6px solid #000;}
+
+#bottom-white h2, #bottom-white h3 {color:#b00000; text-shadow: 0 -1px 1px rgba(0,0,0, 1);}*/
+
+
+/* Images */
+
+#features object, #features embed {width:280px; height:160px;}
+
+#tabs-content-img {width:280px; height:100px; overflow:hidden; margin:10px 0px;}
+	
+#tabs-content-img img{margin-top:-20px;	width:280px;}
+
+
+
+#footer {
+	width:			320px;
+	margin-top:		10px;
+	}
+	
+#btmlinks {display:none;}
+
+#ulslogo {float:none; margin-top:10px; width:300px; }
+#ulslogo img {float:none;}
+#btmlanguage {padding:2px; border:#8fb8d5 solid 1px; height:28px;}
+#btmlang-txt {float:left; font-size:10px; padding:7px;}
+
+#changecountry {/*display:block; height:20px; font-size:11px; text-align:left;*/ float:none; height:30px;}
+
+#changecountry strong{font-size:12px;}
+#changecountry img {width:20px; float:left; margin:0px 3px;}
+
+}
+
+

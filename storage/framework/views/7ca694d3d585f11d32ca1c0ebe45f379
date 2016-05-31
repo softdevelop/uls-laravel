@@ -1,0 +1,55 @@
+<?php $platformImage = getObjectInfoAssets('platformImage','asset', $_5702f4c80454aa5c613a125f_field_platformImage); ?>
+<div style='display: none'>
+<?php echo $_5702f4c80454aa5c613a125f_field_platformImage; ?>
+
+</div>
+
+<section class="step2 container" id="plaform-anchor">
+            <div class="wrap-step2">
+                <div class="tab-content">
+                    <h3 class="title-step2 platformlanding">
+                      <img class="ellipe-left" src="<?php /* Begin ellipse.gif Asset */ ?>http://cdn.ulsinc.com/assets/images/general/56c7f39ed647914b4c8b4577/ellipse.gif<?php /* End ellipse.gif Asset */ ?>" alt="">
+                      <span class="text-blue"><?php echo $_5702f4c80454aa5c613a125f_field_family; ?> Platform</span>
+                      <img class="ellipe-right" src="<?php /* Begin ellipse.gif Asset */ ?>http://cdn.ulsinc.com/assets/images/general/56c7f39ed647914b4c8b4577/ellipse.gif<?php /* End ellipse.gif Asset */ ?>" alt=""></h3>
+                    <section class="section-tab">
+                        <div class="margin-bottom padding-10">
+                            <div class="row">
+
+                                <div class="col-xs-6 col-md-4">
+                                    <!-- Image on left -->
+                                    <div id="platform-image-placeholder" class="platform-main-image">
+                                        <img src="<?php echo $platformImage['src']; ?>" border="0" alt="">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-md-8">
+                                    <div class="tab-box2">
+                                        <!-- Nav tabs -->
+                                        <ul class="nav nav-tabs2" role="tablist">
+                                          <?php for($i = 0; $i < count($sub_block_items); $i++): ?>
+                                               <li role="presentation" class="<?php if($i==0) echo "active";?>"><a href="#content<?php echo $_5702f4c80454aa5c613a125f_field_family; ?><?php echo $i; ?>" aria-controls="accessories" role="tab" data-toggle="tab" id="" onclick="<?php echo $platformImage['src']; ?>','platform-image-placeholder');"><?php echo $_5702f4c80454aa5c613a125f_field_family; ?> <?php echo $i; ?></a></li>
+                                          <?php endfor; ?>
+                                        </ul>
+
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <!--Start Tab 1 content 1-->
+                                          <?php $itemNum = 0;?>
+                                           <?php foreach($sub_block_items as $subBlock): ?>
+                                          <div role="tabpanel" class="tab-pane <?php if($itemNum==0) echo "active";?>" id="content<?php echo $_5702f4c80454aa5c613a125f_field_family; ?><?php echo $itemNum; ?>">
+                                          		<?php echo $subBlock; ?>
+
+                                          </div>
+                                          <?php $itemNum++;?>
+                                            <!--End Tab 2 content 2-->
+                                          <?php endforeach; ?>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>

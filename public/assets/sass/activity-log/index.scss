@@ -1,0 +1,28 @@
+@media screen and(max-width: 425px){
+	.activitys-logs {
+		.w200{
+			width: 100%!important;
+		}
+		.space-vertical-mobile{
+			margin-bottom: 10px;
+		}
+		.newest-to-oldest{
+			padding:0px;
+		}
+		.panigation{
+			ul>li>a{
+				padding: 6px 9px;
+			}
+		}
+	}
+}
+
+@media screen and(max-width: 320px){
+	.activitys-logs {
+		.panigation{
+			ul>li>a{
+				padding: 6px 9px;
+			}
+		}
+	}
+}

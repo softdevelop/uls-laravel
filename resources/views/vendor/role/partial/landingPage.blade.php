@@ -1,0 +1,30 @@
+<div ng-if="error && message!=''" class="alert alert-danger">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    @{{message}}
+</div>
+
+ <div class="border-box-ccc">
+        <h5 class="margin-none title-box-r">{{ trans('Role/role-landing-page.roles') }}</h5>
+         <div id="box-role">
+            <div class="w-item" ng-class="{'active':roleData.id == value.id}" ng-repeat="(key, value) in items_s.items | orderBy:'name'">
+                <span class="item pull-left">@{{value.name}}</span>
+                <span class="action pull-right">
+                 <a class="" href="javascript:void(0)" ng-click="selectFeature('permission', value)" data-toggle="tooltip" data-placement="left" title="{{ trans('Role/role-landing-page.edit_role_permissions') }}">
+                    <i class="fa fa-key"></i>
+                </a>
+                <a class="" href="javascript:void(0)" data-toggle="tooltip" ng-click="selectFeature('user', value)" data-placement="left" title="{{ trans('Role/role-landing-page.add_user_or_group') }}">
+                    <i class="fa fa-user-plus"></i>
+                </a>
+                <a class="" href="javascript:void(0)" ng-click="selectFeature('edit', value)" data-toggle="tooltip" data-placement="left" title="{{ trans('Role/role-landing-page.edit_this_role') }}">
+                    <i class="ti-pencil"></i>
+                </a>
+
+                <a class="" href="javascript:void(0)" ng-click="delete(value.id)"  title="{{ trans('Role/role-landing-page.delete_this_role') }}">
+                    <i class="fa fa-trash-o"></i>
+                </a>
+
+                </span>
+                <div class="clearfix"></div>
+            </div> 
+        </div>
+    </div>

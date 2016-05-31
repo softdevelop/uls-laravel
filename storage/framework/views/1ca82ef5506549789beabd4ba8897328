@@ -1,0 +1,129 @@
+<?php $__env->startSection('title'); ?>
+	<?php echo e(trans('cms_page/page-history.history')); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+<div class="wrap-branch wrap-content-management" data-ng-controller="HistoryController">
+	<div class="top-content">
+        <label class="c-m">
+
+            <span class="wrap-breadcrumb">
+                <span class="breadcrumb-level">
+                    <a class="c-breadcrumb" title="{{baseUrl}}/cms/pages" href="{{baseUrl}}/cms/pages"><?php echo e(trans('cms_page/page-history.cms_page_manager')); ?>&nbsp;</a>
+                </span>
+
+                <?php if(isset($breadcrumbData)): ?>
+                    <?php foreach($breadcrumbData as $key => $value): ?>
+                        <a class="c-breadcrumb" href="{{baseUrl}}/cms/pages/set-page-selected/<?php echo e($value['_id']); ?>" target="_self" >/&nbsp;<?php echo e($value['name']); ?>&nbsp;</a>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+
+                <span class="breadcrumb-level">
+                    <span title="<?php echo e($page->name); ?>">/ <?php echo e($page->name); ?> / <?php echo e(trans('cms_page/page-history.history')); ?></span>
+                </span>
+
+            </span>
+        </label>
+
+    </div>
+	<div class="content page-manager" ng-init="contentId=<?php echo e(json_encode($contentId)); ?>">
+		 <!-- Nav tabs -->
+        <ul ng-if="contentId!=''" class="nav nav-tabs fix-normal top-tab" role="tablist">
+            <li>
+            	<?php if($statusPage == 'live'): ?>
+	                <a href="cms/pages/page-build/{{contentId}}">
+		                <i class="fa fa-list-alt"></i> <?php echo e(trans('cms_page/page-edit-draft.page_build')); ?>
+
+		            </a>
+            	<?php else: ?>
+	                <a href="cms/pages/edit-page/{{contentId}}">
+	                    <i class="fa fa-list-alt"></i> <?php echo e(trans('cms_page/page-history.edit')); ?>
+
+	                </a>
+            	<?php endif; ?>
+            </li>
+            <li class="active">
+                <a href="#History" role="tab" data-toggle="tab" ng-click="showValueContent()">
+                    <i class="fa fa-file-code-o"></i> <?php echo e(trans('cms_page/page-history.history')); ?>
+
+                </a>
+            </li>
+            <?php if(\Auth::user()->can('manage_redirects')): ?>
+                <li>
+                    <a href="/cms/pages/redirect/{{contentId}}">
+                        <i class="fa fa-file-code-o"></i> <?php echo e(trans('cms_page/page-history.redirects')); ?>
+
+                    </a>
+                </li>
+            <?php endif; ?>
+        </ul>
+        <div class="tab-content fix-tab">
+            <div class="tab-pane fade" id="Edit">
+			</div>
+			<div class="tab-pane fade active in" id="History">
+                <div class="title-table">
+				     <div class="table-responsive">     
+				        <table class="table fix-height-tb table-striped center-td" ng-table="tableParams" show-filter="isSearch">
+					        <a class="fixed-search" href="javascript:void(0)" ng-click="isSearch = !isSearch">
+				                <i class="fa fa-search"></i>
+				            </a>
+				            <tbody>
+					            <tr ng-repeat="item in $data">
+						            <td class="text-center" data-title="'User'" filter="" sortable="'name'">
+                                        <span ng-if="item.user_id == -1">
+                                            <?php echo e(trans('cms_page/page-history.system')); ?>
+
+                                        </span>
+                                        <span ng-if="item.user_id != -1">
+    						                {{users_map[item.user_id].first_name}} {{users_map[item.user_id].last_name}}
+                                        </span>
+						            </td>
+					                <td class="text-center"  data-title="'Action'" filter="{ 'action': 'text' }" sortable="'action'">
+						                {{item.action}}
+						            </td>
+						            <td class="text-center"  data-title="'Create at'" sortable="'created_at'">
+						                {{item.created_at | clientDate:'MM-dd-yyyy HH:mm:ss'}}
+						            </td>
+						            <td class="text-center"  data-title="'Update at'" sortable="'updated_at'">
+						                {{item.updated_at | clientDate:'MM-dd-yyyy HH:mm:ss'}}
+						            </td>
+						            <td class="show-action text-left" data-title="'Action'">
+						                <div class="wrap-ac-group">
+			                                <i class="fa fa-ellipsis-v"></i>
+			                                <a href="javascript:void(0)" ng-click="showGroup($event)" class="ac-group btn"></a>
+											<ul class="group-btn-ac">
+												<a ng-if="item.action != 'Page deleted'" class="text-show-action" href="<?php echo e(URL::to('cms/pages/history/view-draft/')); ?>/{{item._id}}" target="_blank"> 
+													<li> <?php echo e(trans('cms_page/page-history.view_page_link')); ?></li>
+												</a>
+												<a class="text-show-action" href="<?php echo e(URL::to('support/show/')); ?>/{{item.ticket_id}}" target="_blank"> 
+													<li> <?php echo e(trans('cms_page/page-history.view_ticket')); ?></li>
+												</a>
+											</ul>
+			                            </div>
+						            </td>
+					            </tr>
+				            </tbody>
+				        </table>
+				      </div>
+				</div>
+            </div>
+        </div>
+	</div>
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+	<script>
+		window.histories = <?php echo json_encode($histories); ?>;
+	</script>
+	<?php if(!isProduction() && !isDev()): ?>
+		<?php echo Html::script('/app/components/pages/HistoryService.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('/app/components/pages/HistoryController.js?v='.getVersionScript()); ?>
+
+	<?php else: ?>
+		<script src="<?php echo e(elixir('app/pages/history.js')); ?>"></script>
+	<?php endif; ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

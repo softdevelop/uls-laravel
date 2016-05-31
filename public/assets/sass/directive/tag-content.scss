@@ -1,0 +1,48 @@
+// fix checkbox
+.wrap-tag-content .checkbox label::after{
+    left: -1px;
+}
+// end
+
+.wrap-label [class*=" ti-"], 
+.wrap-label [class^=ti-]{
+    font-weight: 700;
+    margin-right: 0px !important;
+    font-size: 10px !important;
+}
+.wrap-label .text-show-action.active{
+    color: #c62929 !important;
+}
+
+
+.wrap-label.select-level [class*=" ti-"], 
+.wrap-label.select-level [class^=ti-]{
+    margin-right: 5px !important;
+    color: #333 !important;
+}
+.wrap-label.select-level .select-menu-parrent li a:hover [class*=" ti-"],
+.wrap-label.select-level .select-menu-parrent li a:hover [class^=ti-]{
+    color: #fff !important;
+}
+.wrap-ac-group.ac-up .group-btn-ac li.select-multil{
+    padding:0px!important;
+}
+.wrap-ac-group .group-btn-ac li.select-multil:hover{
+    background: none;
+}
+.wrap-label.select-level .select-menu-parrent li a:hover [class*=" ti-"],
+.wrap-label.select-level .select-menu-parrent li a:hover [class^=ti-]{
+    color:#000!important;
+}
+
+// fix for tag display don't mising on top and bottom
+.wrap-ac-group.show-top .wrap-label.select-level .select-menu-modal{
+    top: -312px !important;
+}
+// end
+
+// fix for tag content all page
+.wrap-tag-content{
+    position: relative;
+}
+// end

@@ -1,0 +1,41 @@
+$icon-table-color:#43B94C;
+$link-table-color:#004FFF;
+.report-campaign{
+	.icon {
+		.fa{
+			font-size: 9px;
+			color:$icon-table-color;
+		}
+	}
+	.name{
+
+		a{
+			color:$link-table-color;
+		}
+		
+	}
+	.total{
+		background: #E6E6E6;
+		color:#000;
+		font-weight:600;
+	}
+}
+.c-m{
+	.c-fff{
+		&:hover{
+			color: rgba(255,255,255,0.8);
+		}
+	}
+}
+
+// table
+.campaign .table>tbody>tr>td, 
+.campaign .table>tbody>tr>th, 
+.campaign .table>tfoot>tr>td, 
+.campaign .table>tfoot>tr>th, 
+.campaign .table>thead>tr>td, 
+.campaign .table>thead>tr>th{
+	padding-left: 10px;
+    text-align: center!important;
+}
+// end

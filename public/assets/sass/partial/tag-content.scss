@@ -1,0 +1,348 @@
+@import '../modules/css3-mixins.scss';
+.wrap-ac-group.ac-up .group-btn-ac{
+	li.action-tag-content{
+	  padding:0px!important;
+	  a.action{
+	  	padding-top: 8px;
+	  	padding-left: 10px;
+	  	border:none;
+	  	font-size: 14px;
+	  	&:hover{
+	  		border:none!important;
+	  		color:#07ADEC;
+	  	}
+	  }
+	}
+	.wrap-label{
+	    height: 35px;
+	    .select-menu-modal {
+	    	a{
+			    width: auto;
+			    margin-top: 3px;
+			}
+			a.active{
+				background: #428bca !important;				
+			}
+	    }
+
+	}
+	li.select-menu-item{
+	  padding:0px!important;
+	}
+
+} 
+.wrap-label.select-level {
+  position: relative;
+}
+
+// fix for width for content management
+.action-tag-content .wrap-label.select-level .select-menu-modal{
+  width:220px!important;
+  top:36px!important;
+  left: -1px!important;
+}
+.wrap-label{
+	.select-menu-modal {
+	    overflow: hidden;
+	    font-size: 12px;
+	    color: #666;
+	    background-color: #fff;
+	    background-clip: padding-box;
+	    border: 1px solid rgba(200,200,200,0.4);
+	    border-radius: 0px;
+	    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2) !important;
+	    position: absolute !important;
+	    left: -1px;
+	    width:220px !important;
+	    margin:0px;
+	    top: 34px;
+	    z-index: 1020;
+	    right: 0px;
+	    border-top: 1px solid #c1c1c1 !important;
+
+	}
+	.js-select-menu-deferred-content{
+		.select-menu-filters {
+	      	background-color: #f8f8f8;
+	      	.select-menu-text-filter {
+			  	padding: 10px;
+		  		input{
+		  			height: 34px;
+				    font-weight: 300;
+				    font-size: 12px;
+
+			        display: block;
+				    width: 100%;
+				    max-width: 100%;
+				    padding: 5px;
+				    border: 1px solid #ddd;
+				    border-radius: 3px;
+		  		}
+			  	
+			}
+
+		}
+		.select-menu-list {
+			height: auto;
+			max-height: 400px;
+			overflow: auto;
+			position: relative;
+			line-height: 1.4;
+			padding: 10px;
+			padding-top: 5px;
+			.select-menu-parrent{
+			    padding-left:0px !important;
+			    .select-menu-item {
+				        cursor: pointer;
+				        border-bottom: 1px solid #eee;
+				        display: table;
+				        table-layout: fixed;
+				        width: 100%;
+				        overflow: hidden;
+				        color: inherit;
+				        .show-sub-select{
+						    position: relative;
+						    padding-left: 30px !important;
+						    display: block;
+  							color: #333 !important;
+  							@include transition(all 0.2s linear);
+  							&:hover{
+  								background: #efefef!important;
+  								@include transition(all 0.2s linear);
+  							}
+
+  							&.active{
+  								background: #428bca !important;
+  								span{
+  									color:#fff!important;
+  								}
+  								i{
+  									color:#fff!important;	
+  								}
+  							}
+  							&.active:hover{
+  								background: #428bca !important;
+  							}
+
+  							span{
+  								font-weight: 500;
+  								display: block;
+								padding: 7px 5px!important;
+								color: #333 !important;
+  							}
+  						
+  							span.name{
+  								word-wrap:break-word;
+  								word-break: break-word;
+  							}
+  							span.color {
+							      display: inline-block;
+							      width: 14px;
+							      height: 14px;
+							      margin-right: 2px;
+							      margin-bottom: 2px;
+							      vertical-align: middle;
+							      border-radius: 3px;
+							}
+						}
+				}
+				.checkbox-inline,
+				.checkbox-inline+.checkbox-inline, 
+				.radio-inline,
+				.radio-inline+.radio-inline {
+				     margin:0px!important; 
+				}
+				.checkbox label:before{
+				  width: 15px;
+				  height: 15px;
+				  top:1px;
+				}
+
+			}
+		}
+	}
+}
+
+.wrap-ac-group .group-btn-ac li .wrap-label .select-menu-modal a.active{
+  background: #428bca !important;
+}
+
+// .wrap-label.select-level .select-menu-parrent li a span.active{
+//   background: #428bca !important;
+//   color: #fff !important;
+// }
+
+
+
+.wrap-label.select-level .select-menu-list:last-child .select-menu-item:last-child{
+  border-radius: 0px;
+}
+
+
+.wrap-label .select-menu-text-filter input {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.wrap-label.select-level .select-menu-parrent li 
+.js-select-menu-deferred-content{
+  display: block;
+  @include animation(fade 1s ease-out);
+}
+
+
+// fix tag content when tag in table
+.action-tag-content .wrap-label .js-select-menu-deferred-content .select-menu-list{
+	height: 255px;
+}
+
+
+/*-------------style-directive-select-level-------------*/
+
+.wrap-label.select-level .text-show-action{
+    width: 100%;
+    display: block;
+    min-height: 34px;
+    background-color: #fafafa;
+    background-image: none;
+    border: 1px solid #c8c7cc;
+    border-radius: 0 0 0 0 !important;
+    color: black;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.2;
+    padding: 5px 10px;
+    transition-duration: 0.1s;
+    box-shadow: none !important;
+    @include transition(300ms ease-in-out);
+    text-align: left;
+    &.active,&:hover{
+		border: 1px solid #676767 !important;
+  		color: #000 !important;		
+    }
+}
+
+.wrap-label.select-level{
+	.parrent-select{
+		list-style: none;
+	    padding-left: 10px;
+	    // .show-sub-select{
+	    // 	padding-left: 40px!important;
+	    // }
+	}
+	.select-menu-parrent{
+		list-style: none;
+		li{
+			a{
+				i{
+					position: absolute;
+				    left: 5px;
+				    top: 11px;
+				    &.fa-folder-open{
+				    	color: #07adec !important;		
+				    }
+				    &.fa-folder{
+				    	color: #07adec !important;	
+				    }
+				}
+			}
+
+		} 	
+	} 
+}
+
+.wrap-label.select-level .text-show-action.active .fa-angle-down:before {
+    content: "\f106";
+}
+
+// fix for edit page
+.wrap-edit-pages .wrap-label.select-level .text-show-action{
+  min-height: 34px;
+  height: auto;
+}
+// end
+
+// fix display inline block for action-tag-content
+.action-tag-content .wrap-label .js-select-menu-deferred-content .select-menu-list .select-menu-parrent .select-menu-item .show-sub-select span{
+	display: inline-block;
+}
+.action-tag-content .wrap-label .js-select-menu-deferred-content .select-menu-list .select-menu-parrent .select-menu-item .show-sub-select{
+	display: flex!important;
+	align-items: center;
+}
+
+
+// fix hover li in tag content table
+.wrap-ac-group .group-btn-ac li.select-menu-item:hover{
+	background: transparent;
+}
+
+// fix for http://localhost:8000/site-configuration/tag-content
+.tag-content .table-responsive table{
+	min-width: 0px;
+}
+
+.tag-content .table-animate table thead tr th:nth-child(1){
+	width:53px;
+	min-width: 0px!important;
+}
+.tag-content .table-animate table thead tr th:nth-child(2){
+	width: 150px!important;
+}
+.tag-content .table-animate table thead tr th:nth-child(3){
+	min-width: 50px!important;
+}
+.tag-content .table-animate table thead tr th:nth-child(4){
+	width: 67px!important;
+}
+
+
+// tag modal
+.tag-modal .wrap-label .js-select-menu-deferred-content .select-menu-list .select-menu-parrent .select-menu-item .show-sub-select{
+	display: flex!important;
+	align-items: center;
+}
+// button action
+
+// end
+
+
+.table-tag-content{
+	// parent
+	.parent-plus-or-minus{
+		width: 53px;
+		padding:6.5px 0px
+	}
+	.parent-name{
+		width:150px;
+	}
+	.parent-color{
+		min-width: 50px;
+	}
+	.parent-action{
+		width: 67px;
+	}
+	// child
+
+	.child-plus-or-minus{
+		width:53px;
+		padding: 6.5px 0px;
+	}
+
+	.child-name{
+		width:150px;
+		padding: 8px 0px;
+	}
+	.child-color{
+		min-width:50px;
+		padding: 8px 0px;
+	}
+	.child-action{
+		width:67px;
+		padding: 8px 0px;
+	}
+}

@@ -1,0 +1,26 @@
+<?php 
+return [
+	'breadcrumb' 			=> 'CMS Template Manager',
+	'propose_new_template' 	=> 'Propose New Template',
+	'add_new_template' 		=> 'Add New Template',
+	'create_directory' 		=> 'Create Directory',
+	'edit_name_folder' 		=> 'Edit Name Folder',
+	'delete' 				=> 'Delete',
+	'name'					=> 'Name',
+	'status'				=> 'Status',
+	'languages'				=> 'Languages',
+	'regions'				=> 'Regions',
+	'due_date'				=> 'Due Date',
+	'last_update'			=> 'Last Update',
+	'action'				=> 'Action',
+	'request_translation'	=> 'Request Translation',
+	'edit_template'			=> 'Edit Template',
+	'request_region'		=> 'Request Region',
+    'n_a' 					=> 'n/a',
+    'all_status' 			=> 'All Status',
+    'draft' 				=> 'Draft',
+    'live' 					=> 'Live',
+    'view_task'				=> 'View Task',
+    'default'				=> 'Default',
+    'title'					=> 'CMS Template Manager'
+];

@@ -1,0 +1,13 @@
+<div class="modal-header">
+    <h4 class="modal-title break-word"><?php echo e(trans('cms_block/edit-folder.header_title')); ?> <?php echo e($folder->name); ?></h4>
+</div>
+<div class="modal-body" ng-init="folder=<?php echo e($folder); ?>">
+    <strong><?php echo e(trans('cms_block/edit-folder.folder_name')); ?>:<span class="text-require"> *</span> </strong>
+    <span class="break-word">
+        <a href="#" editable-text="folder.name"
+                    e-name="folder.name"
+                    onbeforesave="checkEmtypeName($data)">
+            {{folder.name || 'empty'}}
+        </a>
+    </span>
+</div>

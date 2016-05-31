@@ -1,0 +1,71 @@
+<div class="header-branch">
+    <div class="branch-action">
+        <div class="col-xs-8 col-sm-6 col-md-6 col-lg-6 title-branch padding-none">
+            <h4 class="margin-none">User Administration</h4>
+        </div>
+        <div class="col-xs-4 col-sm-6 col-md-6 col-lg-6 btn-branch padding-none">
+            <div class="btn-group pull-right">
+                <a data-toggle="modal" ng-click="getModalCreateUser()" class="btn btn-primary hidden-xs btn-xs">
+                    <span class="fa fa-plus"><i></i></span><span>&nbsp</span>Add User
+                </a>
+            </div>
+            <div class="btn-group pull-right">
+                <a data-toggle="modal" ng-click="getModalCreateUser()" class="btn btn-primary visible-xs btn-xs">
+                    <span class="fa fa-plus"><i></i></span><span>&nbsp</span><span class="fa fa-user"><i></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<div class="table-responsive table-user list-branch-tb">
+    <div class="alert alert-danger" ng-show="error_message">
+        {{error_message}}
+    </div>
+    <div class="alert alert-success" ng-show="success_message">
+        {{success_message}}
+    </div>
+    <table class="table v-middle table-primary" ng-table="tableParams" show-filter="true">
+        <tbody id="responsive-table-body">
+            <tr  ng-repeat="item in $data">
+                <td sortable="'name'" data-title="'Name'" filter="{ 'name': 'text' }">
+                    <a ng-if="item.status == 'yes'" ng-href="/user/profile/{{item.id}}">
+                        <img ng-if="item.avatar" ng-src="{{item.avatar}}" width="40" class="img-circle" /> {{item.name}}
+                    </a>
+                    <a ng-if="item.status == 'no'" href="javascript:void(0)">
+                        <img ng-if="item.avatar" ng-src="{{item.avatar}}" width="40" class="img-circle" /> {{item.name}}
+                    </a>
+                </td>
+                <td class="text-center" sortable="'email'" data-title="'Email'" filter="{ 'email': 'text' }">
+                    <a ng-if="item.status == 'yes'" ng-href="{{ baseUrl +'/user/profile/'+item.id }}" >{{item.email}}</a>
+                    <a ng-if="item.status == 'no'" href="javascript:void(0)" >{{item.email}}</a>
+                </td>
+                
+                <td class="text-center" sortable="'created_at'" data-title="'Created Date'"><span class="label label-default">{{item.created_at}}</span></td>
+                
+                <td class="text-center" data-title="'Status'" filter="{'status':'status'}">
+                <span title="Active User" ng-show="item.status == 'yes'" class="label label-success pointer">Active</span>
+                <span title="InActive User" ng-click="changeStatus(item, $index)" ng-show="item.status == 'no'" class="label label-danger pointer">Deleted (Click this to rollback)</span>
+                </td>
+                <td ng-show="isAction" class="text-center" data-title="'Action'">
+                
+                     <a  title="Update Permissions"  data-toggle="modal" ng-href="/admin/user/show-permissions/{{item.id}}" class="btn btn-primary btn-xs"  name="click"> Update Permissions</a>
+                    <a  ng-click="resetPassword(item.email)" class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Password Reset">Password Reset</a>
+                    <a  ng-href="/user/profile/{{item.id}}" class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil"></i></a>
+                    <a  ng-click="delete(item.id)" class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Delete">
+                    <i class="fa fa-times"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+   
+    <script type="text/ng-template" id="ng-table/filters/status.html">
+        <div class="checkbox checkbox-success">
+            <input id="filter-checkbox" ng-change="changeFilter()" type="checkbox" ng-model="params.filter()[name]" name="filter-status" ng-true-value="'yes'" ng-false-value="'no'" />
+            <label for="filter-checkbox"></label>
+        </div>
+    </script>
+
+    
+</div>

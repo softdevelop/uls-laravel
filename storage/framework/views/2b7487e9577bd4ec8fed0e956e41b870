@@ -1,0 +1,39 @@
+ 
+ <?php $__env->startSection('title'); ?>
+  Register
+ <?php $__env->stopSection(); ?>
+ <?php $__env->startSection('content'); ?>
+	
+	<form method="POST" action="/auth/register">
+	  <?php echo csrf_field(); ?>
+
+	  <div id="register_logo" class="logo text-center">
+	      <img src="<?php echo e(asset('images/navibar/uls_logo.png')); ?>"/>
+	  </div>
+	  <div class="input-group col-md-12 col-ms-12 col-xs-12">
+	      <span class=""></span>
+	      <input type="text" name="name" id="name" placeholder="Name" value="<?php echo e(old('name')); ?>">
+	  </div>
+	  <div class="input-group col-md-12 col-ms-12 col-xs-12">
+	      <span class=""></span>
+	      <input type="email" name="email" id="email" placeholder="Email Address" value="<?php echo e(old('email')); ?>">
+	  </div>
+	  <div class="input-group col-md-12 col-ms-12 col-xs-12">
+	        <span class=""></span>
+	        <input type="password" name="password" id="password" value="" placeholder="Password">
+	  </div>
+	       <div class="input-group col-md-12 col-ms-12 col-xs-12">
+	        <span class=""></span>
+	        <input type="password" name="password_confirmation" id="password" value="" placeholder="Password Again">
+	  </div>
+	  <div class=" actionregister text-center">
+	      <button type="submit" class="btn btn-primary" name="btn_register">Register</button>
+	      <a href="login"><span type="submit" class="btn btn-primary button-o p-t-3" name="btn_login">Login</span></a> 
+	  </div>
+	  <div class="forgot-login text-center">
+	      <a id="reset_pwd" href="/password/email">Forgot password?</a>
+	  </div>
+	</form>
+ <?php $__env->stopSection(); ?>
+ 
+<?php echo $__env->make('auth', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

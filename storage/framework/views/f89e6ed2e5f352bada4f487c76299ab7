@@ -1,0 +1,16 @@
+<?php $officeImg = getObjectInfoAssets('officeImg','asset',  $_56f567100454aa51f7189562_field_officeimg ); ?>
+<article class="history-address-section">
+        <div class="image">
+            <img src="<?php echo $officeImg['src']; ?>" alt="<?php echo $officeImg['alt']; ?>" width="100%">
+        </div>
+		<div class="wrap-img pull-left">
+				<?php /* Begin google-icon.png Asset */ ?>
+            <img src="http://cdn.ulsinc.com/assets/images/general/56c76d69d647911a198b4574/google-icon.png" alt="" width="60">
+				<?php /* End google-icon.png Asset */ ?>
+        </div>
+        <div class="wrap-text pull-left" style="margin-left:-10px">
+            <h4><?php echo $_56f567100454aa51f7189562_field_officeName; ?></h4>
+            <p><?php echo $_56f567100454aa51f7189562_field_addressPhone; ?></p>
+        </div>
+  <div class="clearfix"></div>
+</article>

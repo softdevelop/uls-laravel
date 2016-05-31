@@ -1,0 +1,41 @@
+ 
+ <?php $__env->startSection('title'); ?>
+  Send Password Reset Link
+ <?php $__env->stopSection(); ?>
+ <?php $__env->startSection('content'); ?>
+    <div id="login_logo" class="logo text-center">
+        <img src="<?php echo e(asset('images/navibar/uls_logo.png')); ?>"/>
+    </div>
+    <?php if(session('status')): ?>
+      <div class="alert alert-success">
+        <?php echo e(session('status')); ?>
+
+      </div>
+    <?php endif; ?>
+
+    <?php if(count($errors) > 0): ?>
+        <div class="alert alert-danger">
+          <ul>
+              <?php foreach($errors->all() as $error): ?>
+                    <li><?php echo e($error); ?></li>
+              <?php endforeach; ?>
+          </ul>
+        </div>
+    <?php endif; ?>
+
+    <form method="POST" action="/password/email" novalidate>
+     <?php echo csrf_field(); ?>
+
+
+      <div class="input-group">
+          <span class="input-group-addon glyphicon glyphicon-user"></span>
+          <input type="email" name="email" value="<?php echo e(old('email')); ?>" placeholder="Your Email">
+      </div>
+
+      <div class=" actionlogin text-center">
+          <button type="submit" class="btn btn-primary" name="btn_login">Send Password Reset Link</button>
+      </div>
+</form>
+ <?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('auth', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,71 @@
+
+<div class="file-upload-rowboat">
+   <div class="clearfix"></div>
+    <div class="file-note">
+        <div ng-if="fileUpload && file.uniId" ng-repeat="file in fileUpload" class="pull-left file-item" ng-class="{'load-file': file.progress != 100, 'load-file':fileError[file.uniId].status==0}">
+            <a ng-if="!disabled" href="javascript:void(0)" ng-click="deleteFile(file.uniId)">
+                <i class="fa fa-times-circle-o rm-fa"></i>
+            </a>
+            <a href="javascript:void(0)" class="file-load-bar info-file">
+                <i class="fa pull-left" ng-class="{'fa-picture-o': checkFile(file['type']) == 'image', 'fa-file-o': checkFile(file['type']) != 'image'}"></i>
+                <label class="info-f-f">
+                    <p>{{file.name | limitTo: 5 }}{{file.name.length > 5 ? '...' : '.'}} {{file.name.split('.').pop()}}</p>
+                    <p>{{ file.size | bytes }}</p>
+                </label>
+            </a>
+
+            <div class="wrap-progress">
+                <div ng-show="file.progress!= '100' && fileError[file.uniId].status!=0" class=" progress progress-primary">
+                    <div  class="progress-bar progress-bar-primary" style="width: {{file.proccess}}%;"></div>
+                </div>
+                <div ng-show="fileError[file.uniId].status==0" class=" progress progress-primary pro-f-f">
+                    <div class="progress-error full-width"></div>
+                </div>
+                <small class="text-red" ng-show="fileError[file.uniId].status==0">{{file.error}}</small>
+            </div>
+
+            
+
+        </div>
+        <div ng-hide="fileIsUploading == true" ng-if="files" ng-repeat="fileId in fileIds" class="pull-left file-item">
+            <a href="javascript:void(0)">
+                <i class="fa fa-times-circle-o rm-fa"></i>
+            </a>
+
+             <a ng-if="isImage(files[fileId]['type'])" href="javascript:void(0)" ng-click="openPicture({id:fileId})" class="col-md-3" target="_blank">
+                   <i class="fa fa-picture-o pull-left"></i>
+                   <label>
+                    <div><span>{{files[fileId]['file_name'] | limitTo: 5 }}{{files[fileId]['file_name'].length > 5 ? '...' : '.'}} {{files[fileId]['file_name'].split('.').pop()}}</span></div>
+                    <span>{{ files[fileId]['size'] | bytes }}</span>
+                    </label>
+                </a>
+             <a ng-if="!isImage(files[fileId]['type'])" ng-href="{{ baseUrl }}/admin/file/download/{{fileId}}" class="col-md-3" target="_blank">
+               <i class="fa fa-file-o pull-left"></i>
+               <label>
+                <div><span>{{files[fileId]['file_name'] | limitTo: 5 }}{{files[fileId]['file_name'].length > 5 ? '...' : '.'}} {{files[fileId]['file_name'].split('.').pop()}}</span></div>
+                <span>{{ files[fileId]['size'] | bytes }}</span>
+                </label>
+            </a>
+        </div>
+
+        <i ng-show="hideIconLoading" class="fa fa-spinner fa-spin"></i>    
+
+        
+    <div class="clearfix"></div>
+    </div>
+    <!-- dragging&dropping -->
+    <div ng-show="!disabled && uploadMultiple!= 'one' && ngMultiple"  ngf-select multiple="ngMultiple"  ngf-drop ngf-change="upload($files)" class="drag-and-drop">
+        <h2>
+        {{ accept=="image" ?'title-drop-image': 'title-drop-file' | trans : 'directive-file' }}
+        </h2>
+    </div>
+    <div ng-show="!disabled && uploadMultiple != 'one' && !ngMultiple" ngf-select  ngf-drop ngf-change="upload($files)" class="drag-and-drop">
+        <h2>
+        {{ accept=="image" ?'title-drop-image':'title-drop-file' | trans : 'directive-file' }}
+        </h2>
+    </div>
+
+
+    <input class="file-upload-input" ng-if="uploadMultiple == 'one' && accept!='image'" ng-show="!disabled" placeholder="Click here to browse for file" ngf-select ngf-drop ngf-change="upload($files)" />
+    <input class='file-upload-input' ng-if="uploadMultiple == 'one' && accept=='image'" ng-show="!disabled" placeholder="Click here to browse for image" ngf-select  ngf-drop ngf-change="upload($files)" />
+</div>

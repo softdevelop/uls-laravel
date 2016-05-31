@@ -1,0 +1,41 @@
+ 
+ <?php $__env->startSection('title'); ?>
+  Reset Password
+ <?php $__env->stopSection(); ?>
+ <?php $__env->startSection('content'); ?>
+  <div id="resetpassword_logo" class="logo text-center">
+      <img src="<?php echo e(asset('images/navibar/uls_logo.png')); ?>"/>
+  </div>
+
+  <?php if(count($errors) > 0): ?>
+      <div class="alert alert-danger">
+        <ul>
+            <?php foreach($errors->all() as $error): ?>
+                  <li><?php echo e($error); ?></li>
+            <?php endforeach; ?>
+        </ul>
+      </div>
+  <?php endif; ?>
+  <form method="POST" action="/password/reset" novalidate>
+      <?php echo csrf_field(); ?>
+
+      <input type="hidden" name="token" value="<?php echo e($token); ?>">
+
+      <div class="input-group col-md-12 col-ms-12 col-xs-12">
+          <span class=""></span>
+          <input type="email" name="email" id="email" value="<?php echo e(old('email')); ?>" placeholder="Email Address">
+      </div>
+      <div class="input-group col-md-12 col-ms-12 col-xs-12">
+            <span class=""></span>
+            <input type="password" name="password" id="password" placeholder="Password">
+      </div>
+           <div class="input-group col-md-12 col-ms-12 col-xs-12">
+            <span class=""></span>
+            <input type="password" name="password_confirmation" id="password" placeholder="Password Again">
+      </div>
+      <div class=" action-reset text-center">
+          <button type="submit" class="btn btn-primary" name="btn_register">Set Password</button>
+      </div>
+  </form>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('auth', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

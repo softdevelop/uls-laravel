@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="uls">
+
+<?php echo $__env->make('shared.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<body id="pagehome">
+    <div class="wrapper hidden" id="on-off-menu">
+        <div id="navibar">
+            <a href="" class="btn-user-info visible-xs">
+                <i class="ti-view-grid"></i>
+            </a>
+            <div class="col-lg-12 navibar-uls">
+                <?php echo $__env->make('shared.navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            </div>
+        </div>
+        <div id="sidebar">
+            <div class="side-bar" >
+                <?php echo $__env->make('shared.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            </div>
+        </div>
+        <div id="content-uls" class="content-uls">
+            <div class="home-uls">
+                <?php echo $__env->yieldContent('content'); ?>
+            </div>
+        </div>
+    </div>
+    <?php echo $__env->make('shared.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <script>
+        $('.wrapper').removeClass('hidden');
+    </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+#line  a:hover  img, #gallery  a:hover  img, #logo  a:hover  img, #ulslogo  a:hover  img, #countries a:hover img, #product-main a:hover img, #options-listing a:hover img, #relatedlinks a:hover img, #close a:hover img{opacity:none; filter:none; }
+
+#overview-img a:hover img{opacity:0.5; filter:alpha(opacity=50); }
+
+#expert-main #sendmessage #contact-form {margin-left:-40px;}
+
+
+

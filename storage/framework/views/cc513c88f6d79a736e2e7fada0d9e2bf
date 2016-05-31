@@ -1,0 +1,488 @@
+<!doctype html>
+<html class="no-js" lang="">
+		<head>
+    		<title><?php echo $_5740aa3aae9d5a0d7a485f10_field_title; ?></title>
+    		<meta charset="utf-8">
+    		<meta name="description" content="<?php echo $_5740aa3aae9d5a0d7a485f10_field_metadescription; ?>">
+	  		<meta name="keywords" content="<?php echo $_5740aa3aae9d5a0d7a485f10_field_metakeywords; ?>">
+    		<meta name="viewport" content="width=device-width, initial-scale=1">
+			<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>" />
+				<link rel="shortcut icon" href="" >
+				<link rel="apple-touch-icon" href="">
+    		<link type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic" rel="stylesheet" type="text/css">
+				<link type="text/css" rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+				<link type="text/css" rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/css/lightslider.min.css">
+				<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.1/magnific-popup.min.css">
+
+
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin base.css Asset */ ?>http://dev.cdn.ulsinc.com/assets/css/57295594ae9d5a38e97cdd51/base.css<?php /* End base.css Asset */ ?>">
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin main-new.css Asset */ ?>http://dev.cdn.ulsinc.com/assets/css/574077b8ae9d5a12d2125acc/main-new.css<?php /* End main-new.css Asset */ ?>">
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin custom.css Asset */ ?>http://dev.cdn.ulsinc.com/assets/css/57295547ae9d5a38db022341/custom.css<?php /* End custom.css Asset */ ?>">
+				<link type="text/css" rel="stylesheet" href="http://cdn.ulsinc.com/assets/css/572c52d60454aa0629769655/search.css?v=1">
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin main-new.css Asset */ ?>http://dev.cdn.ulsinc.com/assets/css/56eb796fdf35769f1804449b/main-new.css<?php /* End main-new.css Asset */ ?>">
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin ui.fancytree.min.css Asset */ ?>http://dev.cdn.ulsinc.com/assets/css/5740bbf8ae9d5a64c34c1552/ui.fancytree.min.css<?php /* End ui.fancytree.min.css Asset */ ?>">
+
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin main-v2.89551f27.css Asset */ ?>http://dev.cdn.ulsinc.com/assets/css/574077cfae9d5a10892471f1/main-v2.f9c0bcfd.css<?php /* End main-v2.89551f27.css Asset */ ?>">
+				
+				
+		</head>
+		
+
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+			<?php /* Begin Main Header Block */ ?><?php /* End Main Header Block */ ?>			
+			<?php /* Begin Main Navigation Block */ ?><?php /* End Main Navigation Block */ ?>
+
+    <div id="content">
+           
+
+
+  <!-- start header with background red -->
+  <section class="header-title red">
+    <div class="container">
+      <div class="wrap-title">
+        <h3 class="text-white">Build </h3>
+        <h5 class="text-white">Leverage our modular architecture to build your optimal solution</h5>
+      </div>
+      <div class="wrap-image">
+        <img src="images/contact/map_opacity.png">
+      </div>
+    </div>
+  </section>
+  <!-- the end -->
+  <!-- start box with slide in left -->
+  <section  id="guide-container" ng-app="databaseManager" ng-controller="GuideConfiguratorController" class="section-slide-left container hidden" ng-init="initTree(); databaseTree=<?php echo e(json_encode($databaseTree)); ?>" >
+    
+    <h2 class="text-material-brand space-large-title"> Select Your Material</h2>
+    <!-- start step -->
+    <div id="wizard">
+        
+					<?php /* Begin Step 1 Block */ ?><h2>Step 1</h2>
+<section>
+   <p class="text-long-small margin-bottom-35">LSelect the materials you plan to use now or in the future. For each materials, enter the desired laser processes and material dimensions. This information will help us determine the appropriate processing area foe appropriate processing area for your platform along with laser power and wavelength for each material</p>
+   <!-- start wrap two col -->
+   <div class="wrap-two-col">
+      <!-- start group option -->
+      <div class="wrap-group-option have-search">
+         <div class="wrap-box-search">
+            <h4>Materials</h4>
+            <div class="search">
+               <input class="form-control" type="text" placeholder="Search">
+               <i class="fa fa-search"></i>
+            </div>
+         </div>
+           <div class="wrap-list">
+               <div data-toggle="tree" id="tree"></div>
+           </div>
+         <div class="clearfix"></div>
+      </div>
+      <!-- end group optiono -->
+      <!-- table list material -->
+      <div class="table-list-select-material">
+         <div class="title-page-table">
+            <h3 class="alert-question" href="#alert-question">
+               Selected Material
+            </h3>
+         </div>
+         <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+               <thead>
+                  <tr>
+                     <th>Action</th>
+                     <th>Material</th>
+                     <th class="background-highlight">Laser Cutting</th>
+                     <th class="background-highlight">Cutting Thickness (MIN)</th>
+                     <th class="background-highlight">Cutting Thickness (MAX)</th>
+                     <th>Laser Engraving</th>
+                     <th>Laser Marking</th>
+                     <th>User Defined Process</th>
+                     <th>Part / Material Size A x B x C</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr ng-repeat="item in dataInput.materials">
+                     <td>
+                        <div>
+                          <a href="" ng-click="removeMaterial(item.id)">
+                              <img src="<?php /* Begin delete.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/configurator/57407b12ae9d5a12d2125ace/delete.png<?php /* End delete.png Asset */ ?>">
+                           </a>
+                           <a href="" ng-click="getModalConfigMaterial(item)">
+                              <img src="<?php /* Begin edit.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/configurator/57407b22ae9d5a0d72448973/edit.png<?php /* End edit.png Asset */ ?>"> 
+                           </a>
+                        </div>
+                     </td>
+                     <td>
+                        <div class="text-black">
+                          
+                           {{item.name}}
+                        </div>
+                     </td>
+                     <td class="background-highlight">
+                        <div class="text-black">
+                           <span ng-if="item.content.cut"><img src="<?php /* Begin check.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/configurator/5740a937ae9d5a51d74fb4a1/check.png<?php /* End check.png Asset */ ?>"></span>
+                        </div>
+                     </td>
+                     <td class="background-highlight">
+                        <div class="text-black">
+                          {{ item.content.min_thickness || '0' }} {{config.content.unit == 'inches' ? ' in' : ' mm'}}
+                        </div>
+                     </td>
+                     <td class="background-highlight">
+                        <div>
+                           {{ item.content.max_thickness || '0' }} {{config.content.unit == 'inches' ? ' in' : ' mm'}}
+                        </div>
+                     </td>
+                     <td>
+                        <div>
+                           <span ng-if="item.content.engraving"><img src="<?php /* Begin check.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/configurator/5740a937ae9d5a51d74fb4a1/check.png<?php /* End check.png Asset */ ?>"></span>
+                        </div>
+                     </td>
+                     <td>
+                        <div>
+                          
+                           <span ng-if="item.content.marking"><img src="<?php /* Begin check.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/configurator/5740a937ae9d5a51d74fb4a1/check.png<?php /* End check.png Asset */ ?>"></span>
+                        </div>
+                     </td>
+                     <td>
+                        <div>
+                           <span ng-if="item.content.other"><img src="<?php /* Begin check.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/configurator/5740a937ae9d5a51d74fb4a1/check.png<?php /* End check.png Asset */ ?>"></span>
+                        </div>
+                     </td>
+                     <td>
+                        <div class="text-black">
+                              {{item.content.width || 0}} {{item.content.unit == 'inches' ? ' in' : ' mm'}} x {{item.content.height || 0}} {{item.content.unit == 'inches' ? ' in' : ' mm'}} x {{item.content.depth || 0}} {{item.content.unit == 'inches' ? ' in' : ' mm'}}
+                        </div>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <!-- end table list material -->
+      <div class="clearfix"></div>
+   </div>
+</section><?php /* End Step 1 Block */ ?>
+				  <?php /* Begin Step 2 Block */ ?>  <h2>Step 2</h2>
+  <section>
+    <section class="config">
+      <div class="wrap-step-two">
+
+        <div class="content-step-2">
+          <p class="margin-bottom-30 text-default">Please answer the following questions:</p>
+          <div class="box-info-process">
+            <ol>
+              <li class="margin-bottom-30 ">
+                <p class="text-default">What type of application will the laser system be used for?</p>
+                <div class="check-process">
+                  <div class="col-sm-4 col-md-4 padding-none">
+                    <div class="radio">
+                      <input type="radio" name="question_first" value="visual" ng-model="dataInput.answerQuestions.question_first">
+                      <label class="text-default" for="visual-communication">
+                          Visual Communication
+                      </label>
+                      <a class="get-visual-communication" href="#get-visual-communication"><i class="icon-question fa fa-question-circle"></i></a>
+                    </div>
+
+                  </div>
+                  <div class="col-sm-4 col-md-4 padding-none">
+                    <div class="radio">
+                      <input type="radio" name="question_first" value="dimensional" ng-model="dataInput.answerQuestions.question_first">
+                      <label class="text-default" for="parts-manufacturing">
+                          Parts Manufacturing
+                      </label>
+                      <a class="get-dimensional-applications" href="#get-dimensional-applications"><i class="icon-question fa fa-question-circle"></i></a>
+                    </div>
+
+                  </div>
+
+                  <div class="col-sm-4 col-md-4 padding-none">
+                    <div class="radio">
+                      <input type="radio" name="question_first" value="" ng-model="dataInput.answerQuestions.question_first">
+                      <label class="text-default" for="other">
+                          Other
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="clearfix"></div>
+                </div>
+              </li>
+
+              <li class="margin-bottom-30 ">
+                <p class="text-default">What is the expected frequecy of use?</p>
+                <div class="check-process">
+                  <div class="col-sm-4 col-md-4 padding-none">
+                    <div class="radio">
+                      <input type="radio" name="question_second" value="occasional" ng-model="dataInput.answerQuestions.question_second">
+                      <label class="text-default" for="Occasional">
+                          Occasional
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-md-4 padding-none">
+                    <div class="radio">
+                      <input type="radio" name="question_second" value="one_shift" ng-model="dataInput.answerQuestions.question_second">
+                      <label class="text-default" for="one-shift">
+                          One Shift (8-10 hours per day)
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-md-4 padding-none">
+                    <div class="radio">
+                      <input type="radio" name="question_second" value="continuous" ng-model="dataInput.answerQuestions.question_second">
+                      <label class="text-default" for="Continuous">
+                         Continuous 24/7
+                      </label>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </li>
+              <li class="margin-bottom-30 ">
+                <p class="text-default">What is your most important selection criterion?</p>
+                <div class="check-process">
+                  <div class="col-sm-4 col-md-4 padding-none">
+                    <div class="radio">
+                      <input type="radio" name="question_third" value="budget" ng-model="dataInput.answerQuestions.question_third">
+                      <label class="text-default" for="productivity">
+                         Productivity
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-4 padding-none">
+                    <div class="radio">
+                      <input type="radio" name="question_third" value="blanced_budget" ng-model="dataInput.answerQuestions.question_third">
+                      <label class="text-default" for="budget">
+                         Budget
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-4 padding-none">
+                    <div class="radio">
+                      <input type="radio" name="question_third" value="productivity" ng-model="dataInput.answerQuestions.question_third">
+                      <label class="text-default" for="budget-and-productivity">
+                         Budget and Productivity
+                      </label>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+        </div>
+		<?php /* Begin Each Show Image Slide Block */ ?><!-- form get sample -->
+<form id="get-visual-communication" class="mfp-hide">
+				<img src="http://dev.cdn.ulsinc.com/assets/images/configurator/57407b3fae9d5a095459906d/icon-times.png" class="mfp-close">
+				<div class="wrap-box-contact">
+					<div class="main-box">
+						<div class="wrap-question-comment">
+							<h4 class="text-header margin-bottom-15">Visual Applications</h4>
+							<p class="text-message">Visual Applications require how to moderate levels of precision such as:</p>
+							<p class="text-default margin-bottom-30">Signs, Name Plates, Electronic Etching</p>
+							<p class="text-message"><i>Some example are shown below.</i></p>
+							<div class="box-slide fix-modal">
+									<ul class="lightSlider-visual">
+																									<li class="item" data-thumb="http://dev.cdn.ulsinc.com/assets/images/configurator/57407c05ae9d5a0d7a485f02/slide-4.png">
+		<a class="image" href="http://dev.cdn.ulsinc.com/assets/images/configurator/57407c05ae9d5a0d7a485f02/slide-4.png"><img width="100%" src="http://dev.cdn.ulsinc.com/assets/images/configurator/57407c05ae9d5a0d7a485f02/slide-4.png" alt="slice img"></a>
+</li>
+																									<li class="item" data-thumb="http://dev.cdn.ulsinc.com/assets/images/configurator/57407be8ae9d5a1147555345/slide-2.png">
+		<a class="image" href="http://dev.cdn.ulsinc.com/assets/images/configurator/57407be8ae9d5a1147555345/slide-2.png"><img width="100%" src="http://dev.cdn.ulsinc.com/assets/images/configurator/57407be8ae9d5a1147555345/slide-2.png" alt="slice img"></a>
+</li>
+																									<li class="item" data-thumb="http://dev.cdn.ulsinc.com/assets/images/configurator/57407bf6ae9d5a0d7a485efe/slide-3.png">
+		<a class="image" href="http://dev.cdn.ulsinc.com/assets/images/configurator/57407bf6ae9d5a0d7a485efe/slide-3.png"><img width="100%" src="http://dev.cdn.ulsinc.com/assets/images/configurator/57407bf6ae9d5a0d7a485efe/slide-3.png" alt="slice img"></a>
+</li>
+																									<li class="item" data-thumb="http://dev.cdn.ulsinc.com/assets/images/configurator/57407bd8ae9d5a0d72448977/slide-1.png">
+		<a class="image" href="http://dev.cdn.ulsinc.com/assets/images/configurator/57407bd8ae9d5a0d72448977/slide-1.png"><img width="100%" src="http://dev.cdn.ulsinc.com/assets/images/configurator/57407bd8ae9d5a0d72448977/slide-1.png" alt="slice img"></a>
+</li>
+																				</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+</form><?php /* End Each Show Image Slide Block */ ?>
+        <?php /* Begin Dimensional Applications Block */ ?><form id="get-dimensional-applications" class="mfp-hide">
+		<img src="http://dev.cdn.ulsinc.com/assets/images/configurator/57407b3fae9d5a095459906d/icon-times.png" class="mfp-close">
+		<div class="wrap-box-contact">
+			<div class="main-box">
+				<div class="wrap-question-comment">
+					<h4 class="text-header margin-bottom-15">Dimensional Applications</h4>
+					<p class="text-message margin-bottom-30">Dimensional Applications are those products and components which need dimensional accuracy</p>
+					<p class="text-message"><i>Some example are shown below.</i></p>
+					<div class="box-slide fix-modal">
+							<ul class="lightSlider-dimensional">
+																									<li class="item" data-thumb="http://dev.cdn.ulsinc.com/assets/images/configurator/57407bd8ae9d5a0d72448977/slide-1.png">
+		<a class="image" href="http://dev.cdn.ulsinc.com/assets/images/configurator/57407bd8ae9d5a0d72448977/slide-1.png"><img width="100%" src="http://dev.cdn.ulsinc.com/assets/images/configurator/57407bd8ae9d5a0d72448977/slide-1.png" alt="slice img"></a>
+</li>
+																									<li class="item" data-thumb="http://dev.cdn.ulsinc.com/assets/images/configurator/57407be8ae9d5a1147555345/slide-2.png">
+		<a class="image" href="http://dev.cdn.ulsinc.com/assets/images/configurator/57407be8ae9d5a1147555345/slide-2.png"><img width="100%" src="http://dev.cdn.ulsinc.com/assets/images/configurator/57407be8ae9d5a1147555345/slide-2.png" alt="slice img"></a>
+</li>
+																									<li class="item" data-thumb="http://dev.cdn.ulsinc.com/assets/images/configurator/57407bf6ae9d5a0d7a485efe/slide-3.png">
+		<a class="image" href="http://dev.cdn.ulsinc.com/assets/images/configurator/57407bf6ae9d5a0d7a485efe/slide-3.png"><img width="100%" src="http://dev.cdn.ulsinc.com/assets/images/configurator/57407bf6ae9d5a0d7a485efe/slide-3.png" alt="slice img"></a>
+</li>
+																									<li class="item" data-thumb="http://dev.cdn.ulsinc.com/assets/images/configurator/57407c05ae9d5a0d7a485f02/slide-4.png">
+		<a class="image" href="http://dev.cdn.ulsinc.com/assets/images/configurator/57407c05ae9d5a0d7a485f02/slide-4.png"><img width="100%" src="http://dev.cdn.ulsinc.com/assets/images/configurator/57407c05ae9d5a0d7a485f02/slide-4.png" alt="slice img"></a>
+</li>
+																		</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form><?php /* End Dimensional Applications Block */ ?>
+
+      </div>
+    </section>
+  </section><?php /* End Step 2 Block */ ?>
+				  <?php /* Begin Step 3 Block */ ?><h2>Step 3</h2>
+<section>
+    <section class="config" ng-if="currentPlatForm">
+      <div class="wrap-step-tree">
+        <div class="top-step margin-bottom-30">
+          <h4 class="margin-bottom-15">Suggested Platform</h4>
+          <div class="col-md-4 margin-bottom-15 padding-0">
+            <div class="img">
+              <figure class="image" ng-if="currentPlatForm.result.linkImagePlatform">
+                <a href="{{currentPlatForm.result.linkImagePlatform}}">
+                  <img width="100%" src="{{currentPlatForm.result.linkImagePlatform}}" alt="img platform">
+                </a>
+              </figure>
+            </div>
+          </div>
+          <div class="col-md-8 margin-bottom-15">
+            <h4 class="text-blue margin-bottom-15">{{currentPlatForm.result.name}}</h4>
+            <p class="line-height-30 text-long-normal-2 margin-bottom-30">
+                {{currentPlatForm.result.description}}
+            </p>
+            <p ng-bind-html="currentPlatForm.result.meta_description | htmlize"></p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="bottom-step padding-15">
+          <h4 class="text-blue">Option</h4>
+          <p class="margin-bottom-30">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ratione harum nesciunt. Numquam odio ducimus expedita iste blanditiis.
+          </p>
+          <div class="content-step">
+            <div class="col-md-8 margin-bottom-15 wrap-box-option" ng-repeat="(key, value) in currentPlatForm.categories">
+              <h5 class="header-point title-step">
+                <img class="ellipe-left" src="<?php /* Begin ellipse.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/configurator/57407b31ae9d5a0d7a485efa/ellipse.png<?php /* End ellipse.png Asset */ ?>" alt="icon">
+                <span class="text-blue">{{value}}</span>
+                <img class="ellipe-right" src="<?php /* Begin ellipse.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/configurator/57407b31ae9d5a0d7a485efa/ellipse.png<?php /* End ellipse.png Asset */ ?>" alt="icon">
+              </h5>
+              <div class="box-item border padding-10" ng-repeat="(key1, accessory) in currentPlatForm.accessories[key]">
+                <div class="col-md-8 padding-0">
+                  <h5 class="margin-bottom-15">{{accessory.name}}</h5>
+                  <p class="line-height-30 margin-bottom-15">
+                    {{accessory.description}}
+                  </p>
+                  <p class="margin-bottom-15"><strong>Benefits</strong></p>
+                  <ul class="padding-left-20">
+                    {{accessory.benefits}}
+                  </ul>
+                </div>
+                <div class="col-md-4 text-center padding-0">
+                  <div class="image margin-bottom-20">
+                    <figure class="image">
+                      <a href="{{accessory.linkImage}}"><img width="90%" src="{{accessory.linkImage}}"></a>
+                    </figure>
+                  </div>
+                  <button class="btn btn-blue btn-large full-width" ng-click="addAccessories(accessory)">ADD</button>
+                </div>
+                <div class="clearfix"></div>
+              </div>                        </div>
+              <div class="col-md-4 margin-bottom-15 space-mobile">
+                <div class="box-accessories">
+                  <h4 class="text-center">Selected Accessories</h4>
+                  <div class="box-content">
+                    <div class="item" ng-repeat="(key, value) in dataInput.selectedAccessories">
+                      <a href="javascript:void(0)" ng-click="deleteAccessories(value.id)"><img src="<?php /* Begin icon-x.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/configurator/57407b4eae9d5a2d743f4a07/icon-x.png<?php /* End icon-x.png Asset */ ?>"></a>
+                      <span>{{value.name}}</span>
+                    </div>
+                  </div>
+                  <div class="box-bottom text-center">
+                    <button class="btn btn-blue btn-large full-width alert-question-finish" href="#alert-question-finish">FINISHED</button>
+                  </div>
+                </div>
+              </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+</section>
+<form id="alert-question-finish" class="mfp-hide">
+      <img src="images/page/icon-times.png" class="mfp-close">
+      <div class="wrap-box-contact">
+
+        <div class="main-box">
+            <p class="title-alert-center">Do you need to select another Accessory?</p>
+            <div class="text-center">
+              <button class="btn btn-blue btn-large" ng-click="closeSelectedAccessory()">Yes </button>
+              <button class="btn btn-blue btn-large" ng-click="finishStep()">No </button>
+            </div>
+            
+        </div>
+      </div>
+    </form><?php /* End Step 3 Block */ ?>
+    </div>
+    <!-- end step -->
+
+  </section>
+
+	<script type="text/javascript" >
+			window.listAnswer = <?php echo json_encode(listAnswer()); ?>;
+			window.email = <?php echo json_encode($email); ?>;
+      window.listALP = <?php echo json_encode(listALP()); ?>;
+      window.dataInput = <?php echo json_encode($dataInput); ?>;
+	</script>
+
+    </div>
+    <footer>
+				<?php /* Begin Footer Navigation Block */ ?><?php /* End Footer Navigation Block */ ?>
+				<?php /* Begin Footer Copyright Block */ ?><?php /* End Footer Copyright Block */ ?>
+	</footer>
+
+			<script type="text/javascript" src="<?php /* Begin vendor.fe961997.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/56eb7d42df3576830d04449d/vendor.37d58f8f.js<?php /* End vendor.fe961997.js Asset */ ?>"></script>
+			<script type="text/javascript" src="<?php /* Begin plugins.bde8e777.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/56eb79e8df3576a00704449b/plugins.bde8e777.js<?php /* End plugins.bde8e777.js Asset */ ?>"></script>
+		   
+    		<script type="text/javascript" src="https://www.google-analytics.com/analytics.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/js/lightslider.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/js/lightslider.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script>
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw5uR1gaKG3AaDuDrVYa6QaE47n03Td_o&callback=initMap"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js"></script>
+
+			
+			 <script type="text/javascript" src="<?php /* Begin main.38388ae6.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/56eb79f8df3576460704449c/main.354e9480.js<?php /* End main.38388ae6.js Asset */ ?>"></script>
+			  <script src="http://cdn.ulsinc.com/assets/js/572c50030454aa1119758f41/search.js?v=1"></script>
+
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-resource.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap-tpls.min.js"></script>
+  		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstra
+																					p-editable.min.js"></script>
+  		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.fancytree/2.10.2/jquery.fancytree-all.min.js"></script>
+  		<script type="text/javascript" src="<?php /* Begin ng-table.min.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/configurator/5740bda1ae9d5a581156008c/ng-table.min.js<?php /* End ng-table.min.js Asset */ ?>"></script>
+	    <script type="text/javascript" src="<?php /* Begin guideconfiguratorservice.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/configurator/5740725cae9d5a0954599068/guideconfiguratorservice.js<?php /* End guideconfiguratorservice.js Asset */ ?>"></script>
+	  	 <script type="text/javascript" src="<?php /* Begin guideconfiguratorcontroller.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/configurator/57407274ae9d5a2d743f4a01/guideconfiguratorcontroller.js<?php /* End guideconfiguratorcontroller.js Asset */ ?>"></script>
+	<script type="text/javascript" src="<?php /* Begin configuratorservice.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/configurator/5740a6a1ae9d5a54f9527082/configuratorservice.js<?php /* End configuratorservice.js Asset */ ?>"></script>
+
+     <script>
+						$(document).ready(function () {
+								$('#tipue_drop_input').tipuedrop();
+						});
+		  </script>
+  </body>
+
+
+</html>

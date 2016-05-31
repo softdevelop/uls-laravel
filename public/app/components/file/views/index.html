@@ -1,0 +1,55 @@
+<div class="list-graphic-tb">
+        <div class="table-responsive wrap-box-content">
+            <table class="table v-middle table-hover" ng-table="tableParams">
+                <thead>
+                    <tr>
+                       <!--  <th class="text-center">#Id</th> -->
+                       <!--  <th class="text-center">Thumbnail</th> -->
+                        <th class="text-center sortable" ng-click="tableParams.sorting({'group':'desc','file_name' : tableParams.isSortBy('file_name', 'asc') ? 'desc' : 'asc'})"><span class="sort-indicator">File Name</span></th>
+                        <th class="text-center">Created By</th>
+                        <th class="text-center">Created</th>
+                        <th ng-show="isAdmin" class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat="group in $groups" id="responsive-table-body">
+                    <tr  ng-repeat="item in group.data">
+                        <td data-title="'File Name'" class="ellipsis">
+                             <a ng-if="checkFile(item.type) == 'image'" ng-click="openPicture({id:item['id']})" class="file-{{item.id}}" href="javascript:void(0)">{{ fileName[item.id] ? fileName[item.id] : item.file_name }}</a>
+
+                             <a ng-if="item.group == 'folder'" href="javascript:void(0)" class="folder-{{item.id}}" ng-click="showFolderId({id: item.id})" >{{ folderName[item.id] ? folderName[item.id] : item.file_name }}
+                            </a>
+                            <a ng-if="checkFile(item.type) != 'image' && item.group=='file'"  class="file-{{item.id}}" ng-href="{{ baseUrl }}/admin/document-manager/download/{{item.id}}">{{ fileName[item.id] ? fileName[item.id] : item.file_name }}
+                            </a>
+
+                            <div class="form-group hidden" ng-class="{'edit-file-{{item.id}}' :item.group == 'file','edit-folder-{{item.id}}' :item.group == 'folder' }">
+                                <form name="form">
+                                      <input ng-if="item.group == 'file'" name="editFolderFile" ng-required="true" file-name-edited="{{fileName[item.id]}}" id="file-{{item.id}}" edit-file-name type="text" ng-init="fileName[item.id]=item.file_name" ng-model="fileName[item.id]" class="form-control">
+                                
+                                 <input ng-if="item.group == 'folder'" name="editFolderFile" ng-required="true" file-name-edited="{{folderName[item.id]}}" id="folder-{{item.id}}" edit-file-name type="text" ng-init="folderName[item.id]=item.file_name" ng-model="folderName[item.id]" class="form-control">
+                                </form>
+                              
+
+                            </div>
+
+                        </td>
+                        <td class="text-center" data-title="'Created By'">{{ listNameUser[item.user_id]}}</td>
+                        <td class="text-center" data-title="'Created'">{{ item.created_at | clientDate}}</td>
+
+                        <td ng-show="isAdmin"  class="text-center" data-title="'Action'">
+                            <a ng-if="item.group=='file'" class="btn btn-primary btn-xs" href="javascript:void(0)" ng-click="deleteFile( {id:item.id} )"><i class="fa fa-trash-o"></i></a>
+            
+                            <a class="btn btn-primary btn-xs" href="javascript:void(0)" ng-click="editFileName(item.id, item.group)"><i class="fa fa-pencil"></i></a>
+
+                           <!--  <a ng-if="isDocumentRowboat && item.group == 'folder' && (item.visible &&item.visible != 0)" class="btn btn-primary btn-xs" ng-click="visibleFolder({id:item.id})"><i class="fa fa-eye"></i></a> -->
+                           <!--  <a ng-if="isDocumentRowboat && item.group == 'folder'&& (!item.visible ||item.visible == 0)" class="btn btn-primary btn-xs" ng-click="visibleFolder({id:item.id})"><i class="fa fa-eye-slash"></i> </a> -->
+                            <a ng-if="item.parent_id &&item.parent_id !=0&&item.group=='folder'&&isDocumentRowboat" class="btn btn-primary btn-xs" ng-click="deleteFolder({id:item.id,position:'main'})"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <script type="text/ng-template" id="ng-table/filters/age.html">
+                
+            </script>
+        </div>
+</div>
+

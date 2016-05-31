@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="bootstrap/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         syntaxCheck="false">
+    <testsuites>
+        <testsuite name="Application Test Suite">
+            <directory>./tests/</directory>
+        </testsuite>
+
+        <testsuite name="Pages">
+            <directory>./tests/cms/pages</directory>
+        </testsuite>
+        <testsuite name="Assets">
+            <directory>./tests/cms/assets</directory>
+        </testsuite>
+        <testsuite name="Dashboard">
+            <directory>./tests/cms/dasdboard</directory>
+        </testsuite>
+        <testsuite name="DocumentManager">
+            <directory>./tests/document-manager</directory>
+        </testsuite>
+
+    </testsuites>
+    <php>
+        <env name="APP_ENV" value="uls_testing"/>
+        <env name="DB_DATABASE" value="uls_testing"/>
+        <env name="DB_MONGO_DATABASE" value="uls_testing"/>
+        <env name="CACHE_DRIVER" value="array"/>
+        <env name="SESSION_DRIVER" value="array"/>
+    </php>
+</phpunit>

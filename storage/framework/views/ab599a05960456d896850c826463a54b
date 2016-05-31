@@ -1,0 +1,175 @@
+<div class="modal-header">
+    <button  ng-click="cancel()" class="close" type="button"><span aria-hidden="true">×</span></button>
+    <h4 class="modal-title">
+        <span ng-if="!block._id"><?php echo e(trans('cms_block/request-block.modal_header_request')); ?></span>
+        <span ng-if="block._id && block.modal == 'request_translation'"><?php echo e(trans('cms_block/request-block.modal_header_translate')); ?></span>
+        <span ng-if="block._id && block.modal == 'request_region'"><?php echo e(trans('cms_block/request-block.modal_header_region')); ?></span>
+    </h4>
+</div>
+
+<div class="modal-body" id="loaded">
+    <div ng-if="error">{{error}}</div>
+    <form role="form" name="formData" ng-init="folders=<?php echo e(json_encode($folders)); ?>;selectedItem=<?php echo e(json_encode($selectedItem)); ?>;folderType=<?php echo e(json_encode($folderType)); ?>" novalidate>
+        <!-- Input Name-->
+        <div class="form-group" ng-class="[submitted && formData.name.$invalid]">
+            <label class="label-form" for="name"><?php echo e(trans('cms_block/request-block.name_label')); ?>:<span class="text-require"> *</span></label>
+            <div class="wrap-form">
+                <div ng-if="!block._id">
+                    <input class="form-control name" placeholder="<?php echo e(trans('cms_block/request-block.name_placeholder')); ?>" type="text" name="name" ng-model="block.name" ng-required = "true" />
+                    <div class="pull-left">
+                        <small class="help-inline" ng-show="submitted && formData.name.$error.required"><?php echo e(trans('cms_block/request-block.name_required')); ?></small>
+                    </div>
+                </div>
+
+                <div ng-if="block._id">
+                    <span>{{block.name}}</span>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <!-- Input folders-->
+        <div class="form-group" ng-class="[submitted && formData.folder_id.$invalid]">
+            <label class="label-form" for="name"><?php echo e(trans('cms_block/request-block.folder_label')); ?>:<span class="text-require"> *</span></label>
+            <div class="wrap-form">
+                <?php if(!$block['_id']): ?>
+                <div >
+                    <select-level items="folders" text="Select <?php echo e(trans('cms_block/request-block.folder_placeholder')); ?>" show-icon="true" text-filter="Filter folder" ng-model="block.folder_id" selected-item="selectedItem"></select-level>
+                    <div class="pull-left">
+                        <small class="help-inline" ng-show="submitted && !block.folder_id"><?php echo e(trans('cms_block/request-block.folder_required')); ?></small>
+                    </div>
+                </div>
+                <?php else: ?>
+                <div>
+                    <span>{{block.folderName}}</span>
+                </div>
+                <?php endif; ?>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <!-- Input Type-->
+        <div class="form-group" ng-class="[submitted && formData.folder_id.$invalid]" ng-show ="folderType[block.folder_id] != 'managed_block'">
+            <label class="label-form" for="name"><?php echo e(trans('cms_block/request-block.type_label')); ?>:<span class="text-require"> *</span></label>
+            <div class="wrap-form">
+                <div ng-if="!block._id">
+                    <select name="type" class="form-control" ng-options="key as value for (key,value) in <?php echo e(json_encode($types)); ?>" ng-model="block.type" ng-required = "true">
+                        <option value="" disabled><?php echo e(trans('cms_block/request-block.type_select')); ?></option>
+                    </select>
+                    <div class="pull-left">
+                        <small class="help-inline" ng-show="submitted && formData.type.$error.required"><?php echo e(trans('cms_block/request-block.type_required')); ?></small>
+                    </div>
+                </div>
+                <div ng-if="block._id">
+                    <span>{{block.typeName}}</span>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <!-- Requested Date-->
+        <div class="form-group" ng-class="[submitted && formData.due_date.$invalid]">
+            <label class="label-form" for="name"><?php echo e(trans('cms_block/request-block.requested_date_label')); ?>:<span class="text-require"> *</span></label>
+            <div class="wrap-form">
+                <input type="text" placeholder="<?php echo e(trans('cms_block/request-block.requested_date_placeholder')); ?>" class="form-control" name="due_date"
+                            datepicker-popup="{{format}}"
+                            ng-model="block.due_date"
+                            is-open="opened['requestDate']"
+                            ng-click="open($event,'requestDate')"
+                            min-date = "minDate"
+                            ng-required="true"/>
+                <div class="pull-left">
+                    <small class="help-inline" ng-show="submitted && formData.due_date.$error.required"><?php echo e(trans('cms_block/request-block.requested_date_required')); ?></small>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <!-- Input Languages-->
+        <?php if($block->_id && $block->modal == 'request_translation'): ?>
+            <div class="form-group">
+                <label class="label-form" for="requestDate"><?php echo e(trans('cms_block/request-block.requested_language_label')); ?>:<span class="text-require"> *</span></label>
+                <div class="clearfix"></div>
+                <multi-select-block items = "<?php echo e(json_encode($languagesUnselected)); ?>" required-item="requiredLanguage" items-assigned = "languages_selected"></multi-select-block>
+                <div class="clearfix"></div>
+                <small class="help-inline m-l-15 ng-invalid" ng-show="submitted && requiredLanguage"><?php echo e(trans('cms_block/request-block.requested_language_required')); ?></small>
+            </div>
+        <?php endif; ?>
+
+        <!-- Input Regions-->
+        <?php if($block->_id && $block->modal == 'request_region'): ?>
+            <div class="form-group">
+                <label class="label-form" for="requestDate"><?php echo e(trans('cms_block/request-block.requested_region_label')); ?>:<span class="text-require"> *</span></label>
+                <div class="clearfix"></div>
+                <multi-select-block items = "<?php echo e(json_encode($regionsUnselected)); ?>" required-item="requiredRegion" items-assigned = "regions_selected"></multi-select-block>
+                <div class="clearfix"></div>
+                <small class="help-inline m-l-15 ng-invalid" ng-show="submitted && requiredRegion"><?php echo e(trans('cms_block/request-block.requested_region_required')); ?></small>
+            </div>
+        <?php endif; ?>
+
+        <!-- Input Description-->
+        <div class="form-group" >
+            <label class="label-form" for=""><?php echo e(trans('cms_block/request-block.description_label')); ?>:<span class="text-require"> *</span></label>
+            <div class="wrap-form">
+                <textarea id="description" name="description" class="form-control" ng-init="initRedactor()" placeholder="<?php echo e(trans('cms_block/request-block.description_placeholder')); ?>"></textarea>
+                <div class="pull-left">
+                    <small class="help-inline ng-invalid" ng-show="submitted && requiredDescription"><?php echo e(trans('cms_block/request-block.description_required')); ?></small>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <!-- Attach File -->
+        <div class="form-group">
+            <div class="form-group drop-file col-lg-12 padding-none">
+                <div>
+                    <file-upload ng-model="filesUpload" placeholder="<?php echo e(trans('cms_block/request-block.placeholder_file_upload')); ?>"></file-upload>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <!-- Thumbnail -->
+        <div class="form-group">
+            <div class="form-group drop-file col-lg-12 padding-none">
+                <button class="btn btn-primary pull-left" ng-model="block.thumbnail"
+                        ngf-select
+                        ngf-reset-model-on-click="false"
+                        ngf-accept="'image/*'"
+                        accept="image/*">
+                    <i class="fa fa-image"></i> <?php echo e(trans('cms_block/request-block.block_thumb_btn')); ?>
+
+                </button>
+
+                <div class="clearfix"></div>
+
+                <div class="m-t-15">
+                    <div class="" ng-repeat="image_add in block.thumbnail track by $index">
+                        <img class="item-thum-up" ngf-src="image_add" ng-show="image_add.type.indexOf('image') > -1" ngf-accept="'image/*'">
+                        <a class="action-thum-up" href="javascript:void(0);"><i ng-click="removeThumbnail($index)" class="fa fa-times"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </form>
+
+    <div class="" ng-show="errors">
+        <div class="help-inline" ng-repeat="(key, value) in errors">{{value}}</div>
+        <div class="clearfix"></div>
+    </div>
+
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="cancel()" ><i class="fa fa-times"></i> <?php echo e(trans('cms_block/request-block.cancel_btn')); ?></button>
+
+    <button class="btn btn-primary" id="btnSubmit" ng-click="submit(formData.$invalid)"><i class="fa fa-check"></i> <?php echo e(trans('cms_block/request-block.submit_btn')); ?></button>
+</div>
+
+<script>
+    window.block = <?php echo json_encode($block); ?>
+
+    window.folders = <?php echo json_encode($folders); ?>
+
+</script>

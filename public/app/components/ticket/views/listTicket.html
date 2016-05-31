@@ -1,0 +1,21 @@
+
+    <div class="table-responsive list-ticket">    
+        <table class="table table-bordered table-striped table-condensed table-list" ng-table="tableParams" show-filter="true">
+            <tbody id="responsive-table-body">
+                <tr ng-click="clickable(item.id)"  ng-repeat="item in $data">
+                    <td sortable="'id'" data-title="'Id'">{{item.id}}</td>
+                    
+                    <td data-title="'Type'"  data-filter="{ 'type': 'select' }" data-filter-data="names($column)">{{types[item.type]}}</td>
+                    <td sortable="'title'" filter="{ 'title': 'text' }" data-title="'Subject'">{{item.title}}</td>
+                    <td  data-title="'Status'">{{states[item.status]}}</td>
+                    <td  data-title="'Priority'">{{prioritys[item.priority]}}</td>
+                    <td  data-title="'Assigned'">{{ item.assign_id ?  usersMap[item.assign_id]['name'] : 'Unassigned'}}</td>
+                    <td  data-title="'Action'">
+                        <timer ng-if="item.status=='closed'"  start-time="item.timer" end-time="item.timer">{{hhours}}:{{mminutes}}:{{sseconds}}</timer>
+                        <timer ng-if="item.status!='closed'"  start-time="item.timer"><span>{{ddays}} {{ddays > 0 ? 'days': 'day'}},</span> {{hhours}}:{{mminutes}}:{{sseconds}}</timer>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

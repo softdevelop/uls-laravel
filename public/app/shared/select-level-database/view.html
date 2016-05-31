@@ -1,0 +1,34 @@
+<div>
+    <div class="wrap-label select-level">
+
+        <a href="javascript:void(0)" ng-click="toggleSelectMenu($event)" class="text-show-action">
+          {{text}}
+          <i class="fa fa-angle-down pull-right"></i>
+        </a>
+
+        <div id="select-level-modal-{{key}}-{{index}}" class="select-menu-modal off">
+            <div class="js-select-menu-deferred-content">
+                <div class="select-menu-filters">
+                </div>
+                <div id="select-level" class="select-menu-list label-select-menu" >
+                    <script type="text/ng-template" id="subSelect">
+                        <a class="show-sub-select show-sub-select-{{value.key}}" ng-click="showSubSelect($event, value); selectedItem(value, $event)">
+                            <i class="fa fa-folder" ng-if="!value.folder_id && value.subFolder.length > 0"></i>
+                            <span ng-show="value.parent_id != '0'" class="name-select item-{{value.key}}" ng-class="{'item-not-sub':!value.subFolder.length}">{{value.name}}</span>
+                            <span ng-show="value.parent_id == '0'" class="name-select item-{{value.key}}" ng-class="{'item-not-sub':!value.subFolder.length}">{{value.name}}</span>
+                        </a>
+
+                        <ul ng-if="value.subFolder" class="parrent-select parrent-select-{{value.key}}" style="list-style:none">
+                            <li class="select-multil" ng-repeat="(key, value) in value.subFolder | filter:searchQuery" ng-include="'subSelect'"></li>
+                        </ul>
+                    </script>
+                    <ul class="select-menu-parrent"  style="list-style:none">
+                        <li id="select-{{index}}" class="select-menu-item" ng-repeat="(index, value) in items | filter:searchQuery" ng-include="'subSelect'"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="select-menu-loading-overlay"></div>
+        </div>
+    </div>
+</div>
+

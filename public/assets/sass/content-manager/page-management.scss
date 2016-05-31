@@ -1,0 +1,96 @@
+@import "../modules/variable.scss";
+@import "../modules/css3-mixins.scss";
+
+// for all th and td
+@for $i from 0 through 10{
+    .page-management .table > thead > tr > th:nth-of-type(#{$i}){
+        text-align: center!important;
+        padding-left:0px;
+        padding-right: 0px;
+    }
+    .page-management .table > tbody > tr > td:nth-of-type(#{$i}){
+        text-align: center!important;
+        padding-left:0px;
+    }
+}
+// fix partial
+.page-management .table > thead > tr > th:nth-of-type(2){
+    text-align: center!important;
+    padding-left:20px;
+}
+.page-management .table > thead > tr > th:nth-of-type(3){
+    text-align: center!important;
+    padding-left:20px;
+}
+.page-management .table > thead > tr > th:nth-of-type(4) {
+    padding-left: 20px;
+    text-align: center;
+}
+.page-management .table > thead > tr > th:nth-of-type(8) {
+    // padding-left: 20px;
+    text-align: center;
+}
+
+// .wrap-edit-pages{
+//     .wrap-box-user{
+//         border: 1px solid #ccc;
+//         background: #efefef;
+//         margin: 0 15px;
+//     }
+// }
+
+@for $i from 1 through 100 {
+    #element-apepend-#{$i}{
+        padding-bottom: 15px!important;
+        opacity: 1;
+        @include transition('all 1s linear');
+    }
+}
+
+.table-page{
+    .child-td1{
+        min-width:35px;
+        padding: 6.5px 0px;
+    }
+    .child-td2{
+        width:194px;
+        padding: 6.5px 0px;
+    }
+    .child-td3{
+        min-width:113px;
+        padding: 6.5px 0px;
+    }
+    .child-td4{
+        width:130px;
+        padding: 6.5px 0px;
+        // padding-right:14px;
+    }
+    .child-td5{
+        width:99px;
+        padding: 6.5px 0px;
+    }
+    .child-td6{
+        width:98px;
+        padding: 6.5px 0px;
+    }
+    .child-td7{
+        width:158px;
+        padding: 6.5px 0px;
+    }
+    .child-td8{
+        width:116px;
+        padding: 6.5px 0px;
+    }
+    .child-td9{
+        width:67px;
+        padding: 6.5px 0px;
+    }
+
+}
+
+// exit status
+.vertical-box.exist-live-status{
+  margin-right:30px;
+}
+// end
+

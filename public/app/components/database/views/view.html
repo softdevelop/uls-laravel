@@ -1,0 +1,51 @@
+<div>
+   
+    <div class="wrap-label select-level">
+
+        <a href="javascript:void(0)" ng-click="toggleSelectMenu($event)" class="text-show-action">
+            {{text}}
+            <i class="fa fa-angle-down pull-right"></i>
+        </a>
+
+        <!-- <div ng-show="isLoading()" style="text-align: center">
+            <i class="fa fa-spinner fa-spin"></i>
+        </div> -->
+        
+        <div id="select-level-modal-{{key}}-{{index}}" class="select-menu-modal off">
+            <div class="js-select-menu-deferred-content">
+                <div class="select-menu-filters">
+                </div>
+                <div id="select-level" class="select-menu-list label-select-menu">
+                    <script type="text/ng-template" id="subSelect">
+                        <a class="show-sub-select show-sub-select-{{value._id}}" ng-click="showSubSelect($event, value._id)" >
+                        <!-- value.subFolder = {{value.subFolder}} -->
+                            <i class="fa fa-folder" ng-if="value.subFolder.length > 0 || showIcon"></i>
+                            <i class="fa fa-folder" ng-if="!value.folder_id && value.subFolder.length > 0"></i>
+                            <!-- When insert link block, template. Pages have content has status is live then show but not allow click --> 
+                            <span ng-if="value.hasContentLive == false && value.isShow" class="name-select item-{{value._id}}" item-data="{{valfolder_idue._id}}" ng-class="{'item-not-sub':!value.subFolder.length}">{{value.name}}</span>
+                            <span ng-if="value.hasContentLive == true" class="name-select item-{{value._id}}" ng-click="selectedItem(value, $event)" item-data="{{valfolder_idue._id}}" ng-class="{'item-not-sub':!value.subFolder.length}">{{value.name}}</span>
+                            <!-- User can't choose folder -->
+                            <span ng-if="!canChooseFolder && value.hasContentLive == undefined" ng-show="value.folder_id" ng-click="selectedItem(value, $event)" class="name-select item-{{value._id}}" item-data="{{valfolder_idue._id}}" ng-class="{'item-not-sub':!value.subFolder.length}">{{value.name}}</span>
+                            <span ng-if="!canChooseFolder && value.hasContentLive == undefined" ng-show="!value.folder_id" class="name-select item-{{value._id}}" item-data="{{valfolder_idue._id}}" ng-class="{'item-not-sub':!value.subFolder.length}">{{value.name}}</span>
+                            <!-- User can choose folder -->
+                            <span ng-if="canChooseFolder && value.hasContentLive == undefined" ng-show="value.parent_id != '0'" ng-click="selectedItem(value, $event)" class="name-select item-{{value._id}}" item-data="{{valfolder_idue._id}}" ng-class="{'item-not-sub':!value.subFolder.length}">{{value.name}}</span>
+                            <span ng-if="canChooseFolder && value.hasContentLive == undefined" ng-show="value.parent_id == '0'" class="name-select item-{{value._id}}" item-data="{{valfolder_idue._id}}" ng-class="{'item-not-sub':!value.subFolder.length}">{{value.name}}</span>
+                        </a>
+
+                        <ul ng-if="value.subFolder" class="parrent-select parrent-select-{{value._id}}">
+                            <li class="select-multil" ng-repeat="(key, value) in value.subFolder | orderBy:'name'" ng-include="'subSelect'"></li>
+                        </ul>
+                    </script>
+                    <ul class="select-menu-parrent">
+                        <li id="select-{{index}}" class="select-menu-item" ng-repeat="(index, value) in itemsTmp | orderBy:'name'" ng-include="'subSelect'" onload="currentIndex.value = index"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="select-menu-loading-overlay"></div>
+        </div>
+
+
+    </div>
+</div>
+
+

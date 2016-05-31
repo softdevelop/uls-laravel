@@ -1,0 +1,118 @@
+<form id="get-edit-form-list-material" style="width:100% !important">
+    <img src="images/page/icon-times.png" class="mfp-close">
+    <div class="wrap-box-material-entry">
+        <div class="main-box">
+            <div class="wrap-question-comment">
+                <h2 class="material-get-change text-material-brand space-large-title">Material Entry:
+                    <span class="material-entry-name">Polypropylene</span>
+                </h2>
+                <p class="text-large-top-modal">Select the laser process(es) you intend to apply to the material or part. </p>
+                <p class="text-large-top-modal">Select ‘Other’ if your desired process is not listed. </p>
+                <p class="text-large-top-modal">Next, enter the dimensions of the material or part.</p>
+            </div>
+            <div class="group-content">
+                <h3 class="large-title-modal">Measurements</h3>
+                <form action="">
+                    <div class="radio radio-inline">
+                        <input type="radio" name="radio1" id="radio1" value="option1" checked="">
+                        <label for="radio1"><i>Inches</i></label>
+                    </div> 
+                    <div class="radio radio-inline">
+                        <input type="radio" name="radio1" id="radio2" value="option1" checked="">
+                        <label for="radio2"><i>Millimeter</i></label>
+                    </div>
+                </form>
+            </div>
+            <div class="group-content laser-processes">
+                <h3 class="large-title-modal">Laser Processes</h3>
+                <form action="">
+                    <div class="checkbox small-checkbox checkbox-primary">
+                        <input id="laser-cutting" type="checkbox" checked="">
+                        <label for="laser-cutting">Laser Cutting</label>
+                    </div>
+                    <table class="space-cutting-thinknet">
+                        <tr>
+                            <td class="width-180">
+                                <span>Cutting Thickness (Min)</span>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="number">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="space-cutting-thinknet">
+                        <tr>
+                            <td class="width-180">
+                                <span>Cutting Thickness (Max)</span>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="number">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="checkbox small-checkbox checkbox-primary">
+                        <input id="laser-engraving" type="checkbox" checked="">
+                        <label for="laser-engraving">Laser Engraving</label>
+                    </div>
+                    <div class="checkbox small-checkbox checkbox-primary">
+                        <input id="laser-marking" type="checkbox" checked="">
+                        <label for="laser-marking">Laser Marking</label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="laser-other" type="checkbox" checked="">
+                        <label for="laser-other">Other</label>
+                        <input class="margin-left-10" type="text">
+                    </div>
+                </form>
+            </div>
+            <div class="group-content">
+                <h3 class="large-title-modal">Material or Part Size</h3>
+                <ul class="list-style-decoration">
+                    <li>Orient your material or part with the surface to be processed facing up</li>
+                    <li>For field A, enter the measurement from left to right for the longest side</li>
+                    <li>For field B, enter the measurement from front to back</li>
+                    <li>For field C, enter the measurement from top to bottom</li>
+                </ul>
+                <div class="text-center">
+                    <img width="80%" src="images/configurator/config-step-image1.png">
+                </div>
+                <div class="space-bottom-box hidden-525">
+                    <table class="table-center">
+                        <tr>
+                            <td><strong>(A)</strong></td>
+                            <td><strong>(B)</strong></td>
+                            <td><strong>(C)</strong></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="space-input-bottom"></td>
+                            <td><input type="text" class="space-input-bottom"></td>
+                            <td><input type="text" class="space-input-bottom"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="visible-525 wrap-input">
+                    <div class="margin-bottom-10">
+                        <strong>(A)</strong>
+                        <input type="text" class="space-input-bottom">
+                    </div>
+                    <div class="margin-bottom-10">
+                        <strong>(B)</strong>
+                        <input type="text" class="space-input-bottom">
+                    </div>
+                    <div class="margin-bottom-10">
+                        <strong>(C)</strong>
+                        <input type="text" class="space-input-bottom">
+                    </div>
+                </div>
+                <div class="space-bottom-button-group">
+                    <button class="btn btn-blue hight-light btn-x-large margin-0-10" href="#">Cancel</button>
+                    <button class="btn btn-blue btn-x-large margin-0-10" href="#">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

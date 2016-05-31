@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#system-specs-title {padding:5px; width:250px; float:left; border-top:1px solid #ccc;}
+#system-specs-title a{font-weight:bold; color:#900000;}
+#system-specs-title a:hover {color:#333;}
+
+#system-specs {padding:5px; width:370px; border-top:1px solid #ccc;  border-left:1px solid #ccc; float:left;}
+#system-specs input {padding:4px; color:#333; background-color:#eee; border:1px #ccc solid;}
+
+#system-specs-send {padding:5px; width:370px; border-top:1px solid #ccc;  border-left:1px solid #ccc; float:left;}
+#system-specs-send2 {padding:5px; width:100px; border-top:1px solid #ccc;  border-left:1px solid #ccc; float:left;}
+#system-specs-send input {padding:4px; color:#fff; background-color:#900000; border:1px #ccc solid;
+border-top:2px solid #666; 
+border-right:2px solid #666;
+border-left:2px solid #000; 
+border-bottom:2px solid #000;}
+
+#system-specs textarea {padding:4px; color:#666; background-color:#fff; border:1px #ccc solid; width:300px;}
+
+#print input {padding:4px; color:#fff; background-color:#900000; border:1px #ccc solid; }
+
+#system-specs-title2 {padding:5px; width:165px; float:left; border-top:1px solid #ccc;}
+#system-specs2 {padding:5px; width:100px; border-top:1px solid #ccc;  border-left:1px solid #ccc; float:left;}
+
+

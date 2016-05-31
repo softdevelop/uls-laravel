@@ -1,0 +1,73 @@
+@import '../modules/variable.scss';
+@import '../modules/css3-mixins.scss';
+@import "../modules/mixins-responsive.scss";
+
+//colors
+$color_outer_space_approx: #33353a;
+$white: #fff;
+// end
+
+// side right ticket
+.wrap-your-ticket{
+  	z-index: 1011;
+  	height: 30px;
+  	.fa-ticket{
+		top:128px;
+	}
+}
+// end
+
+// height content
+.scroll-y-t {
+	overflow-y: scroll;
+	min-height: 500px;
+	// margin-bottom: 70px;
+}
+// end
+
+// space each item
+.fixsiderbar {
+    padding-top: 20px;
+    border-top: 1px solid $color_outer_space_approx;
+}
+// end
+
+// title each item
+.h5-tittle {
+    padding-top: 15px;
+    padding-left: 10px;
+}
+// end
+
+.your-ticket {
+    margin-top: 0px;
+	right: -250px;
+	width: 250px;
+    // transition: all 0.35s ease;
+    @include transition(all 0.35s ease);
+    top:105px;
+    height: auto;
+    .sidebar-block{
+        height: 100%;
+        &.equal-padding{
+        	.content-your-ticket {
+	            // height: 100%;
+	            overflow-y: auto;
+	            ul{
+	                li.list-unstyled{
+	                    margin-left: 0px;
+	                }
+	            }
+	        }
+        }
+    }
+
+    .title-your-ticket {
+	    .tittleA {
+	        color: $white;
+	        font-size: 15px;
+	    }
+	}
+
+}
+

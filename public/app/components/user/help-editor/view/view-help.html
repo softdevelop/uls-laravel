@@ -1,0 +1,22 @@
+<div id="fix-modal-top">
+    <div class="col-lg-4 col-md-4 padding-none set-height-modal-content help-infor-modal hidden-sm-down">
+        <script type="text/ng-template" id="subSelect">
+            <!-- <a ng-if="value.subFolder.length > 0 && value.parent_id == '0'" ng-click="showDescription(value)" class="f700" data-toggle="collapse" href="#{{value._id}}" aria-expanded="false" aria-controls="collapseExample">{{value.name}}</a> -->
+            
+            <a ng-click="goToAnchorWithId('_' + value._id)" ng-class="{'f700' : value.parent}" data-toggle="collapse" href="#{{value._id}}" aria-expanded="false" aria-controls="collapseExample">{{value.name}}</a>
+            
+            <ul ng-if="value.subFolder" id="{{value._id}}" class="ls-none sub-select-{{value._id}} collapse test">
+                <li class="w200" ng-repeat="(key, value) in value.subFolder" ng-include="'subSelect'"></li>
+            </ul>
+        </script>
+        <ul class="ls-none">
+            <li id="select-{{index}}" class="" ng-repeat="(index, value) in items" ng-include="'subSelect'"></li>
+        </ul>
+    </div>
+
+    <div class="col-lg-8 col-md-8 set-height-modal-content" id="fix-modal-top">
+        <form-builder content="description"></form-builder>
+    </div>
+    <div class="clearfix"></div>
+</div>
+    

@@ -1,0 +1,19 @@
+@import "modules/mixins-responsive.scss";
+
+
+
+.tpl-tiket{
+	.content-ticket{
+		.info-user-ticket{
+			.ava-u{
+		    	.box-u-ava.box-priority{
+		    		@include respond-to(medium-1200) {padding: 14px 5% 0 5% !important;}
+		    		@include respond-to(medium-1024) {padding: 14px 5% 0 5% !important;}
+		    		@include respond-to(medium-992) {padding: 14px 5% 0 5% !important;}
+
+		    	}
+	    	} 
+
+	    } 
+	} 
+}

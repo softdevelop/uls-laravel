@@ -1,0 +1,17 @@
+<div class="div modal-header">
+        <button  ng-click="cancel()" class="close" type="button"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">{{label}}</h4>
+</div>
+
+<div class="modal-body">
+    <form method="POST" accept-charset="UTF-8" name="formData">
+			<form-builder content="content"> </form-builder>
+    </form>
+</div>
+
+<div class="modal-footer">
+
+    <button type="button" class="btn btn-default margin-bottom-10" ng-click="cancel()" data-dismiss="modal"><span class="fa fa-trash">  </span> Close</button>
+    <button type="submit" ng-click="submit(formData.$invalid)" ng-disabled="isErrorUploadFile"  class="btn btn-action margin-bottom-10"><span class="fa fa-check"></span>Submit</button>
+
+</div>

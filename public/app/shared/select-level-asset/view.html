@@ -1,0 +1,39 @@
+<div>
+   
+    <div class="wrap-label select-level">
+
+        <a href="javascript:void(0)" ng-click="toggleSelectMenu($event)" class="text-show-action">
+            {{text}}
+            <i class="fa fa-angle-down pull-right"></i>
+        </a>
+        
+        <div id="select-level-modal-{{key}}-{{index}}" class="select-menu-modal off">
+            <div class="js-select-menu-deferred-content">
+                <div class="select-menu-filters">
+                </div>
+                <div id="select-level" class="select-menu-list label-select-menu" >
+                    <script type="text/ng-template" id="subSelect">
+                        <a class="show-sub-select show-sub-select-{{value._id}}" ng-click="showSubSelect($event, value)" >
+                        <!-- value.subFolder = {{value.subFolder}} -->
+                            <i class="fa fa-folder" ng-if="value.folder"></i>
+                            <!-- User can't choose folder -->
+                            <span ng-if="!value.folder" ng-click="selectedItem(value, $event)" class="name-select item-{{value._id}}" item-data="{{valfolder_idue._id}}" ng-class="{'item-not-sub':!value.subFolder.length}">{{value.name}}</span>
+                            <span ng-if="value.folder" class="name-select item-{{value._id}}" item-data="{{valfolder_idue._id}}" ng-class="{'item-not-sub':!value.subFolder.length}">{{value.name}}</span>
+                        </a>
+                        <ul ng-if="value.subFolder" class="parrent-select parrent-select-{{value._id}}" style="list-style:none">
+                            <li class="select-multil" ng-repeat="(key, value) in value.subFolder | orderBy:'name'" ng-include="'subSelect'"></li>
+                        </ul>
+                    </script>
+                    <ul class="select-menu-parrent"  style="list-style:none">
+                        <li id="select-{{index}}" class="select-menu-item" ng-repeat="(index, value) in itemsTmp | orderBy:'name'" ng-include="'subSelect'" onload="currentIndex.value = index"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="select-menu-loading-overlay"></div>
+        </div>
+
+
+    </div>
+</div>
+
+

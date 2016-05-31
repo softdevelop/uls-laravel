@@ -1,0 +1,37 @@
+#platform {font-family:Arial Unicode MS, Arial, Helvetica, sans-serif;}
+
+#homepage-wrap h1 {font-family:Arial Unicode MS, Arial, Helvetica, sans-serif;}
+
+#navigation li li a {font-family:Arial Unicode MS, Arial, Helvetica, sans-serif;}
+
+#navigation li {font-family:Arial Unicode MS, Arial, Helvetica, sans-serif;}
+
+h4 {font-family:Arial Unicode MS, Arial, Helvetica, sans-serif;}
+
+h3 {font-family:Arial Unicode MS, Arial, Helvetica, sans-serif;}
+
+h2 {font-family:Arial Unicode MS, Arial, Helvetica, sans-serif;}
+
+h1 {font-family:Arial Unicode MS, Arial, Helvetica, sans-serif;}
+
+body {font-family:Arial Unicode MS, Arial, Helvetica, sans-serif;}
+
+#newsticker h3 {margin-top:-2px; }
+
+#landingpage-right #contact-form {background: #eee; border:1px solid #eee;}
+
+#landingpage-right #contact {background: #eee; border:1px solid #eee;}
+
+#landingpage-right #contact-form input, #landingpage-right #contact-form textarea {border:1px solid #ccc;}
+
+#landingpage-right #contact-form #checkbox input {background:none; border:none; padding:0px; margin:0px; }
+
+#homepage-wrap h1 {font-weight:bold; font-family:Arial, Helvetica, sans-serif;}
+
+
+#mlLogin input[type="text"], #mlLogin input[type="password"] { border:1px solid #ccc; }
+#titlebar { filter:alpha(opacity=100); }
+
+#overlay { filter:alpha(opacity=50); }
+
+.relatedLink { background-image:none !important;  }

@@ -1,0 +1,93 @@
+<?php $__env->startSection('title'); ?>
+    <?php echo e(trans('cms_database/create-category.title')); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+<div ng-controller="MaterialsController" class="wrap-content-management block-manager">
+    <div class="top-content">
+        <label class="c-m content-management">
+            <span class="breadcrumb-level">
+                <a class="c-breadcrumb" href="{{baseUrl}}/cms/database-manager"><?php echo e(trans('cms_database/create-category.breadcrumb_first')); ?> /&nbsp;
+                <a class="c-breadcrumb" href="{{baseUrl}}/cms/database-manager/set-database-selected/<?php echo e($_GET['type'] == 'accessories' ? 'root_accessories': 'root_material'); ?>" title=""> <?php echo e($_GET['type'] == 'accessories' ? 'Accessories': 'Material'); ?></a> / <?php echo e(trans('cms_database/create-category.breadcrumb_last_create')); ?></a>
+            </span>
+        </label>
+
+    </div>
+    <div class="content margin-top-0">
+        <div>
+            <form role="form" name="formData" novalidate>
+       
+                <input type="hidden" ng-model="material.type" ng-init="material.type='<?php echo e($_GET['type']); ?>'" value="<?php echo e($_GET['type']); ?>">
+
+                <div class="form-group">
+                    <label class="label-form" for="name">
+                        <?php echo e(trans('cms_database/create-category.category_label')); ?>:<span class="text-require"> *</span>
+                    </label>
+                    <div class="wrap-form show-full-width-select">
+                        <select-level items="<?php echo e(json_encode($categories)); ?>" show-icon="true" text="<?php echo e(trans('cms_database/create-category.category_placeholder')); ?>" text-filter="Filter folder" ng-model="material.category_id" selected-item="<?php echo e(json_encode($selectedItem)); ?>" ></select-level>
+                        <div>
+                            <small class="error" ng-show="submitted && material.category_id==null"><?php echo e(trans('cms_database/create-category.category_required')); ?></small>
+                        </div>   
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <!-- Name -->
+                <div class="form-group">
+                    <label class="label-form" for="name"><?php echo e(trans('cms_database/create-category.name_label')); ?>:<span class="text-require"> *</span></label>
+                    <div class="wrap-form">
+                        <input class="form-control name" placeholder="<?php echo e(trans('cms_database/create-category.name_placeholder')); ?>" type="text" name="name" ng-model="material.name" ng-required = "true" />
+                        <div class="pull-left">
+                            <small class="help-inline" ng-show="submitted && formData.name.$error.required"><?php echo e(trans('cms_database/create-category.name_required')); ?></small>
+                            <small class="help-inline" ng-show="submitted && nameError && !formData.name.$error.required"><?php echo e(trans('cms_database/create-category.name_exists')); ?></small>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            <?php if($type == 'materials'): ?>
+              <?php echo $__env->make('database.partial.create_material', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php elseif($type == 'accessories'): ?>
+                <?php echo $__env->make('database.partial.create_accessories', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php endif; ?>
+
+            </form>
+            <div class="clearfix"></div>
+
+            <div class="text-right form-group action-bottom">
+                <a type="button" class="btn btn-default"  ng-click="cancel()" href="{{baseUrl}}/cms/database-manager/set-database-selected/root_material" target="_self" data-dismiss="modal">
+                    <i class="fa fa-times"></i> <?php echo e(trans('cms_database/create-category.cancel_btn')); ?>
+
+                </a>
+                <a type="button" class="btn btn-primary" ng-click="createMaterial(formData.$invalid)" ng-disabled="saving"><i class="fa fa-check"></i> <?php echo e(trans('cms_database/create-category.submit_btn')); ?></a>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+</div>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+    <script type="text/javascript">
+       window.material = <?php echo json_encode($material); ?>
+
+
+    </script>
+    <?php if(!isProduction() && !isDev()): ?>
+        <?php echo Html::script('app/components/materials/MaterialsService.js?v='.getVersionScript()); ?>
+
+        <?php echo Html::script('app/components/materials/MaterialsController.js?v='.getVersionScript()); ?>
+
+        <?php echo Html::script('app/components/database/selectLevelDirective.js?v='.getVersionScript()); ?>
+
+        <?php echo Html::script('app/components/file/fileService.js?v='.getVersionScript()); ?>
+
+        <?php echo Html::script('app/shared/file-upload-directive/fileUploadDirective.js?v='.getVersionScript()); ?>
+
+    <?php else: ?>
+        <script src="<?php echo e(elixir('app/pages/create-new-material.js')); ?>"></script>
+    <?php endif; ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

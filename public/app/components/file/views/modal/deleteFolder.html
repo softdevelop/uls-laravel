@@ -1,0 +1,17 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal"  ng-click="cancel()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title">Delete</h4>
+</div>
+
+<div class="modal-body">
+    <p class="text-center font-14">Are you sure you want to delete the folder <strong>{{name}}</strong> and all of it’s contents?</p>
+
+    <form>
+        <div class="form-group center-block">
+            <button type="submit" class="btn btn-action" ng-click="deleteFolder()"><span class="glyphicon glyphicon-cog">  </span> Delete</button>
+            <button type="button" class="btn btn-default" ng-click="cancel()"><span class="glyphicon glyphicon-remove close-delete">  </span> Cancel</button>
+        </div>
+
+    </form>
+
+</div>

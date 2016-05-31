@@ -1,0 +1,23 @@
+
+
+<div class="modal-header">
+<button aria-label="Close" data-dismiss="modal" class="close" type="button" ng-click="cancel()"><span aria-hidden="true">×</span></button>
+
+    <h4 class="modal-title">Add {{term.name}}</h4>
+    
+</div>
+<div class="modal-body">
+
+    <form class="form-horizontal" method="POST" accept-charset="UTF-8" name="formDataModal">
+        <div class="col-lg-12">
+            <div compile="term.htmlField.htmlArr[0].htmlField"></div>
+            <div compile="term.htmlField.htmlArr[1].htmlField"></div>
+            <div compile="term.htmlField.htmlArr[2].htmlField"></div>
+        </div>
+        <div class="clearfix"></div>
+    </form>
+</div>
+<div class="modal-footer center-block">
+    <button id="bt-submit" class="btn btn-primary" ng-click="submit(formDataModal)"><i class="fa fa-check"></i> Save</button>
+    <button class="btn btn-default" ng-click="cancel()"><i class="fa fa-times"></i> Cancel</button>
+</div>

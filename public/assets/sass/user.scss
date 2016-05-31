@@ -1,0 +1,95 @@
+@import "modules/css3-mixins.scss";
+@import "modules/variable.scss";
+
+.content-role tr.title-box-r th{
+	padding-left: 10px!important;
+}
+
+.content-role .table-action-user table td{
+	padding-left: 10px!important;
+}
+
+.modal-infor-user{
+	max-height:600px;
+	overflow-y:auto;
+}
+.hide-text{
+	color:transparent;
+}
+.modal-user{
+	max-height:600px;
+	overflow:auto;
+	height: 590px;
+	.fixed-ul-user{
+		position:fixed;
+		top:60px;
+		left:20px;
+	}
+}
+.c-transparent{
+	color:transparent;
+}
+table .search-u-g  select.form-control.search-people{
+    width:98%;
+}
+.box-w-n{
+	.box-w-n-edit{
+		min-height: 327px;
+		margin-bottom: 20px;
+	}	
+}
+.box-w-n-group{
+	border: 1px solid #ccc;
+	min-width: 100px!important;
+	.top-title-left{
+		padding-left: 10px!important;
+		max-width: 250px;
+		text-align: left!important;
+	}
+	.top-title-right{
+		padding-left:0px;
+		text-align:right!important;
+		position: relative;
+	}
+}
+
+.icon-in-table{
+	.user-gr-icon{
+		font-size: 17px;
+		color:$primary-color;
+		cursor: default;
+		&:hover{
+			color:$primary-color;
+		}
+	}
+
+}
+
+.add-user-group{
+	.name{
+		border-top-left-radius: 0px!important;
+		border-bottom-left-radius: 0px!important;
+	}
+	.fix-buttom{
+		padding:9px 12px;
+	}
+}
+.icon{
+	.user-icon{
+		display:inline-block;
+		color:#c62929;
+	}	
+}
+.c-81b53e{
+	color:#81b53e;
+}
+.c-e74c3c{
+	color:#e74c3c;
+}
+.min-w-250{
+	min-width: 250px;
+}
+.set-height-modal-content{
+	height: 560px;
+	overflow: auto;
+}

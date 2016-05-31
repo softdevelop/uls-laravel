@@ -1,0 +1,15 @@
+<div class="modal-body" id="modal-open">
+  <div class="relative">
+    <img class="close-image pointer" ng-click="cancel()" data-dismiss="modal" aria-label="Close" src="/images/icon-times.png" class="mfp-close">
+    <div class="wrap-box-content-modal">
+        <h4>Your progress will be saved as you go through the tool. We recommed that you enter your email address now so that all saved progress can be send to your once you exit the tool</h4>
+        <label>Email *</label>
+        <input type="text" class="form-control" ng-model="dataInput.email" required="true"></input>
+        <small>{{messageError}}</small>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-blue btn-large" ng-click="submitEmail()">Yes </button>
+        <button class="btn btn-blue btn-large" ng-click="cancelEmail()">No </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="modal-header">
+    <h4 class="modal-title">Modal Insert Page
+</div>
+
+<div class="modal-body tag">
+    <div ng-if="!existField">
+        <div class="wrap-label select-level">
+
+            <div id="select-level-modal" class="select-menu-modal">
+                <div class="js-select-menu-deferred-content">
+                    <div class="select-menu-filters">
+                    </div>
+                    <div id="select-level" class="select-menu-list label-select-menu" >
+                        <script type="text/ng-template" id="subSelect">
+                            <a class="show-sub-select show-sub-select-{{value.page_id}}" data-page="{{value}}" ng-click="showSubSelect($event, value.page_id); selectedItem(value, $event)">
+                                <i class="fa fa-folder" ng-if="value.subFolder.length > 0"></i>
+                                <!-- User can't choose folder -->
+                                <span ng-show="value.folder_id" class="name-select item-{{value._id}}" ng-class="{'item-not-sub':!value.subFolder.length}">{{value.name}}</span>
+                                <span ng-show="!value.folder_id" class="name-select item-{{value._id}}" ng-class="{'item-not-sub':!value.subFolder.length}">{{value.name}}</span>
+                            </a>
+
+                            <ul ng-if="value.subFolder" class="parrent-select parrent-select-{{value._id}}">
+                                <li class="select-multil" ng-repeat="(key, value) in value.subFolder | filter:searchQuery" ng-include="'subSelect'"></li>
+                            </ul>
+                        </script>
+                        <ul class="select-menu-parrent">
+                            <li id="select-{{index}}" class="select-menu-item" ng-repeat="(index, value) in items | filter:searchQuery" ng-include="'subSelect'"></li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <div class="select-menu-loading-overlay"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="cancel()"> <i class="fa fa-times"></i> Cancel</button>
+    <button class="btn btn-primary" ng-click="submit()"> <i class="fa fa-check"></i> OK</button>
+</div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

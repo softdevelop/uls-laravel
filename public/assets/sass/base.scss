@@ -1,0 +1,746 @@
+
+$black: #000;
+$color_mountain_mist_approx: #999;
+$color_alto_approx: #d9d9d9;
+
+@import "../../bower_components/compass-breakpoint/stylesheets/breakpoint";
+@import "../../bower_components/cssowl/lib/scss/cssowl";
+
+@import 'modules/variable.scss';
+@import 'modules/css3-mixins.scss';
+@import "modules/mixins-responsive.scss";
+
+
+// input number
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+// wrap content anything
+.wrap-box-content{
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.22);
+    background: #fff;
+}
+// end
+
+// for modal bootstrap
+.modal-backdrop{
+  z-index: 1040!important;
+}
+.modal {
+    z-index: 1050!important;
+}
+// end
+
+// line height
+@for $i from 1 through 100{ 
+	.line-height-#{$i}{
+		line-height: #{$i}px;
+	}
+}
+// end
+
+// height
+.full-height{
+    height: 100%!important;
+}
+.full-height-1{
+    height: 99%!important;
+}
+
+.height-50-percent{
+    height: 50%;
+}
+
+// end
+
+// input
+input{
+    height: 34px;
+}
+// end
+
+// for long text
+%ellipsis{
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.ellipsis{
+    max-width:113px;
+    @extend %ellipsis;
+}
+.ellipsis-width-auto{
+    @extend  %ellipsis;
+}
+.break-word{
+    word-break: break-word;
+}
+// end
+
+//  fix default ul style
+.list-style-none{
+    list-style: none;
+}
+
+.style-ul{
+    padding-left:0px;
+    list-style: none;
+    margin:0px;
+}
+
+.ls-none{
+    list-style: none;
+    padding-left: 20px;
+    line-height: 25px;
+}
+// end
+
+// help icon
+.help-icon{
+    color:#90001B;
+}
+// end
+
+// drag and drop 
+.drag-and-drop:hover{
+    border: 2px dashed rgba(134, 134, 134, 0.74) !important;
+    @include transition(all linear 0.2s);
+}
+
+// end
+
+// float left with width 100%
+.full-left{
+    width: 100%;
+    float: left;
+    padding:0px;
+}
+// end
+
+// overflow visible
+.overflow-visible{
+    overflow: visible;
+}
+// end
+
+.bg-fff{
+    background:#fff;
+}
+
+// for theme
+.wrap-box-content.white-bg{
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.27);
+}
+// end
+
+// group action
+.wrap-ac-group{
+    // text-align: center;
+    // position: relative;
+    .fa-ellipsis-v{
+        @include cssowl-absolute(4px false false 42px);
+        font-size: 24px;
+        color:#B3B3B3;
+    }
+    .ac-group{
+        color:#000;
+        padding: 13px 15px;
+    }
+    .group-btn-ac{
+        border: 1px solid #bfbfbf;
+        width: 220px;
+        list-style: none;
+        background-color: #fff;
+        padding-left:0px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 1px 6px rgba(0,0,0,0.23);
+        z-index: 1015!important;
+        display: none;
+        li{
+            text-align: left;
+            border-bottom:1px solid #efefef;
+            padding: 8px 12px !important;
+            border-top:none;
+            font-size: 13px;
+            a{
+                width:100%;
+                display: block;
+            }
+            &:hover{
+                background: #efefef;
+                color:#90001b;
+            }
+        }
+    }
+    .ac-up-w{
+        display: none !important;
+    }
+    &.ac-up{
+        .group-btn-ac{
+            display: block;
+        }
+        .ac-up-w{
+            display: none !important;
+        }
+    }
+}
+
+// display none
+.off{
+    display: none;
+}
+
+.none{
+   display: none;
+}
+// end
+
+// font size,
+@for $i from 1 through 100{
+    .f#{$i}    {
+        font-size: #{$i}px;
+    }
+}
+
+// color status
+.yellow-status{
+    color:$yellow-status;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6)
+}
+
+.purple-status{
+    color:$purple-status;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6)
+}
+
+.dark-blue-status{
+    color:$dark-blue-status;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6)
+}
+
+.red-status{
+    color:$red-status;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6)
+}
+
+.greens-status{
+    color:$greens-status;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6)
+}
+
+.greens-status{
+    color:$greens-status;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6)
+}
+
+.ready-for-review-status{
+    color:$ready-for-review-status;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6)
+}
+
+.orange-status{
+    color:$orange-status; 
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6) 
+}
+// end
+
+// for table in content management and tag content index
+.table-animate{
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.22);
+    background: #fff;
+}
+// end
+
+.nav-tabs > li{
+    margin-bottom: -1px;
+}
+
+// help icon
+.help-icon{
+    font-size: 16px;
+    color: $help-color;
+    margin-left: 8px;   
+}
+// end
+
+// fix border table in dashboard and list ticket
+.table-list-ticket tbody td{
+    border-bottom:1px solid  rgba(121, 121, 121, 0.2);
+}
+// end
+
+// label
+.label-form.label-form{
+    width: inherit;
+}
+
+.label-form{
+    width: 100%;
+    padding:0px;
+    font-weight: 600;
+    color:#333;
+}
+// end
+
+//  display in lable add nested block
+.bulleted-text{
+    color:#3899ec;
+}
+// end
+
+// form
+.wrap-form{
+    width: 100%;
+    padding:0px;
+}
+// end
+
+// text require
+.text-require{
+    color:#BF0707;
+    font-size: 16px;
+    font-weight: 700;
+}
+// end
+
+// displayy
+.ds-inline{
+    display: inline;
+}
+// end
+
+// width and height
+@for $i from 1 through 500{
+    .w#{$i}{
+        width: #{$i}px;
+    }
+    .h#{$i}{
+        height: #{$i}px;
+    }
+}
+
+.height-auto{
+    height: auto;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.full-w-h{
+    width: 100%!important;
+    height: 100%!important;
+}
+// end
+
+// for margin and padding
+@for $i from 0 through 100{
+    // margin
+    .m-t-#{$i}{
+        margin-top: #{$i}px;
+    }
+    .m-b-#{$i}{
+        margin-bottom: #{$i}px;
+    }
+    .m-l-#{$i}{
+        margin-left: #{$i}px;
+    }
+    .m-r-#{$i}{
+        margin-right: #{$i}px;
+    }
+    .m-#{$i}{
+        margin: #{$i}px;
+    }
+
+
+    .m-t--#{$i}{
+        margin-top: -#{$i}px;
+    }
+    .m-b--#{$i}{
+        margin-bottom: -#{$i}px;
+    }
+    .m-l--#{$i}{
+        margin-left: -#{$i}px;
+    }
+    .m-r--#{$i}{
+        margin-right: -#{$i}px;
+    }
+
+    // padding
+    .p-t-#{$i}{
+        padding-top: #{$i}px;
+    }
+    .p-b-#{$i}{
+        padding-bottom: #{$i}px;
+    }
+    .p-l-#{$i}{
+        padding-left: #{$i}px;
+    }
+    .p-r-#{$i}{
+        padding-right: #{$i}px;
+    }
+    .p-#{$i}{
+        padding: #{$i}px;
+    }
+
+}
+// end
+
+// padding left for all each td table
+@for $i from 1 through 20{
+    .table > tbody > tr > td.p-l-#{$i}{
+        padding-left:#{$i}px;
+    }       
+}
+// 
+
+// quote no field
+.quote-nothing{
+    font-size: 20px;
+    color: #B7B7B7;
+    padding-left: 25px;
+}
+// end
+
+.absolute{
+    position: absolute;
+}
+
+.fixed{
+    position: fixed;
+}
+
+// for typography
+label{
+    color:#000;
+}
+.c0-b{
+    color:#000;
+    font-weight: 700;  
+}
+
+.f-700{
+    font-weight: 700;
+}
+
+.c-primary-h{
+    color:#90001B;
+    &:hover{
+        color:#000;
+    }
+}
+
+.c-333{
+    color:#333;
+    &:hover{
+        color:#333!important;
+    }
+}
+
+.c-fff{
+    color: #fff;
+}
+
+.c-000{
+    color: #000;
+}
+
+.c-primary{
+    color:#90001B;
+}
+
+.c-5CB85C{
+    color:#5CB85C;
+}
+
+.blue{
+    color:#245882;
+}
+
+.capitalize{
+    text-transform:capitalize;
+}
+// end
+
+// line height
+.space-vertical{
+    line-height: 30px;
+}
+
+.l-h-30{
+    line-height: 30px;
+}
+// end
+
+// margin
+
+.margin-none{
+    margin: 0px!important;
+}
+.m-7-5{
+    margin:7px 5px;
+}
+// end
+
+// icon action old table
+.action-icon{
+    color:#909090!important;
+    padding: 7px;
+    font-size: 17px;
+    &:hover{
+        color:#90001b!important;
+        font-weight: 700!important;
+    }
+}
+// end
+
+.fixed-search {
+    font-weight: 700;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    padding: 11px;
+    background: transparent;
+    // background: $color_black_haze_approx;
+    color: $color_mountain_mist_approx;
+    font-size: 15px;
+    &:hover:focus {
+        color: $black;
+        background: $color_alto_approx;
+    }
+}
+// set min width for table
+@for $i from 900 through 2000{
+    .table-responsive table.min-width-#{$i}{
+        min-width: #{$i}px;
+    }
+}
+
+// set min width and max width
+@for $i from 1 through 500{
+    .max-width-#{$i}{
+        max-width: #{$i}px;
+    }
+    .min-width-#{$i}{
+        min-width: #{$i}px;
+    }
+}
+// end
+
+// style for select with class form-control
+select.form-control{
+    border:1px solid #a9a9a9;
+    background-color: transparent;
+    cursor: pointer;
+}
+// end
+
+// modal width class col-xs-offset-1
+.modal-content .col-xs-offset-1{
+    @media only screen and (max-width: $break-small-768 - 1){
+        margin: 0px!important;
+    }
+
+    @media only screen and (max-width: $break-small-480){
+        padding: 0px;
+    }
+}
+// end
+
+// vertical middle
+.middle{
+    vertical-align: middle;
+}
+// end
+
+// footer content
+.footer-content{
+    padding: 15px;
+    text-align: right;  
+}
+// end
+
+// fix input
+textarea:focus,
+select:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus{
+    border-color: #050040 !important;
+}
+
+textarea:hover,
+select:hover,
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="datetime"]:hover,
+input[type="datetime-local"]:hover,
+input[type="date"]:hover,
+input[type="month"]:hover,
+input[type="time"]:hover,
+input[type="week"]:hover,
+input[type="number"]:hover,
+input[type="email"]:hover,
+input[type="url"]:hover,
+input[type="search"]:hover,
+input[type="tel"]:hover,
+input[type="color"]:hover{
+    border-color: #050040!important;
+}
+
+.has-error .form-control:focus,
+.has-error .form-control:hover{
+    border-bottom-color: initial!important
+}
+// end
+
+// fix input-group-addon
+.input-group-addon.fix-addon{
+    background: #efefef!important;
+    border: 1px solid #ccc!important;
+    border-right: none!important;
+}
+// end
+
+// button change in profile
+.btn-change {
+    margin-top: 0!important;
+    margin-left: 0!important;
+}
+// end
+
+// label color
+.hightlight-lb {
+    font-weight: 600;
+    color: #000;
+}
+// end
+
+// fix url
+.url-fix{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+// end
+
+.space-description{
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+.no-drop{
+    
+    cursor: no-drop !important;
+}
+.editable pre{
+    word-break: break-word !important;
+    word-wrap: break-word;
+    white-space: pre-line !important;
+}
+.box-item{
+    li.title-chart{
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 3px;
+        .action{
+            border: none;
+            margin-right: 0px;
+            a{
+                font-size: 12px;
+                padding: 0px;
+                padding-right: 15px;
+                min-width: 27px !important;
+                display: inline-block;
+                &:hover,
+                &:focus{
+                    background: transparent;
+                }
+            }
+        }  
+    }
+    .title-chart{
+        padding: 10px;
+        padding-left: 20px;
+        background: #DEDEDE;
+        .action{
+            border-right: 1px solid #CCCBCB;
+            margin-right: 10px;
+            a{
+                color: #BFBFBF;
+                font-size: 12px;
+                width: 27px;
+                padding-right:15px;
+                display: inline-block;
+                // border-right: 1px solid #C3BCBC;
+                &:hover,
+                &:focus{
+                    color: #428bca !important;
+                }
+                i{
+                    &.fa-chevron-right{
+                        display: none;
+                    }
+                    &.fa-chevron-down{
+                        display: inline-block;
+                    }
+                }
+                &.collapsed{
+                    i{
+                        &.fa-chevron-right{
+                            display: inline-block !important;
+                        }
+                        &.fa-chevron-down{
+                            display: none !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .tab-content#list-link{
+        margin-top: 0px !important;
+        .tab-pane{
+            margin-top: 0px !important;
+        }
+    }
+    .table-responsive.block-ds{
+        // overflow-y: hidden !important;
+    }
+}
+// body{
+//     background: black;
+// }
+
+// 
+// box editor in create template (term)
+#html .area_toolbar{
+    background-color:#F1F1F1!important;
+}
+// end
+
+.ng-table th.sortable .sort-indicator{
+  white-space: pre;
+}
+.ng-table.vertical-top tbody td {
+  vertical-align: top;
+}
+.ng-table tbody td pre{
+  text-align: left;
+  border: none;
+  padding:0px;
+}

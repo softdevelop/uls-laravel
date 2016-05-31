@@ -1,0 +1,9 @@
+// for other plugin general
+.sp-container{
+	z-index: 100;
+}
+// end
+
+.modal ~ .sp-container{
+	z-index: 1051!important;
+}

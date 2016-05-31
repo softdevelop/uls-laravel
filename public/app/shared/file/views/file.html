@@ -1,0 +1,54 @@
+<div>
+    <form id="demo-upload" class="dropzone dz-clickable" ng-file-select ng-multiple="true" ng-file-drop ng-file-change="upload($files)">
+        <div ng-hide="showBoxDropFile()" id="upload_file_result" type="text" class="upload dz-default dz-message" ><span></span>
+        </div>
+        <div ng-repeat="item in items" class="dz-preview dz-file-preview" ng-click="$event.stopPropagation()">
+            <div class="dz-details">
+                <a class="glyphicon glyphicon-remove-circle remove-file" ng-click="deleteFile(item.id)"></a>
+                <div class="dz-filename">
+                    <a href="{{ baseUrl }}/admin/file/{{item.id}}" target="_blank">{{item.file_name}}</a>
+                </div>
+                <div data-dz-size="" class="dz-size">
+                    <strong>{{ item.size | bytes }}</strong>
+                </div>
+                <span ng-if="item.type == 'application/msword'" class="glyphicons-filetype doc"><i></i></span>
+                <span ng-if="item.type == 'application/zip'" class="glyphicons-filetype zip"><i></i></span>
+                <span ng-if="item.type == 'application/pdf'" class="glyphicons-filetype pdf"><i></i></span>
+                <img ng-if="item.type.indexOf('image') > -1 " alt="item.file_name" ng-src="{{ baseUrl }}/admin/file/{{item.id}}">
+                
+            </div>
+           <!--  {{ baseUrl }}/admin/file/{{item.id}} -->
+        </div>
+        <div class="dz-preview dz-file-preview dz-processing" ng-repeat="item in items_s" id="{{item.id}}" ng-click="$event.stopPropagation()">
+            <div class="dz-details">
+               
+                <div class="dz-filename">
+                    <span data-dz-name=""><a class="image-href" ng-href="{{ baseUrl }}/admin/file/{{item.id}}" target="_blank">{{  item.file_name }}</a></span>
+                </div>
+
+                <div class="upload-zip" ng-show="!error">
+                    <img ng-if="item.type == 'application/zip'" class="file-zip" src="/images/zip.png" alt="item.file_name" style="width:75px;height:75px;">
+                    <img ng-if="item.type != 'application/zip'" alt="item.file_name" ng-src="{{ baseUrl }}/admin/file/{{item.id}}">
+                </div>
+                <div data-dz-size="" class="dz-size">
+                    <strong>{{ item.size | bytes }}</strong>
+                </div>
+                <span ng-if="item.type == 'application/msword'" class="glyphicons-filetype doc"></span>
+                <span ng-if="item.type == 'application/zip'" class="glyphicons-filetype zip"></span>
+                <span ng-if="item.type == 'application/pdf'" class="glyphicons-filetype pdf"></span>
+                <img ng-if="item.type.indexOf('image') > -1 " alt="item.file_name" src="{{ baseUrl }}/admin/file/{{item.id}}">
+                
+            </div>
+            <div class="dz-progress">
+                <span data-dz-uploadprogress="" class="dz-upload" style="width: {{item.proccess}};">
+                </span>
+            </div>
+            <div class="dz-success-mark"><span>✔</span>
+            </div>
+            <div class="dz-error-mark"><span>✘</span></div>
+            <div class="dz-error-message">
+                <span data-dz-errormessage="">{{error}}</span>
+            </div>
+        </div>
+    </form>
+</div>

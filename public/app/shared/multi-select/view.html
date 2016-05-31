@@ -1,0 +1,48 @@
+<div class="panel panel-default multi-select-p">
+   	<div class="panel-body">
+   		<div ng-if="error && message != ''" class="alert alert-danger">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			{{message}}
+		</div>
+
+		<div  class="col-xs-12 col-sm-4 col-md-5 col-lg-5 box-parent-select ">
+			<h5 class="strong text-uppercase">Available:</h5>
+			<select data-scrollable multiple="multiple" data-ng-model="selectedItemFrom">
+				<optgroup label="{{!placeholder? 'Permissions': placeholder}}">
+					<!-- <option value="">Select permission</option> -->
+
+					<option title="{{value.description}}" class="pointer" value="{{value.id}}" ng-repeat="(key, value) in items | toArray | orderBy:'name'">{{value.name}}</option>
+				</optgroup>
+				
+			</select>
+		</div>
+		
+		<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 btn-action-move text-center padding-none">
+			<div class="btn-group box-action">
+				<!-- <a class="btn btn-danger"  title="" href="javascript:;" ng-click="undoPermissions()"><i class="fa fa-undo"></i></a>
+				<a class="btn btn-action"  title="" href="javascript:;" ng-click="assignPermissions()"><i class="fa fa-share"></i></a> -->
+
+				<a class="text-success col-lg-12 f28 hidden-xs" title="" href="javascript:;" ng-click="assignPermissions()"><i class="fa fa-arrow-circle-right"></i></a>
+
+        		<a class="text-back col-lg-12 f28 hidden-xs" title="" href="javascript:;" ng-click="undoPermissions()"><i class="fa fa-arrow-circle-left"></i></a>
+
+
+        		<a class="text-success col-lg-12 f28 visible-xs" title="" href="javascript:;" ng-click="assignPermissions()"><i class="fa fa-arrow-circle-down"></i></a>
+
+        		<a class="text-back col-lg-12 f28 visible-xs" title="" href="javascript:;" ng-click="undoPermissions()"><i class="fa fa-arrow-circle-up"></i></a>
+
+			</div>
+		</div>
+
+		<div  class="col-xs-12 col-sm-4 col-md-5 col-lg-5 box-parent-select ">
+			<h5 class="strong text-uppercase">Assigned:</h5>
+			<select data-scrollable multiple="multiple"  data-ng-model="selectedItemTo">
+				<optgroup label="{{!placeholder? 'Permissions': placeholder}}">
+					<!-- <option value="">Select permission</option> -->
+					<option title="{{value.description}}" class="pointer" value="{{value.id}}" ng-repeat="(key, value) in itemsAssigned | toArray | orderBy:'name'">{{value.name}}</option>
+				</optgroup>
+				
+			</select>
+		</div>
+	</div>
+</div>

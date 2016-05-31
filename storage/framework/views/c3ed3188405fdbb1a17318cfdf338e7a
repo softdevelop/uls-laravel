@@ -1,0 +1,81 @@
+<?php $imageRight1 = getObjectInfoAssets('imageRight1','asset', $_56ce4daad6479166388b458d_field_subImageRight1); ?>
+<?php $imageRight2 = getObjectInfoAssets('imageRight2','asset', $_56ce4daad6479166388b458d_field_subImageRight2); ?>
+<?php $imageLeft1 = getObjectInfoAssets('imageLeft1','asset', $_56ce4daad6479166388b458d_field_subImageLeft1); ?>
+<?php $imageLeft2 = getObjectInfoAssets('imageLeft2','asset', $_56ce4daad6479166388b458d_field_subImageLeft2); ?>
+<div style='display: none'>
+<?php echo $_56ce4daad6479166388b458d_field_subImageRight1; ?>
+
+<?php echo $_56ce4daad6479166388b458d_field_subImageRight2; ?>
+
+<?php echo $_56ce4daad6479166388b458d_field_subImageLeft1; ?>
+
+<?php echo $_56ce4daad6479166388b458d_field_subImageLeft2; ?>
+
+</div>
+
+<?php if($imageRight1['src'] !== ""): ?>
+    <?php if($imageRight2['src'] !== ""): ?>
+        <section class="section-right-multi-image container100">
+    <?php else: ?>
+        <section class="section-right-image container100">
+    <?php endif; ?>
+<?php elseif($imageLeft1['src'] !== ""): ?>
+    <?php if($imageLeft2['src'] !== ""): ?>
+        <section class="section-left-multi-image container100">
+    <?php else: ?>
+        <section class="section-left-image container100">
+    <?php endif; ?>
+<?php else: ?>
+<section class="section-none-image container100">
+<?php endif; ?>
+    <h5 class="header-top"><?php echo $_56ce4daad6479166388b458d_field_subHeader; ?></h5>
+    <div class="clearfix"></div>		
+    <?php if($imageLeft1['src'] !== ""): ?>
+    <div class="image">
+        <?php if($imageLeft2['src'] !== ""): ?>
+        <figure class="col-sm-6 col-md-6 image">
+            <a href="<?php echo $imageLeft1['src']; ?>" title="<?php echo $imageLeft1['title']; ?>"><img src="<?php echo $imageLeft1['src']; ?>" alt="<?php echo $imageLeft1['alt']; ?>"></a>
+            <p class="text-description"><?php echo $imageLeft1['title']; ?></p>
+        </figure>
+        <figure class="col-sm-6 col-md-6 image">
+            <a href="<?php echo $imageLeft2['src']; ?>" title="<?php echo $imageLeft2['title']; ?>"><img src="<?php echo $imageLeft2['src']; ?>" alt="<?php echo $imageLeft2['alt']; ?>"></a>
+            <p class="text-description"><?php echo $imageLeft2['title']; ?></p>
+        </figure>
+        <?php else: ?>
+        <figure class="image">
+            <a href="<?php echo $imageLeft1['src']; ?>" title="<?php echo $imageLeft1['title']; ?>"><img src="<?php echo $imageLeft1['src']; ?>" alt="<?php echo $imageLeft1['alt']; ?>"></a>
+            <p class="text-description"><?php echo $imageLeft1['title']; ?></p>
+        </figure>
+        <?php endif; ?>
+    </div>
+	  <?php endif; ?>
+		<?php if($imageRight1['src'] !== ""): ?>
+    <div class="image">
+        <?php if($imageRight2['src'] !== ""): ?>
+        <figure class="col-sm-6 col-md-6 image">
+            <a href="<?php echo $imageRight1['src']; ?>" title="<?php echo $imageRight1['title']; ?>"><img src="<?php echo $imageRight1['src']; ?>" alt="<?php echo $imageRight1['alt']; ?>"></a>
+            <p class="text-description"><?php echo $imageRight1['title']; ?></p>
+        </figure>
+        <figure class="col-sm-6 col-md-6 image">
+            <a href="<?php echo $imageRight2['src']; ?>" title="<?php echo $imageRight2['title']; ?>"><img src="<?php echo $imageRight2['src']; ?>" alt="<?php echo $imageRight2['alt']; ?>"></a>
+            <p class="text-description"><?php echo $imageRight2['title']; ?></p>
+        </figure>
+        <?php else: ?>
+        <figure class="image">
+            <a href="<?php echo $imageRight1['src']; ?>" title="<?php echo $imageRight1['title']; ?>"><img src="<?php echo $imageRight1['src']; ?>" alt="<?php echo $imageRight1['alt']; ?>"></a>
+            <p class="text-description"><?php echo $imageRight1['title']; ?></p>
+        </figure>
+        <?php endif; ?>
+    </div>
+	  <?php endif; ?>  
+		<?php if($_56ce4daad6479166388b458d_field_subContent !== ""): ?>		
+    <div class="content">
+        <p class="text">
+            <?php echo $_56ce4daad6479166388b458d_field_subContent; ?>
+
+        </p>
+    </div>
+      <?php endif; ?>
+
+    <div class="clearfix"></div>					
+</section>

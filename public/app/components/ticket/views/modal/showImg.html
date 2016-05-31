@@ -1,0 +1,12 @@
+<!-- modal show image -->
+
+    <div class="modal-content" ng-init="showImage()">
+        <button type="button" class="close pull-left">
+            <i class="fa fa-download"></i>
+        </button>
+        <span class="m-l-20">abcdefghiklmn.jpg</span>
+        <button type="button" class="close" data-dismiss="modal">
+            <i class="fa fa-times"></i>
+        </button>
+        <img class="img-responsive real-size" ng-src="{{file['folder_file']}}{{file['stored_file_name']}}"  alt="Place">
+    </div><!-- /.modal-content -->

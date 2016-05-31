@@ -1,0 +1,2 @@
+<?php $img = getObjectInfoAssets('img', 'asset', $_56c7adbbd647914b4c8b4568_field_image); ?>
+<img src="<?php echo $img['src']; ?>" alt="<?php echo $img['alt']; ?>">

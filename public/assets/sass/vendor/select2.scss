@@ -1,0 +1,10 @@
+.select2-dropdown{
+	z-index: 1000!important;
+}
+
+// fix for exits modal in page
+.modal ~ .select2-container{
+	z-index: 1051!important;
+}
+
+// end

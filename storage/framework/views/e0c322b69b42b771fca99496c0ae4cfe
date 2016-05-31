@@ -1,0 +1,47 @@
+<?php $__env->startSection('title'); ?>
+    Guided Configurator
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <div ng-controller="GuideConfiguratorController" class="wrap-content-management">
+    <div class="top-content">
+        <label class="c-m"><?php echo e(trans('cms_database/database-index.guided_configurator')); ?></label>
+
+        <a href="javascript:void(0)" ng-click="GuideMe()" class="btn btn-primary hidden-xs pull-right fix-btn-top-content" ng-disabled="dsbBtnDelete">
+            <i class="fa fa-plus"></i> Guide Me
+        </a>
+    </div>
+    
+    <div class="visible-xs group-action-mobile">
+        <div class="btn-show-group" data-toggle="collapse" data-target="#group-btn" aria-expanded="false">
+            <i class="fa fa-plus"></i>
+        </div>
+
+        <div class="wrap-btn-create-circle collapse" id="group-btn">
+
+            <div class="btn-create-circle">
+                <a data-toggle="modal" ng-click="getModalCreatePage()" href="javascript:void(0)">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+</div>
+<?php $__env->stopSection(); ?>
+
+<script type="text/javascript">
+    window.listAnswer = <?php echo json_encode(listAnswer()); ?>;
+    window.listALP = <?php echo json_encode(listALP()); ?>;
+</script>
+    
+<?php $__env->startSection('script'); ?>
+    <?php echo Html::script('app/shared/cms-content/CmsService.js?v='.getVersionScript()); ?>
+
+    <?php echo Html::script('app/components/database/GuideConfiguratorService.js?v='.getVersionScript()); ?>
+
+    <?php echo Html::script('app/components/database/GuideConfiguratorController.js?v='.getVersionScript()); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

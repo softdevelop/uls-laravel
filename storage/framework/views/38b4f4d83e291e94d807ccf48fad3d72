@@ -1,0 +1,26 @@
+<?php $image = getObjectInfoAssets('image','asset',  $_56c7b9e4d6479107438b4569_field_image ); ?>
+		<div class="left-column col-xs-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="caption" style="height: auto">
+						<h3 class="title text-yellow wow fadeInDown" data-wow-duration="1.5s"><?php echo $_56c7b9e4d6479107438b4569_field_title; ?></h3>
+						<p class="text text-white wow fadeInLeftBig" data-wow-duration="1s"><?php echo $_56c7b9e4d6479107438b4569_field_subtitle; ?></p>
+						<?php if($_56c7b9e4d6479107438b4569_field_buttonTitle !== ''): ?>
+                              <a 
+                              <?php if($_56c7b9e4d6479107438b4569_field_buttonCustomClass !== ""): ?>
+                  		      class="<?php echo $_56c7b9e4d6479107438b4569_field_buttonCustomClass; ?>"
+                              <?php endif; ?>
+                              <?php if($_56c7b9e4d6479107438b4569_field_buttonCustomLink !== ""): ?>
+                              href="<?php echo $_56c7b9e4d6479107438b4569_field_buttonCustomLink; ?>"
+                              <?php else: ?>
+                              href="<?php echo $_56c7b9e4d6479107438b4569_field_buttonLink; ?>" 
+                              <?php endif; ?>
+                               target="_top">
+						      <button class="btn btn-red btn-large wow fadeInLeftBig" data-wow-duration="1.5s"><?php echo $_56c7b9e4d6479107438b4569_field_buttonTitle; ?></button></a>
+						<?php endif; ?>
+				</div>
+		</div>
+		<div class="right-column col-xs-6 col-md-6 col-sm-6 col-xs-6">
+				<div class="image wow fadeInRightBig" data-wow-duration="1.5s">
+						<img src="<?php echo $image['src']; ?>" alt="<?php echo $image['alt']; ?>"/>
+                </div>         				
+		</div>
+		<div class="clearfix"></div>

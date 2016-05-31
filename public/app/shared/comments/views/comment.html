@@ -1,0 +1,147 @@
+<!-- Left comment -->
+<div class="min-768 pull-left normal-space-left-comment">
+    <div class="row-wrap-user" ng-if="item.ticket_state == 'response'">
+        <div class="wrap-img">
+            <img ng-src="{{usersMap[item.user_id]['avatar']}}" alt="alt" class="img-circle">
+            
+        </div>
+        <div class="wrap-name">
+            <span ng-if="item.ticket_state == 'response'" class="user-cmt-name">{{usersMap[item.user_id]['name']}} {{usersMap[item.user_id].deleted_at != null ? '(Deactivated)' : ''}}</span>
+        </div>
+    
+    </div>
+    <p class="m-t-9">
+        <span>&nbsp;{{ item['created_at'] | clientDate:'MMM dd, y' }}</span>
+        <span>&nbsp;{{ item['created_at'] | clientDate:'hh:mm a' }}</span>
+    </p>
+</div>
+
+<!-- Right comment -->
+<!-- if comment is response -->
+<div id="comment-{{item._id}}" class="desc-file-ticket pull-left col-lg-8 col-md-8 col-sm-12 col-xs-12 b-l-ccc fix-border" ng-if="item.ticket_state == 'response'">
+    <div ng-bind-html="item['content'] | to_trusted">
+    </div>
+
+    <div ng-if="item.files_id.length" class="file-ticket">
+        <div ng-repeat="file_id in item.files_id" class="file-item">
+
+            <a ng-if="checkFile(files[file_id]['type']) == 'image'" href="javascript:void(0)" ng-click="openPicture({id:file_id})" class="icon-f">
+               <i class="fa fa-picture-o"></i>
+                <span ng-show="files[file_id]['file_name'].length <= 5">{{files[file_id]['file_name']}}</span>
+                <span ng-show="files[file_id]['file_name'].length > 5">{{files[file_id]['file_name'] | limitTo: 5}}{{files[file_id]['file_name'].length > 5 ? '...' : '.'}} {{files[file_id]['file_name'].split('.').pop()}}</span>
+            </a>
+            <a ng-if="checkFile(files[file_id]['type'])  != 'image'" ng-href="{{ baseUrl }}/support/file/download/{{file_id}}" class="icon-f">
+               <i class="fa fa-file-o"></i>
+               <span ng-show="files[file_id]['file_name'].length <= 5">{{files[file_id]['file_name']}}</span>
+                <span ng-show="files[file_id]['file_name'].length > 5">{{files[file_id]['file_name'] | limitTo: 5}}{{files[file_id]['file_name'].length > 5 ? '...' : '.'}} {{files[file_id]['file_name'].split('.').pop()}}</span>
+            </a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<!-- if comment is assign or percent complete -->
+<div id="comment-{{item._id}}" class="desc-file-ticket pull-left col-lg-8 col-md-8 col-sm-12 col-xs-12 b-l-ccc comment-status" ng-if="item.ticket_state != 'response'">
+    <span ng-if="item.ticket_state == 'assign'">
+        <strong>Assigned to </strong>
+        <img ng-src="{{usersMap[item.user_assignee]['avatar']}}" alt="alt" class="img-circle">&nbsp;&nbsp;
+        {{usersMap[item.user_assignee]['name']}}
+    </span>
+
+    <!-- show user do action -->
+    <span>
+        <span ng-if="item.ticket_state == 'assign'">by &nbsp;&nbsp;</span>
+        <span ng-if='item.user_id != -1'>
+            <img ng-src="{{usersMap[item.user_id]['avatar']}}" alt="alt" class="img-circle">&nbsp;&nbsp;
+            <span class="user-cmt-name">{{usersMap[item.user_id]['name']}} {{usersMap[item.user_id].deleted_at != null ? '(Deactivated)' : ''}}</span>
+        </span>
+
+        <span ng-if='item.user_id == -1'>
+            <img ng-src='{{baseUrl}}/160x160_avatar_default.png?t=1' alt="alt" class="img-circle">&nbsp;&nbsp;
+            <span class="user-cmt-name">System</span>
+        </span>
+    </span>
+    
+    <!-- Update % complete -->
+    <span ng-if="item.ticket_state == 'percent_complete'">
+        marked progress <span>{{item.percent}}</span>% complete
+    </span>
+
+    <!-- Request Extension-->
+    <span ng-if="item.ticket_state == 'request_extension'">
+            requested due date extension to {{item.request_extension | myDate:'M/dd/yyyy'}}
+    </span>
+
+    <!-- Approve Extension-->
+    <span ng-if="item.ticket_state == 'approve_extension'">
+            approved request due date extension to {{item.request_extension | myDate:'M/dd/yyyy'}}
+    </span>
+
+    <!-- Request Review Ticket -->
+    <span ng-if="item.ticket_state == 'request_review'">
+            Request reviewed
+    </span>
+
+    <!-- Approve Ticket -->
+    <span ng-if="item.ticket_state == 'approve'">
+            Approved
+    </span>
+
+    <!-- Deny Ticket -->
+    <span ng-if="item.ticket_state == 'deny'">
+            Denied
+    </span>
+
+    <!-- Close Ticket -->
+    <span ng-if="item.ticket_state == 'close'">
+            Closed
+    </span>
+
+    <!-- Add Invite -->
+    <span ng-if="item.ticket_state == 'add_invite'">
+            invited &nbsp;&nbsp;
+            <img ng-src="{{usersMap[item.user_invite]['avatar']}}" alt="alt" class="img-circle">&nbsp;&nbsp;
+            <span class="user-cmt-name">{{usersMap[item.user_invite]['name']}} {{usersMap[item.user_invite].deleted_at != null ? '(Deactivated)' : ''}}</span>
+    </span>
+
+    <!-- Remove Invite -->
+    <span ng-if="item.ticket_state == 'remove_invite'">
+            <span ng-if="item.user_invite == item.user_id">
+                unfollowing
+            </span>
+
+            <span ng-if="item.user_invite != item.user_id">
+                removed Follower &nbsp;&nbsp;
+                <img ng-src="{{usersMap[item.user_invite]['avatar']}}" alt="alt" class="img-circle">&nbsp;&nbsp;
+                <span class="user-cmt-name">{{usersMap[item.user_invite]['name']}} {{usersMap[item.user_invite].deleted_at != null ? '(Deactivated)' : ''}}</span>                            
+            </span>
+    </span>
+
+    <!-- Add Following -->
+    <span ng-if="item.ticket_state == 'add_following'">
+        following
+    </span>
+
+    <!-- remove assign -->
+    <span ng-if="item.ticket_state == 'un_assign'">
+        removed Assignee &nbsp; &nbsp;
+        <img ng-src="{{usersMap[item.user_un_assign]['avatar']}}" alt="alt" class="img-circle">&nbsp;&nbsp;
+        {{usersMap[item.user_un_assign]['name']}}
+    </span>
+
+    <!-- update due date -->
+    <span ng-if="item.ticket_state == 'update_due_date'">
+        Update due date to {{item.due_date | myDate:'M/dd/yyyy'}}
+    </span>
+
+</div>
+
+<div class="foo-comment text-right col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-show="item.ticket_state && item.ticket_state=='close'">
+    <h5  class="text-red"><i>Closed</i></h5>
+</div>
+
+<div class="foo-comment text-right col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-show="item.ticket_state && item.ticket_state=='private'">
+    <h5 class="text-internal"><i>Internal</i></h5>
+</div>
+<br>
+<div class="clearfix"></div>

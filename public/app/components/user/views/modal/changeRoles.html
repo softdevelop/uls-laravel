@@ -1,0 +1,50 @@
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" ng-click="cancel()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title">Manage Roles</h4>
+</div>
+<div class="modal-body mo-change-role">
+    <form>
+        <div class="form-group row info-user-role table-reponsive">
+
+            <table class="table tile">
+                <thead>
+                    <!-- <th>Area</th> -->
+                    <th>Role(s)</th>
+                    <th class="text-center">Action</th>
+                </thead>
+                <tbody>
+                    <tr ng-if="item != null" class="delete-{{$index}}" ng-repeat="item in items track by $index">
+
+                        <!-- <td>{{item.area}}</td> -->
+                        <td>{{item.role}}</td>
+                        <td class="text-center"><a class="btn btn-primary btn-xs" ng-show="item.roleId" href="javascript:void(0)" ng-click="deleteRoles(item.roleId, item.departmentId,$index)" title="Delete"><i class="fa fa-times"></i></a> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="form-group row action-role-mo m-b-10">
+        <form action="" name="changeRoleForm">
+<!--             <div class="col-lg-12 Add-role">
+                <h5 for="">Area</h5>
+                
+                <select  ng-options="d.id as d.display_name for d in listDepartment" ng-model="department" name="department" id="" class="fix-select">
+                </select>
+            </div> -->
+            <div class="col-lg-12 type-role">
+                <h5 for="">Role Type</h5>
+                <select  ng-options="r.id as r.display_name for r in listRole" ng-model="role" name="" id="" class="fix-select">
+                </select>
+            </div>
+        </form>
+
+        </div>
+    </form>
+    <div class="clearfix"></div>
+</div>
+<div class="modal-footer">
+    <div class="form-group center-block">
+        <button type="submit" ng-click="updateRoles()" class="btn btn-action" ng-disabled="!role">Update Role</button>
+        <button ng-click="cancel()" type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove">  </span> Close</button>
+    </div>
+</div>

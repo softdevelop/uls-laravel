@@ -1,0 +1,3 @@
+<div class="col-lg-5 padding-none-1200">
+	<?php echo $__env->make('users::permission.partial.landingPage', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</div>

@@ -1,0 +1,25 @@
+<?php $logo = getObjectInfoAssets('logo','asset', $_56dc71a9d6479127418b4567_field_logo); ?>
+<article class="article-left-image-small col-md-12 padding-none">
+    <table cellspacing='0' cellpadding='0'>
+        <tr>      
+		    <?php if($logo['src'] !== ""): ?>
+            <td valign='top'>
+                <div class="wrap-img pull-left general-nav-image" i="<?php echo $_56dc71a9d6479127418b4567_field_logo; ?>">
+                    <a href="<?php echo $_56dc71a9d6479127418b4567_field_link; ?>"><img src="<?php echo $logo['src']; ?>" alt="<?php echo $logo['alt']; ?>" width='45' border='0'></a>
+                </div>
+            </td>
+	        <?php endif; ?>
+            <td valign='top'>
+                <div class="general-nav-info">
+                    <a href="<?php echo $_56dc71a9d6479127418b4567_field_link; ?>"><h4 class='general-nav-header'><?php echo $_56dc71a9d6479127418b4567_field_header; ?></h4></a>
+                    <?php if($_56dc71a9d6479127418b4567_field_subheader !== ""): ?>
+                    <a href="<?php echo $_56dc71a9d6479127418b4567_field_link; ?>"><p class='general-nav-subheader'><?php echo $subheader; ?></p></a>
+                    <div style='display: none'><?php echo $_56dc71a9d6479127418b4567_field_subheader; ?></div>
+                    <?php endif; ?>
+                    <p class="more"><a href="<?php echo $_56dc71a9d6479127418b4567_field_link; ?>" class="text-red"><?php echo $_56dc71a9d6479127418b4567_field_learnMore; ?> <i class="fa fa-angle-right"></i></a></p>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="clearfix"></div>
+</article>

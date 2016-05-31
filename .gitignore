@@ -1,0 +1,15 @@
+/vendor
+/node_modules
+Homestead.yaml
+.env
+/public/bower_components
+/public/avatars
+/public/report_download.log
+/public/uploads/
+/public/files/positions/*
+/resources/views/templates/*
+/resources/views/template-blocks/*
+/resources/views/templates-block-managed/*
+/jobsemail/config.js
+/jobsemail/node_modules
+elixir.json

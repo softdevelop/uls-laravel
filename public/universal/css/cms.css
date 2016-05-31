@@ -1,0 +1,424 @@
+/* Fonts */
+@font-face {
+    font-family: 	'HelveticaLight';
+    src: 			url('../fonts/helveticalight-webfont.eot');
+    src: 			url('../fonts/helveticalight-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/helveticalight-webfont.woff') format('woff'),
+    url('../fonts/helveticalight-webfont.ttf') format('truetype'),
+    url('../fonts/helveticalight-webfont.svg#HelveticaLight') format('svg');
+    font-weight: 	normal;
+    font-style: 	normal;
+
+}
+
+@font-face {
+    font-family: 	'Myriad';
+    src: 			url('../fonts/myriadwebpro-webfont.eot');
+    src: 			url('../fonts/myriadwebpro-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/myriadwebpro-webfont.woff') format('woff'),
+    url('../fonts/myriadwebpro-webfont.ttf') format('truetype'),
+    url('../fonts/myriadwebpro-webfont.svg#HelveticaLight') format('svg');
+
+}
+
+@font-face {
+    font-family: 	'MyriadBold';
+    src: 			url('../fonts/myriadwebpro-bold-webfont.eot');
+    src: 			url('../fonts/myriadwebpro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/myriadwebpro-bold-webfont.woff') format('woff'),
+    url('../fonts/myriadwebpro-bold-webfont.ttf') format('truetype'),
+    url('../fonts/myriadwebpro-bold-webfont.svg#HelveticaLight') format('svg');
+    font-weight:	normal;
+}
+
+/* Main content */
+html, body, div, span, applet, object, iframe,
+h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 		0;
+    padding: 		0;
+    border: 		0;
+    outline: 		0;
+    vertical-align: baseline;
+    background: 	transparent;
+}
+
+header, footer, aside, article, nav, canvas {display:block;}
+
+body {
+    line-height: 		1;
+    margin: 			0;
+    padding: 			0;
+    border: 			0;
+    outline: 			0;
+    vertical-align: 	baseline;
+    background-color:	#000;
+}
+
+html {height: 100%;}
+
+body {
+    font: 75%/1.47 Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: #666;
+    min-height: 100%;
+}
+
+a {
+    color:					#b00000;
+    text-decoration: 		none;
+    -ms-transition: 		color 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
+    -webkit-transition: 	color 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
+    -moz-transition: 		color 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
+    -o-transition: 			color 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: 			color 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+a:hover {text-decoration:none;}
+
+img {border:0;}
+
+h1, h2, h3, h4, a#again {font-family: 'HelveticaLight', Helvetica, sans-serif; font-weight:normal; }
+
+h1{text-shadow: 0 -1px 3px rgba(0,0,0, 1);}
+h2, h3, h4, a#again {text-shadow: 0 -1px 1px rgba(0,0,0, .5);}
+
+p {margin:5px 10px;}
+
+.clearall {clear:both;}
+
+#home a:hover img, #logo a:hover img {opacity:0.5; filter:alpha(opacity=50); }
+
+/* Body content */
+#page-wrap { width: 1000px; padding: 0 0 0 0px; margin: 0 auto; overflow: hidden;}
+
+#logo {float:left; margin:5px 0 20px 0;}
+
+#home {float:right; margin:-2px 0 0 0;}
+#welcome {float:right; margin:-2px 10px 0 0; padding:5px 10px; background-color:#222;}
+#welcome a {color:#fff; }
+#welcome a:hover {color:#b00000;}
+
+#line {border-top:1px solid #bb0000; margin:15px 0px;}
+
+header h1 {color:#fff;  margin:0px 10px; font-size:30px; float:left;}
+header h1 div {color:#999; font-size:14px; margin:0px 0px;}
+header h1 div em {color:#666; font-style:normal;}
+
+header #button {float:right; width:180px; margin:15px 0 0 0;}
+
+#button a, #titlebar, #listingtitle, #right #sort, #button a.no:hover, #button div {
+    display: 			block;
+    color:				#fff;
+    text-align:			center;
+    font-size:			12px;
+    padding:			5px;
+    text-transform:		uppercase;
+    text-shadow: 		0 -1px 1px rgba(0,0,0, .8);
+    border-right:		#666 1px solid;
+    border-bottom:		#666 1px solid;
+    border-top:			#222 1px solid;
+    border-left:		#222 1px solid;
+    font-family:		'HelveticaLight', Helvetica, sans-serif;
+}
+
+#button a:hover {text-decoration:none; color:#000; cursor:pointer;}
+
+
+#button .black a, input.search, #right #sort select, #button .black div {
+    -ms-box-shadow: 		inset 0 0 5px #000;
+    -webkit-box-shadow: 	inset 0 0 5px #000;
+    -moz-box-shadow: 		inset 0 0 5px #000;
+    -o-box-shadow: 			inset 0 0 5px #000;
+    box-shadow: 			inner 0 0 5px #000;
+}
+
+#listing #image {
+    -ms-box-shadow: 		0 0 5px rgba(0,0,0, .7);
+    -webkit-box-shadow: 	0 0 5px rgba(0,0,0, .7);
+    -moz-box-shadow: 		0 0 5px rgba(0,0,0, .7);
+    -o-box-shadow: 			0 0 5px rgba(0,0,0, .7);
+    box-shadow: 			0 0 5px rgba(0,0,0, .7);
+}
+
+.red a, #search, #right #sort {
+    background: 	#bb0000; /* old browsers */
+    background: 	-moz-linear-gradient(top, #b00000 0%, #500000 100%); /* firefox */
+    background: 	-webkit-gradient(linear, left top, left bottom, color-stop(0%,#b00000), color-stop(100%,#500000)); /* webkit */
+    background: 	-o-linear-gradient(top, #b00000 0%, #500000 100%); /* opera */
+    filter: 		progid:DXImageTransform.Microsoft.gradient( startColorstr='#b00000', endColorstr='#500000',GradientType=0 ); /* ie */
+}
+
+.black a, #titlebar, #left #button a.current, #listingtitle, #right #sort select:hover, #button a.no:hover, #button div {
+    background: 	#333333; /* old browsers */
+    background: 	-moz-linear-gradient(top, #333333 0%, #111111 100%); /* firefox */
+    background: 	-webkit-gradient(linear, left top, left bottom, color-stop(0%,#333333), color-stop(100%,#111111)); /* webkit */
+    background: 	-o-linear-gradient(top, #333333 0%, #111111 100%); /* opera */
+    filter: 		progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#111111',GradientType=0 ); /* ie */
+}
+
+.red a:hover, .black a:hover, #right #sort select {
+    background: 	#ffffff; /* old browsers */
+    background: 	-moz-linear-gradient(top, #eeeeee 0%, #ffffff 100%); /* firefox */
+    background: 	-webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#ffffff)); /* webkit */
+    background: 	-o-linear-gradient(top, #eeeeee 0%, #ffffff 100%); /* opera */
+    filter: 		progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=0 ); /* ie */
+}
+
+#left {float:left; margin:5px 10px 5px 0px; width:200px;}
+
+#left #button a {text-align:left; padding:10px; margin:10px 0px;}
+#left #button a.current:hover {color:#fff;}
+
+#left #button ul {background-color:#333; padding:5px 10px; margin:-10px 0 0 0; list-style:none;}
+#left #button ul li a {padding:2px 5px; font-size:12px; margin:3px 0px; background:none; border:none;}
+#left #button ul li a:hover {color:#666; }
+
+#left #button ul li li a {text-transform:none; color:#666; font-size:11px;}
+#left #button ul li li a:hover {color:#fff;}
+
+#left h2 {margin:0px 10px; color:#fff; text-transform:uppercase; font-size:14px; display:block; background:url(../imgs/arrow-down.png) no-repeat right;}
+
+#left #button a img {float:right; width:15px; margin:1px;}
+
+#left #search {height:40px;}
+
+#grey, #listing a {padding:10px; background-color:#333; color:#fff;}
+#grey ul {list-style:none;}
+#grey li {padding:2px 0px;}
+#grey li a {display:block; padding:5px 10px; color:#fff;}
+#grey li a:hover {color:#ccc; background-color:#666;}
+#grey strong {color:#ccc;}
+
+#search {
+    padding:			10px 0 10px 10px;
+    margin:				10px 0px;
+    border-right:		#666 1px solid;
+    border-bottom:		#666 1px solid;
+    border-top:			#222 1px solid;
+    border-left:		#222 1px solid;
+}
+
+#search input {padding:10px;}
+
+input.search {
+    padding:			2px 8px;
+    border:				none;
+    background-color:	#ccc;
+    float:				left;
+}
+
+#search input.search:hover, #search input.search:focus {background:#fff; color:#333;}
+
+#search input.submit {
+    width:				30px;
+    height:				30px;
+    display:			block;
+    overflow:			hidden;
+    text-indent:		-999px;
+    line-height:		30px;
+    background-color:	none;
+    background:			url(../imgs/search.png) no-repeat 0 0;
+    cursor:				pointer;
+    border: 			none;
+    float: 				left;
+    margin:				0 3px;
+    padding: 			0;
+}
+
+#search input.submit:hover {background-position: 0 -30px; }
+#search input.submit:active {background-position: 	0 -60px; cursor: wait; }
+
+#grey #search input.submit:hover {background-position: 0 -40px; }
+#grey #search input.submit:active {background-position: 	0 -80px; cursor: wait; }
+
+#grey #search {border:none; background:none; width:100%;}
+#grey #search input {width:600px; padding:20px; font-size:14px; color:#666; float:left;}
+
+#grey #search input.submit {
+    width:				40px;
+    height:				40px;
+    line-height:		30px;
+    background:			url(../imgs/search-lg.png) no-repeat 0 0;
+    margin:				10px 3px;
+    padding:			0px;
+}
+
+#header #search {float:right; margin:-20px 0 0 0;}
+
+#right {float:right; width:750px; color:#fff; padding:10px;}
+#right p {margin:10px;}
+#right h3 {color:#999;}
+
+#right #details #button {width:180px; float:right; margin:-30px -10px 10px 20px;}
+#right #details #button a {padding:10px 15px; margin:5px 0 5px 10px; text-align:left; color:#ccc; font-size:14px;}
+#right #details #button a:hover {color:#000;}
+
+#right #details ul {list-style:none;}
+
+#right #details #button a img {margin:3px 5px 0 0; float:left;}
+
+#right #applications {float:left; margin:15px 0px; padding:10px 10px 0 0; width:400px;}
+#right #industries {float:left; margin:15px 0px; padding:10px 0 0 30px; width:300px; border-left:#333 1px solid;}
+
+#right #applications ul, #right #industries ul {list-style:none; float:left; width:100%;}
+#right #applications li, #right #industries li {padding:2px;}
+
+#right #processes #button {width:100%; margin:5px 0px;}
+#right #processes #button a, #titlebar {padding:10px 20px; font-size:16px; text-align:left; }
+#right #processes #button a img {float:right;}
+
+#right #processes #grey {margin-top:-5px;}
+#right #processes #grey #left {width:210px; padding:15px; margin:0px; float:right; /*border:1px dotted #666;*/ background-color:#222;}
+#right #processes #grey #left img {width:110px; margin:5px 5px 0 -3px; border:1px solid #666; float:left;}
+#right #processes #grey #left div {float:left; margin:5px; font-size:11px; color:#999; width:80px;}
+#right #processes #grey #left p {font-size:11px;}
+#right #processes #grey #right {width:450px; float:left;}
+#right #processes #grey #features {padding:10px;}
+#right #processes #grey li {float:left; padding:10px 10px 10px 20px; background: url(../imgs/dot.png) no-repeat left; }
+
+#right #grey #button a {float:left; margin:2px 10px 0 3px; width:145px; text-transform:none; text-align:left; padding:8px 10px;}
+
+
+#sub {font-size:12px; font-weight:normal; color:#ccc;}
+#sub a { margin:0 5px;}
+#sub a:hover {color:#fff;}
+
+#right #listingtitle {float:left; height:25px; padding:10px; width:500px; }
+#main #listingtitle {height:25px; padding:10px; text-transform:none; text-align:left; font-size:14px; }
+
+#listingtitle a, #again {text-transform:uppercase; margin:0px 5px;}
+#listingtitle a:hover {color:#fff;}
+#listingtitle span {font-size:16px; font-style:italic; color:#ccc;}
+
+#right #listingtitle #sub {text-align:left;}
+#right #sort {float:right; font-size:12px; height:25px; padding:10px; width:205px;}
+#right #sort select {width:140px; padding:8px; color:#000; border:0px; margin:-5px 0 0 0; text-transform:none;}
+#right #sort select:hover {color:#fff;}
+#right #sort select optgroup, #right #sort select option {margin:5px }
+
+#listing a {display:block; padding:10px; border-bottom:1px solid #666; margin:0 0 5px 0;}
+#listing a:hover {background-color:#ccc;}
+
+#listing #category {background-color:#666; margin:-10px -10px 0 -10px; padding:5px 10px;}
+
+#listing a#again {width:100px;}
+
+#listing a:hover span, #listing a:hover #description h2, #listing a:hover span em, #listing a:hover #description, #listing a#again:hover {color:#333;}
+#listing #image {float:left; margin:10px 5px 0 5px; width:90px; height:90px; overflow:hidden; border:2px #666 solid;}
+#listing a:hover #image {border:2px #fff solid;}
+#listing a:hover img {opacity:0.5; filter:alpha(opacity=50);}
+#listing #image img {width:140px;}
+#listing #description {float:left; margin:10px; padding:5px; width:600px; font-size:12px; color:#fff;}
+#listing #description h2 {color:#ccc; margin:0 0 5px 0;}
+#listing #laser {float:left; margin:5px; width:200px;}
+#listing #button {float:right; width:200px; margin:10px 5px 0 5px;}
+#listing #button div {margin:1px; padding:5px 0 5px 5px; text-align:left; font-size:10px;}
+#listing #button div img {width:10px; margin:2px 8px 0 0; float:left;}
+
+#button a.no, #button div.no {opacity:0.3; filter:alpha(opacity=30); color:#666;}
+#button a.no img, #button div.no img {opacity:0.0; filter:alpha(opacity=0);}
+#button a.no:hover {cursor:default;}
+
+/**/
+
+#left a:hover img {opacity:0.5; filter:alpha(opacity=50);}
+#left #mainimage img {width:200px;border:1px solid #ccc;}
+#left #thumbnails ul {list-style:none;}
+#left #thumbnails li {width:59px; height:60px; overflow:hidden; float:left; margin:0 5px 5px 0;border:1px solid #333; }
+#left #thumbnails img {width:120px;}
+
+
+
+
+/*------
+  CMS
+------*/
+
+/* Template */
+
+#overlay { width:100%; height: 100%; background: #000; opacity: 0.5; position: fixed; z-index: 20; display: none; }
+
+/* Dasboard */
+
+#newMat, #newCompany { display: block; float: right; background: #b00000; color: #000; font-weight: bold; width: 100px; height: 30px;
+    line-height: 30px; text-align: center; margin:-15px 0 0; }
+
+
+
+
+
+
+/* Edit Material */
+div#overlay { display: none; }
+.modal { display: none; width:450px; height: 200px; left:50%; margin-left:-225px; background: #aaaaaa; position: fixed; z-index: 99; text-align: center; }
+.modal p { font-size: 16px; color: #000; margin:30px 0 50px; }
+.modal input[type="text"] { width: 200px; font-size: 14px; padding: 7px 5px; }
+.modal .buttons {width:330px; margin: 0 auto; }
+#confirmDelete,#confirmCatDelete { background: #960000; color: #000; float: left; margin:0 25px 0 0; line-height: 37px; }
+#addCategoryBtn, #editCategoryBtn { float: left; margin:0 25px 0 0; }
+#cancel { background: #dd0; float: left; }
+#category { margin: 20px 0 0; }
+#cropModal { margin-top:80px; padding:30px; display:block; height:auto; width:900px; left:50%; margin-left:-450px; background: #aaa; position: fixed; z-index: 99; text-align: center; }
+    #cropModal textarea { width:400px; height:200px; margin:0 auto; display:block; }
+
+#confirmation { width:100%; left: 0; top: 0; height: 40px; line-height: 40px; font-weight: bold; text-indent: 131px;
+    background: #1bb015; display: none; position: fixed; color: #ededed; cursor: pointer; font-size: 15px; }
+
+
+#validationErrors { color:#f00; font-weight: bold; }
+.button { width:150px; height: 35px; line-height: 35px; background:#009600; display: block; color: #000; border: none; font-weight:bold; text-align: center; }
+.button:hover { background: #fff !important; cursor: pointer; }
+
+
+.updateMat {  float:right; clear: both; }
+#delete { background: #960000; height:37px; color: #000; float: right; margin:-1px 15px 0 0; line-height: 37px; }
+#goToMat { background: #DDDD00; float: right; margin: 0 15px 0 0; }
+
+form p { margin:0 0 35px; }
+
+textarea[name="search_string"] { height: 60px; width: 300px; }
+
+#categories select { width:260px; }
+.plus, .minus, .edit { cursor: pointer; margin:0 0 -3px 10px; }
+.minus, .edit { margin-bottom:-4px; }
+.processes { margin:20px 0 20px; }
+.processNames { margin:0 0 0 5px; font-size: 14px; text-decoration: underline; }
+
+#manufacturers, #suppliers { width:400px; float: left; }
+    #manufacturers select, #suppliers select { min-width: 305px; }
+h4.slide { padding:5px 0 5px 20px; background: #c0c0c0; color: #000; font-weight: bold; font-size: 20px; cursor: pointer; }
+h4.slide:hover { color:#960000; }
+#cutting, #engraving, #marking, #imaging { display: none; }
+
+select.companies { display: block; margin:0 0 20px; }
+
+#materials li, #companies li { margin:10px 0 5px; }
+
+div#imageUpload { margin:60px 0 40px; width: 250px; }
+    div#imageUpload textarea { width: 250px; }
+        table#images { float: left; margin:0 30px 0 0; }
+            table#images th, #images td { width:80px; text-align:center; vertical-align:middle; margin:0 0 10px; color: #cfcfcf; font-weight: bold; }
+            table#images th { text-decoration: underline; }
+            table#images tbody tr:hover { background-color:#a55858 !important; }
+                tr.img { margin:0 0 10px; }
+                    tr.img .thumbnail { height: 80px; width: 80px; cursor: pointer; }
+                    tr.img .deleteImg { cursor: pointer; }
+                tr.current { background-color: #abc6dd !important; }
+
+        div#imgCaption { float:left; width: 250px; padding:0 0 110px; position: relative; display:none; background: #000; }
+            div#imgCaption .button { width:100px; float: left; }
+                #cancelCaption { background-color:#dd0; float:right !important; }
+
+
+
+
+/* Edit Company */
+
+div#regions { width: 200px; }
+    div#regions select { margin:0 0 15px; }

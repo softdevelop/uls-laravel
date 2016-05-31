@@ -1,0 +1,7 @@
+<?php $image = getObjectInfoAssets('image','asset', $_56d79cc7d64791c54c8b457a_field_image ); ?>
+ data-thumb="<?php echo $image['src']; ?>" style="width: 303px; margin-right: 0px;">
+<?php if($_56d79cc7d64791c54c8b457a_field_youtube !== ""): ?>
+  <a class="video" href="https://www.youtube.com/watch?v=<?php echo $_56d79cc7d64791c54c8b457a_field_youtube; ?>" title="<?php echo $image['title']; ?>"><img src="<?php echo $image['src']; ?>" alt="<?php echo $image['alt']; ?>" style='width: 303px;'></a>
+<?php else: ?>
+  <a class="image" href="<?php echo $image['src']; ?>" title="<?php echo $image['title']; ?>"><img src="<?php echo $image['src']; ?>" alt="<?php echo $image['alt']; ?>" style='width: 303px;'></a>
+<?php endif; ?>

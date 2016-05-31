@@ -1,0 +1,82 @@
+<style>
+	input{
+	height: 34px;
+	}
+	.modal-footer{
+	 	border-top:none!important; 
+	}
+	.table-responsive table{
+		    margin-bottom: 1px;
+	}
+</style>
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="cancel()" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">Edit Fields</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="table-responsive wrap-box-content">
+            <table class="table center-td fix-height-tb table-striped">
+	            <thead>
+				    <th style="width:200px" class="text-center">Name</th>
+				    <th class="text-center">Required</th>
+				    <th class="text-center">Type</th>
+				    <th class="text-center">Multiple</th>
+				    <th style="width:100px" class="text-center">Min Field</th>
+				    <th style="width:100px" class="text-center">Max Field</th>
+				    <th class="text-center">Action</th>
+	            </thead>
+
+	            <tbody>
+	                <tr ng-repeat="item in fields">
+	                    <td style="padding:6px;">
+	                    	<span ng-if="!edit[$index]">{{item.name}}</span>
+	                    	<input ng-if="edit[$index]" type="text" ng-model="fields[$index]['name']" />
+	                    	<span ng-show="validate[$index]['name']" class="help-inline ng-invalid"> {{validate[$index]['name']}}</span>
+
+	                    </td>
+	                    <td>
+	                    	<!-- <span ng-if="!edit[$index]">{{item.required}}</span> -->
+	                    	<!-- <input type="checkbox"  /> -->
+	                    	<div class="checkbox checkbox-success remember">
+						      <input  type="checkbox" name="remember" ng-checked="item.required==true">
+						      <label ng-if="!edit[$index]" for="check-required"></label>
+						  </div>
+	                    </td>
+	                    <td>
+	                    	{{item.type}}
+	                    </td>
+	                    <td>
+	                    	{{item.multiple}}
+	                    </td>
+	                    <td>
+	                    	<span ng-if="!edit[$index] || !item.multiple">{{item.min_field}}</span>
+	                    	<input ng-if="edit[$index] && item.multiple" type="number" ng-model="fields[$index]['min_field']" />
+	                    	<span ng-show="validate[$index]['min_field']"  class="help-inline ng-invalid">{{validate[$index]['min_field']}}</span>
+	                    </td>
+	                    <td>
+	                    	<span ng-if="!edit[$index] || !item.multiple">{{item.max_field}}</span>
+	                    	<input ng-if="edit[$index] && item.multiple" type="number" ng-model="fields[$index]['max_field']" />
+	                    	<span ng-show="validate[$index]['max_field']"  class="help-inline ng-invalid">{{validate[$index]['max_field']}}</span>
+	                    </td>
+	                    <td style="width:80px">
+	                    	<button title="Edit" href="javascript:void(0)" ng-if="!edit[$index]" ng-click="showEditField($index)" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
+
+	                    	<button title="Done" href="javascript:void(0)" ng-if="edit[$index]" ng-click="editField($index, fields[$index])" class="btn btn-primary btn-xs"><i class="fa fa-check"></i> </button>
+
+	                    	<button title="Cancel" href="javascript:void(0)" ng-if="edit[$index]" ng-click="rollbackItemField($index, fields[$index]['variable'])" class="btn btn-primary btn-xs"><i class="fa fa-times"></i> </button>
+	                    </td>
+	                </tr>
+	            </tbody>
+            </table>
+            <div class="clearfix"></div>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+    	<button type="button" class="btn btn-default" ng-click="cancel()" data-dismiss="modal"> <i class="fa fa-times"></i> Cancel</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="checkValidateFields()"> <i class="fa fa-check"></i> Save</button>
+        <a id="submit-field" confirm="'Do you want to edit this template ?'" on-confirm="updateTemplateContent()"></a>
+      </div>
+    </div><!-- /.modal-content -->

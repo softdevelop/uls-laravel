@@ -1,0 +1,149 @@
+<?php $__env->startSection('title'); ?>
+	Campaign
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+
+<div class="wrap-branch" data-ng-controller="campaignCtrl">
+	<div class="top-content">
+	    <label class="c-m">Campaigns</label>
+	</div>
+	<div class="content campaign content-fix">
+
+		<select class="col-lg-5 col-md-5" name="typeFilterFirst" ng-model="firstSelect.typeFilterFirst" ng-change="filterFirstSelect(firstSelect.typeFilterFirst)" ng-init="firstSelect.typeFilterFirst = 0; filterFirstSelect(0)">
+            <option value="0">Clicks</option>
+            <option value="1">Impressions</option>
+            <option value="2">Conversions</option>
+            <option value="3">CTR</option>
+            <option value="4">Conv. Rate</option>
+            <option value="5">CPA</option>
+            <option value="6">Avg. Position</option>
+        </select>
+        <span class="col-lg-2 col-md-2 space-vertical text-center">vs.</span>
+        <select class="col-lg-5 col-md-5" name="typeFilterSecond" ng-model="secondSelect.typeFilterSecond" ng-change="filterSecondSelect(secondSelect.typeFilterSecond)" ng-init="secondSelect.typeFilterSecond = 1; filterSecondSelect(1)">
+            <option value="0">Clicks</option>
+            <option value="1">Impressions</option>
+            <option value="2">Conversions</option>
+            <option value="3">CTR</option>
+            <option value="4">Conv. Rate</option>
+            <option value="5">CPA</option>
+            <option value="6">Avg. Position</option>
+        </select>
+		<div class="clearfix"></div>
+
+		<div ng-show="isLoading || isLoadingChart" id="page-loading" class="overlay-loading">
+		  <div class="spin-box"></div>
+		</div>
+		
+		<div ng-show="!isLoading" id="container"></div>
+
+		<div class="clearfix"></div>
+
+		<form name="formSearchByDate" novalidate>
+			<div class="tile-title">
+				<!-- Input Date Available -->
+
+				<div class="col-sm-12 col-md-5 col-lg-4 form-group">
+				    <label class="control-label col-sm-3 col-md-5 col-lg-4 text-right padding-none f700" for="startDate">Start Date</label>
+		            <div class="control col-sm-9 col-md-7 col-lg-8 padding-none" ng-class="{true: 'error'}[submitted && formSearchByDate.startDate.$invalid]">
+		                <input  type="text" class="form-control" name="startDate"
+		                        datepicker-popup="{{format}}" 
+		                        ng-model="campaign.startDate" 
+		                        is-open="opened['startDate']" 
+		                        date-disabled="disabled(date, mode)" 
+		                        ng-click="open($event, 'startDate')" 
+		                        ng-required="true" 
+		                        close-text="close" />   
+		                <div class="pull-right">
+		                    <small class="help-inline" ng-show="submitted && formSearchByDate.startDate.$error.required">Start date is required.</small>
+		                </div>   
+		            </div>
+		            <div class="clearfix"></div>
+				</div>
+	            <!-- Input Date to-->
+
+	            <div class="col-sm-12 col-md-5 col-lg-4 form-group">
+	            	<label class="control-label col-sm-3 col-md-5 col-lg-4 text-right padding-none f700" for="endDate">End Date</label>
+		            <div class="control col-sm-9 col-md-7 col-lg-8 padding-none" ng-class="{true: 'error'}[submitted && formSearchByDate.endDate.$invalid]">
+		                <input  type="text" class="form-control" name="endDate"
+		                        datepicker-popup="{{format}}" 
+		                        ng-model="campaign.endDate" 
+		                        is-open="opened['endDate']" 
+		                        date-disabled="disabled(date, mode)" 
+		                        ng-click="open($event, 'endDate')"
+		                        ng-required="true"
+		                        close-text="close" />
+		                <div class="pull-right">
+		                    <small class="help-inline" ng-show="submitted && formSearchByDate.endDate.$error.required">End date is required.</small>
+		                    <small class="help-inline" ng-show="submitted && formSearchByDate.endDate.$error.bigger">End date is bigger Start date.</small>
+		                </div>  
+		            </div>
+		            <div class="clearfix"></div>
+		        </div>
+	            
+	            <div class="search-day col-sm-12 col-md-2 col-lg-4 form-group">
+	            	<?php /* <button class="btn btn-default" ng-click="getChartModalCampaign(formSearchByDate.$invalid)"><i class="fa fa-spinner">Chart</i></button> */ ?>
+	            	
+	            	<button ng-disable="isLoading" class="btn btn-primary" ng-click="getSearchModalCampaign(formSearchByDate.$invalid)">Search</button>	
+	            </div>
+			</div>
+		</form>
+
+		<div class="clearfix"></div>
+
+		<div class="title-table table-responsive">
+            <table ng-show="!isLoading" class="table table-bordered report-campaign" ng-table="tableParams">
+			    <tbody> 
+				    <tr ng-repeat="campaign in $data">
+				    	<td class="text-center icon"><i class="fa fa-circle"></i></td>
+		                <td sortable="'name'" data-title="'Name'" class="text-left name"><a href="/campaign/report-group/{{campaign['campaignId']}}" >{{campaign['name']}}</a></td>
+		                <td sortable="'Clicks'" data-title="'Clicks'" class="text-center">{{campaign['Clicks']}}</td>
+		                <td sortable="'Impressions'" data-title="'Impressions'" class="text-center">{{campaign['Impressions']}}</td>
+		                <td sortable="'CTR'" data-title="'CTR'" class="text-center">{{campaign['CTR']}}%</td>
+		                <td sortable="'Conversions'" data-title="'Conversions'" class="text-center">{{campaign['Conversions']}}</td>
+		                <td sortable="'AvgCPC'" data-title="'Conv.Rate'" class="text-center">{{campaign['AvgCPC']}}%</td>
+		                <td sortable="'CPA'" data-title="'CPA'" class="text-center">{{campaign['CPA']}}</td>
+		               
+		                <td sortable="'Avgposition'" data-title="'Avg. Position'" class="text-center">{{campaign['Avgposition']}}</td>
+					</tr>
+		            <tr class="total">
+		            	<td></td>
+		                <td class="text-left">Total - Search</td>
+		                <td class="text-center">{{total['Clicks']}}</td>
+		                <td class="text-center">{{total['Impressions']}}</td>
+		                <td class="text-center">{{total['CTR']}}%</td>
+		                <td class="text-center">{{total['Conversions']}}</td>
+		                <td class="text-center">{{total['AvgCPC']}}%</td>
+		                <td class="text-center">{{total['CPA']}}</td>
+		                <td class="text-center">{{total['Avgposition']}}</td>
+		            </tr>
+
+			    </tbody>
+		  	</table>
+		  	<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+	<script type="text/javascript">
+		window.endDate 	 = <?php echo json_encode($endDate); ?>;
+		window.startDate = <?php echo json_encode($startDate); ?>;
+		window.campaigns = <?php echo json_encode($campaigns); ?>;
+		window.total 	 = <?php echo json_encode($total); ?>;
+		window.dateRange = <?php echo json_encode($dateRange); ?>;
+		window.dataReportChart = <?php echo json_encode($dataReportChart); ?>;
+	</script>
+	
+	<?php if(!isProduction() && !isDev()): ?>
+		<?php echo Html::script('/app/components/campaign/CampaignService.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('/app/components/campaign/CampaignController.js?v='.getVersionScript()); ?>
+
+	<?php else: ?>
+		<script src="<?php echo e(elixir('app/pages/campaign-manager.js')); ?>"></script>
+	<?php endif; ?>
+<?php $__env->stopSection(); ?>
+
+
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

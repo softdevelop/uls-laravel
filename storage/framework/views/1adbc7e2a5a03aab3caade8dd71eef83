@@ -1,0 +1,198 @@
+<!-- Details pages -->
+<div class="visible-sm visible-xs" ng-if="isDetails">
+
+    <!-- Name -->
+    <div class="form-group">
+        <label class="control-label hightlight-lb" for="template"><?php echo e(trans('cms_page/page-detail.name')); ?>:<small class="text-require"> *</small></label>
+        <input class="form-control" name="name" ng-model="page.name" ng-disabled ="isDisable" type="text"
+                ng-change="validateCurrentForm(formData.$invalid)"
+                ng-maxlength=255
+                ng-required="true"/>
+        <div class="pull-left">
+            <small class="help-inline" ng-show="submitted && formData.name.$error.required"><?php echo e(trans('cms_page/page-detail.name_required')); ?>.</small>
+            <small class="help-inline" ng-show="submitted && pageNameUnique"><?php echo e(trans('cms_page/page-detail.name_existed')); ?>.</small>
+            <small class="help-inline" ng-show="submitted && formData.name.$error.maxlength"><?php echo e(trans('cms_page/page-detail.name_max_length')); ?></small>
+        </div>
+    </div>
+
+    <!-- Parent -->
+    <div class="form-group">
+        <label class="control-label hightlight-lb" for="template"><?php echo e(trans('cms_page/page-detail.type')); ?></label>
+        <select  name="parent_id" ng-disabled ="isDisable" class="form-control margin-none" ng-options="key as value for (key , value) in parents" ng-model="page.parent_id">
+        </select>
+    </div>
+    <!-- URL -->
+    <div class="form-group">
+
+        <label class="control-label hightlight-lb" for="template"><?php echo e(trans('cms_page/page-detail.url')); ?>:<small class="text-require"> *</small></label>
+
+        <div class="input-group full-width">
+          <?php /* <span class="fix-addon input-group-addon" ng-if="page.parent_id!=0&&page.parent_id" id="basic-addon3">/{{parents[page.parent_id]}}/</span> */ ?>
+          <span class="fix-addon input-group-addon" id="basic-addon3">{{page.parentUrl}}</span>
+          <input ng-change="validateCurrentForm(formData.$invalid)" ng-disabled ="isDisable" ng-maxlength=255 class="form-control" type="text" name="url" ng-model="page.url" ng-required="true" convent-text-to-lowercase />
+        </div>
+        <div class="pull-left">
+            <small class="help-inline" ng-show="submitted && formData.url.$error.required"><?php echo e(trans('cms_page/page-detail.url_required')); ?>.</small>
+            <small class="help-inline" ng-show="submitted && pageUrlUnique"><?php echo e(trans('cms_page/page-detail.url_existed')); ?>.</small>
+            <small class="help-inline" ng-show="submitted && errorTypeUrl"><?php echo e(trans('cms_page/page-detail.url_invalid')); ?></small>
+            <small class="help-inline" ng-show="submitted && formData.url.$error.maxlength"><?php echo e(trans('cms_page/page-detail.url_maxlength')); ?></small>
+        </div>
+    </div>
+   <!-- Input Template-->
+    <div class="form-group">
+
+        <label class="hightlight-lb" for="template">
+            <?php echo e(trans('cms_page/page-detail.template')); ?>
+
+            <!--: <span class="text-require"> *</span> -->
+        </label>
+
+        <select name="template" class="form-control" ng-disabled ="isDisable" ng-model="page.template" ng-change="changeTemplate(page.template)" id="template" ng-options="key as value.name for (key, value) in templates">
+          <option disabled="true" value=""><?php echo e(trans('cms_page/page-detail.select_a_template')); ?></option>
+        </select>
+
+        <div class="pull-left">
+            <!-- <small class="help-inline" ng-show="submitted && formData.template.$error.required">Template is required field.</small> -->
+        </div>
+
+    </div>
+     <!-- Input Template-->
+    <div class="form-group">
+
+        <label class="hightlight-lb" for="version">
+            <?php echo e(trans('cms_page/page-detail.version')); ?>
+
+            <!--: <span class="text-require"> *</span> -->
+        </label>
+
+     <select ng-model="page.version" ng-disabled ="isDisable" >
+            <option  ng-repeat="(key, value) in versions" value="{{value | number:1}}">{{value | number:1}}</option>
+        </select>
+
+        <div class="pull-left">
+            <!-- <small class="help-inline" ng-show="submitted && formData.template.$error.required">Template is required field.</small> -->
+        </div>
+
+    </div>
+
+
+</div>
+<!-- Details pages -->
+<div class="hidden-sm hidden-xs" ng-if="isDetails">
+    <div class="form-group">
+        <!-- Name -->
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="input-group">
+                <span class="input-group-addon">
+                  <label class="control-label hightlight-lb" for="template"><?php echo e(trans('cms_page/page-detail.name')); ?>:<small class="text-require"> *</small></label>
+                </span>
+                <input class="form-control"  ng-class="{'no-drop':isDisable}" ng-maxlength=255 ng-disabled ="isDisable" ng-change="validateCurrentForm(formData.$invalid)" type="text" name="name" ng-model="page.name" ng-required="true"/>
+                <div class="pull-left">
+                    <small class="help-inline" ng-show="submitted && formData.name.$error.required"><?php echo e(trans('cms_page/page-detail.name_required')); ?>.</small>
+                    <small class="help-inline" ng-show="submitted && pageNameUnique"><?php echo e(trans('cms_page/page-detail.name_existed')); ?>.</small>
+                    <small class="help-inline" ng-show="submitted && formData.name.$error.maxlength"><?php echo e(trans('cms_page/page-detail.name_max_length')); ?></small>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Parent -->
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="input-group">
+                <span class="input-group-addon">
+                  <label class="control-label hightlight-lb" for="template"><?php echo e(trans('cms_page/page-detail.type')); ?></label>
+                </span>
+                <select-level items="folderPages" disable-click = "isDisable?'disabled':''" text="Select Page" item-choose="page.parent_id" name="folder" text-filter="Filter folder" current-page="page" ng-model="page.parent_id" ng-required = "true" on-click="changePageType(pageId)" chage-type="true"></select-level>
+            </div>
+        </div>
+
+        <!-- URL -->
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="input-group">
+                <span class="input-group-addon">
+                  <label class="control-label hightlight-lb" for="template"><?php echo e(trans('cms_page/page-detail.url')); ?>:<small class="text-require"> *</small></label>
+                </span>
+
+                <div class="input-group full-width">
+                  <?php /* <span class="fix-addon input-group-addon" ng-if="page.parent_id!=0&&page.parent_id" id="basic-addon3">/{{parents[page.parent_id]}}/</span> */ ?>
+
+                  <span class="fix-addon input-group-addon" id="basic-addon3">
+                        <div class="failse-hover">
+                            <span>{{page.parentUrl}}</span>
+                        </div>
+
+                        <div class="wrap-tool-tip">
+                            <div class="tool-tip">
+                              {{page.parentUrl}}
+                              <div class="arrow-down"></div>
+                            </div>
+                        </div>
+
+                  </span>
+
+                  <input ng-maxlength=255  ng-class="{'no-drop':isDisable}" ng-disabled ="isDisable" ng-change="validateCurrentForm(formData.$invalid)" class="form-control"  ng-class="{'no-drop':isDisable}" type="text" name="url" ng-model="page.url" ng-required="true" convent-text-to-lowercase/>
+                </div>
+
+                <div class="pull-left">
+                    <small class="help-inline" ng-show="submitted && formData.url.$error.required"><?php echo e(trans('cms_page/page-detail.url_required')); ?>.</small>
+                    <small class="help-inline" ng-show="submitted && pageUrlUnique"><?php echo e(trans('cms_page/page-detail.url_existed')); ?>.</small>
+                    <small class="help-inline" ng-show="submitted && errorTypeUrl"><?php echo e(trans('cms_page/page-detail.url_invalid')); ?></small>
+                    <small class="help-inline" ng-show="submitted && formData.url.$error.maxlength"><?php echo e(trans('cms_page/page-detail.url_maxlength')); ?></small>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+
+   <!-- Input Template-->
+   <div class="form-group">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="input-group">
+                <span class="input-group-addon">
+                  <label class="hightlight-lb" for="template">
+                        <?php echo e(trans('cms_page/page-detail.template')); ?>
+
+                        <!--: <span class="text-require"> *</span> -->
+                  </label>
+                </span>
+
+                <div class="input-group">
+                  <select name="template"  ng-class="{'no-drop':isDisable}"  ng-disabled ="isDisable" class="form-control" ng-model="page.template" ng-change="changeTemplate(page.template)" id="template" ng-options="key as value.name for (key, value) in templates">
+                      <option disabled="true" value=""><?php echo e(trans('cms_page/page-detail.select_a_template')); ?></option>
+                  </select>
+                  <div class="pull-left">
+                    <!-- <small class="help-inline" ng-show="submitted && formData.template.$error.required">Template is required field.</small> -->
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Input version-->
+   <div class="form-group">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="input-group">
+                <span class="input-group-addon">
+                  <label class="hightlight-lb" for="version">
+                        <?php echo e(trans('cms_page/page-detail.version')); ?>
+
+                        <!--: <span class="text-require"> *</span> -->
+                  </label>
+                </span>
+
+                <div class="input-group">
+                   <select ng-model="page.version" ng-disabled ="isDisable" >
+                        <option  ng-repeat="(key, value) in versions" value="{{value | number:1}}">{{value | number:1}}</option>
+                    </select>
+                  <div class="pull-left">
+                    <!-- <small class="help-inline" ng-show="submitted && formData.template.$error.required">Template is required field.</small> -->
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+</div>

@@ -1,0 +1,77 @@
+$break-small-320: 320px;
+$break-small-355: 355px;
+$break-small-360: 360px;
+$break-small-375: 375px;
+$break-small-425: 425px;
+$break-small-460: 460px;
+$break-small-480: 480px;
+$break-small-768: 768px;
+
+$break-medium-992: 992px;
+$break-medium-1024: 1024px;
+$break-medium-1200: 1200px;
+
+$break-large-1440: 1440px;
+$break-large-1920: 1920px;
+$break-large-2560: 2560px;
+
+@mixin respond-to($media) {
+	// screen from 0 to 320px
+  @if $media == small-320 {
+    @media only screen and (max-width: $break-small-320) { @content; }
+  }
+
+	// screen 321px to 375px
+  @else if $media == small-375 {
+    @media only screen and (min-width: $break-small-320 + 1) and (max-width: $break-small-375) { @content; }
+  }
+
+  	// screen 374px to 425px
+  @else if $media == small-425 {
+    @media only screen and (min-width: $break-small-375 + 1) and (max-width: $break-small-425) { @content; }
+  }
+
+  // screen 424px to 768px
+  @else if $media == small-768 {
+    @media only screen and (min-width: $break-small-425 + 1) and (max-width: $break-small-768) { @content; }
+  }
+
+  // screen 769px to 992px
+  @else if $media == medium-992 {
+    @media only screen and (min-width: $break-small-768 + 1) and (max-width: $break-medium-992) { @content; }
+  }
+
+  // screen 993px to 1024px
+  @else if $media == medium-1024 {
+    @media only screen and (min-width: $break-medium-992 + 1) and (max-width: $break-medium-1024) { @content; }
+  }
+
+  // screen 1025 to 1200px
+  @else if $media == medium-1200 {
+    @media only screen and (min-width: $break-medium-1024 + 1) and (max-width: $break-medium-1200) { @content; }
+  }
+
+   // screen 1201px to 1440px
+  @else if $media == large-1440 {
+    @media only screen and (min-width: $break-large-1200 + 1) and (max-width: $break-large-1440) { @content; }
+  }
+
+   // screen 1441px to 1920px
+  @else if $media == large-1920 {
+    @media only screen and (min-width: $break-large-1440 + 1) and (max-width: $break-large-1920) { @content; }
+  }
+
+  // screen 2560px to down
+  @else if $media == large-2560 {
+    @media only screen and (max-width: $break-large-2560){ @content; }
+  }
+	
+}
+
+// hidden sm to down
+.hidden-sm-down{
+    @media only screen and(max-width: $break-medium-992 - 1){
+        display: none!important;
+    }
+}
+// end

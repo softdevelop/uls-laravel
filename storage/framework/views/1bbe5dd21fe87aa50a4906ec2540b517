@@ -1,0 +1,496 @@
+<!doctype html>
+<html class="no-js" lang="">
+		<head>
+    		<title><?php echo $_5740aa3aae9d5a0d7a485f10_field_title; ?></title>
+    		<meta charset="utf-8">
+    		<meta name="description" content="<?php echo $_5740aa3aae9d5a0d7a485f10_field_metadescription; ?>">
+	  		<meta name="keywords" content="<?php echo $_5740aa3aae9d5a0d7a485f10_field_metakeywords; ?>">
+    		<meta name="viewport" content="width=device-width, initial-scale=1">
+			<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>" />
+				<link rel="shortcut icon" href="" >
+				<link rel="apple-touch-icon" href="">
+    		<link type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic" rel="stylesheet" type="text/css">
+				<link type="text/css" rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+				<link type="text/css" rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/css/lightslider.min.css">
+				<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.1/magnific-popup.min.css">
+			
+			<link type="text/css" rel="stylesheet" href="/bower_components/angular-xeditable/dist/css/xeditable.css">
+
+
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin base.css Asset */ ?>http://dev.cdn.ulsinc.com/assets/css/57295594ae9d5a38e97cdd51/base.css<?php /* End base.css Asset */ ?>">
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin main-new.css Asset */ ?>http://dev.cdn.ulsinc.com/assets/css/574077b8ae9d5a12d2125acc/main-new.css<?php /* End main-new.css Asset */ ?>">
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin custom.css Asset */ ?>http://dev.cdn.ulsinc.com/assets/css/57295547ae9d5a38db022341/custom.css<?php /* End custom.css Asset */ ?>">
+				<link type="text/css" rel="stylesheet" href="http://cdn.ulsinc.com/assets/css/572c52d60454aa0629769655/search.css?v=1">
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin main-new.css Asset */ ?>http://dev.cdn.ulsinc.com/assets/css/56eb796fdf35769f1804449b/main.47338d68.css<?php /* End main-new.css Asset */ ?>">
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin ui.fancytree.min.css Asset */ ?>http://dev.cdn.ulsinc.com/assets/css/5740bbf8ae9d5a64c34c1552/ui.fancytree.min.css<?php /* End ui.fancytree.min.css Asset */ ?>">
+
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin main-v2.89551f27.css Asset */ ?>http://dev.cdn.ulsinc.com/assets/css/574077cfae9d5a10892471f1/main-v2.47338d68.css<?php /* End main-v2.89551f27.css Asset */ ?>">
+				
+				
+		</head>
+		
+
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+			<?php /* Begin Main Header Block */ ?><?php /* End Main Header Block */ ?>			
+			<?php /* Begin Main Navigation Block */ ?><?php /* End Main Navigation Block */ ?>
+
+    <div id="content">
+           
+
+	<div id="guide-container" ng-app="databaseManager" ng-controller="GuideConfiguratorController" class="hidden">
+	  	<section>
+				<?php /* Begin Report Block */ ?><section class="config">
+  
+  <div class="container" ng-if="dataInput['platform']">
+    <h2 class="text-material-brand space-large-title big-border margin-top-40">Laser System Report</h2>
+    <h4 class="text-material-brand margin-bottom-20"> Congratulations, you have completed building your laser system!</h4>
+    <p class="text-long-normal-2 line-height-30 margin-bottom-30">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea cumque itaque culpa non! Beatae eos fugiat doloremque deleniti quibusdam, quam et suscipit culpa, fugit doloru
+    </p>
+
+    <h3 class="text-material-brand space-large-title">Suggested Laser System Configuration</h3>
+
+    <div class="top-step margin-bottom-30">
+      <div class="col-md-4 margin-bottom-15">
+        <div class="img">
+              <a href="{{dataInput.platform.linkImagePlatform}}">
+              <img width="100%" src="{{dataInput.platform.linkImagePlatform}}" alt="img platform">
+            </a>
+        </div>
+      </div>
+      <div class="col-md-5 margin-bottom-15">
+        <h4 class="text-blue margin-bottom-15">{{ dataInput.platform.name }}</h4>
+        <p class="text-long-normal-2 line-height-30">
+          <span ng-bind-html="dataInput.platform.description | htmlize"></span>
+        </p>
+        <p class="line-height-30 margin-bottom-15">
+          <a href="">Technical Specifications</a> or <a href="">Download Brochure</a>
+        </p>
+      </div>
+
+      <div class="col-md-3">
+        <button class="btn btn-blue btn-full-list">Contact Us</button>
+        <button class="btn btn-blue btn-full-list">Email Report To Me</button>
+        <button class="btn btn-blue btn-full-list">Test My Material</button>
+        <button class="btn btn-blue btn-full-list">Find A Representative</button>
+      </div>
+      <div class="clearfix"></div>
+
+        <div class="box-table margin-bottom-15">
+          <h4 class="header-blue text-center">Laser Power</h4>
+          <table class="table-border">
+            <thead>
+              <tr>
+                <th><h5>Laser Power</h5></th>
+                <th><h5>Laser Requirements</h5></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="line-height-30">150 watts</div>
+                </td>
+                <td class="line-height-30 ">
+                  <div class="line-height-30">A150 watts laser is the minimum power required to cut Polypropylene with a maximum cutting thickness of 0.5in.</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+     
+
+      <div class="group-box">
+        <h3 class="text-material-brand margin-bottom-20">Selected Options</h3>
+        <div class="box-table table-responsive">
+            <table class="table table-border">
+              <thead class="header-blue">
+                <tr>
+                  <th>Accessory</th>
+                  <th>Desciption</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat="(key, value) in dataInput['selectedAccessories']">
+                    <td class="width-300">
+                      <div class="half-block"><strong>{{value['name']}}</strong></div>
+                      <div class="half-block">
+                        <img width="100%" src="{{value['linkImage']}}">
+                      </div>
+                    </td>
+                    <td>
+                           <p ng-bind-html="value['description'] | htmlize"></p>
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+
+      <div class="group-box">
+        <h3 class="text-material-brand margin-bottom-20">Next Steps</h3>
+        <p class="text-strong margin-bottom-10">I want to:</p>
+        <ul class="list-style-decoration text-long-normal-2">
+          <li class="underline">Contact a ULS special to review my laser system configuration and get pricing</li>
+          <li class="underline">Test my Material</li>
+          <li class="underline">See a demonstration of this sytem</li>
+          <li class="underline">Recive a copy of this report</li>
+          <li class="underline">Ask a question</li>
+        </ul>
+      </div>
+
+      <div class="group-box">
+        <h3 class="text-material-brand margin-bottom-20">Input Summary</h3>
+        <div class="table-list-select-material single">
+
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+              <thead class="header-blue">
+                <tr>
+
+                  <th>Material</th>
+                  <th class="background-highlight">Laser Cutting</th>
+                  <th class="background-highlight">Cutting Thickness (MIN)</th>
+                  <th class="background-highlight">Cutting Thickness (MAX)</th>
+                  <th>Laser Engraving</th>
+                  <th>Laser Marking</th>
+                  <th>User Defined Process</th>
+                  <th>Part / Material Size A x B x C</th>
+                  <th>Suggested Power (MIN)</th>
+                  <th>Suggested Wavelength</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="(key, item) in dataInput['materials']">
+                  <td>
+                      {{item['name']}}
+                  </td>
+
+                  <td class="background-highlight">
+                      <img ng-if="item['content']['cut']" src="<?php /* Begin check.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/configurator/5740a937ae9d5a51d74fb4a1/check.png<?php /* End check.png Asset */ ?>">
+                  </td>
+
+                  <td class="background-highlight">
+                        <span ng-if="item.content.min_thickness">{{item.content.min_thickness }} {{config.content.unit == 'inches' ? ' in' : ' mm'}}</span>
+                  </td>
+
+                  <td class="background-highlight">
+                        <span ng-if="item.content.max_thickness">{{item.content.max_thickness }} {{config.content.unit == 'inches' ? ' in' : ' mm'}}</span>
+                  </td>
+
+                  <td>
+                    <div>
+                        <span ng-if="item.content.engraving"><img src="<?php /* Begin check.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/configurator/5740a937ae9d5a51d74fb4a1/check.png<?php /* End check.png Asset */ ?>"></span>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div>
+                      <span ng-if="item.content.marking"><img src="<?php /* Begin check.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/configurator/5740a937ae9d5a51d74fb4a1/check.png<?php /* End check.png Asset */ ?>"></span>
+                    </div>
+                  </td>
+
+                  <td>
+                      <span ng-if="item.content.other"><img src="<?php /* Begin check.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/configurator/5740a937ae9d5a51d74fb4a1/check.png<?php /* End check.png Asset */ ?>"></span>
+                  </td>
+
+                  <td>
+                       <span ng-if="item.content.width && item.content.height && item.content.depth">
+                     		 {{item.content.width}} {{item.content.unit == 'inches' ? ' in' : ' mm'}} x {{item.content.height}} {{item.content.unit == 'inches' ? ' in' : ' mm'}} x {{item.content.depth}} {{item.content.unit == 'inches' ? ' in' : ' mm'}}
+                  	  </span>
+                  </td>
+                   <td>
+                        {{item.content.suggested_power}}
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="group-box">
+        <h3 class="text-material-brand margin-bottom-20">Additional Information</h3>
+        <ul class="list-style-decoration text-long-normal-2">
+          <li>The laser system be userd for visual applications</li>
+          <li>Ethe exected frequency of use is one shift (8-10 hours per day)</li>
+          <li>Budger is most important to me.</li>
+
+        </ul>
+      </div>
+
+      <p class="text-uppercase text-long-normal-2">Report generated 5/12/2016</p>
+
+    </div>
+
+    <!-- end -->
+  </div>
+
+
+  <div class="container configuration-was-recomended" class="container" ng-if="!dataInput['platform']">
+    <div class="text-header-normal margin-bottom-10 margin-top-40">
+      No Configuration Was Recomended
+    </div>
+
+    <p class="text-long-normal-2 margin-bottom-40">
+      A Universal Expert will need to speak with you to understand the best system to meet your unique needs. Please enter your <span class="text-red-hightlight">contact</span> information so that a Universal expert may contact at your convenience.
+    </p>
+    
+    <div class="col-md-9 padding-0">
+
+      <div class="table-list-select-material single float-none ">
+        <div class="title-page-table">
+          <h3 class="title-single-table font-size-18">
+            Material Processing Detail
+          </h3>
+        </div>
+         <div class="table-responsive font-size-13">
+            <table class="table table-striped table-bordered">
+              <thead class="header-blue">
+                <tr>
+
+                  <th>Material</th>
+                  <th class="background-highlight">Laser Cutting</th>
+                  <th class="background-highlight">Cutting Thickness (MIN)</th>
+                  <th class="background-highlight">Cutting Thickness (MAX)</th>
+                  <th>Laser Engraving</th>
+                  <th>Laser Marking</th>
+                  <th>User Defined Process</th>
+                  <th>Part / Material Size A x B x C</th>
+                  <th>Suggested Power (MIN)</th>
+                  <th>Suggested Wavelength</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="(key, item) in dataInput['materials']">
+                  <td>
+                      {{item['name']}}
+                  </td>
+
+                  <td class="background-highlight">
+                      <img ng-if="item.content.cut" src="<?php /* Begin check.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/configurator/5740a937ae9d5a51d74fb4a1/check.png<?php /* End check.png Asset */ ?>">
+                  </td>
+
+                  <td class="background-highlight" >
+                    	<span ng-if="item.content.min_thickness">{{item.content.min_thickness }} {{config.content.unit == 'inches' ? ' in' : ' mm'}}</span>
+                      
+                  </td>
+
+                  <td class="background-highlight">
+                    	<span ng-if="item.content.max_thickness">
+                      			{{ item.content.max_thickness}} {{config.content.unit == 'inches' ? ' in' : ' mm'}}
+                   		 </span>
+                  </td>
+
+                  <td>
+                    <div>
+                        <span ng-if="item.content.engraving"><img src="<?php /* Begin check.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/configurator/5740a937ae9d5a51d74fb4a1/check.png<?php /* End check.png Asset */ ?>"></span>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div>
+                      <span ng-if="item.content.marking"><img src="<?php /* Begin check.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/configurator/5740a937ae9d5a51d74fb4a1/check.png<?php /* End check.png Asset */ ?>"></span>
+                    </div>
+                  </td>
+
+                  <td>
+                      <span ng-if="item.content.other"><img src="<?php /* Begin check.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/configurator/5740a937ae9d5a51d74fb4a1/check.png<?php /* End check.png Asset */ ?>"></span>
+                  </td>
+
+                  <td>
+                    	<span ng-if="item.content.width && item.content.height && item.content.depth">
+                     		 {{item.content.width}} {{item.content.unit == 'inches' ? ' in' : ' mm'}} x {{item.content.height}} {{item.content.unit == 'inches' ? ' in' : ' mm'}} x {{item.content.depth}} {{item.content.unit == 'inches' ? ' in' : ' mm'}}
+                  	  </span>
+                  </td>
+                  <td>
+                      {{item.content.content.suggested_power}}
+                  </td>
+                  <td>
+                      
+                  </td>
+
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+      </div>
+
+    </div>
+
+    
+    <div class="top-step-right col-md-3 margin-bottom-15">
+      <button class="btn btn-blue btn-full-list">Contact Us</button>
+      <button class="btn btn-blue btn-full-list" ng-click="emailReportToMe()">Email Report To Me</button>
+      <button class="btn btn-blue btn-full-list" ng-click="backToStep1()">Back To Step 1</button>
+    </div>
+
+    <div class="clearfix"></div>
+  </div>
+</section>
+<?php /* End Report Block */ ?>
+	  	</section>
+	</div>
+	<script type="text/javascript" >
+      	window.dataInput = <?php echo json_encode($data); ?>;
+	</script>
+
+    </div>
+    <footer>
+				<?php /* Begin Footer Navigation Block */ ?><section class="footer-navigation top">
+	<div class="container">
+		<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 list-navigation">
+			<ul class="list-unstyled">
+            	<li><strong><a href="">About Us</a></strong></li>
+				<li><a href="<?php /* Begin ULS History Link */ ?>http://dev.demo.ulsinc.com<?php /* End ULS History Link */ ?>">History</a></li>
+                <li><a href="<?php /* Begin Newsroom Link */ ?>http://dev.demo.ulsinc.com<?php /* End Newsroom Link */ ?>">News and Events</a></li>
+			</ul>
+            <div class="clearfix"></div>
+		</div>
+      	<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 list-navigation">
+			<ul class="list-unstyled">
+				<li><strong><a href="">Products</a></strong> </li>
+                <li><a href="<?php /* Begin Platforms Link */ ?>http://dev.demo.ulsinc.com<?php /* End Platforms Link */ ?>">Platforms</a></li>
+                <li><a href="<?php /* Begin Configure Your Laser System Link */ ?>http://dev.demo.ulsinc.com<?php /* End Configure Your Laser System Link */ ?>">Configure Your System</a></li>
+                <li><a href="<?php /* Begin Discover ULS Innovations and Benefits Link */ ?>http://dev.demo.ulsinc.com<?php /* End Discover ULS Innovations and Benefits Link */ ?>">ULS Technology</a></li>
+
+			</ul>
+            <div class="clearfix"></div>
+		</div>
+      	<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 list-navigation">
+			<ul class="list-unstyled">
+              	<li><strong><a href="">Materials</a></strong> </li>
+				<li><a href="<?php /* Begin Wood Link */ ?>http://dev.demo.ulsinc.com<?php /* End Wood Link */ ?>">Wood</a></li>
+                <li><a href="<?php /* Begin Microsurface Plastic Link */ ?>http://dev.demo.ulsinc.com<?php /* End Microsurface Plastic Link */ ?>">Microsurface Plastic</a></li>
+                <li><a href="<?php /* Begin MPF Link */ ?>http://dev.demo.ulsinc.com<?php /* End MPF Link */ ?>">3M™ Microcellular Polyurethane Foam</a></li>
+                <li><a href="<?php /* Begin 3M Protection Film Link */ ?>http://dev.demo.ulsinc.com<?php /* End 3M Protection Film Link */ ?>">3M™ Protection Film</a></li>
+                <li><a href="<?php /* Begin Halar Link */ ?>http://dev.demo.ulsinc.com<?php /* End Halar Link */ ?>">Halar®</a></li>
+                <li><a href="<?php /* Begin Kapton Link */ ?>http://dev.demo.ulsinc.com<?php /* End Kapton Link */ ?>">Kapton® Polyimide Film</a></li>
+                <li><a href="<?php /* Begin Viton Link */ ?>http://dev.demo.ulsinc.com<?php /* End Viton Link */ ?>">Viton® Fluoroelastomer</a></li>
+                <li><a href="<?php /* Begin Teflon Link */ ?>http://dev.demo.ulsinc.com<?php /* End Teflon Link */ ?>">Teflon® Fluoropolymer</a></li>
+			</ul>
+            <div class="clearfix"></div>
+      	</div>      
+      	<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 list-navigation">
+			<ul class="list-unstyled">
+				<li><strong><a href="">Resources</a></strong></li>
+				<li><a href="<?php /* Begin Advanced Materials Processing Center Link */ ?>http://dev.demo.ulsinc.com<?php /* End Advanced Materials Processing Center Link */ ?>">Advanced Materials Processing Center</a></li>                  
+                <li><a href="<?php /* Begin White Papers (Landing) Link */ ?>http://dev.demo.ulsinc.com<?php /* End White Papers (Landing) Link */ ?>">White Papers</a></li>
+			</ul>
+            <div class="clearfix"></div>
+      	</div>
+		<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 list-navigation">
+			<ul class="list-unstyled">
+				<li><strong><a href="">How to Buy</a></strong></li>
+				<li><a href="<?php /* Begin Find a Representative Link */ ?>http://dev.demo.ulsinc.com<?php /* End Find a Representative Link */ ?>">Find a Representative</a></li>
+              	<li><a href="<?php /* Begin Portal 3: Discover > How Your Organization Can Benefit from Laser Technology Link */ ?>http://dev.demo.ulsinc.com<?php /* End Portal 3: Discover > How Your Organization Can Benefit from Laser Technology Link */ ?>">Evaluate My Business</a></li>
+			</ul>
+            <div class="clearfix"></div>
+      	</div>
+		<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 list-navigation">
+			<ul class="list-unstyled">
+				<li><strong><a href="">Support</a></strong></li>
+                <li><a href="<?php /* Begin Support Programs Link */ ?>http://dev.demo.ulsinc.com<?php /* End Support Programs Link */ ?>">Support Programs</a></li>
+          	    <li><a href="<?php /* Begin Software Downloads Link */ ?>http://dev.demo.ulsinc.com<?php /* End Software Downloads Link */ ?>">Software Downloads</a></li>                
+                <li><a href="<?php /* Begin Contact Support Link */ ?>http://dev.demo.ulsinc.com<?php /* End Contact Support Link */ ?>">Contact Support</a></li>
+			</ul>
+            <div class="clearfix"></div>
+		</div>
+		<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 list-navigation">
+			<ul class="list-unstyled">
+				<li><strong><a href="">Contact</a></strong></li>
+          	    <li><a href="<?php /* Begin Contact Us Link */ ?>http://dev.demo.ulsinc.com<?php /* End Contact Us Link */ ?>">Contact Us</a></li>
+              	<li><a href="<?php /* Begin Find a Representative Link */ ?>http://dev.demo.ulsinc.com<?php /* End Find a Representative Link */ ?>">Find a Representative</a></li>
+			</ul>
+            <div class="clearfix"></div>
+		</div>      
+    	<div class="clearfix"></div>
+    </div>
+</section><?php /* End Footer Navigation Block */ ?>
+				<?php /* Begin Footer Copyright Block */ ?>    <section class="copyright bottom">
+      <div class="container text-center">
+		<!-- socsial -->
+                <div class="social">
+                    <a href=""><img src="<?php /* Begin google_logo.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/57297b1eae9d5a46ed5e32f1/google_logo.png<?php /* End google_logo.png Asset */ ?>" alt="google+"></a>
+                    <a href=""><img src="<?php /* Begin linkedin_logo.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/57297b39ae9d5a470025fd29/linkedin_logo.png<?php /* End linkedin_logo.png Asset */ ?>" alt="linkedln+"></a>
+                </div>
+                <!-- the end -->
+
+                <!-- laguage -->
+                <div class="language-footer">
+                    <img src="<?php /* Begin united-states-flag-icon.png Asset */ ?><?php /* End united-states-flag-icon.png Asset */ ?>" alt="united-states-flag-icon">
+                    <span>United States - Change Country or Region</span>
+                </div>
+                <!-- the end -->
+        <div class="logo-small">
+          <h5><img src="<?php /* Begin uls_logo_small.png Asset */ ?>http://dev.cdn.ulsinc.com/assets/images/logo/57295e12ae9d5a419104c9f1/uls_logo_small.png<?php /* End uls_logo_small.png Asset */ ?>" alt="logo"></h5>
+        </div>
+        
+        <!-- copyright -->
+        <div class="copyright-content">
+          
+          <p class="copyright-text">© <?php echo date("Y");?> Universal Laser Systems, Inc. All rights reserved. Universal Laser Systems logo and name are registered trademarks of Universal Laser Systems, Inc. All other company and product names are trademarks or registered trademarks of their respective companies.</p>
+
+          <ul class="copyright-link list-inline">
+            <li>
+              <a href="<?php /* Begin Terms of Use Link */ ?>http://dev.demo.ulsinc.com<?php /* End Terms of Use Link */ ?>">Terms of Use </a> |    
+            </li>
+            <li>
+              <a href="<?php /* Begin Privacy Policy Link */ ?>http://dev.demo.ulsinc.com<?php /* End Privacy Policy Link */ ?>">Privacy Policy</a>  |
+            </li>
+            <li>
+              <a href="<?php /* Begin Configure Your Laser System Link */ ?>http://dev.demo.ulsinc.com<?php /* End Configure Your Laser System Link */ ?>">Configure Your Laser System </a>
+            </li>
+          </ul>
+
+        </div>
+        <!-- the end -->
+      </div>
+    </section><?php /* End Footer Copyright Block */ ?>
+	</footer>
+
+			<script type="text/javascript" src="<?php /* Begin vendor.fe961997.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/56eb7d42df3576830d04449d/vendor.37d58f8f.js<?php /* End vendor.fe961997.js Asset */ ?>"></script>
+			<script type="text/javascript" src="<?php /* Begin plugins.bde8e777.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/56eb79e8df3576a00704449b/plugins.bde8e777.js<?php /* End plugins.bde8e777.js Asset */ ?>"></script>
+		   
+    		<script type="text/javascript" src="https://www.google-analytics.com/analytics.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/js/lightslider.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/js/lightslider.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script>
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw5uR1gaKG3AaDuDrVYa6QaE47n03Td_o&callback=initMap"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js"></script>
+
+			
+			 <script type="text/javascript" src="<?php /* Begin main.38388ae6.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/56eb79f8df3576460704449c/main.446b9e46.js<?php /* End main.38388ae6.js Asset */ ?>"></script>
+			  <script src="http://cdn.ulsinc.com/assets/js/572c50030454aa1119758f41/search.js?v=1"></script>
+
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-resource.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap-tpls.min.js"></script>
+  		<script type="text/javascript" src="/bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+  		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.fancytree/2.10.2/jquery.fancytree-all.min.js"></script>
+  		<script type="text/javascript" src="<?php /* Begin ng-table.min.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/configurator/5740bda1ae9d5a581156008c/ng-table.min.js<?php /* End ng-table.min.js Asset */ ?>"></script>
+	    <script type="text/javascript" src="<?php /* Begin guideconfiguratorservice.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/configurator/5740725cae9d5a0954599068/guideconfiguratorservice.js<?php /* End guideconfiguratorservice.js Asset */ ?>"></script>
+	  	 <script type="text/javascript" src="<?php /* Begin guideconfiguratorcontroller.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/configurator/57407274ae9d5a2d743f4a01/js.js<?php /* End guideconfiguratorcontroller.js Asset */ ?>?v=1"></script>
+	<script type="text/javascript" src="<?php /* Begin configuratorservice.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/configurator/5740a6a1ae9d5a54f9527082/configuratorservice.js<?php /* End configuratorservice.js Asset */ ?>"></script>
+
+     <script>
+						$(document).ready(function () {
+								$('#tipue_drop_input').tipuedrop();
+						});
+		  </script>
+  </body>
+
+
+</html>

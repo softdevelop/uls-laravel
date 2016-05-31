@@ -1,0 +1,65 @@
+<?php $imageRight = getObjectInfoAssets('imageRight','asset', $_56ce48f2d6479193388b4567_field_imageRight); ?>
+<?php $imageLeft = getObjectInfoAssets('imageLeft','asset', $_56ce48f2d6479193388b4567_field_imageLeft); ?>
+<div style='display: none'>
+<?php echo $_56ce48f2d6479193388b4567_field_imageRight; ?>
+
+<?php echo $_56ce48f2d6479193388b4567_field_imageLeft; ?>
+
+</div>
+<?php if($imageRight['src'] !== "" OR $_56ce48f2d6479193388b4567_field_videoRight !== ""): ?>
+<section class="section-right-image container100">
+<?php elseif($imageLeft['src'] !== "" OR $_56ce48f2d6479193388b4567_field_videoLeft !== ""): ?>
+<section class="section-left-image container100">
+<?php else: ?>
+<section class="section-none-image container100">
+<?php endif; ?>
+    <?php if($_56ce48f2d6479193388b4567_field_mainHeader !== ""): ?>
+    <h4 class="text-red header-top border-bottom"><?php echo $_56ce48f2d6479193388b4567_field_mainHeader; ?></h4>
+    <div class="clearfix"></div>
+    <?php endif; ?>
+	<?php if($imageLeft['src'] !== "" OR $_56ce48f2d6479193388b4567_field_videoLeft !== ""): ?>
+    <div class="image">
+        <figure class="image">
+            <a
+            <?php if($_56ce48f2d6479193388b4567_field_videoLeft !== ""): ?>
+                href="https://www.youtube.com/watch?v=<?php echo $_56ce48f2d6479193388b4567_field_videoLeft; ?>" 
+            <?php else: ?>   
+                href="<?php echo $imageLeft['src']; ?>" 
+            <?php endif; ?>
+               title="<?php echo $imageLeft['title']; ?>"><img src="<?php echo $imageLeft['src']; ?>" alt="<?php echo $imageLeft['alt']; ?>"></a>
+            <p class="text-description"><?php echo $imageLeft['title']; ?></p>
+        </figure>
+    </div>
+	  <?php endif; ?>
+  
+	<?php if($imageRight['src'] !== "" OR $_56ce48f2d6479193388b4567_field_videoRight !== ""): ?>
+    <div class="image">
+        <figure class="image">
+            <a
+            <?php if($_56ce48f2d6479193388b4567_field_videoRight !== ""): ?>
+                href="https://www.youtube.com/watch?v=<?php echo $_56ce48f2d6479193388b4567_field_videoRight; ?>" 
+            <?php else: ?>   
+                href="<?php echo $imageRight['src']; ?>" 
+            <?php endif; ?>
+               title="<?php echo $imageRight['title']; ?>"><img src="<?php echo $imageRight['src']; ?>" alt="<?php echo $imageRight['alt']; ?>"></a>
+            <p class="text-description"><?php echo $imageRight['title']; ?></p>
+        </figure>
+    </div>
+	  <?php endif; ?>
+  
+		<?php if($_56ce48f2d6479193388b4567_field_mainContent !== ""): ?>		
+    <div class="content">
+        <p class="text">
+            <?php echo $_56ce48f2d6479193388b4567_field_mainContent; ?>
+
+        </p>
+    </div>
+      <?php endif; ?>
+
+    <div class="clearfix"></div>		
+</section>
+  <?php foreach($sub_block_items as $subBlock): ?>
+  <?php echo $subBlock; ?>
+
+  <?php endforeach; ?>
+ 

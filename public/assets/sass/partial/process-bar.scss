@@ -1,0 +1,147 @@
+//colors
+$color_mercury_approx: #a9a9a9;
+$boulder: #7a7a7a;
+$color_terracotta_approx: #eb6a5a;
+$white: #fff;
+$color_iron_approx: #d8d8d8;
+$color_havelock_blue_approx: #4193d0;
+$color_chelsea_cucumber_approx: #8bbf61;
+$color_driftwood_approx: #ab7a4b;
+$color_boston_blue_approx: #428bca;
+$color_well_read_approx: #bd362f;
+$color_cape_cod_approx: #424242;
+
+.progress {
+  background: $color_mercury_approx;
+  margin: 0 0 10px;
+  
+  box-shadow: none !important;
+  
+  border-radius: 0 0 0 0;
+  &.count-outside {
+    margin-left: 40px;
+    position: relative;
+    overflow: visible;
+    .count {
+      position: absolute;
+      width: 40px;
+      left: -40px;
+      top: 0;
+      text-align: left;
+    }
+    &:after {
+      display: block;
+      content: "";
+      border: 5px solid transparent;
+      border-right-color: $boulder;
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      margin-top: -5px;
+    }
+  }
+  &.progress-small {
+    height: 16px;
+    .progress-bar {
+      font-size: 8px;
+      line-height: 16px;
+      &.right {
+        text-indent: 2px;
+      }
+    }
+    &.count-outside .count {
+      height: 16px;
+      line-height: 16px;
+    }
+    &.add-outside .add {
+      height: 16px;
+      line-height: 16px;
+    }
+  }
+  &.progress-mini {
+    height: 10px !important;
+    &.count-outside .count {
+      height: 10px;
+      line-height: 10px;
+    }
+    &.add-outside .add {
+      height: 10px;
+      line-height: 10px;
+    }
+    &.progress-primary.count-outside:after {
+      border-right-color: $color_terracotta_approx;
+    }
+  }
+  &.add-outside {
+    margin-right: 45px;
+    .add {
+      position: absolute;
+      width: 40px;
+      right: -45px;
+      top: 0;
+      text-align: left;
+      padding-left: 5px;
+    }
+  }
+  &.count-outside-primary {
+    margin-left: 40px;
+    position: relative;
+    overflow: visible;
+    .count {
+      position: absolute;
+      width: 40px;
+      left: -40px;
+      top: 0;
+      text-align: left;
+    }
+    &:after {
+      display: block;
+      content: "";
+      border: 5px solid transparent;
+      border-right-color: $color_terracotta_approx;
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      margin-top: -5px;
+    }
+  }
+  &.white {
+    background: $white;
+  }
+  .progress-bar {
+    text-align: center;
+    
+    border-radius: 0 0 0 0;
+    background: $color_iron_approx;
+    &.progress-bar-info {
+      background: $color_havelock_blue_approx;
+    }
+    &.progress-bar-success {
+      background: $color_chelsea_cucumber_approx;
+    }
+    &.progress-bar-warning {
+      background: $color_driftwood_approx;
+    }
+    &.progress-bar-primary {
+      background: $color_boston_blue_approx;
+    }
+    &.progress-bar-danger {
+      background: $color_well_read_approx;
+    }
+    &.progress-bar-inverse {
+      background: $color_cape_cod_approx;
+    }
+  }
+}
+
+// for mini size
+.progress.progress-mini {
+  margin-bottom: 0;
+}
+// end
+
+// for normal size
+.progress.progress-normal{
+  height: 18px!important;
+}
+// end

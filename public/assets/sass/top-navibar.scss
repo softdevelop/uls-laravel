@@ -1,0 +1,92 @@
+@import 'modules/variable.scss';
+@import 'modules/css3-mixins.scss';
+// button top being user
+#navibar{
+	z-index: 1015;
+    .info-user{
+    	.navbar-nav {
+    		.notifications {
+    			.dropdown-toggle{
+    				.badge{
+					    position: static;
+					    top: initial;
+					    left: initial;
+					    margin-left: 30px;
+					    margin-top: 3px;
+					}
+    			} 
+    		} 
+    	}
+    } 
+
+	.s-being-u{
+		color:#fff;
+		background-color: red;
+		box-shadow: 0px 2px 3px #8C8C8C;
+		margin: 10px;
+	}
+}
+// end
+
+// for logo 
+.on-off .logo{
+	margin-left: 0px;
+}
+
+	//  fix for other icon toogle for sidebar
+	.logo #switch:after {
+	    font-family: 'FontAwesome';
+	    content: "\f0d9";
+	    font-size: 25px;
+	    color: #6F6F6F;
+	    position: absolute;
+	    left: 230px;
+	    padding: 4px 10px;
+	    top: 6px;
+	    border: 1px solid #ccc;
+	    border-right: none;
+	    border-top-left-radius: 5px;
+	    border-bottom-left-radius: 5px;
+	    background: #fff;
+	}
+
+	.on-off .logo #switch:after{
+		font-family: 'FontAwesome';
+		content: "\f0da";
+		font-size: 25px;
+	    color:$primary-color;
+	}
+	// end
+// end
+
+
+
+@media only screen and(max-width: 767px) {
+	%height{
+		height: 41px !important;
+		padding: 0 !important;
+	}
+	#navibar .navibar-uls {
+		position: relative;
+		.info-user {
+			height: 41px;
+			.navbar-nav{
+				li{
+					.s-being-u{
+						display: none;
+					}
+				}
+				.notifications {
+					@extend %height;
+				}
+				.user {
+					@extend %height;
+				}
+			} 
+		}
+		
+	}
+	.user.open .dropdown-menu {
+		margin-top: 0;
+	}
+}

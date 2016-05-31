@@ -1,0 +1,11 @@
+<div class="modal-content">
+
+    <a ng-href="{{ baseUrl }}/cms/asset-manager/file/download/{{asset._id}}" target="_self" type="button" class="close pull-left">
+        <i class="fa fa-download"></i>
+         <span class="f15">Download</span>
+    </a>
+    <button ng-click="cancel()" type="button" class="close" data-dismiss="modal">
+        <i class="fa fa-times"></i>
+    </button>
+    <img class="img-responsive real-size" ng-src="{{ baseUrl }}/cms/asset-manager/file/{{asset._id}}?v={{v}}" alt="Place">
+</div><!-- /.modal-content -->

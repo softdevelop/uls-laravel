@@ -1,0 +1,13 @@
+{
+    "name": "rowboat/users",
+    "description": "A package to supply UI to manage users",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ho toan",
+            "email": "tony@rowboatllc.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

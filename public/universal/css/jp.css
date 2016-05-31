@@ -1,0 +1,25 @@
+
+/* BEGIN INTERNATIONALIZE */
+
+#navigation li, #navigation a, #navigation a span {
+	
+	/* LI WIDTH */
+	width: 175px;
+	
+}
+
+#navigation a span {
+	
+	/* POINT TO LOCALIZED IMAGE */
+	background: url("../images/navigation-jp.png") no-repeat 0 -5px;
+	
+}
+
+
+ div.light_square .pp_close{width:76px;height:40px;background: url(../images/closebtn-jp.png) -0px -0px no-repeat;cursor: pointer; display:block;}
+
+#mainflash {width:100%; height:418px; /*background-image:url(../images/homeimage.jpg);*/ background-position:top center; background-repeat:no-repeat;}
+
+/* END INTERNATIONALIZE */
+
+

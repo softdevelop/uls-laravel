@@ -1,0 +1,52 @@
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">{{'section' | trans : 'golbal'}} {{stepSection + 1}} {{'of' | trans : 'golbal'}} {{sectionLenght}}</h4>
+    </div>
+
+    <div class="modal-body">
+    	<form class="form-horizontal" method="POST" action="" accept-charset="UTF-8" name="formSection">
+
+    		<div ng-repeat="(key, value) in sectionsConfig" ng-if="stepSection == key">
+    			<input type="hidden" name="variable_{{key}}" ng-model="sections[stepSection].variable" ng-init="sectionsConfig.variable = sectionsConfig[stepSection]['variable']"  />
+		        <div class="form-group" ng-class="{'has-error':submittedSection[key] && formSection.name_{{key}}.$invalid}">
+		        	<label for="" class="col-lg-12"><strong>{{'name' | trans : 'directive-cms-config'}}:<span class="text-require"> *</span></strong></label>
+		        	<div class="col-lg-12">
+		        		<input type="text" name="name_{{key}}" class="form-control" ng-model="sections[stepSection].name" ng-init="sections[stepSection].name = value['name']" ng-required="true" />
+		        		<input type="hidden" ng-model="sections[stepSection].variable" ng-init="sections[stepSection].variable = value['variable']" />
+						<small class="help-inline" ng-show="submittedSection[key] && formSection.name_{{key}}.$invalid">
+							{{'name' | trans : 'directive-cms-config'}} {{'invalid' | trans : 'validate'}}
+						</small>
+		        	</div>
+
+		        	<div class="clearfix"></div>
+		        </div>
+
+				<div class="form-group">
+					<label class="col-lg-12" for=""><strong>{{'thumbnail_image' | trans : 'directive-cms-config'}}:<span class="text-require"> *</span></strong></label>
+					<div class="col-lg-12">
+					    <div class="input-group">
+					       <input name="file" type="text" class="form-control" ng-value="loadingFile[stepSection]" ng-disabled="true"/>
+					      <span class="input-group-btn">
+					        <button class="btn btn-default" type="button" accept="image/*" ngf-select ngf-drop ngf-change="uploadThumbnailSection($files, stepSection)">Select File</button>
+					      </span>
+					    </div>
+					    <small class="help-inline" ng-show="errorThumbnailSection[stepSection]">{{errorThumbnailSection[stepSection]}}</small>
+					    <small class="help-inline" ng-show="submittedSection[key] && !sections[key].thumbnail">{{'thumbnail_image' | trans : 'directive-cms-config'}} {{'required' | trans : 'validate'}}</small>
+					</div>
+
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</form>
+    </div>
+
+    <div class="modal-footer">
+
+    	<button type="button" class="btn btn-default" ng-if="stepSection == 0" ng-click="cancel()"><i class="fa fa-times"></i>{{'cancel' | trans : 'golbal'}}</button>
+
+        <button type="button" class="btn btn-default" ng-if="stepSection > 0" ng-click="prevStepSection()"><i class="fa fa-arrow-left"></i>{{'previous' | trans : 'golbal'}}</button>
+
+        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="eventNextStepSection(formSection.$invalid)">
+        	<i class="fa fa-arrow-right"></i>{{'next' | trans : 'golbal'}}
+        </button>
+    </div>

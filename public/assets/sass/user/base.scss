@@ -1,0 +1,114 @@
+@import '../modules/mixins-responsive.scss';
+.w-item .action i{
+	color:#909090!important;
+}
+// help permission and role
+.help-infor-icon{
+	font-size: 16px;
+	color:#fff;
+	padding-left: 10px;
+	margin-left: 10px;
+	border-left: 1px solid rgba(255,255,255,0.5);
+}
+// end
+
+// modal tutorial
+.space-area{
+	padding:20px;
+	background: #fafafa;
+	margin-bottom: 25px;
+}
+.help-infor-modal ul > li{
+	> a{
+		color:#000;
+	}
+	> ul > li > a{
+		color:#000;
+		// padding-left: 10px;
+		&:hover,&:active,&:focus{
+			color:#90001B;
+		}
+	}
+	&.active > a{
+		color:#90001B;
+		border-left: 1px solid #90001B;
+	}
+}
+#ad-access,#ad-users,#ad-search-users,#ad-edit-user-profile,#ad-add-user,#ad-update-permission,#ad-password-reset,#ad-become-user,#ad-edit-user-details,#ad-deactive-user,
+#roles-access,#roles-edit-role-permissions,#roles-edit-role-user-groups,#roles-edit-role-details,#roles-delete-a-role,
+#per-access,#per-edit-per-user-group,#per-edit-per-details,#per-delete-a-per,
+#container-roles,#container-permission,#user-administration{
+	 border-top: 20px solid transparent;
+}
+.modal-user{
+	.fix-mobile{
+		@media only screen and(max-width: $break-small-460){
+			width: 100%;
+		}
+	}
+	.border-img{
+		padding:5px;
+		border:1px solid #dadada;
+	}
+	figure{
+		img{
+			width: 100%;
+		}
+	}
+
+}
+
+// end
+
+//  user in group permission and role
+.sub-td.well{
+	margin-left: 0px;
+	border:none;
+	background: none;
+	box-shadow: none;
+	border-radius: 0px;
+	padding: 0;
+	margin-bottom: 0px;
+}
+
+.fix-bt-remove .table tbody > tr > td{
+	vertical-align: top!important;
+}
+
+.table-responsive > .table > tbody > tr > td{
+	position: relative;
+	a .fa-plus-square{
+		position: absolute;
+		top:18px;
+		right: 12px;
+	}
+}
+
+// end
+
+// list item in first box role and permision
+.w-item:hover, .w-item.active{
+	background: #EFEFEF !important;
+    color: #90001b !important;
+    border: 1px solid #fff !important;
+    .action i{
+			color:#90001B!important;
+		}
+}
+// end
+
+//edit role and permission
+.edit-role .fix-btn-pl .editable-buttons button,
+.edit-role .fix-input-pl .editable-buttons button{
+	padding:6px 12px!important;
+}
+
+@media only screen and (max-width: $break-small-480){
+	.fix-btn-pl{
+		margin-top: 30px;
+	}
+}
+// end
+
+
+

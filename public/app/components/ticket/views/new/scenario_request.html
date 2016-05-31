@@ -1,0 +1,134 @@
+<div class="col-lg-6">
+
+    <div class="form-group">
+            <label>{{list_doc_types.label}}</label>
+            <div ng-class="{'has-error-select': submitted && formData.doc_types.$invalid}" class="fix-select">
+                <select  class="form-control" ng-options="key as value.name for (key, value) in list_doc_types.option" ng-model="ticket.scenarioRequest.doc_types" name="doc_types" ng-required="true">
+                </select>
+                <span class="control-label span-error" ng-show="submitted && formData.doc_types.$error.required">{{list_doc_types.label}} is a required field</span>
+            </div>
+    </div>
+
+    <div class="form-group">
+            <label>{{list_loan_types.label}}</label>
+            <div ng-class="{'has-error-select': submitted && formData.loan_types.$invalid}" class="fix-select">
+                <select   class="form-control"  ng-options="key as value.name for (key, value) in list_loan_types.option" ng-model="ticket.scenarioRequest.loan_types" name="loan_types" ng-required="true">
+                </select>
+                <span class="control-label span-error" ng-show="submitted && formData.loan_types.$error.required">{{list_loan_types.label}} is a required field</span>
+            </div>
+    </div>
+
+    <div class="form-group">
+        <label>Loan Amount</label>
+        <div ng-class="{'has-error': submitted && formData.loan_amount.$invalid}">
+            <input  type="number"  class="form-control" id="loan_amount" ng-model="ticket.scenarioRequest.loan_amount" name="loan_amount"  ng-required="true">
+        </div>
+        <span class="control-label span-error" ng-show="submitted && formData.loan_amount.$error.required">Loan Amount is a required field</span>
+    </div>
+
+    <div class="form-group">
+        <label>Property Value</label>
+        <div ng-class="{'has-error': submitted && formData.property_value.$invalid}">
+            <input  type="number"  class="form-control" id="property_value" ng-model="ticket.scenarioRequest.property_value" name="property_value" ng-required="true">
+            <span class="control-label span-error" ng-show="submitted && formData.property_value.$error.required">Property Value is a required field</span>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label>County</label>
+        <div ng-class="{'has-error': submitted && formData.country.$invalid}" class="fix-select">
+            <input  type="text" class="form-control" id="country" ng-model="ticket.scenarioRequest.country" name="country" ng-required="true">
+            <span class="control-label span-error" ng-show="submitted && formData.country.$error.required">County is a required field</span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Zip Code</label>
+        <div class="fix-select" ng-class="{'has-error': submitted && formData.zip_code.$invalid}" ng-required="true">
+            <input  type="text" class="form-control" id="zip_code" ng-model="ticket.scenarioRequest.zip_code" name="zip_code"ng-pattern="/^(\d{5}-\d{4}|\d{5})$/" ng-required="true" >
+            <span class="control-label span-error" ng-show="submitted && formData.zip_code.$invalid">Zip Code is a required field, 5 numbers</span>
+        </div>
+    </div>
+</div>
+<div class="col-lg-6">
+
+    <div class="form-group">
+
+            <label>{{list_occupancy.label}}</label>
+            <div ng-class="{'has-error-select': submitted && formData.occupancy.$invalid}" class="fix-select">
+                <select   class="form-control"  name="occupancy" ng-options="key as value.name for (key, value) in list_occupancy.option" ng-model="ticket.scenarioRequest.occupancy" ng-required="true">
+                </select>
+                <span class="control-label span-error" ng-show="submitted && formData.occupancy.$error.required">{{list_occupancy.label}} is a required field</span>
+            </div>
+
+    </div>
+
+    <div class="form-group">
+        <label>FICO</label>
+        <div  ng-class="{'has-error': submitted && formData.fico.$invalid}">
+            <input  placeholder="(numeric - 3 digit)" type="number" data-ng-minlength='3' data-ng-maxlength='3' class="form-control" id="fico" ng-model="ticket.scenarioRequest.fico" name="fico" ng-required="true">
+            <span class="control-label span-error" ng-show="submitted && formData.fico.$invalid">FICO is a required field, 3 numbers</span>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label>LTV (%)</label>
+        <div>
+            <input  type="text" data-ng-disabled='1' class="form-control" id="ltv" ng-value="!(ticket.scenarioRequest.loan_amount/ticket.scenarioRequest.property_value)?0:(ticket.scenarioRequest.loan_amount/ticket.scenarioRequest.property_value)*100" name="ltv" >
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Front DTI (%)</label>
+        <div ng-class="{'has-error': submitted && formData.front_dti.$invalid}">
+            <input  type="number"  class="form-control " id="front_dti" ng-model="ticket.scenarioRequest.front_dti" name="front_dti" ng-required="true">
+            <span class="control-label span-error" ng-show="submitted && formData.fico.$invalid">Front DTI (%) is a required field</span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Back DTI (%)</label>
+        <div ng-class="{'has-error': submitted && formData.back_dti.$invalid}">
+            <input  type="number"  class="form-control " id="back_dti" ng-model="ticket.scenarioRequest.back_dti" name="back_dti" ng-required="true">
+            <span class="control-label span-error" ng-show="submitted && formData.back_dti.$error.required">Back DTI (%) is a required field</span>
+        </div>
+    </div>
+
+    <div class="form-group">
+
+            <label>{{list_proposed_term.label}}</label>
+            <div ng-class="{'has-error-select': submitted && formData.proposed_term.$invalid}"  class="fix-select">
+                <select   class="form-control"  name="proposed_term" ng-options="key as value.name for (key, value) in list_proposed_term.option" ng-model="ticket.scenarioRequest.proposed_term" ng-required="true">
+                </select>
+                <span class="control-label span-error" ng-show="submitted && formData.proposed_term.$error.required">{{list_proposed_term.label}} is a required field</span>
+            </div>
+
+    </div>
+</div>
+<div class="col-lg-12">
+    <div class="panel panel-default radio-select-re">
+        <div class="panel-body">
+            <div class="col-sm-12 col-md-12 col-lg-3 checkbox checkbox-info">
+                <input id="inlineRadio1" value="Non Permenant Resident Alien" name="type_scenario" checked="" type="checkbox" ng-model="ticket.scenarioRequest.type_scenario.non_permenant_resident_alien">
+                <label for="inlineRadio1">Non Permenant Resident Alien</label>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-2 checkbox checkbox-info">
+                <input id="inlineRadio2" value="Foreign National" name="type_scenario" type="checkbox"  ng-model="ticket.scenarioRequest.type_scenario.foreign_national">
+                <label for="inlineRadio2"> Foreign National</label>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-2 checkbox checkbox-info">
+                <input id="inlineRadio3" value="First Time Homebuyer" name="type_scenario" type="checkbox"  ng-model="ticket.scenarioRequest.type_scenario.first_time_homebuyer">
+                <label for="inlineRadio3">First Time Homebuyer</label>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-3 checkbox checkbox-info">
+                <input id="inlineRadio4" value="Non Occupying Co-borrower" name="type_scenario" type="checkbox"  ng-model="ticket.scenarioRequest.type_scenario.non_occupyingco_borrower">
+                <label for="inlineRadio4">Non-Occupying<br> Co-Borrower</label>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-2 checkbox checkbox-info">
+                <input id="inlineRadio5" name="type_scenario" type="checkbox"  ng-model="ticket.scenarioRequest.type_scenario.appraisal_in_hand">
+                <label for="inlineRadio5">Appraisal in Hand</label>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>

@@ -1,0 +1,58 @@
+<?php $__env->startSection('title'); ?>
+	<?php echo e(trans('User/user-index.breadcrum')); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+
+	<div data-ng-controller="UserController">
+		<div class="top-content">
+	        <ul class="breadcrumb br-ticket1 top-content">
+	            <li>
+	                <a href="<?php echo e(URL::to('admin/user')); ?>"><?php echo e(trans('User/user-index.breadcrum')); ?></a>
+	            </li>
+	            <li class="active">
+	                <a  href="javascript:void(0)"><?php echo e(trans('User/user-update-permissions.text_breadcrum')); ?> <strong><?php echo e($user->first_name); ?> <?php echo e($user->last_name); ?></strong></a>
+	            </li>
+        	</ul>
+	    </div>
+
+		<div class="content wrap-permission-user">
+			<h4 class="title-multiselect"><?php echo e(trans('User/user-update-permissions.roles')); ?></h4>
+			<multi-select error='error' message='message.role' placeholder="<?php echo e(trans('User/user-update-permissions.roles')); ?>" items="listRoles" items-assigned="userRoles" on-change="updateRole()"> </multi-select>
+			
+			<h4 class="title-multiselect"><?php echo e(trans('User/user-update-permissions.permissions')); ?></h4>
+			<multi-select error='error' message='message.per' items="listPermissions" items-assigned="userPermissions" on-change="updatePermission()"> </multi-select>
+			
+			<h4><?php echo e(trans('User/user-update-permissions.groups')); ?></h4>
+			<multi-select error='error' message='message.group' placeholder="<?php echo e(trans('User/user-update-permissions.groups')); ?>" data-items="listGroups" data-items-assigned="userGroups" data-on-change="updateGroup()"> </multi-select>
+		</div>
+	</div>
+	
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+	<script  type="text/javascript">
+	     window.dataController = {
+	    	'id': <?php echo e($id); ?>,
+	    	'listPermissions' : <?php echo json_encode($listPermissions); ?>,
+	    	'userPermissions' : <?php echo empty($userPermissions)? '{}': json_encode($userPermissions); ?>,
+	    	'listRoles'       : <?php echo json_encode($listRoles); ?>,
+	    	'userRoles'       : <?php echo empty($userRoles)? '{}': json_encode($userRoles); ?>,
+	    	'listGroups'      : <?php echo json_encode($listGroups); ?>,
+	    	'userGroups'      : <?php echo empty($userGroups) ? '{}': json_encode($userGroups); ?>
+
+ 	    };
+	</script>
+	<?php if(!isProduction() && !isDev()): ?>
+		<?php echo Html::script('app/components/user/userController.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/components/user/userService.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/shared/multi-select/multiSelectDirective.js?v='.getVersionScript()); ?>
+
+	<?php else: ?>
+		<script src="<?php echo e(elixir('app/pages/permissionforuser.js')); ?>"></script>
+	<?php endif; ?>
+<?php $__env->stopSection(); ?>
+
+	
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

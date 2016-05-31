@@ -1,0 +1,66 @@
+
+/* BEGIN INTERNATIONALIZE */
+
+#navigation li, #navigation a, #navigation a span {
+	
+	/* LI WIDTH */
+	width: 175px;
+	
+}
+
+#navigation a span {
+	
+	/* POINT TO LOCALIZED IMAGE */
+	background: url("../images/navigation-ar.png") no-repeat 0 -5px;
+	
+}
+
+
+ div.light_square .pp_close{width:76px;height:40px;background: url(../images/closebtn-ar.png) -0px -0px no-repeat;cursor: pointer; display:block;}
+
+#mainflash {width:100%; height:418px; /*background-image:url(../images/homeimage.jpg);*/ background-position:top center; background-repeat:no-repeat;}
+
+/* END INTERNATIONALIZE */
+
+
+#arabic #navigation li li a {
+	font-size: 14px;
+	text-align: right;
+	
+}
+
+#arabic #navigation ul ul {
+	
+	width: 80px;
+	
+}
+
+#arabic {
+	
+	text-align:right;
+	font-size:110%;
+	}
+	
+#arabic #homepage-wrap { background-image:url(../images/newhome-image-ar.png); }
+
+#arabic #tab-links a, #arabic #learnmore a{ text-align:right;}
+
+#arabic #navigation li.hover li ul, #arabic #navigation li:hover li ul {
+	
+	right: 100%;
+}
+
+#arabic #navigation a, #arabic #navigation a span, #arabic  #navigation li.hover ul, #arabic  #navigation li:hover ul {
+	right: 0;
+	
+}
+
+#arabic #navigation li {float:right;}
+
+#arabic #navigation li li {float:none;}
+
+#arabic #columnleft {float:right;}
+
+#arabic #columnright {float:left;}
+
+#arabic #process-tabs #learnmore, #arabic #market-tabs #learnmore {float:right;}

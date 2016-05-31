@@ -1,0 +1,13 @@
+
+<div class="modal-content" id="model-template-content" ng-init="selectedItem = <?php echo e(json_encode($selectedItem)); ?>">
+	<div ng-if="stepFirst">
+		<?php echo $__env->make('vendor.tempalte-content-manager.partial.template-manager-step1', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	</div>
+<?php /* 	<div ng-if="stepSecond">
+		<?php echo $__env->make('vendor.tempalte-content-manager.partial.template-manager-step2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+	</div>
+	<div ng-if="stepThird">
+		<?php echo $__env->make('vendor.tempalte-content-manager.partial.template-manager-step3', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	</div> */ ?>
+</div>

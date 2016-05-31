@@ -1,0 +1,48 @@
+@import '../modules/variable.scss';
+@import '../modules/css3-mixins.scss';
+// breadcrumb responsive
+.wrap-breadcrumb{
+	display: flex;
+	.breadcrumb-level:first-child{
+		// white-space: pre;
+		min-width: 140px;
+	}
+	.breadcrumb-level:last-child{
+		max-width: 100%;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	}	
+}
+// end
+
+// breadcrumb single
+.c-breadcrumb{
+	color: #efefef;
+}
+.breadcrumb{
+	padding:10px!important;
+}
+
+.c-breadcrumb:hover, .c-breadcrumb:focus, .c-breadcrumb:active, .c-breadcrumb.active{
+	color: #fff;
+	opacity: 0.8;
+	@include transition(all linear 0.35s);
+}
+
+// end
+
+.breadcrumb > li {
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: clip;
+  overflow: hidden;
+  height: 25px;
+  word-break: break-all;
+}
+
+// breadcrumb for ticket
+.br-ticket.wrap-breadcrumb .breadcrumb-level:first-child{
+	min-width: auto!important;
+}
+// end

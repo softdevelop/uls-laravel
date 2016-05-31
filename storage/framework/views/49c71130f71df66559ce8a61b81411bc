@@ -1,0 +1,31 @@
+<?php
+  if(strtotime($_56d73e0cd64791e5378b459a_field_date) > time()) {
+?>
+<?php $logo = getObjectInfoAssets('logo','asset',  $_56d73e0cd64791e5378b459a_field_logo ); ?>
+<article class="article-left-image-small col-md-12 padding-none">
+    <div class="wrap-img pull-left">
+        <img src="<?php echo $logo['src']; ?>" alt="<?php echo $logo['alt']; ?>" width='45'>
+    </div>
+    <div class="wrap-text pull-left" i="<?php echo $_56d73e0cd64791e5378b459a_field_date; ?>">
+        <div class="news-info"  i="<?php echo $_56d73e0cd64791e5378b459a_field_date; ?>">
+            <h5><a href="<?php echo $_56d73e0cd64791e5378b459a_field_link; ?>" style='color: inherit; font-size: inherit; font-weight: inherit;'><?php echo $_56d73e0cd64791e5378b459a_field_name; ?></a></h5>
+            <?php if($_56d73e0cd64791e5378b459a_field_dateInfo !== ""): ?>
+            <div class="news-description"><a href="<?php echo $_56d73e0cd64791e5378b459a_field_link; ?>" style='color: inherit; font-size: inherit; font-weight: inherit;'><?php echo $_56d73e0cd64791e5378b459a_field_dateInfo; ?>
+
+                <?php if($_56d73e0cd64791e5378b459a_field_subInfo !== ""): ?>
+                    <br><?php echo $_56d73e0cd64791e5378b459a_field_subInfo; ?>
+
+                <?php endif; ?>              
+              </a>
+            </div>    
+            <?php endif; ?>
+<?php /*
+  --            <div class="news-link-div">
+  --              <a href="<?php echo $_56d73e0cd64791e5378b459a_field_link; ?>" class="text-red news-link">Learn More <i class="fa fa-angle-right"></i></a>
+  --          </div>
+  */ ?>
+         </div>              
+    </div>
+    <div class="clearfix"></div>
+</article>
+<?php } ?>

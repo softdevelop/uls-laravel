@@ -1,0 +1,322 @@
+<!doctype html>
+<html class="no-js" lang="">
+		<head>
+    		<title><?php echo $_56be0c11d64791fe6f8b45a4_field_title; ?></title>
+    		<meta charset="utf-8">
+    		<meta name="description" content="<?php echo $_56be0c11d64791fe6f8b45a4_field_metadescription; ?>">
+	  		<meta name="keywords" content="<?php echo $_56be0c11d64791fe6f8b45a4_field_metakeywords; ?>">
+    		<meta name="viewport" content="width=device-width, initial-scale=1">
+			<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>" />
+				<link rel="shortcut icon" href="" >
+				<link rel="apple-touch-icon" href="">
+    		<link type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic" rel="stylesheet" type="text/css">
+    		<link type="text/css" rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+				<link type="text/css" rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/css/lightslider.min.css">
+				<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.1/magnific-popup.min.css">
+				<?php /*
+				<link type="text/css" rel="stylesheet" href="{{-- Begin main_uls.css Asset --}}http://cdn.ulsinc.com/assets/css/56c4d5e6d64791f8638b4588/main.css{{-- End main_uls.css Asset --}}"> 
+				<link type="text/css" rel="stylesheet" href="{{-- Begin allmain.css Asset --}}http://cdn.ulsinc.com/assets/css/56d61830d6479197698b4568/allmain.css{{-- End allmain.css Asset --}}">
+				*/?>
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin base.css Asset */ ?>http://cdn.ulsinc.com/assets/css/56d61443d64791d3378b456a/base.css<?php /* End base.css Asset */ ?>?v1">
+				
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin main-new.css Asset */ ?>http://cdn.ulsinc.com/assets/css/56d61487d64791e5378b456e/main-new.css<?php /* End main-new.css Asset */ ?>?v1">
+				
+				<?php /* Add all new style on this file*/?>
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin custom.css Asset */ ?>http://cdn.ulsinc.com/assets/css/56d61464d64791746a8b4567/custom.css<?php /* End custom.css Asset */ ?>?v1">
+				
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin search.css Asset */ ?>http://cdn.ulsinc.com/assets/css/572c52d60454aa0629769655/search.css<?php /* End search.css Asset */ ?>?v1">
+				
+				<script type="text/javascript" src="<?php /* Begin vendor.2046b4fb.js Asset */ ?>http://cdn.ulsinc.com/assets/js/56c49b6bd6479154638b45a0/vendor.bd87f1f5.js<?php /* End vendor.2046b4fb.js Asset */ ?>?v=3"></script>
+				<script type="text/javascript" src="<?php /* Begin plugins.bde8e777.js Asset */ ?>http://cdn.ulsinc.com/assets/js/56c49b7ad64791f7638b4585/plugins.bde8e777.js<?php /* End plugins.bde8e777.js Asset */ ?>?v=3"></script>
+				
+    		<script type="text/javascript" src="https://www.google-analytics.com/analytics.js"></script>
+				
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/js/lightslider.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/js/lightslider.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw5uR1gaKG3AaDuDrVYa6QaE47n03Td_o&callback=initMap"></script>
+				<script type="text/javascript" src="<?php /* Begin main.8760756f.js Asset */ ?>http://cdn.ulsinc.com/assets/js/56c49b85d64791074a8b45a4/main.b81f04fc.js<?php /* End main.8760756f.js Asset */ ?>?v=3"></script>
+		</head>
+		
+
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+			<?php /* Begin Main Header Block */ ?><header>
+  <div class="container header">
+    <div class="col-xs-6 col-md-6 box-logo">
+      <h1><a href="<?php /* Begin Home Link */ ?>http://demo.ulsinc.com/home/56c26499d647919e718b4569<?php /* End Home Link */ ?>"><img src="<?php /* Begin uls_logo.png Asset */ ?>http://cdn.ulsinc.com/assets/images/general/56c61690d64791cb038b456c/uls_logo.png<?php /* End uls_logo.png Asset */ ?>" alt="ulslogo"></a></h1>
+    </div>
+    <div class="col-xs-6 col-md-6 text-right box-search">
+      <div class="form-group box-option">
+        <form action="/search-result" method="get">
+        	<input type="text" name="q" id="tipue_drop_input" autocomplete="off" required placeholder="Search..." value="<?php echo e(!empty($q) ? $q : ''); ?>">
+          	<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+        	<div id="tipue_drop_content" class="search-result-dropdown"></div>
+         	<button type="submit" class="btn btn-default">Search</button>
+        </form>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</header><?php /* End Main Header Block */ ?>			
+			<?php /* Begin Main Navigation Block */ ?><nav class="navbar">
+        <div class="container">
+
+            <!-- start navibar header only display in mobile -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#list-menu" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- logo and button toggle box search -->
+                <a href="index.html" class="logo visible-xs"><img src="<?php /* Begin uls_logo.png Asset */ ?>http://cdn.ulsinc.com/assets/images/general/56c61690d64791cb038b456c/uls_logo.png<?php /* End uls_logo.png Asset */ ?>" alt="ulslogo"></a>
+                <button type="button" class="navbar-toggle collapsed btn-search" data-toggle="collapse" data-target="#list-option" aria-expanded="false">
+                    <i class="fa fa-search"></i>
+                </button>
+                <!-- the end -->
+            </div>
+            <!-- the end -->
+
+            <!-- start box search display in mobile -->
+            <div class="collapse navbar-collapse" id="list-option">
+                <div class="visible-xs box-search">
+                    <div class="box-option">
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <button class="btn btn-default">Search</button>
+                    </div>
+                </div>
+            </div>
+            <!-- the end -->
+
+            <!-- start list navibar -->
+            <div class="collapse navbar-collapse" id="list-menu">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php /* Begin History Link */ ?>http://demo.ulsinc.com/about-us/history/56cf6811d6479158708b457b<?php /* End History Link */ ?>">History</a></li>
+                          <li><a href="<?php /* Begin Newsroom Link */ ?>http://demo.ulsinc.com/about-us/news/56c27a15d647911b118b45d6<?php /* End Newsroom Link */ ?>">News and Events</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php /* Begin Platforms Link */ ?>http://demo.ulsinc.com/products/platforms/56ca1703d6479173448b4576<?php /* End Platforms Link */ ?>">Platforms</a></li>
+                            <li><a href="<?php /* Begin Configure Your Laser System Link */ ?>http://demo.ulsinc.com/configure/56c26bd4d6479154638b4579<?php /* End Configure Your Laser System Link */ ?>">Configure Your System</a></li>
+                            <li><a href="<?php /* Begin Discover ULS Innovations and Benefits Link */ ?>http://demo.ulsinc.com/technology/56c269ced647911b118b45ca<?php /* End Discover ULS Innovations and Benefits Link */ ?>">ULS Technology</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Materials</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php /* Begin Wood Link */ ?>http://demo.ulsinc.com/materials/wood/56c27913d64791716b8b457d<?php /* End Wood Link */ ?>">Wood</a></li>
+                            <li><a href="<?php /* Begin Microsurface Plastic Link */ ?>http://demo.ulsinc.com/materials/microsurface-plastic/56c2792ed64791f6638b4582<?php /* End Microsurface Plastic Link */ ?>">Microsurface Plastic</a></li>
+                            <li><a href="<?php /* Begin MPF Link */ ?>http://demo.ulsinc.com/materials/3m-microcellular-polyurethane-foam/56c27941d64791f76a8b457e<?php /* End MPF Link */ ?>">3M™ Microcellular Polyurethane Foam</a></li>
+                            <li><a href="<?php /* Begin 3M Protection Film Link */ ?>http://demo.ulsinc.com/materials/3m-protection-film/56c2795bd6479126638b4575<?php /* End 3M Protection Film Link */ ?>">3M™ Protection Film</a></li>
+                            <li><a href="<?php /* Begin Halar Link */ ?>http://demo.ulsinc.com/materials/halar/56c27971d647911b118b45d2<?php /* End Halar Link */ ?>">Halar®</a></li>
+                            <li><a href="<?php /* Begin Kapton Link */ ?>http://demo.ulsinc.com/materials/kapton/56c27986d6479154638b4585<?php /* End Kapton Link */ ?>">Kapton® Polyimide Film</a></li>
+                            <li><a href="<?php /* Begin Viton Link */ ?>http://demo.ulsinc.com/materials/viton/56c2799bd64791716b8b4581<?php /* End Viton Link */ ?>">Viton® Fluoroelastomer</a></li>
+                            <li><a href="<?php /* Begin Teflon Link */ ?>http://demo.ulsinc.com/materials/teflon/56c279b2d64791f6638b4586<?php /* End Teflon Link */ ?>">Teflon® Fluoropolymer</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php /* Begin Advanced Materials Processing Center Link */ ?>http://demo.ulsinc.com/resources/advanced-materials-processing-center/56c279f5d6479126638b4579<?php /* End Advanced Materials Processing Center Link */ ?>">Advanced Materials Processing Center</a></li>
+                            <li><a href="<?php /* Begin White Papers (Landing) Link */ ?>http://demo.ulsinc.com/resources/white-papers/56c27a5ed64791716b8b4585<?php /* End White Papers (Landing) Link */ ?>">White Papers</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">How to Buy</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php /* Begin Find a Representative Link */ ?>http://demo.ulsinc.com/how-to-buy/find-a-representative/56c27ab3d64791f6638b458a<?php /* End Find a Representative Link */ ?>">Find a Representative</a></li>
+                            <li><a href="<?php /* Begin Portal 3: Discover > How Your Organization Can Benefit from Laser Technology Link */ ?>http://demo.ulsinc.com/evaluate/56c26860d6479154638b4571<?php /* End Portal 3: Discover > How Your Organization Can Benefit from Laser Technology Link */ ?>">Evaluate My Business</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Support</a>
+                        <ul class="dropdown-menu">                            
+                            <li><a href="<?php /* Begin Support Programs Link */ ?>http://demo.ulsinc.com/support/support-programs/56c27c60d647911b118b45da<?php /* End Support Programs Link */ ?>">Support Programs</a></li>
+                            <li><a href="<?php /* Begin Software Downloads Link */ ?>http://demo.ulsinc.com/support/software-downloads<?php /* End Software Downloads Link */ ?>">Software Downloads</a></li>
+                            <li><a href="<?php /* Begin Contact Support Link */ ?>http://demo.ulsinc.com/support/contact-support/56c27c9fd64791716b8b4589<?php /* End Contact Support Link */ ?>">Contact Support</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php /* Begin Contact Us Link */ ?>http://demo.ulsinc.com/contact-us/56c278cad6479154638b4581<?php /* End Contact Us Link */ ?>">Contact Us</a></li>
+                            <li><a href="<?php /* Begin Find a Representative Link */ ?>http://demo.ulsinc.com/how-to-buy/find-a-representative/56c27ab3d64791f6638b458a<?php /* End Find a Representative Link */ ?>">Find a Representative</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- the end list navibar -->
+
+        </div>
+    </nav><?php /* End Main Navigation Block */ ?>
+
+    <div id="content">
+         
+
+
+<?php /* Begin Red Header Block */ ?><?php $image = getObjectInfoAssets('image','asset', ''); ?>
+<section class="header-title red">
+      <div class="container">
+				<div class="wrap-title">
+						<h3 class="text-white not-none"><?php echo $_56c6295cd64791060a8b456c_field_header; ?></h3>
+				</div>
+                <?php if(count($image) > 0): ?>
+				<div class="wrap-image">
+						<img src="<?php echo $image['src']; ?>" alt="<?php echo $image['alt']; ?>" />
+				</div>
+                <?php endif; ?>
+		</div>
+</section>
+<?php /* End Red Header Block */ ?>
+<div class="container" style="padding-top: 20px;">
+<?php echo $section_main; ?>
+
+</div>
+
+
+
+
+    </div>
+    <footer>
+				<?php /* Begin Footer Navigation Block */ ?><section class="footer-navigation top">
+	<div class="container">
+		<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 list-navigation">
+			<ul class="list-unstyled">
+            	<li><strong><a href="">About Us</a></strong></li>
+				<li><a href="<?php /* Begin ULS History Link */ ?>http://demo.ulsinc.com<?php /* End ULS History Link */ ?>">History</a></li>
+                <li><a href="<?php /* Begin Newsroom Link */ ?>http://demo.ulsinc.com/about-us/news/56c27a15d647911b118b45d6<?php /* End Newsroom Link */ ?>">News and Events</a></li>
+			</ul>
+            <div class="clearfix"></div>
+		</div>
+      	<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 list-navigation">
+			<ul class="list-unstyled">
+				<li><strong><a href="">Products</a></strong> </li>
+                <li><a href="<?php /* Begin Platforms Link */ ?>http://demo.ulsinc.com/products/platforms/56ca1703d6479173448b4576<?php /* End Platforms Link */ ?>">Platforms</a></li>
+                <li><a href="<?php /* Begin Configure Your Laser System Link */ ?>http://demo.ulsinc.com/configure/56c26bd4d6479154638b4579<?php /* End Configure Your Laser System Link */ ?>">Configure Your System</a></li>
+                <li><a href="<?php /* Begin Discover ULS Innovations and Benefits Link */ ?>http://demo.ulsinc.com/technology/56c269ced647911b118b45ca<?php /* End Discover ULS Innovations and Benefits Link */ ?>">ULS Technology</a></li>
+
+			</ul>
+            <div class="clearfix"></div>
+		</div>
+      	<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 list-navigation">
+			<ul class="list-unstyled">
+              	<li><strong><a href="">Materials</a></strong> </li>
+				<li><a href="<?php /* Begin Wood Link */ ?>http://demo.ulsinc.com/materials/wood/56c27913d64791716b8b457d<?php /* End Wood Link */ ?>">Wood</a></li>
+                <li><a href="<?php /* Begin Microsurface Plastic Link */ ?>http://demo.ulsinc.com/materials/microsurface-plastic/56c2792ed64791f6638b4582<?php /* End Microsurface Plastic Link */ ?>">Microsurface Plastic</a></li>
+                <li><a href="<?php /* Begin MPF Link */ ?>http://demo.ulsinc.com/materials/3m-microcellular-polyurethane-foam/56c27941d64791f76a8b457e<?php /* End MPF Link */ ?>">3M™ Microcellular Polyurethane Foam</a></li>
+                <li><a href="<?php /* Begin 3M Protection Film Link */ ?>http://demo.ulsinc.com/materials/3m-protection-film/56c2795bd6479126638b4575<?php /* End 3M Protection Film Link */ ?>">3M™ Protection Film</a></li>
+                <li><a href="<?php /* Begin Halar Link */ ?>http://demo.ulsinc.com/materials/halar/56c27971d647911b118b45d2<?php /* End Halar Link */ ?>">Halar®</a></li>
+                <li><a href="<?php /* Begin Kapton Link */ ?>http://demo.ulsinc.com/materials/kapton/56c27986d6479154638b4585<?php /* End Kapton Link */ ?>">Kapton® Polyimide Film</a></li>
+                <li><a href="<?php /* Begin Viton Link */ ?>http://demo.ulsinc.com/materials/viton/56c2799bd64791716b8b4581<?php /* End Viton Link */ ?>">Viton® Fluoroelastomer</a></li>
+                <li><a href="<?php /* Begin Teflon Link */ ?>http://demo.ulsinc.com/materials/teflon/56c279b2d64791f6638b4586<?php /* End Teflon Link */ ?>">Teflon® Fluoropolymer</a></li>
+			</ul>
+            <div class="clearfix"></div>
+      	</div>      
+      	<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 list-navigation">
+			<ul class="list-unstyled">
+				<li><strong><a href="">Resources</a></strong></li>
+				<li><a href="<?php /* Begin Advanced Materials Processing Center Link */ ?>http://demo.ulsinc.com/resources/advanced-materials-processing-center/56c279f5d6479126638b4579<?php /* End Advanced Materials Processing Center Link */ ?>">Advanced Materials Processing Center</a></li>                  
+                <li><a href="<?php /* Begin White Papers (Landing) Link */ ?>http://demo.ulsinc.com/resources/white-papers/56c27a5ed64791716b8b4585<?php /* End White Papers (Landing) Link */ ?>">White Papers</a></li>
+			</ul>
+            <div class="clearfix"></div>
+      	</div>
+		<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 list-navigation">
+			<ul class="list-unstyled">
+				<li><strong><a href="">How to Buy</a></strong></li>
+				<li><a href="<?php /* Begin Find a Representative Link */ ?>http://demo.ulsinc.com/how-to-buy/find-a-representative/56c27ab3d64791f6638b458a<?php /* End Find a Representative Link */ ?>">Find a Representative</a></li>
+              	<li><a href="<?php /* Begin Portal 3: Discover > How Your Organization Can Benefit from Laser Technology Link */ ?>http://demo.ulsinc.com/evaluate/56c26860d6479154638b4571<?php /* End Portal 3: Discover > How Your Organization Can Benefit from Laser Technology Link */ ?>">Evaluate My Business</a></li>
+			</ul>
+            <div class="clearfix"></div>
+      	</div>
+		<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 list-navigation">
+			<ul class="list-unstyled">
+				<li><strong><a href="">Support</a></strong></li>
+                <li><a href="<?php /* Begin Support Programs Link */ ?>http://demo.ulsinc.com/support/support-programs/56c27c60d647911b118b45da<?php /* End Support Programs Link */ ?>">Support Programs</a></li>
+          	    <li><a href="<?php /* Begin Software Downloads Link */ ?>http://demo.ulsinc.com/support/software-downloads<?php /* End Software Downloads Link */ ?>">Software Downloads</a></li>                
+                <li><a href="<?php /* Begin Contact Support Link */ ?>http://demo.ulsinc.com/support/contact-support/56c27c9fd64791716b8b4589<?php /* End Contact Support Link */ ?>">Contact Support</a></li>
+			</ul>
+            <div class="clearfix"></div>
+		</div>
+		<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 list-navigation">
+			<ul class="list-unstyled">
+				<li><strong><a href="">Contact</a></strong></li>
+          	    <li><a href="<?php /* Begin Contact Us Link */ ?>http://demo.ulsinc.com/contact-us/56c278cad6479154638b4581<?php /* End Contact Us Link */ ?>">Contact Us</a></li>
+              	<li><a href="<?php /* Begin Find a Representative Link */ ?>http://demo.ulsinc.com/how-to-buy/find-a-representative/56c27ab3d64791f6638b458a<?php /* End Find a Representative Link */ ?>">Find a Representative</a></li>
+			</ul>
+            <div class="clearfix"></div>
+		</div>      
+    	<div class="clearfix"></div>
+    </div>
+</section><?php /* End Footer Navigation Block */ ?>
+				<?php /* Begin Footer Copyright Block */ ?>    <section class="copyright bottom">
+      <div class="container text-center">
+
+        <div class="logo-small">
+          <h5><img src="<?php /* Begin uls_logo_small.png Asset */ ?>http://cdn.ulsinc.com/assets/images/general/56c620efd647911e118b4569/uls_logo_small.png<?php /* End uls_logo_small.png Asset */ ?>" alt="logo"></h5>
+        </div>
+        
+        <!-- copyright -->
+        <div class="copyright-content">
+          
+          <p class="copyright-text">© <?php echo date("Y");?> Universal Laser Systems, Inc. All rights reserved. Universal Laser Systems logo and name are registered trademarks of Universal Laser Systems, Inc. All other company and product names are trademarks or registered trademarks of their respective companies.</p>
+
+          <ul class="copyright-link list-inline">
+            <li>
+              <a href="<?php /* Begin Terms of Use Link */ ?>http://demo.ulsinc.com/terms-of-use<?php /* End Terms of Use Link */ ?>">Terms of Use </a> |    
+            </li>
+            <li>
+              <a href="<?php /* Begin Privacy Policy Link */ ?>http://demo.ulsinc.com/privacy-policy<?php /* End Privacy Policy Link */ ?>">Privacy Policy</a>  |
+            </li>
+            <li>
+              <a href="<?php /* Begin Configure Your Laser System Link */ ?>http://demo.ulsinc.com/configure/56c26bd4d6479154638b4579<?php /* End Configure Your Laser System Link */ ?>">Configure Your Laser System </a>
+            </li>
+          </ul>
+
+        </div>
+        <!-- the end -->
+      </div>
+    </section><?php /* End Footer Copyright Block */ ?>
+	    </footer>
+
+    <script>
+      $(document).ready(function(){
+        $('.item').click( function(){
+          $('#video-compoment').get(0).play();       // get(0) gets the original DOM element
+          $('.item').unbind('click');  // remove click listener
+        });
+      });
+    </script>
+    <script>
+        new WOW().init();
+    </script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+			<script src="<?php /* Begin search.js Asset */ ?>http://cdn.ulsinc.com/assets/js/572c50030454aa1119758f41/search.js<?php /* End search.js Asset */ ?>?v=1"></script>
+			<script>
+        $(document).ready(function () {
+            $('#tipue_drop_input').tipuedrop();
+        });
+    </script>
+  </body>
+
+
+</html>

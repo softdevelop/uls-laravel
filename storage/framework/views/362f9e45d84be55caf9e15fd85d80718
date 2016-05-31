@@ -1,0 +1,6 @@
+<article class="list-text">
+    <h5><i class="fa fa-circle"></i><?php echo $_56d8d28ad64791330e8b459f_field_bullet; ?></h5>
+    <?php if($_56d8d28ad64791330e8b459f_field_description !== ""): ?>
+    <p class="text"><?php echo $_56d8d28ad64791330e8b459f_field_description; ?></p>
+    <?php endif; ?>
+</article>

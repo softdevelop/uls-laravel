@@ -1,0 +1,84 @@
+//colors
+$seashell: #f1f1f1;
+$alabaster: #fafafa;
+$black: #000;
+$color_pohutukawa_approx: #90001b;
+$color_silver_approx: #bfbfbf;
+$color_celeste_approx: #ccc;
+$color_tapa_approx: #777777;
+$color_mercury_approx: #e4e4e4;
+
+.scroll-noti1 {
+	overflow-y: auto !important;
+	max-height: 425px;
+	height: auto;
+	.media{
+		height: 85px;
+	}
+}
+.show-all-noti {
+	line-height: 30px;
+	color: $black;
+	font-weight: 500;
+	&:hover {
+		color: $color_pohutukawa_approx;
+		font-weight: 700;
+	}
+}
+.wrap-box-show-all {
+	height: 31px;
+	
+	box-shadow: 0 2px 5px $color_silver_approx;
+}
+.full-notification {
+	.dropdown-header1 {
+		list-style: none;
+		border-bottom: 1px solid $color_celeste_approx;
+		padding-bottom: 10px;
+		font-weight: 700;
+	}
+	.media1 {
+		list-style: none;
+		&:hover {
+			background: $alabaster;
+		}
+	}
+	.fdropdown-menu {
+		padding-left: 0;
+	}
+	.fname {
+		font-weight: 700;
+		color: $black;
+	}
+	.ftext-muted {
+		color: $color_tapa_approx;
+	}
+	.f-active {
+		background: $seashell;
+	}
+	.fmedia {
+		list-style: none;
+		height: 60px;
+		border-bottom: 1px solid $color_mercury_approx;
+	}
+}
+.navibar-uls .info-user .navbar-nav .notifications .dropdown-menu .media.active1 {
+	background: $seashell;
+	&:hover {
+		background: $alabaster;
+	}
+}
+.c-0d0d0d{
+	color:#0d0d0d;
+}
+
+
+.navibar-uls .info-user .navbar-nav .notifications .dropdown-menu .media .wrap-media{
+    padding:0px;
+    display: block;
+}
+.navibar-uls .info-user .navbar-nav .notifications .dropdown-menu .scroll-noti1 .wrap-link{
+    padding: 6px;
+    height: 100%;
+    cursor: pointer;
+}

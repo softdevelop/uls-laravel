@@ -1,0 +1,48 @@
+<?php
+
+  $readMoreLink = "";
+  if($_56d64ea4d64791e5378b457c_field_assetLink != "") { $readMoreLink = $_56d64ea4d64791e5378b457c_field_assetLink; }
+  else if($_56d64ea4d64791e5378b457c_field_externalLink != "") { $readMoreLink = $_56d64ea4d64791e5378b457c_field_externalLink; }
+  else if($_56d64ea4d64791e5378b457c_field_internalLink != "") { $readMoreLink = $_56d64ea4d64791e5378b457c_field_internalLink; }
+
+?>
+<?php $image = getObjectInfoAssets('image','asset', $_56d64ea4d64791e5378b457c_field_image); ?>
+<section class="news" i="<?php echo $_56d64ea4d64791e5378b457c_field_assetLink; ?> - <?php echo $_56d64ea4d64791e5378b457c_field_externalLink; ?> - <?php echo $_56d64ea4d64791e5378b457c_field_internalLink; ?>">
+    <article>
+        <div class="news-wrapper">
+            <table cellspacing='0' cellpadding='0' style='width: 100%'>
+                <tr>
+                    <?php if($_56d64ea4d64791e5378b457c_field_dateShown !== ""): ?>
+                    <td valign='top'>
+                        <div class="news-date" i="<?php echo $_56d64ea4d64791e5378b457c_field_date; ?>">
+                            <?php echo $_56d64ea4d64791e5378b457c_field_dateShown; ?>
+
+                        </div>
+                    </td>
+                    <?php elseif($image['src'] !== ""): ?>
+                    <td valign='top'>
+                        <div class="news-video" i="<?php echo $_56d64ea4d64791e5378b457c_field_image; ?>">
+                            <a href="<?php echo $readMoreLink; ?>" title="<?php echo $image['title']; ?>"><img src="<?php echo $image['src']; ?>" alt="<?php echo $image['alt']; ?>" width="80" /></a>
+                        </div>
+                    </td>
+                    <?php endif; ?>
+                    <td valign='top' style='width: 100%'>
+                        <div class="news-info"  i="<?php echo $_56d64ea4d64791e5378b457c_field_date; ?>">
+                            <h5><a href="<?php echo $readMoreLink; ?>" style='color: inherit; font-size: inherit; font-weight: inherit;'><?php echo $_56d64ea4d64791e5378b457c_field_name; ?> <i class="fa fa-angle-right"></i></a></h5>
+                            <?php if($_56d64ea4d64791e5378b457c_field_info !== ""): ?>
+                            <div class="news-description"><a href="<?php echo $readMoreLink; ?>" style='color: inherit; font-size: inherit; font-weight: inherit;'><?php echo $_56d64ea4d64791e5378b457c_field_info; ?></a></div>    
+                            <?php endif; ?>
+                            <?php if($_56d64ea4d64791e5378b457c_field_readMore !== ""): ?>
+                            <div class="news-link-div">
+                                <a href="<?php echo $readMoreLink; ?>" class="text-red news-link"><?php echo $_56d64ea4d64791e5378b457c_field_readMore; ?> <i class="fa fa-angle-right"></i></a>
+                            </div>
+                            <?php endif; ?>
+                        </div>                      
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="clearfix"></div>
+    </article>
+</section>

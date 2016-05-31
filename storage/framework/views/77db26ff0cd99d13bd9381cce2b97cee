@@ -1,0 +1,294 @@
+<!doctype html>
+<html class="no-js" lang="">
+		<head>
+    		<title><?php echo $_5740aa3aae9d5a0d7a485f10_field_title; ?></title>
+    		<meta charset="utf-8">
+    		<meta name="description" content="<?php echo $_5740aa3aae9d5a0d7a485f10_field_metadescription; ?>">
+	  		<meta name="keywords" content="<?php echo $_5740aa3aae9d5a0d7a485f10_field_metakeywords; ?>">
+    		<meta name="viewport" content="width=device-width, initial-scale=1">
+			<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>" />
+				<link rel="shortcut icon" href="" >
+				<link rel="apple-touch-icon" href="">
+    		<link type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic" rel="stylesheet" type="text/css">
+				<link type="text/css" rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+				<link type="text/css" rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/css/lightslider.min.css">
+				<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.1/magnific-popup.min.css">
+
+
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin base.css Asset */ ?>http://dev.cdn.ulsinc.com/assets/css/57295594ae9d5a38e97cdd51/base.css<?php /* End base.css Asset */ ?>">
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin main-new.css Asset */ ?>http://dev.cdn.ulsinc.com/assets/css/574077b8ae9d5a12d2125acc/main-new.css<?php /* End main-new.css Asset */ ?>">
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin custom.css Asset */ ?>http://dev.cdn.ulsinc.com/assets/css/57295547ae9d5a38db022341/custom.css<?php /* End custom.css Asset */ ?>">
+				<link type="text/css" rel="stylesheet" href="http://cdn.ulsinc.com/assets/css/572c52d60454aa0629769655/search.css?v=1">
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin main-new.css Asset */ ?>http://dev.cdn.ulsinc.com/assets/css/56eb796fdf35769f1804449b/main-new.css<?php /* End main-new.css Asset */ ?>">
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin ui.fancytree.min.css Asset */ ?>http://dev.cdn.ulsinc.com/assets/css/5740bbf8ae9d5a64c34c1552/ui.fancytree.min.css<?php /* End ui.fancytree.min.css Asset */ ?>">
+
+				<link type="text/css" rel="stylesheet" href="<?php /* Begin main-v2.89551f27.css Asset */ ?>http://dev.cdn.ulsinc.com/assets/css/574077cfae9d5a10892471f1/main-v2.f9c0bcfd.css<?php /* End main-v2.89551f27.css Asset */ ?>">
+				
+				
+		</head>
+		
+
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+			<?php /* Begin Main Header Block */ ?><?php /* End Main Header Block */ ?>			
+			<?php /* Begin Main Navigation Block */ ?><?php /* End Main Navigation Block */ ?>
+
+    <div id="content">
+         
+
+<div ng-app="uls">
+<?php /* Begin Header Gallery Block */ ?> <section class="header-title red">
+		<div class="container">
+			 <div class="wrap-title">
+					<h3 class="text-white"><?php echo e($_56ec06c1ae9d5a1f580b6f58_1_field_title); ?> Gallery</h3>
+			 </div>
+			 <div class="wrap-image">
+					<img src="<?php /* Begin header-title-image.png Asset */ ?><?php /* End header-title-image.png Asset */ ?>">
+			 </div>
+		</div>
+ </section><?php /* End Header Gallery Block */ ?>
+<div class="br-gallery">
+<ol class="breadcrumb container">
+  <li><a href="#"><i>Home</i></a></li>
+  <li><a href="#"><i>page</i></a></li>
+  <li class="active"><i>active page</i></li>
+</ol>
+</div>
+		
+		<?php /* Begin Button Guild Me Block */ ?><div class="text-center box-action">
+        <button class="btn btn-blue btn-x-large get-later margin-bottom-15" href="#get-later">Guide Me</button>
+  		<p class="text-sub"><a href="">I Want to use the Manual Process <i class="fa fa-angle-right"></i></a></p>
+</div>
+<form action="<?php echo e(URL::to('configurator')); ?>" method="post" accept-charset="utf-8"   id="get-guide-email" class="mfp-hide">
+    <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+  <img src="<?php /* Begin icon-times.png Asset */ ?><?php /* End icon-times.png Asset */ ?>" class="mfp-close">
+  <div class="wrap-box-contact">
+
+    <div class="main-box">
+      <div class="wrap-question-comment">
+
+        <h4 class="text-header margin-bottom-15">Save Your Progress</h4>
+        <p class="text-message">Enter your email address and your saved progress will be sent to you when you exit at any time.</p>
+        <div class="box-email">
+          <div class="input-group">
+            <span class="input-group-addon test-addon-email" id="basic-addon1"><strong>Email</strong> <span class="text-red">*</span></span>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email Address">
+          </div>
+        </div>
+
+      </div>
+      <div class="action-button text-center">
+        <button  class="btn btn-blue btn-x-large margin-bottom-15">
+          Continue
+        </button>
+        <button   class="btn btn-x-large margin-bottom-15 btn-empty">
+          Later
+        </button>
+      </div>
+
+    </div>
+  </div>
+</form>
+<form id="get-later" class="mfp-hide">
+            <img src="<?php /* Begin icon-times.png Asset */ ?><?php /* End icon-times.png Asset */ ?>png" class="mfp-close">
+            <div class="wrap-box-contact">
+
+              <div class="main-box">
+                <div class="form-group wrap-question-comment">
+                  <p class="text-message">By skipping the guided process, you acknowledge that you understand how lasers interact with your material(s) and are able to select a platform, laser power and wavelength(s) without guidance.</p>
+                </div>
+                <div class="action-button text-center">
+                  <button class="btn btn-blue btn-x-large get-guide-email margin-bottom-15" href="#get-guide-email">
+                    Continue
+                  </button>
+                  <p class="text-sub"><a href="">Take me to the guided process <i class="fa fa-angle-right"></i></a></p>
+                </div>
+
+              </div>
+            </div>
+</form><?php /* End Button Guild Me Block */ ?>
+<div ng-controller="GalaryController as galaryCtrl">
+  <div class="main-content">
+            <div class="container">
+               <!-- start left content -->
+              <div class="wrap-group-option">
+    				<?php /* Begin Tags Block */ ?><?php foreach($tagsContent as $key => $tags): ?>
+<?php if(!empty($tags['children'])): ?>
+  <section class="group-checked <?php if($key == 0): ?>top <?php endif; ?>">
+      <h4 class="title">
+         <a class="text-more collapsed" data-toggle="collapse" href="#<?php echo e(strtolower(preg_replace('/[^a-zA-Z0-9_]/', '_',  $tags['name']))); ?>" aria-expanded="false" aria-controls="<?php echo e(strtolower(str_replace(' ', '_', $tags['name']))); ?>">
+         <span class="more text-red"><?php echo e($tags['name']); ?> <i class="fa fa-caret-right"></i> <i class="fa fa-caret-down"></i></span>
+         </a>
+      </h4>
+
+      <?php if(!empty($tags['children'])): ?>
+              <div class="collapse wrap" id="<?php echo e(strtolower(preg_replace('/[^a-zA-Z0-9_]/', '_',  $tags['name']))); ?>">
+
+                <?php foreach($tags['children'] as $key => $tag): ?>
+                <?php if(empty($tag['children'])): ?>
+                   <div class="form-group">
+                     <div class="item">
+                        <input type="checkbox" value=".<?php echo e(strtolower(preg_replace('/[^a-zA-Z0-9_]/', '_',  $tag['name']))); ?>" ng-model="galaryCtrl.tagsIds['<?php echo e($tag['_id']); ?>']" ng-click="galaryCtrl.getGalleryWitTagsIds()" ng-true-value="'<?php echo e($tag['_id']); ?>'" ng-false-value="''"><span class="tage_name"><?php echo e($tag['name']); ?></span>
+                     </div>
+                  </div>
+               <?php else: ?>
+               <div class="form-group">
+                  <h5 class="text-red sub-title">
+                     <a class="text-more collapsed" data-toggle="collapse" href="#<?php echo e(strtolower(preg_replace('/[^a-zA-Z0-9_]/', '_',  $tag['name']))); ?>" aria-expanded="false" aria-controls="<?php echo e(strtolower(preg_replace('/[^a-zA-Z0-9_]/', '_',  $tag['name']))); ?>">
+                     <span class="more text-red"><?php echo e($tag['name']); ?> <i class="fa fa-caret-right"></i> <i class="fa fa-caret-down"></i></span>
+                     </a>
+                  </h5>
+                  <div class="collapse" id="<?php echo e(strtolower(preg_replace('/[^a-zA-Z0-9_]/', '_',  $tag['name']))); ?>">
+                     <?php foreach($tag['children'] as $item): ?>
+                        <div class="item">
+                           <input type="checkbox" value=".<?php echo e(strtolower(preg_replace('/[^a-zA-Z0-9_]/', '_',  $item['name']))); ?>" ng-model="galaryCtrl.tagsIds['<?php echo e($item['_id']); ?>']" ng-click="galaryCtrl.getGalleryWitTagsIds()" ng-true-value="'<?php echo e($item['_id']); ?>'" ng-false-value="''"><span class="tage_name"><?php echo e($item['name']); ?></span>
+                        </div>
+                     <?php endforeach; ?>
+                  </div>
+               </div>
+               <?php endif; ?>
+               <?php endforeach; ?>
+               <div class="clearfix"></div>
+               </div>
+      <?php endif; ?>
+   </section>
+  <?php endif; ?>
+<?php endforeach; ?>
+<?php /* End Tags Block */ ?>
+      <div class="clearfix"></div>
+   </div>
+
+
+               <!-- end -->
+               <!-- start main content -->
+        <?php /* Begin Images Block */ ?> <div class="wrap-list-gallery">
+   <section class="list-gallery" >
+     <div ng-repeat = "item in galaryCtrl.items">
+        <div class="item">
+           <a href="{{item.url}}">
+           <img style="width:147px;height:147px;" src="{{item.url}}">
+           </a>
+        </div>
+       </div>
+     
+      <div class="clearfix"></div>
+     <div data-ng-controller="PaginationUlsController as paginationCtrl">
+   		<div class="text-center panigation">
+  	     	<pagination total-items="paginationCtrl.totalItems" ng-model="paginationCtrl.currentPage" max-size="paginationCtrl.maxSize" class="pagination-sm" ng-change="paginationCtrl.pageChanged()" boundary-links="true" rotate="false" items-per-page="paginationCtrl.itemsPerPage"></pagination>
+  		</div>
+     </div>
+   </section>
+</div><?php /* End Images Block */ ?>
+
+               <!-- end -->
+               <div class="clearfix"></div>
+            </div>
+         </div>
+		</div>
+<?php /* Begin Bottom Content Block */ ?><div class="bottom-content">
+            <div class="wrap-list-bottom">
+               <div class="container">
+                  <div class="list-bottom">
+                     <div class="item">
+                        <h4 class="text-blue title">LEARN</h4>
+                        <p class="text">
+                           Learn the fundamentals of laser technology
+                        </p>
+                     </div>
+                     <div class="item">
+                        <h4 class="text-blue title">EXPLORE</h4>
+                        <p class="text">
+                           Explore Real world applications
+                        </p>
+                     </div>
+                     <div class="item">
+                        <h4 class="text-blue title">MATERIALS</h4>
+                        <p class="text">
+                           Find out how DLMP works with thousands of materials
+                        </p>
+                     </div>
+                     <div class="item">
+                        <h4 class="text-blue title">DISCOVER</h4>
+                        <p class="text">
+                           Discover how your organization can benefit from laser technology
+                        </p>
+                     </div>
+                     <div class="item">
+                        <h4 class="text-blue title">DEPLOY</h4>
+                        <p class="text">
+                           See how Universal can help you deploy laser technology
+                        </p>
+                     </div>
+                     <div class="item">
+                        <h4 class="text-blue title">CREATE</h4>
+                        <p class="text">
+                           Create a new world of opportunities with innovative technologies from ULS
+                        </p>
+                     </div>
+                     <div class="item last">
+                        <h4 class="text-blue title">CONFIGURE</h4>
+                        <p class="text">
+                           Configure your customized ULS laser system
+                        </p>
+                     </div>
+                     <div class="clearfix"></div>
+                  </div>
+               </div>
+            </div>
+         </div><?php /* End Bottom Content Block */ ?>
+  
+</div>
+<script src="<?php /* Begin app.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/galary/5728a769ae9d5a72534194f1/app.js<?php /* End app.js Asset */ ?>"></script>
+    	<script src="<?php /* Begin config.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/galary/5728a77aae9d5a719e207141/config.js<?php /* End config.js Asset */ ?>"></script>
+    	<script src="<?php /* Begin galarycontroller.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/galary/5728cd1aae9d5a0c5436b181/galarycontroller.js<?php /* End galarycontroller.js Asset */ ?>">
+</script>
+    	<script src="<?php /* Begin paginationcontroller.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/galary/5728be19ae9d5a04052cd9b1/paginationcontroller.js<?php /* End paginationcontroller.js Asset */ ?>"></script>
+    	<script src="<?php /* Begin paginationservice.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/galary/5728be2eae9d5a04384807f2/paginationservice.js<?php /* End paginationservice.js Asset */ ?>"></script>
+
+    </div>
+    <footer>
+				<?php /* Begin Footer Navigation Block */ ?><?php /* End Footer Navigation Block */ ?>
+				<?php /* Begin Footer Copyright Block */ ?><?php /* End Footer Copyright Block */ ?>
+	</footer>
+
+			<script type="text/javascript" src="<?php /* Begin vendor.fe961997.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/56eb7d42df3576830d04449d/vendor.37d58f8f.js<?php /* End vendor.fe961997.js Asset */ ?>"></script>
+			<script type="text/javascript" src="<?php /* Begin plugins.bde8e777.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/56eb79e8df3576a00704449b/plugins.bde8e777.js<?php /* End plugins.bde8e777.js Asset */ ?>"></script>
+		   
+    		<script type="text/javascript" src="https://www.google-analytics.com/analytics.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/js/lightslider.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/js/lightslider.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script>
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw5uR1gaKG3AaDuDrVYa6QaE47n03Td_o&callback=initMap"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js"></script>
+
+			
+			 <script type="text/javascript" src="<?php /* Begin main.38388ae6.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/56eb79f8df3576460704449c/main.354e9480.js<?php /* End main.38388ae6.js Asset */ ?>"></script>
+			  <script src="http://cdn.ulsinc.com/assets/js/572c50030454aa1119758f41/search.js?v=1"></script>
+
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-resource.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap-tpls.min.js"></script>
+  		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstra
+																					p-editable.min.js"></script>
+  		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.fancytree/2.10.2/jquery.fancytree-all.min.js"></script>
+  		<script type="text/javascript" src="<?php /* Begin ng-table.min.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/configurator/5740bda1ae9d5a581156008c/ng-table.min.js<?php /* End ng-table.min.js Asset */ ?>"></script>
+	    <script type="text/javascript" src="<?php /* Begin guideconfiguratorservice.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/configurator/5740725cae9d5a0954599068/guideconfiguratorservice.js<?php /* End guideconfiguratorservice.js Asset */ ?>"></script>
+	  	 <script type="text/javascript" src="<?php /* Begin guideconfiguratorcontroller.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/configurator/57407274ae9d5a2d743f4a01/guideconfiguratorcontroller.js<?php /* End guideconfiguratorcontroller.js Asset */ ?>"></script>
+	<script type="text/javascript" src="<?php /* Begin configuratorservice.js Asset */ ?>http://dev.cdn.ulsinc.com/assets/js/configurator/5740a6a1ae9d5a54f9527082/configuratorservice.js<?php /* End configuratorservice.js Asset */ ?>"></script>
+
+     <script>
+						$(document).ready(function () {
+								$('#tipue_drop_input').tipuedrop();
+						});
+		  </script>
+  </body>
+
+
+</html>

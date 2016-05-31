@@ -1,0 +1,31 @@
+<div class="top-content">
+	<h3 class="c-m">{{trans.breadcrum}}
+		<a data-toggle="modal" href="javascript:void(0)" ng-click="getModalCreateDescription()" class="btn btn-primary pull-right fixed-add">
+		<i class="fa fa-plus"></i> {{trans.add_permission}}
+		</a>
+	</h3>
+</div>
+<div class="content">
+	<div class="title-table">
+		<div class="table-responsive">
+			<table class="table table-hover fix-height-tb table-striped" ng-table="tableParams" show-filter="isSearch">
+				<a class="fixed-search" href="javascript:void(0)" ng-click="isSearch = !isSearch">
+	                <i class="fa fa-search"></i>
+	            </a>
+				<tbody>
+					<tr  ng-repeat="item in $data">
+						<td class="text-center" sortable="'name'" data-title="trans.name" filter="{ 'name': 'text' }">
+							<a href="javascript:void(0)">{{item.name}}</a>
+						</td>
+						<td class="text-center" sortable="'description'" data-title="trans.description" filter="{ 'description': 'text' }"><a href="javascript:void(0)">{{item.description}}</a>
+						</td>
+						<td class="text-center" data-title="'Action'">
+							<a  ng-click="delete(item.id)" class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Delete"><i
+								class="fa fa-times"></i></a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

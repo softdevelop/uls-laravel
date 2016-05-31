@@ -1,0 +1,319 @@
+<?php /* <div id="page-loading" style="display: none;" class="overlay-loading">
+    <span class="loading-icon"><i class="fa fa-spinner fa-pulse fa-fw margin-bottom"></i></span>
+</div> */ ?>
+
+<div id="page-loading" class="overlay-loading none">
+  <div class="spin-box"></div>
+</div>
+<div class="butterbar-container hidden"><span id="butterbar">An unexpected error has occurred. Please try again later.</span></div>
+<?php echo Html::script('bower_components/jquery/dist/jquery.min.js'); ?>
+
+<script type="text/javascript">
+  window.debug = <?php echo isDebug(); ?>;
+</script>
+
+<script>
+  $(document).ready(function(){
+    $('#tag-roles').click(function(){
+        $('.session-roles').addClass('in');
+        $('.session-user-admin').removeClass('in');
+        $('.session-permissions').removeClass('in');
+    });
+    $('#tag-permission').click(function(){
+        $('.session-permissions').addClass('in');
+        $('.session-roles').removeClass('in');
+        $('.session-user-admin').removeClass('in');
+    });
+  });
+</script>
+
+<?php echo Html::script('app/lib/socket.io-1.3.4.js'); ?>
+
+
+<?php echo $__env->yieldContent('scripts-modules'); ?>
+<?php if(!isProduction() && !isDev()): ?>
+  <?php echo Html::script('scripts/main.js'); ?>
+
+  <?php echo Html::script('scripts/vendor.js?v=1'); ?>
+
+  <?php echo Html::script('scripts/modernizr.js'); ?>
+
+  <?php echo Html::script('bower_components/jquery-ui/jquery-ui.min.js'); ?>
+
+  <?php echo Html::script('bower_components/jquery.maskedinput/dist/jquery.maskedinput.min.js'); ?>
+
+  <?php echo Html::script('bower_components/fancytree/dist/jquery.fancytree-all.min.js'); ?>
+
+  <?php echo Html::script('bower_components/fancytree/dist/src/jquery.fancytree.dnd.js'); ?>
+
+  <?php echo Html::script('bower_components/fancytree/dist/src/jquery.fancytree.edit.js'); ?>
+
+  <?php echo Html::script('bower_components/underscore/underscore.js'); ?>
+
+
+  <?php echo Html::script('bower_components/angular/angular.js'); ?>
+
+  <?php echo Html::script('bower_components/angular-resource/angular-resource.js'); ?>
+
+  <?php echo Html::script('bower_components/angular-bootstrap/ui-bootstrap.min.js'); ?>
+
+  <?php echo Html::script('bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'); ?>
+
+  <?php echo Html::script('bower_components/ng-table/dist/ng-table.min.js'); ?>
+
+  <?php echo Html::script('bower_components/ngImgCrop/source/js/init.js'); ?>
+
+  <?php echo Html::script('bower_components/ngImgCrop/source/js/ng-img-crop.js'); ?>
+
+  <?php echo Html::script('bower_components/ngImgCrop/compile/minified/ng-img-crop.js'); ?>
+
+  <?php echo Html::script('bower_components/pusher/dist/pusher.min.js'); ?>
+
+  <?php echo Html::script('bower_components/angular-cookies/angular-cookies.js'); ?>
+
+  <?php echo Html::script('bower_components/angular-xeditable/dist/js/xeditable.js'); ?>
+
+  <?php echo Html::script('bower_components/angular-sanitize/angular-sanitize.js'); ?>
+
+  <?php echo Html::script('bower_components/moment/min/moment.min.js'); ?>
+
+  <?php echo Html::script('bower_components/moment/min/locales.min.js'); ?>
+
+  <?php echo Html::script('bower_components/humanize-duration/humanize-duration.js'); ?>
+
+  <?php echo Html::script('bower_components/angular-timer/dist/angular-timer.js'); ?>
+
+
+  <?php /* <?php echo Html::script('bower_components/angular-ui-router/release/angular-ui-router.min.js'); ?> */ ?>
+  <?php echo Html::script('bower_components/angular-animate/angular-animate.js'); ?>
+
+  <?php echo Html::script('bower_components/angular-wizard/dist/angular-wizard.min.js'); ?>
+
+
+
+  <?php echo Html::script('bower_components/ng-file-upload/ng-file-upload-shim.min.js'); ?>
+
+
+
+  <?php echo Html::script('bower_components/magnific-popup/dist/jquery.magnific-popup.js'); ?>
+
+  <?php echo Html::script('bower_components/magnific-popup/dist/jquery.magnific-popup.min.js'); ?>
+
+  <!-- jquery highcharts -->
+  <?php echo Html::script('bower_components/highcharts/highcharts.js'); ?>
+
+  <?php echo Html::script('bower_components/angular-route/angular-route.js'); ?>
+
+  <?php /* <?php echo Html::script('bower_components/angular-ui-utils/modules/mask/mask.js'); ?> */ ?>
+  <?php echo Html::script('app/lib/tool-tip/tool-tip.js'); ?>
+
+
+
+  <?php echo Html::script('app/app.js'); ?>
+
+  <?php echo Html::script('app/config.js'); ?>
+
+  <?php echo Html::script('app/baseController.js'); ?>
+
+
+  <?php /* <?php echo Html::script('app/route.js'); ?> */ ?>
+  <?php echo Html::script('app/components/user/userService.js'); ?>
+
+  <?php echo Html::script('app/components/assetmanagers/AssetManagerService.js'); ?>
+
+  <?php echo Html::script('app/shared/notification/notificationController.js'); ?>
+
+  <?php echo Html::script('app/shared/notification/notificationService.js'); ?>
+
+  <?php echo Html::script('app/shared/notification/notificationDirective.js'); ?>
+
+  <?php echo Html::script('app/shared/validate/rowboatValidateDirective.js'); ?>
+
+  <?php echo Html::script('app/shared/format-date/formatDate.js'); ?>
+
+  <?php echo Html::script('app/shared/translation/transFilter.js'); ?>
+
+
+  <?php echo Html::script('app/shared/filters/elapsedTime.js'); ?>
+
+
+  <?php echo Html::script('app/lib/redactor1023/redactor/redactor.js?v='.getVersionScript()); ?>
+
+  <?php echo Html::script('app/lib/redactor1023/redactor/table.js?v='.getVersionScript()); ?>
+
+  <?php echo Html::script('app/lib/redactor1023/redactor/source.js?v='.getVersionScript()); ?>
+
+  <?php echo Html::script('app/lib/redactor1023/redactor/insertlink.js?v='.getVersionScript()); ?>
+
+  <?php echo Html::script('app/lib/redactor1023/redactor/insertpage.js?v='.getVersionScript()); ?>
+
+  <?php echo Html::script('app/shared/ng-file-upload/ng-file-upload-all.js?v='.getVersionScript()); ?>
+
+
+  <?php echo Html::script('app/components/user/help-editor/HelpEditorDirective.js'); ?>
+
+
+<?php else: ?>
+  <script src="<?php echo e(elixir('app/pages/library.js')); ?>"></script>
+<?php endif; ?>
+<?php echo Html::script('app/lib/codemirror/lib/codemirror.js'); ?>
+
+<?php echo Html::script('app/lib/codemirror/addon/search/searchcursor.js'); ?>
+
+<?php echo Html::script('app/lib/codemirror/addon/search/search.js'); ?>
+
+<?php echo Html::script('app/lib/codemirror/addon/dialog/dialog.js'); ?>
+
+<?php echo Html::script('app/lib/codemirror/addon/edit/matchbrackets.js'); ?>
+
+<?php echo Html::script('app/lib/codemirror/addon/edit/closebrackets.js'); ?>
+
+<?php echo Html::script('app/lib/codemirror/addon/comment/comment.js'); ?>
+
+<?php echo Html::script('app/lib/codemirror/addon/wrap/hardwrap.js'); ?>
+
+<?php echo Html::script('app/lib/codemirror/addon/display/placeholder.js'); ?>
+
+<?php echo Html::script('app/lib/codemirror/addon/fold/foldcode.js'); ?>
+
+<?php echo Html::script('app/lib/codemirror/addon/fold/brace-fold.js'); ?>
+
+<?php echo Html::script('app/lib/codemirror/mode/javascript/javascript.js'); ?>
+
+<?php echo Html::script('app/lib/codemirror/keymap/sublime.js'); ?>
+
+
+
+<?php /* <?php echo Html::script('app/lib/codemirror/addon/display/fullscreen.js'); ?> */ ?>
+<?php echo Html::script('app/lib/codemirror/mode/htmlmixed/htmlmixed.js'); ?>
+
+<?php echo Html::script('app/lib/codemirror/mode/xml/xml.js'); ?>
+
+<?php echo Html::script('app/lib/codemirror/mode/clike/clike.js'); ?>
+
+<?php echo Html::script('app/lib/codemirror/mode/php/php.js'); ?>
+
+
+
+<?php /* <?php echo Html::script('app/lib/redactor1023/redactor/redactor.js?v='.getVersionScript()); ?> */ ?>
+<?php /* <?php echo Html::script('app/lib/redactor1023/redactor/table.js?v='.getVersionScript()); ?> */ ?>
+<?php /* <?php echo Html::script('app/lib/redactor1023/redactor/insertblock.js?v='.getVersionScript()); ?> */ ?>
+
+<?php /* <?php echo Html::script('app/lib/redactor1023/redactor/source.js?v='.getVersionScript()); ?> */ ?>
+<?php /* <?php echo Html::script('app/lib/redactor1023/redactor/insertlink.js?v='.getVersionScript()); ?> */ ?>
+<?php /* <?php echo Html::script('app/lib/redactor1023/redactor/insertpage.js?v='.getVersionScript()); ?> */ ?>
+<?php /* <?php echo Html::script('app/lib/redactor1023/redactor/insertasset.js?v='.getVersionScript()); ?> */ ?>
+<?php /* <?php echo Html::script('app/lib/redactor1023/redactor/parsercontent.js?v='.getVersionScript()); ?> */ ?>
+
+
+<?php echo Html::script('bower_components/notify.js/notify.js'); ?>
+
+
+<?php /* <?php echo Html::script('bower_components/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js'); ?> */ ?>
+<!-- ui-iconpicker Script -->
+<?php echo Html::script('bower_components/ui-iconpicker/dist/scripts/ui-iconpicker.min.js'); ?>
+
+
+<!-- Angular switch bootstrap -->
+<?php echo Html::script('bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js'); ?>
+
+<?php echo Html::script('bower_components/angular-toggle-switch/angular-toggle-switch.min.js'); ?>
+
+
+
+<!-- jquery spectrum color picker -->
+<?php echo Html::script('bower_components/spectrum/spectrum.js'); ?>
+
+
+<!-- jquery  multiselect -->
+<?php echo Html::script('assets/forms_elements_multiselect/js/jquery.multi-select.js'); ?>
+
+<?php echo Html::script('assets/forms_elements_multiselect/js/multiselect.init.js'); ?>
+
+
+<!-- jquery  select 2 -->
+<?php echo Html::script('bower_components/select2/dist/js/select2.min.js'); ?>
+
+
+<!-- angular-sortable -->
+<?php echo Html::script('bower_components/angular-ui-sortable/sortable.min.js'); ?>
+
+
+
+<script type="text/javascript">
+
+  window.baseUrl = '<?php echo e(URL::to("")); ?>';
+  window.maxUpload   = <?php echo json_encode(uploadMaxFile()); ?>;
+  window.userId = <?php echo Auth::user()->id; ?>;
+  window.hashData = <?php echo json_encode(getHashData()); ?>;
+  window.usersMap = <?php echo json_encode(getUsersMap()); ?>;
+  window.testFuture = <?php echo json_encode(testFuture()); ?>;
+  window.isTime = <?php echo json_encode(checkIsTime(Auth::user()->id)); ?>
+
+  window.listsAsset = <?php echo json_encode(getFileImagesAsset()); ?>
+
+  window.translations = <?php echo json_encode(trans('js/js')); ?>
+
+
+  window.dataOptionMap = <?php echo json_encode(getDataOptionsMap()); ?>;
+
+  window.socketURL = '<?php echo e(env("SOCKET_URL", "http://localhost:8891")); ?>';
+  window.urlFrontEnd = '<?php echo e(env("url_front_end", "http://demo.ulsinc.com")); ?>';
+
+  window.isAdvancedEditingFeatures = <?php echo json_encode(Auth::user()->can('advanced_editing_features')); ?>
+
+
+// $(document).ready(function() {
+//     $('#rootwizard').bootstrapWizard();
+// });
+
+</script>
+
+<?php if(isTesting()): ?>
+  <?php echo Html::script('bower_components/jasmine-core/lib/jasmine-core/jasmine.js'); ?>
+
+  <?php echo Html::script('bower_components/jasmine-core/lib/jasmine-core/jasmine-html.js'); ?>
+
+  <?php echo Html::script('bower_components/jasmine-core/lib/jasmine-core/boot.js'); ?>
+
+  <?php echo Html::script('bower_components/angular-mocks/angular-mocks.js'); ?>
+
+   <script type="text/javascript">
+
+        var angularMock = ['ngMock'];
+    </script>
+
+<?php endif; ?>
+<?php echo $__env->yieldContent('script'); ?>
+<?php echo Html::script('app/shared/fomat-html/fomatHtml.js?v=' . getVersionScript() ); ?>
+
+
+<script>
+  var RowboatPusher = {
+            init: function(){
+                this.socket = io(window.socketURL);
+            },
+            socket: null,
+            subscribe: function(channel){
+                return {
+                    channel: channel,
+                    bind: function(event, callback){
+                        RowboatPusher.socket.on(this.channel+':'+event, callback)
+                    }
+                }
+            }
+        }
+        RowboatPusher.init();
+</script>
+
+<?php if(isProduction() && isDev()): ?>
+    <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+<?php endif; ?>
+

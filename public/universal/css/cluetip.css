@@ -1,0 +1,118 @@
+/* global */
+#cluetip-close img {
+  border: 0;
+}
+#cluetip-title {
+  overflow: hidden;
+}
+#cluetip-title #cluetip-close {
+  float: right;
+  position: relative;
+}
+#cluetip-waitimage {
+  width: 25px;
+  height: 10px;
+  position: absolute;
+  background-image: url(http://dev.ulsinc.com/imgs/tooltip/wait.gif);
+}
+.cluetip-arrows {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: -11px;
+  height: 22px;
+  width: 11px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+#cluetip-extra {
+  display: none;
+}
+/***************************************
+   =cluetipClass: 'default' 
+-------------------------------------- */
+
+.cluetip-default {
+	margin:5px;
+  background-color: #eee;  	
+    
+    border-radius: 0em 0em 1em 1em;
+	-webkit-border-radius: 0em 0em 1em 1em;
+	-moz-border-radius: 0em 0em 1em 1em;
+
+}
+
+.cluetip-default strong {color:#990000;}
+
+.cluetip-default #cluetip-outer {
+  position: relative;
+  margin: 0px;
+  
+  border-radius: 0em 0em 1em 1em;
+	-webkit-border-radius: 0em 0em 1em 1em;
+	-moz-border-radius: 0em 0em 1em 1em;
+/*	*/
+	-webkit-box-shadow: 0 1px 8px rgba(0,0,0, .5);
+	-moz-box-shadow: 0 1px 8px rgba(0,0,0, .5);
+	
+	background-color:#eee;
+}
+.cluetip-default h3#cluetip-title {
+  margin: 0px;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: normal;
+  
+  background: #900000; /* old browsers */
+	background: -moz-linear-gradient(top, #900000 0%, #500000 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#900000), color-stop(100%,#500000)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#900000', endColorstr='#500000',GradientType=0 ); /* ie */	
+	
+  color: #fff;
+}
+.cluetip-default #cluetip-title a {
+  color: #eee;
+  font-size: 0.95em;
+}  
+.cluetip-default #cluetip-inner {
+  padding:10px 20px; line-height:20px;
+}
+.cluetip-default div#cluetip-close { 
+  text-align: right;
+  margin: 0 5px 5px;
+  color: #900;
+}
+
+/* default arrows 
+
+.clue-right-default .cluetip-arrows {
+  background-image: url(http://dev.ulsinc.com/imgs/tooltip/arrowleft.gif);
+}
+.clue-left-default .cluetip-arrows {
+  background-image: url(http://dev.ulsinc.com/imgs/tooltip/arrowright.gif);
+  left: 100%;
+  margin-right: -11px;
+}
+.clue-top-default .cluetip-arrows {
+  background-image: url(http://dev.ulsinc.com/imgs/tooltip/arrowdown.gif);
+  top: 100%;
+  left: 50%;
+  margin-left: -11px;
+  height: 11px;
+  width: 22px;  
+}  
+.clue-bottom-default .cluetip-arrows {
+  background-image: url(http://dev.ulsinc.com/imgs/tooltip/arrowup.gif);
+  top: -11px;
+  left: 50%;
+  margin-left: -11px;
+  height: 11px;
+  width: 22px;
+}*/
+
+
+/* stupid IE6 HasLayout hack */
+.cluetip-rounded #cluetip-title,
+.cluetip-rounded #cluetip-inner {
+  zoom: 1;
+}

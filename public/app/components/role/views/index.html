@@ -1,0 +1,50 @@
+<div class="header-branch">
+    <div class="branch-action">
+        <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6 title-branch padding-none">
+            <h4 class="margin-none">Roles Administrator</h4>
+        </div>
+        <div class="col-xs-2  col-sm-6 col-md-6 col-lg-6 btn-branch padding-none">
+            <div class="btn-group pull-right">
+                <a data-toggle="modal" ng-click="getModalCreateRole()" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> <span class="hidden-xs">Add role</span>
+                </a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+
+<div class="table-responsive table-user list-branch-tb" style="position:relative;min-height:auto">
+    <a class="fixed-search" href="javascript:void(0)" ng-click="isSearch = !isSearch">
+        <i class="fa fa-search"></i>
+    </a> 
+    <table class="table table-hover" ng-table="tableParams"  show-filter="isSearch">
+        <tbody id="responsive-table-body">
+            <tr  ng-repeat="item in $data">
+                <td class="text-center" sortable="'name'" data-title="'Name'" filter="{ 'name': 'text' }">
+                    <a href="javascript:void(0)">{{item.name}}</a>
+                </td>
+                <td class="text-center" sortable="'display_name'" data-title="'Display Name'" filter="{ 'display_name': 'text' }">
+                    <a href="javascript:void(0)" title="{{item.description}}">{{item.display_name}}</a>
+                </td>
+                <td class="show-action  action text-center" style="width:250px;" data-title="'Action'">
+                    <div class="wrap-ac-group">
+                        <i ng-disabled="item.deleted_at != null" ng-click="showGroup($event)" class="fa fa-ellipsis-v pointer"></i>
+                        <ul class="group-btn-ac">
+                            <li>
+                                <a href="javascript:void(0)" title="Update Permissions"  data-toggle="modal" ng-href="admin/user/roles/permissions/{{item.id}}" name="click"><i class="fa fa-ban"></i> Update Permissions</a>
+                            </li>
+                            <li>
+                                <a title="Edit" ng-click="getModalCreateRole(item.id)" data-toggle="modal" href="javascript:void(0)" name="click"><i class="fa fa-pencil"></i> Edit</a>
+                            </li>
+                            <li>
+                                <a ng-click="delete(item.id)" href="javascript:void(0)" title="Delete"><i class="fa fa-times"></i> Delete</a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+       </tbody>
+    </table>
+</div>

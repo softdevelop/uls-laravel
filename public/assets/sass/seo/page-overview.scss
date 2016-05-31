@@ -1,0 +1,7 @@
+@import "../modules/mixins-responsive.scss";
+
+@media only screen and(max-width: $break-small-355) {
+	.hide-fb, .hide-tt, .hide-gg, .hide-dl, .hide-sl, .hide-dig{
+		display: none!important;
+	}
+}

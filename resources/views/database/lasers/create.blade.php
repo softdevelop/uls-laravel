@@ -1,0 +1,185 @@
+@extends('app')
+@section('title')
+    @if(!empty($laser) && !empty($laser['id']))
+        Edit Laser
+    @else
+        Create Laser
+    @endif
+@endsection
+@section('content')
+<div ng-controller="LaserController" class="wrap-content-management block-manager">
+
+    <div class="top-content">
+
+        <label class="c-m content-management">
+            <span class="breadcrumb-level">
+                <a class="c-breadcrumb" href="@{{baseUrl}}/cms/database-manager">CMS Database Manager /&nbsp;
+                <a class="c-breadcrumb" href="@{{baseUrl}}/cms/database-manager/set-database-selected/root_laser" title="">Laser</a> / 
+                @if(!empty($laser) && !empty($laser['id']))
+                    Edit
+                @else
+                    Create
+                @endif</a>
+            </span>
+        </label>
+
+    </div>
+    <div class="content margin-top-0">
+        <div>
+            <form role="form" name="formData">
+                <!-- Name -->
+                <div class="form-group">
+                    <label class="label-form" for="name">Name:<span class="text-require"> *</span></label>
+                    <div class="wrap-form">
+                        <input class="form-control name" placeholder="Name" type="text" name="name" ng-model="laser.name" ng-required="true" />
+                        <div class="pull-left">
+                            <small class="help-inline" ng-show="submitted && formData.name.$error.required">Name is a required field</small>
+                            <small class="help-inline" ng-show="submitted && error">@{{error}}</small>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="wrap-box-title">
+
+                    <a class="pointer btn btn-xs btn-upload pull-right" ng-click="addPlatform()" >
+                        <i class="fa fa-plus-square"></i>  Add Platform
+                    </a>
+
+                    <div class="clearfix"></div>
+                    <br />
+                    <div>
+                        <div>
+                            <div class="panel-group" ng-repeat="(key, value) in multiPlatforms" class="sectionsid">
+                                
+                                <div class="panel panel-default have-border">
+                                    <div class="panel-heading have-bg fix-height">
+                                        <h4 class="panel-title relative">
+                                            <span class="position-close" ng-click="removePlatform(key)">
+                                                <i class="ti-close"></i>
+                                            </span>
+                                            
+                                            <a data-toggle="collapse"  data-target=".platform_@{{key}}" class="capitalize accordion-toggle">
+                                                Platform &nbsp
+                                            </a>
+                                            
+                                        </h4>
+                                    </div>
+
+                                    <div class="bg-fff platform_@{{key}} collapse in" role="tabpanel">
+                                        <div class="panel-body">
+                                           <div class="wrap-form">
+                                                <select ng-options="key as value for (key, value) in platforms" name="platform_@{{key}}_@{{index}}" class="form-control" ng-model="laser['data'][key].platform_id" ng-required="true" ng-change="selectedPlatform(key)">
+                                                    <option value="" ng-if="!laser['data'][key].platform_id">Select Platform</option>
+                                                </select>
+                                                <div class="pull-left">
+                                                    <small class="help-inline" ng-show="submitted && formData.platform_@{{key}}_@{{index}}.$error.required">Platform is a required field</small>
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <label class="label-form" ng-if="laser['data'][key].platform_id">
+                                                <span class="bulleted-text">
+                                                    Compatibility
+                                                </span> &nbsp
+                                                <a class="pointer btn btn-xs btn-upload" ng-click="addCompatibilityLaser(key)">
+                                                    <i class="fa fa-plus-square"></i> Add
+                                                </a>
+                                            </label>
+                                           
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="panel-body wrap-nested platform_@{{key}} collapse in">
+                                    <div class="fix-scroll" id="compatibility-@{{key}}">
+
+                                        <div ng-repeat="(index, item) in multiCompatibility[key]" class="panel-group" >
+                                            <div class="panel panel-default have-border">
+                                                <div class="panel-heading have-bg fix-height" role="tab" id="headingOne">
+                                                    <h4 class="panel-title relative">
+                                                        <span class="position-close" ng-click="removeCompatibilityLaser(key, index)">
+                                                            <i class="ti-close"></i>
+                                                        </span>
+                                                        <a data-toggle="collapse" data-target="#compatibility-@{{key}}-@{{index}}" class="capitalize accordion-toggle">
+                                                            &nbspCompatibility&nbsp
+                                                        </a>
+                                                        <div class="clearfix"></div>
+                                                    </h4>
+                                                </div>
+
+                                                <div id="compatibility-@{{key}}-@{{index}}" class="bg-fff collapse in" role="tabpanel">
+                                                    <div class="panel-body" >
+                                                        <div>
+                                                            <div class="form-group">
+                                                                <label class="label-form" for="power">Power (W):<span class="text-require"> *</span></label>
+                                                                <div class="wrap-form">
+                                                                    <input class="form-control" placeholder="Power" min="1" type="number" name="power_@{{key}}_@{{index}}" ng-model="laser['data'][key]['compatibilitys'][index]['power']" ng-required="true" />
+                                                                    <div class="pull-left">
+                                                                        <small class="help-inline" ng-show="submitted && formData.power_@{{key}}_@{{index}}.$error.required">Power is a required field</small>
+                                                                        <small class="help-inline" ng-show="submitted && formData.power_@{{key}}_@{{index}}.$invaild">Power is a invaild</small>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="clearfix"></div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="label-form" for="cut">Cut (um):<span class="text-require"> *</span></label>
+                                                                <div class="wrap-form">
+                                                                    <input class="form-control" placeholder="Cut" min="1" type="number" name="cut_@{{key}}_@{{index}}" ng-model="laser['data'][key]['compatibilitys'][index]['cut']" ng-required="true" />
+                                                                    <div class="pull-left">
+                                                                        <small class="help-inline" ng-show="submitted && formData.cut_@{{key}}_@{{index}}.$error.required">Cut is a required field</small>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="clearfix"></div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="label-form" for="type">Type:<span class="text-require"> *</span></label>
+                                                                <div class="wrap-form">
+                                                                <select ng-model="laser['data'][key]['compatibilitys'][index]['type']" class="form-control">
+                                                                    <option value="CO2">CO2</option>
+                                                                    <option value="Fiber">Fiber</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                      </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                     <small class="help-inline" ng-show="submitted && choosePlatform">Platform is a required field.</small>
+                     <small class="help-inline" ng-show="submitted && !choosePlatform &&chooseCompatibility">Compatibility is a required field.</small>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="clearfix"></div>
+
+            </form>
+            <button class="btn btn-primary" id="submit" ng-click="submit(formData.$invalid)">
+                <i class="fa fa-check"></i> Save
+            </button>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+</div>
+@stop
+@section('script')
+    <script type="text/javascript">
+    window.platforms = {!! json_encode($platforms)!!};
+    window.laser = {!! json_encode($laser) !!};
+    </script>
+    @if(!isProduction() && !isDev())
+        {!! Html::script('app/components/lasers/LaserService.js?v='.getVersionScript())!!}
+        {!! Html::script('app/components/lasers/LaserController.js?v='.getVersionScript())!!}
+    @else
+        <script src="{{ elixir('app/pages/laser.js') }}"></script>
+    @endif
+@stop

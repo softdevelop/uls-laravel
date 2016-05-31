@@ -1,0 +1,59 @@
+<div class="form-group bottom-thumbnails-assets">
+    <label class="label-form" for="name">Thumbnails <i class="fa fa-info-circle help-icon" title="Select the thumbnail sizes that should be generated for this image"></i></label>
+    <div class="wrap-form">
+
+        <div class="col-lg-6 col-md-6 padding-none">
+            <div class="checkbox checkbox-info">
+                <input id="checkbox1" class="styled" type="checkbox" name="thumbnails" ng-true-value="'64x64'" ng-model="asset.thumbnailsSmall">
+                <label for="checkbox1">
+                    Small Lightbox 64x64
+                </label>
+            </div>
+
+            <div class="checkbox checkbox-info">
+                <input id="checkbox2" class="styled" type="checkbox" name="thumbnails" ng-true-value="'100x100'" ng-model="asset.thumbnailsMedium">
+                <label for="checkbox2">
+                    Medium Lightbox 100x100
+                </label>
+            </div>
+
+        </div>
+
+        <div class="col-lg-6 col-md-6 padding-none">
+            <div class="checkbox checkbox-info">
+                <input id="checkbox3" type="checkbox" name="thumbnails" ng-true-value="'75x75'" ng-model="asset.thumbnailsMaterial">
+                <label for="checkbox3">
+                    Material List 75x75
+                </label>
+            </div>
+
+            <div class="checkbox checkbox-info">
+                <input id="checkbox4" type="checkbox" name="thumbnails" ng-true-value="'82x82'" ng-model="asset.thumbnailsProduct">
+                <label for="checkbox4">
+                    Product List 82x82
+                </label>
+            </div>
+        </div>
+
+        <div class="col-lg-12 padding-none fix-space">
+            <div class="checkbox checkbox-info col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input id="checkbox5" type="checkbox" name="thumbnails" ng-model="asset.thumbnailsCustom">
+                <label for="checkbox5">
+                    Custom
+                </label>
+            </div>
+            <div ng-if='asset.thumbnailsCustom' class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <input type="number" placeholder='width' name="thumbnails" min='1' ng-model="asset.thumbnailsWidth"/>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <input type="number" placeholder='height' name="thumbnails" min='1' ng-model="asset.thumbnailsHeight"/>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="clearfix"></div>
+</div>

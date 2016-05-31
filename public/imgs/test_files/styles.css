@@ -1,0 +1,464 @@
+html, body, div, span, applet, object, iframe,
+ h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+/* FONTS */
+
+@font-face {
+    font-family: 'DroidSansRegular';
+    src: url('http://www.pisceandev.com/fonts/DroidSans-webfont.eot');
+    src: url('http://www.pisceandev.com/fonts/DroidSans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://www.pisceandev.com/fonts/DroidSans-webfont.woff') format('woff'),
+         url('http://www.pisceandev.com/fonts/DroidSans-webfont.ttf') format('truetype'),
+         url('http://www.pisceandev.com/fonts/DroidSans-webfont.svg#DroidSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'DroidSansBold';
+    src: url('http://www.pisceandev.com/fonts/DroidSans-Bold-webfont.eot');
+    src: url('http://www.pisceandev.com/fonts/DroidSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://www.pisceandev.com/fonts/DroidSans-Bold-webfont.woff') format('woff'),
+         url('http://www.pisceandev.com/fonts/DroidSans-Bold-webfont.ttf') format('truetype'),
+         url('http://www.pisceandev.com/fonts/DroidSans-Bold-webfont.svg#DroidSansBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+html, body {
+	background: url('http://www.pisceandev.com/images/tile.jpg');
+}
+
+#wrapper {
+	width: 960px;
+	margin:-20px auto 0;
+	background-color: #FFF;
+}
+
+#header {
+	width:auto;
+	height:189px;
+	background: url('http://www.pisceandev.com/images/tile5.jpg');
+}
+
+#masthead {
+	margin: 0 auto;
+	width: 960px;
+	height: 189px;
+}
+
+#logo {
+	width: 185px;
+	height: 193px;
+	margin: -213px 0 0 0;
+	background: url('http://www.pisceandev.com/images/logo.png');
+}
+
+#footer {
+	width: 960px;
+	height: 41px;
+	background: url('http://www.pisceandev.com/images/footer.png');
+	margin: 0 auto;
+}
+
+#footer-links {
+	text-align: center;
+	color:#CCC;
+	width:960px;
+	color: #454545;
+	padding-bottom: 20px;
+	padding-top: 30px;
+}
+
+#footer-links a {
+	color: #20345a;
+	font: 12px Helvetica, sans-serif;
+	padding: 5px;
+	text-decoration: none;
+}
+
+#footer-links a:hover {
+	color: #9BCEEF;
+}
+
+#topnav {
+	height: 20px;
+	width: 290px;
+	background: #20345a;
+	margin: -178px 0 125px 655px;
+	padding: 10px 0 10px 10px;
+	color: #FFF;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border: 1px dotted #FFF;
+}
+	
+	
+#topnav a {
+	color:#FFF;
+	font: 14px Helvetica, sans-serif;
+	font-weight: bold;
+	padding: 5px;
+	text-decoration: none;
+}
+
+#topnav a:hover {
+	color: #587dc3;
+}
+
+#content {
+	width: 732px;
+	float: left;
+	padding-right: 30px;
+}
+
+#main-body {
+	background-color: #D4E1F7;
+	padding:5px 25px 20px 25px;
+	margin-top: -13px;
+	width: 685px;
+	-webkit-border-bottom-right-radius: 20px;
+	-moz-border-radius-bottomright: 20px;
+	-webkit-border-bottom-left-radius: 20px;
+	-moz-border-radius-bottomleft: 20px;
+	behavior: url(http://www.pisceandev.com/css/PIE.htc);
+	border-radius: 0 0 20px 20px;
+
+}
+
+p {
+	font: 12px Helvetica, sans-serif;
+	margin-bottom: 12px;
+	color: #323232;
+}
+
+h1, h6 {
+	font: 18px 'DroidSansBold', Arial, sans-serif;
+	font-weight:bold;
+	margin-bottom: 0;
+	color: #FFF;
+	margin-top: 20px;
+	width: 704px;
+	height: 44px;
+	padding: 14px 11px 0 20px;
+	background:url('http://www.pisceandev.com/images/page_header.jpg') repeat-x;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topright: 20px;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-radius-topleft: 20px;
+	text-shadow: 0 1px 3px rgba(0,0,0, 1);
+}
+
+h2.company {
+	margin: 0 0 10px -20px;
+}
+
+h2 {
+	font: 24px 'DroidSansRegular', Arial, sans-serif;
+	font-weight:bold;
+	margin-bottom: 7px;
+	margin-top: 30px;
+	color: #20345a;
+}
+
+h2#archive {
+	margin-left:20px;
+	margin-bottom: -10px;
+}
+
+h3 {
+	font: 12px "Book Antiqua", Palatino, serif;
+	margin-bottom: -12px;
+}
+
+h4 {
+	font: 16px 'DroidSansRegular', Arial, sans-serif;
+	margin: -12px 0 20px -20px;
+	margin-bottom: 7px;
+	color: #20345a;
+	width: 734px;
+	font-style: italic;
+}
+
+h5 {
+	font: 14px "Book Antiqua", Palatino, serif;
+	font-weight:bold;
+	margin-bottom: 7px;
+	margin-top: -15px;
+	color: #20345a;
+}
+
+
+h1.blog-article {
+
+}
+
+a.read-more {
+	font: 13px Helvetica, sans-serif;
+	display:block;
+	margin:20px 10px 20px 585px;
+	width: 80px;
+	padding:7px;
+	
+	background: #900000; /* old browsers */
+	background: -moz-linear-gradient(top, #587dc3 0%, #355696 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#587dc3), color-stop(100%,#355696)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#587dc3', endColorstr='#355696',GradientType=0 ); /* ie */		
+
+	color:#fff;
+	text-align:left;
+	
+	border-radius: .8em .8em .8em .8em;
+	-webkit-border-radius: .8em .8em .8em .8em;
+	-moz-border-radius: .8em .8em .8em .8em;
+	
+	-webkit-box-shadow: 0 1px 5px rgba(0,0,0, .5);
+	-moz-box-shadow: 0 1px 5px rgba(0,0,0, .5);
+	
+	text-shadow: 0 1px 3px rgba(0,0,0, 1);
+}
+
+
+a.testimony {
+	margin-left:337px;
+}
+
+a {
+	color: #587dc3;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:hover img {
+	-ms-box-shadow: rgba(0, 0, 0, 0.8) 0 8px 40px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.8) 0 4px 20px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 8px 40px;
+}
+
+p.resume {
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+
+p.resume br {
+	margin-bottom: -5px;
+}
+
+span.employer {
+	margin-bottom: -7px;
+	font: 14px 'DroidSansRegular', Arial, sans-serif;
+	margin-left: 20px;
+}
+
+span.company {
+	font: 14px 'DroidSansBold', Arial, sans-serif;
+	margin-bottom: -5px;
+	margin-left: 20px;
+	color: #20345a;
+}
+
+span.description {
+	font: 12px Helvetica, sans-serif;
+	margin-bottom: 12px;
+	margin-top: -7px;
+	display: block;
+	margin-left: 20px;
+	color: #323232;
+}
+
+.website {
+	color: #587dc3;
+}
+
+.testimonial-holder {
+	width: 734px;
+	margin-bottom: 25px;
+}
+
+.testimonial-image {
+	width: 250px;
+	height: 250px;
+	float: left;
+}
+
+.testimonial {
+	float: left;
+	width: 434px;
+}
+
+.testimonial p {
+	margin-left: -20px;
+}
+
+/* FORM */
+
+.form-input {
+	width: 680px;
+	display: block;
+	margin-bottom: 20px;
+	height: 20px;
+}
+
+label {
+	font: 13px Helvetica, Arial, sans-serif bold;
+	text-align: right;
+	width:100px;
+	display:block;
+	float:left;
+	margin-right:20px;
+}
+
+input#contact {
+	margin-top: 20px;
+	margin-left: 120px;
+}
+
+.form-input input {
+	float:left:
+}
+
+div.error {
+	width: 170px;
+	background-color: #F7AAAA;
+	font: 10px Helvetica, Arial, sans-serif;
+	padding:8px 8px 8px 12px;
+	-webkit-border-radius: .8em .8em .8em .8em;
+	-moz-border-radius: .8em .8em .8em .8em;
+	margin-left:320px;
+	margin-top:-25px;
+}
+
+/* END FORM */
+	
+/* NAVIGATION */
+
+#navigation {
+	width:168px;
+	margin-right: 30px;
+}
+
+#navigation-holder {
+	float:left;
+	width: 168px;
+	margin-right: 30px;
+}
+
+#navigation ul {
+	list-style-type: none;
+}
+
+#navigation ul li a {
+	text-decoration: none;
+	color: white;
+	font: 12px Helvetica, sans-serif;
+	font-weight: bold;
+	display: block;
+	height: 20px;
+	text-shadow: 0 1px 3px rgba(0,0,0, 1);
+	padding:7px 0 0 15px;	
+}
+
+#navigation li a:hover {
+	background-color: #212E84;
+	height: 20px;
+}
+
+#navigation ul li {
+	background-color: #5075B9;
+	border-bottom: 1px dotted #FFF;
+}
+
+#nav-top {
+	background-color: #355696;  
+	height: 15px;
+	width: 168px;
+	-webkit-border-top-right-radius: 20px;
+	-moz-border-radius-topright: 20px;
+	border-top-right-radius: 20px;
+	border-bottom: 1px dotted #FFF;
+	margin-top: 20px;
+	behavior: url(http://www.pisceandev.com/css/PIE.php);
+	
+}
+
+#nav-bottom {
+	background-color: #355696;
+	height: 15px;
+	width: 168px;
+	-webkit-border-bottom-right-radius: 20px;
+	-moz-border-radius-bottomright: 20px;
+	border-bottom-right-radius: 20px;
+	behavior: url(http://www.pisceandev.com/css/PIE.htc);
+	border-radius: 0 0 20px 0;
+}
+
+/* END NAVIGATION */	
+
+/* MARQUEE */
+
+.marquee {
+	margin: 0 auto;
+	background-color: #20345a;
+	height: 30px;
+	padding-top: 5px;
+	color: #FFF;
+}	
+
+.marquee a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+.marquee a:hover {	
+	text-decoration: underline;
+}
+
+.mchild {
+	font: 12px "Helvetica Neue";
+}
+
+.mchild em, a.learn {
+	color: #9BCEEF;
+}
+
+a.learn {
+	margin-left: 10px;
+} 
+
+a.learn:hover {
+	text-decoration: none;
+	color: #C6E2F4;
+}
+
+#marquee-holder {
+	width: auto;
+	background-color: #20345a;
+	height:30px;
+	padding-top: 2px;
+} 
+
+/* END MARQUEE */
+
+
+

@@ -1,0 +1,35 @@
+@import '../modules/variable.scss';
+@import '../modules/css3-mixins.scss';
+.list-ticket .table>tbody>tr>td, 
+.list-ticket .table>tbody>tr>th, 
+.list-ticket .table>tfoot>tr>td, 
+.list-ticket .table>tfoot>tr>th, 
+.list-ticket .table>thead>tr>td, 
+.list-ticket .table>thead>tr>th{
+	padding-left: 10px;
+    text-align: center!important;
+}
+// fix min-width index ticket
+.table-responsive table.table-list-ticket{
+	min-width:1540px;
+}
+// end
+
+// child ticket
+.table-list-ticket .child-active{
+	background: #E4E4E4;
+	height: auto;
+    overflow: hidden;
+    @include transition(all linear 0.35s);
+    cursor: pointer;
+}
+.table-list-ticket .ng-hide.child-active{
+	background: #E4E4E4;
+	height: 0px;
+    overflow: hidden;
+    @include transition(all linear 0.35s);
+}
+.table-list-ticket tbody tr.child-active td{ 
+	border-bottom:1px solid  rgba(255, 255, 255, 0.65);
+}
+// end

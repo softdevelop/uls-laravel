@@ -1,0 +1,31 @@
+<style type="text/css">
+	.table a {
+		margin-top: 5px;
+	}
+</style>
+<table class="table">
+    <tr style="width:450px;">
+        <th style="width:200px;">De-Active</th>
+        <th style="width:50px;"></th>
+        <th style="width:200px;">Selected</th>
+    </tr>
+    <tr class="panel panel-default">
+        <th style="width:200px;">
+	        <select data-scrollable multiple="multiple" data-ng-model="selectedItemFrom" size="5" style="width: 200px;">
+		        <option class="pointer" value="{{key}}" ng-repeat="(key, value) in items">{{value}}</option>
+		    </select>
+        </th>
+
+        <th>
+           	<a class="btn btn-success glyphicon glyphicon-arrow-right" href="javascript:;" ng-click="assignItem()"></a>
+           	<div class="clearfix"></div>
+	    	<a class="btn btn-danger  glyphicon glyphicon-arrow-left"  href="javascript:;" ng-click="undoItem()"></a>
+        </th>
+        
+        <th ng-class="{true: 'error'}[submitted && ProposePageForm.region.$invalid]">
+            <select data-scrollable multiple="multiple"  data-ng-model="selectedItemTo"  size="5" style="width: 200px;">
+	           	<option class="pointer" value="{{key}}" ng-repeat="(key, value) in itemsAssigned">{{value}}</option>
+	    	</select>
+        </th>
+    </tr>
+</table>

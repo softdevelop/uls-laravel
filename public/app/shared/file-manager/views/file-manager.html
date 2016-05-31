@@ -1,0 +1,66 @@
+<div>
+    <form id="demo-upload" class="dropzone dz-clickable" ngf-select ngf-multiple="true" ngf-drop ngf-change="upload($files)">
+        <div ng-hide="showBoxDropFile()" id="upload_file_result" type="text" class="upload dz-default dz-message height-105" ><!-- <span>Drop files to upload or click here to browse for file</span> -->
+        </div>
+        <div ng-if="itemsUpload" ng-repeat="item in itemsUpload" class="dz-preview dz-file-preview" ng-click="$event.stopPropagation()">
+            <div class="dz-details">
+            <a class="glyphicon glyphicon-remove-circle remove-file" ng-click="deleteFile(item.id)" ng-show ="item.proccess==100"></a>
+                <div class="dz-filename">
+                    <a href="{{ baseUrl }}/admin/document-manager{{item.id}}" target="_blank">{{item.file_name | limitTo: 5}}{{item.file_name.length > 5 ? '...' : '.'}} {{item.file_name.split('.').pop()}}</a>
+                </div>
+                <div data-dz-size="" class="dz-size">
+                    <strong>{{ item.size | bytes }}</strong>
+                </div>
+
+                <span ng-if="checkFile(item.type)  == 'msword'" class="glyphicons-filetype doc"><i></i></span>
+                
+                <span ng-if="checkFile(item.type)  == 'zip'" class="glyphicons-filetype zip"><i></i></span>
+                
+                <span ng-if="checkFile(item.type) == 'pdf'" class="glyphicons-filetype pdf"><i></i></span>
+                
+                <img ng-if="checkFile(item.type) == 'image'" alt="" ng-src="{{ baseUrl }}/admin/document-manager{{item.id}}">
+
+                <span ng-if="checkFile(item.type) == 'other'" class="fa fa-file"><i></i></span>
+                
+            </div>
+           <!--  {{ baseUrl }}/admin/document-manager{{item.id}} -->
+        </div>
+        <div ng-if="items_s" class="dz-preview dz-file-preview dz-processing" ng-repeat="item in items_s" id="{{item.id}}" ng-click="$event.stopPropagation()">
+            <div class="dz-details">
+               
+                <div class="dz-filename">
+                    <span data-dz-name=""><a class="image-href" ng-href="{{ baseUrl }}/admin/document-manager{{item.id}}" target="_blank">{{item.file_name | limitTo: 5}}{{item.file_name.length > 5 ? '...' : '.'}} {{fitem.file_name.split('.').pop()}}</a></span>
+                </div>
+
+                <div class="upload-zip" ng-show="!error">
+                    <img ng-if="item.type == 'application/zip'" class="file-zip width-75 height-75" alt="">
+                    <img ng-if="item.type != 'application/zip'" alt="" ng-src="{{ baseUrl }}/admin/document-manager{{item.id}}">
+                </div>
+                <div data-dz-size="" class="dz-size">
+                    <strong>{{ item.size | bytes }}</strong>
+                </div>
+
+                <span ng-if="checkFile(type)  == 'msword'" class="glyphicons-filetype doc"><i></i></span>
+                
+                <span ng-if="checkFile(type)  == 'zip'" class="glyphicons-filetype zip"><i></i></span>
+                
+                <span ng-if="checkFile(type) == 'pdf'" class="glyphicons-filetype pdf"><i></i></span>
+                
+                <img ng-if="checkFile(type) == 'image'" alt="" ng-src="{{ baseUrl }}/admin/document-manager{{item.id}}">
+
+                <span ng-if="checkFile(type) == 'other'" class="fa fa-file"><i></i></span>
+                
+            </div>
+            <div class="dz-progress">
+                <span data-dz-uploadprogress="" class="dz-upload" style="width: {{item.proccess}};">
+                </span>
+            </div>
+            <div class="dz-success-mark"><span>✔</span>
+            </div>
+            <a class="glyphicon glyphicon-remove-circle remove-file remove-err" href="javascript:void(0)" ng-show ="item.proccess==100" ng-click="deleteFileError(item.id?item.id:item.uniId, $event)"></a>
+            <div class="dz-error-message">
+                <span data-dz-errormessage="">{{item.error}}</span>
+            </div>
+        </div>
+    </form>
+</div>

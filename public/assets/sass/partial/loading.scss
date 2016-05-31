@@ -1,0 +1,62 @@
+@import "../../../bower_components/cssowl/lib/scss/cssowl";
+@import "../modules/css3-mixins.scss";
+
+//colors
+$black: #000;
+$white: #fff;
+
+.overlay-loading {
+	position: fixed;
+	text-align: center;
+	background-color: $black;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+	z-index: 999999;
+}
+.loading-icon {
+	@include cssowl-absolute(50% false false 50%);
+	font-size: 60px;
+	color: $white;
+}
+.spin-box {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 100%;
+  width: 18px;
+  height: 18px;
+  box-shadow: 18px 18px #4f4d49, -18px 18px #fff, -18px -18px #4f4d49, 18px -18px #fff;
+  @include animation(spin ease infinite 4s);
+}
+
+@include keyframes (spin);
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: 18px 18px #4f4d49, -18px 18px #fff, -18px -18px #4f4d49, 18px -18px #fff;
+  }
+  25% {
+   box-shadow: -18px 18px #fff, -18px -18px #4f4d49, 18px -18px #fff, 18px 18px #4f4d49;
+  }
+  50% {
+   box-shadow: -18px -18px #4f4d49, 18px -18px #fff, 18px 18px #4f4d49, -18px 18px #fff;
+  }
+  75% {
+   box-shadow:  18px -18px #fff, 18px 18px #4f4d49, -18px 18px #fff, -18px -18px #4f4d49;
+  }
+}
+
+
+// uploadfile loadding form builder directive
+.position-loadding{
+  position: absolute;
+  top: 20px;
+  right: 15px;
+}

@@ -1,0 +1,11 @@
+<div ng-if="!field.multiple">
+	<label class="label-form">
+	    {{field.name}}<span class="text-require" ng-if="field.required !== 'false' && field.required"> *</span>
+	</label>
+	<div class="wrap-form">
+		<select name="{{field.variable}}" id="{{field.variable}}" class="form-control"  name="{{field.variable}}" ng-model="contentBlock['_' + currentBlockInject]['data']['fields'][field.variable]" ng-required = "{{field.required}}" ng-options="key as value for (key, value) in field.options" ng-change="validateCurrentForm(formData.$invalid)">
+			<option value="">Choose...</option>
+		</select>
+		<small class="help-inline" ng-show="submitted && formData.{{field.variable}}.$invalid"><span>{{field.name}}</span> is a required field.</small>
+	</div>
+</div>

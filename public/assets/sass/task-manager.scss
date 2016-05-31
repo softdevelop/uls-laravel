@@ -1,0 +1,852 @@
+@import 'modules/variable.scss';
+@import 'modules/css3-mixins.scss';
+//colors
+$color_blue_background: #4b6776;
+$white: #fff;
+$color_border: #ccc;
+$color_lynch_text: #5f8295;
+$color_mine_shaft_text: #333;
+$color_rolling_stone_text: #767a84;
+$color_silver_text: #bbbcbe;
+$color_outer_space_border: #33353a;
+// .list-ticket .table-list thead th {
+//     min-width: 100px;
+// }
+.tpl-tiket .content-ticket .info-user-ticket {
+    &.fix-height-box {
+        .option-u {
+            .wrap-user-ass {
+                padding: 0;
+                height: auto;
+                max-height: 200px;
+                width: 100%;
+                overflow: auto;
+                border: none !important;
+                margin-bottom: 5px;
+            }
+            .box-u-option {
+                padding-bottom: 0;
+            }
+            .user-ass {
+                width: auto;
+                height: 60px;
+                background-color: transparent;
+                color: $color_lynch_text;
+                border: none;
+                margin: 5px 0;
+                position: relative;
+                img {
+                    height: 100%;
+                    border-radius: 100px;
+                    border: 1px solid $color_border;
+                    padding: 2px;
+                }
+                .a-times {
+                    top: 20px;
+                    color: $color_mine_shaft_text;
+                }
+            }
+        }
+        .box-u-ava {
+            height: auto !important;
+            padding-top: 30px;
+        }
+        .box-u-info {
+            height: auto !important;
+        }
+        .box-u-option {
+            padding-top: 40px !important;
+            height: auto !important;
+            .fix-label {
+                position: relative;
+                .assign-fix {
+                    position: absolute;
+                    top: -40px;
+                    left: -20px;
+                    background: $color_blue_background;
+                    padding: 5px;
+                    color: $white;
+                    border-bottom-right-radius: 5px;
+                }
+            }
+        }
+    }
+    .ava-u .box-u-ava {
+        position: relative;
+        label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: $color_blue_background;
+            padding: 5px;
+            color: $white;
+            border-bottom-right-radius: 5px;
+        }
+        img {
+            width: 150px;
+            border-radius: 100px;
+            border: 1px solid $color_border;
+            padding: 2px;
+        }
+    }
+}
+@media only screen and(max-width: 992px) {
+    .tpl-tiket .content-ticket .info-user-ticket {
+        .box-u-ava {
+            height: auto!important;
+            img {
+                width: 150px !important;
+            }
+        }
+        .box-u-info {
+            height: auto!important;
+        }
+        .box-u-option {
+            height: auto!important;
+        }
+    }
+    .drag-and-drop h2 {
+        font-size: 14px;
+    }
+}
+.fix-height .box-u-ava {
+    height: 160px!important;
+}
+// style menu right your ticket
+// .your-ticket {
+//     .sidebar-block{
+//         height: 100%;
+//     }
+//     .sidebar-block.equal-padding {
+//         // height: 100%;
+//         .content-your-ticket {
+//             height: 100%;
+//             overflow-y: auto;
+//             ul{
+//                 li.list-unstyled{
+//                     margin-left: 0px;
+//                 }
+//             }
+//         }
+//     }
+// }
+.media-left {
+    padding-left: 20px;
+    .your-awatar {
+        font-size: 14px;
+        color: $color_rolling_stone_text;
+    }
+}
+// .title-your-ticket {
+//     text-align: left;
+//     padding-left: 20px;
+//     color: $white;
+//     .tittleA {
+//         color: $white;
+//         font-size: 15px;
+//     }
+// }
+.s-open1 {
+    color: $white;
+}
+.s-open {
+    color: $color_silver_text;
+}
+// .h5-tittle {
+//     padding-top: 15px;
+//     padding-left: 10px;
+// }
+// .fixsiderbar {
+//     padding-top: 20px;
+//     border-top: 1px solid $color_outer_space_border;
+// }
+.drag-and-drop {
+    margin: 0;
+    font-size: 13px;
+    line-height: 16px;
+    background-color: #fafafa;
+    border: 2px dashed #e3e3e3;
+    text-align: center;
+    height: 150px;
+    cursor: pointer;
+    text-align: center;
+    display: table;
+    width: 100%;
+    position: relative;
+    &:hover {
+        border: 2px dashed #90001b;
+        h2 {
+            opacity: 0.3;
+        }
+    }
+    &:active {
+        cursor: wait;
+    }
+    h2 {
+        vertical-align: middle;
+        display: table-cell;
+        color: #aaa;
+    }
+}
+.dropzone {
+    .dz-default.dz-message {
+        background-size: 380px !important;
+        width: 428px;
+        height: 106px;
+        margin-left: -191px;
+        margin-top: -50px;
+        top: 50%;
+        left: 50%;
+    }
+}
+@media only screen and(max-width: 430px) {
+    .dropzone {
+        .dz-default.dz-message {
+            background-size: 250px !important;
+            width: 250px;
+            height: 70px;
+            margin-left: -124px;
+            margin-top: -30px;
+            left: 50%;
+        }
+    }
+}
+
+.file-note {
+    padding-bottom: inherit;
+    i:before {
+        font-size: 18px;
+    }
+    padding:10px;
+    position:relative;
+    .load-file {
+        width: 120px;
+        height: 40px;
+        cursor: wait;
+        .file-load-bar {
+            opacity: 0.5;
+            cursor: wait;
+        }
+        .progress {
+            height: 7px;
+            .progress-error {
+                float: left;
+                width: 0;
+                height: 100%;
+                font-size: 12px;
+                line-height: 20px;
+                color: #fff;
+                text-align: center;
+                box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+                transition: width .6s ease;
+                background-color: #e5002b;
+            }
+        }
+        &:hover {
+            .fa-times-circle-o {
+                display: block;
+            }
+        }
+    }
+    .file-item {
+        position: relative;
+        height: inherit;
+        margin-top: 0px;
+        width: 174px;
+        padding: 15px;
+        a {
+            text-decoration: none;
+            width: 100%;
+            word-wrap: break-word;
+            i:before {
+                color: #333;
+                font-size: 35px;
+            }
+            .fa-times-circle-o {
+                position: absolute;
+                top: -10px;
+                left: -5px;
+                font-size: 10px !important;
+                display: none;
+                z-index: 9999;
+            }
+        }
+        &:hover {
+            .info-file {
+                color: #649bd7;
+                opacity: 0.5;
+            }
+            .fa-times-circle-o {
+                display: block;
+            }
+        }
+    }
+}
+.media .wrap-media .media-body {
+    position: relative !important;
+}
+.media .wrap-media .media-body .status {
+    white-space: normal !important;
+    position: absolute !important;
+    top: 5px !important;
+}
+// .navibar-uls .info-user .navbar-nav .notifications .dropdown-menu .media .wrap-media{
+//     padding:0px;
+//     display: block;
+// }
+// .navibar-uls .info-user .navbar-nav .notifications .dropdown-menu .scroll-noti1 .wrap-link{
+//     padding: 6px;
+//     height: 100%;
+//     cursor: pointer;
+// }
+// .tpl-tiket .content-ticket .info-user-ticket .box-u-ava,
+.tpl-tiket .content-ticket .info-user-ticket .box-u-info,
+.tpl-tiket .content-ticket .info-user-ticket .box-u-option {
+    height: 160px!important;
+}
+
+// update 5/10
+//colors
+$color_pohutukawa_approx: #90001b;
+$color_pohutukawa_45_approx: rgba(144, 0, 27, 0.45);
+$color_blumine_approx: #245882;
+
+//@extend-elements
+//original selectors
+//.table > tbody > tr.highlight > td, .table > tbody > tr.highlight > th
+%extend_1 {
+	background: $color_pohutukawa_45_approx !important;
+	color: $white !important;
+	border-bottom: 1px solid $color_pohutukawa_approx;
+}
+// .fixed-search {
+// 	top: -2px;
+// 	left: -10px !important;
+// 	background: transparent !important;
+// }
+// @media only screen and(max-width: 767px) {
+// 	#navibar .navibar-uls {
+// 		.info-user {
+// 			height: 40px;
+// 			.navbar-nav .user {
+// 				height: 40px !important;
+// 			}
+// 		}
+// 		.notifications {
+// 			padding: 0 !important;
+// 		}
+// 		.user {
+// 			padding: 0 !important;
+// 		}
+// 	}
+// 	.navibar-uls .info-user .navbar-nav .notifications {
+// 		height: 40px !important;
+// 	}
+// 	.user.open .dropdown-menu {
+// 		margin-top: 0;
+// 	}
+// }
+.progress {
+	height: 5px !important;
+	margin-bottom: 0;
+}
+.file-note {
+}
+.btn-change {
+	margin: 0;
+	button {
+		width: 100%;
+	}
+}
+// .c-m {
+// 	font-weight: 100 !important;
+// }
+.btn {
+	font-weight: 100 !important;
+}
+// .your-ticket {
+//     margin-top: 0px;
+// 	right: 0px;
+// 	width: 250px;
+//     transition: all 0.35s ease;
+//     top:105px;
+//     height: auto;
+// }
+// .title-your-ticket {
+// 	padding-left: 0;
+// }
+// .scroll-y-t {
+// 	overflow: auto !important;
+// }
+.url-fix {
+	// max-width: 300px !important;
+	a {
+		word-wrap: break-word;
+	}
+}
+// .drag-and-drop:hover {
+// 	border: 1px dashed $color_pohutukawa_approx !important;
+// }
+ul.br-ticket1 {
+	background: $color_pohutukawa_approx !important;
+}
+.wrap-ac-group .fa-ellipsis-v {
+	top: 0;
+	// left: 28px;
+}
+// .table > tbody > tr.highlight > {
+// 	td {
+// 		@extend %extend_1;
+// 		a {
+// 			color: $white;
+// 			&:hover {
+// 				color: $color_blumine_approx;
+// 			}
+// 			&.btn {
+// 				color: $white;
+// 			}
+// 		}
+// 	}
+// 	th {
+// 		@extend %extend_1;
+// 		a {
+// 			color: $white;
+// 			&:hover {
+// 				color: $color_blumine_approx;
+// 			}
+// 			&.btn {
+// 				color: $white;
+// 			}
+// 		}
+// 	}
+// }
+#note-task p {
+	clear: both !important;
+}
+.ui-create .redactor-editor {
+	min-height: 250px !important;
+}
+.redactor-box textarea {
+	background: $white !important;
+}
+.info-f-f p {
+	margin-bottom: 0;
+}
+.comment-user .desc-file-ticket .redactor-editor {
+	border: none;
+}
+// .table-responsive table {
+// 	min-width: 1100px;
+// }
+
+// update 5/10 file bug
+//colors
+$color_blue_bayoux_approx: #4b6776;
+$white: #fff;
+$color_celeste_approx: #ccc;
+$color_lynch_approx: #5f8295;
+$color_mine_shaft_approx: #333;
+
+.box-u-option {
+	padding-top: 40px !important;
+	.fix-label {
+		position: relative;
+		.assign-fix {
+			position: absolute;
+			top: -40px;
+			left: -20px;
+			background: $color_blue_bayoux_approx;
+			padding: 5px;
+			color: $white;
+		
+			border-bottom-right-radius: 5px;
+		}
+	}
+}
+@media only screen and(max-width: 992px) {
+	.box-u-ava img {
+		width: 150px !important;
+	}
+	.tpl-tiket .content-ticket .info-user-ticket {
+		.box-u-ava {
+			height: auto!important;
+		}
+		.box-u-info {
+			height: auto!important;
+		}
+		.box-u-option {
+			height: auto!important;
+		}
+	}
+	.drag-and-drop h2 {
+		font-size: 14px;
+	}
+}
+// .list-ticket .table-list thead th {
+// 	min-width: 100px;
+// }
+// .ava-u .box-u-ava {
+// 	position: relative;
+// 	label {
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		background: $color_blue_bayoux_approx;
+// 		padding: 5px;
+// 		color: $white;
+	
+// 		border-bottom-right-radius: 5px;
+// 	}
+// }
+.tpl-tiket .content-ticket .info-user-ticket {
+	&.fix-height-box {
+		.option-u {
+			.wrap-user-ass {
+				padding: 0;
+				height: auto;
+				max-height: 200px;
+				width: 100%;
+				overflow: auto;
+				border: none !important;
+				margin-bottom: 5px;
+			}
+			.box-u-option {
+				padding-bottom: 0;
+			}
+		}
+		.box-u-ava {
+			height: auto !important;
+			padding-top: 50px;
+		}
+		.box-u-info {
+			height: auto !important;
+		}
+		.box-u-option {
+			height: auto !important;
+		}
+	}
+	.ava-u .box-u-ava img {
+		width: 150px;
+	
+		border-radius: 100px;
+		border: 1px solid $color_celeste_approx;
+		padding: 2px;
+	}
+	.option-u .user-ass {
+		width: auto;
+		height: 60px;
+		background-color: transparent;
+		color: $color_lynch_approx;
+		border: none;
+		margin: 5px 0;
+		position: relative;
+		img {
+			height: 100%;
+		
+			border-radius: 100px;
+			border: 1px solid $color_celeste_approx;
+			padding: 2px;
+		}
+		.a-times {
+			top: 20px;
+			color: $color_mine_shaft_approx;
+		}
+	}
+}
+
+// .file-note .file-item{
+//     width: 174px !important;
+//     padding: 15px !important;
+//     margin-top:40px !important;
+// }
+.file-note .progress{
+    margin-bottom:0px;
+    background-color: #90001b;
+}
+// .file-note{
+//     padding-bottom:50px;
+// }
+.file-note .file-item a .fa.fa-times-circle-o.rm-fa:before{
+    font-size: 23px;
+}
+.file-note .file-item a .fa-times-circle-o {
+    top: 2px;
+    left: 5px;
+    background-color: #fff;
+    border-radius: 100px;
+}
+
+// .wrap-ac-group .group-btn-ac {
+//     width: 220px !important;
+// }
+
+// assign button in list ticket
+.assign .btn-primary{
+    background-color:transparent;
+    padding:1px;
+    i{
+      color:#333!important;
+    }
+    &:hover,
+    &:focus{
+        background-color:transparent!important;
+        color:#333!important;
+  }
+}
+
+.assign .hide.active-navigation-container{
+    left: -11px!important;
+    top: 21px;
+}
+// end
+
+
+/*table list ticket http://uls.app/support*/
+// .list-ticket .table-list thead th{
+//     min-width: 110px;
+// }
+
+// .list-ticket .table-list thead th:nth-of-type(1){
+//  width: 30px;
+//  min-width: 0px;
+// }
+// .list-ticket .table-list thead th:nth-of-type(3){
+//  width: 70px;
+//  min-width: 0px; 
+// }
+// .list-ticket .table-list thead th:nth-of-type(4){
+//  min-width: 200px;   
+// }
+// .list-ticket .table-list thead th:nth-of-type(8){
+//  min-width: 200px;
+// }
+// .list-ticket .table-list thead th:nth-of-type(9){
+//  width: 165px;
+// }
+// .list-ticket .table-list thead th:nth-of-type(10){
+//  width: 165px;
+// }
+// .table-list-ticket.table > thead > tr > th:nth-of-type(11){
+//  width:180px;
+// }
+
+.a-wrap-table{
+    display:block;
+    color:#333;
+    padding:0px;
+    &:hover{
+        color:#000;
+    }
+}
+.list-ticket .table-list thead th:nth-of-type(1){
+    display: none;
+}
+.list-ticket .table-list tbody td{
+    padding: 9px;
+}
+
+@for $i from 1 through 100{
+    .list-ticket .table-list tbody td:nth-of-type(#{$i}){
+        word-break: break-word;
+
+    }
+}
+
+// 1
+.list-ticket .table-list thead th:nth-of-type(2){
+    width: 45px;
+}
+.list-ticket .table-list tbody td:nth-of-type(1){
+    width: 71px;
+}
+
+.list-ticket .table-list .a-wrap-table tbody td{ 
+    border:none;
+}
+
+// 2
+.list-ticket .table-list thead th:nth-of-type(3){
+    width: 60px;
+}
+.list-ticket .table-list tbody td:nth-of-type(2){
+    width: 40px;
+}
+
+// 3
+.list-ticket .table-list thead th:nth-of-type(4){
+    width:115px;
+    
+}
+.list-ticket .table-list tbody td:nth-of-type(3){
+    width: 88px;
+}
+
+// 4
+.list-ticket .table-list thead th:nth-of-type(5){
+    width: 173px;
+}
+.list-ticket .table-list tbody td:nth-of-type(4){
+    width: 200px;
+}
+
+// 5
+.list-ticket .table-list thead th:nth-of-type(6){
+    width: 170px;
+    padding-left: 50px;
+}
+.list-ticket .table-list tbody td:nth-of-type(5){
+    width: 150px;
+}
+
+// 6
+.list-ticket .table-list thead th:nth-of-type(7){
+    width: 120px;
+}
+.list-ticket .table-list tbody td:nth-of-type(6){
+    width: 90px;
+}
+
+// 7
+.list-ticket .table-list thead th:nth-of-type(8){
+    width: 110px;
+}
+.list-ticket .table-list tbody td:nth-of-type(7){
+    width: 120px;
+}
+
+// 8
+.list-ticket .table-list thead th:nth-of-type(9){
+    width: 200px;
+}
+.list-ticket .table-list tbody td:nth-of-type(8){
+    width: 180px;
+}
+
+// 9
+.list-ticket .table-list thead th:nth-of-type(10){
+    width: 135px;
+}
+.list-ticket .table-list tbody td:nth-of-type(9){
+    width: 140px;
+}
+
+// 10
+.list-ticket .table-list thead th:nth-of-type(11){
+    width: 155px;
+}
+.list-ticket .table-list tbody td:nth-of-type(10){
+    width: 140px;
+}
+
+// 11
+.list-ticket .table-list thead th:nth-of-type(12){
+    width: 145px;
+    line-height: 22px;
+}
+.list-ticket .table-list tbody td:nth-of-type(11){
+    width: 140px;
+    padding:12px;
+}
+
+// 12
+.list-ticket .table-list thead th:nth-of-type(13){
+    width: 110px;
+}
+.list-ticket .table-list tbody td:nth-of-type(12){
+    width: 110px;
+}
+
+.fix-label-checkbox.checkbox label::before{
+    margin-left: -19px;
+}
+
+.fix-space-progress.progress{
+    margin:0px;
+    position: relative;
+}
+
+.delete-16{
+    font-size: 16px;
+    color:#8A8A8A;
+    .space-delete{
+        padding:10px;
+        border: 1px solid rgba(123, 123, 123, 0.18);
+        @include transition(all 0.2s linear);
+        &:hover{
+            background: #e2e2e2;
+            @include transition(all 0.2s linear);
+            color:#333;
+        }
+    }
+}
+
+/*end*/
+
+/*icon close file upload*/
+.file-note .file-item a .fa-times-circle-o{
+    z-index: 10;
+}
+/*end*/
+
+.table .select2-container--default .select2-selection--multiple{
+    min-height: 34px;
+    border-radius: 0px;
+    border:1px solid #C8C7CC;
+}
+
+.table .select2-container--default .select2-search--inline .select2-search__field{
+    height: 21px;
+}
+.table .progress .progress-bar.progress-bar-primary{
+    white-space: nowrap;
+}
+
+.p-t-10{
+    padding-top:10px;
+}
+
+// your tiket sidebar right
+.s-w-ans{
+    i,span{
+        color:#fff;
+    }
+}
+.full-width-height{
+    width: 100%;
+    height: 100%;
+}
+
+.fa.p-15-20{
+    padding:15px 20px;
+    @include transition(all 0.3s linear);
+    &:hover{
+        background: #EFEFEF;
+        @include transition(all 0.3s linear);
+    }
+}
+// .block-c-000{
+//     padding:20px 25px;
+//     display: block;
+//     color:#000;
+//     &:hover{
+//         background: #EFEFEF;
+//         @include transition(all 0.3s linear);
+//     }
+// }
+.pre-line{
+    white-space: pre-line;
+}
+// mobile list action on top
+@media only screen and (max-width: 480px){
+  .btn-mobile{
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  .btn-mobile.m-r-20{
+    margin-right: 0px;
+  }
+  .btn-mobile.m-r-10{
+    margin-right: 0px!important;
+  }
+}
+// end

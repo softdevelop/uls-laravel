@@ -1,0 +1,48 @@
+<div>
+    <div class="wrap-label select-level pointer">
+
+        <a class="action text-show-action" href="javascript:void(0)" ng-click="toggleSelectMenu($event)">
+          Tag Content Type
+        </a>
+
+        <div id="select-level-modal-{{index}}" class="select-menu-modal collapse">
+            <div class="js-select-menu-deferred-content">
+
+                <!-- Search for tag -->
+                <div class="select-menu-filters">
+                    <div class="select-menu-text-filter">
+                        <input type="text" id="label-filter-field" class="js-filterable-field js-navigation-enable" placeholder="{{placeholder}}" data-ng-model="searchName">
+                    </div>
+                </div>
+                <!-- End search for tag -->
+
+                <!-- Show tag lists -->
+                <div id="select-level-tag" class="select-menu-list label-select-menu" >
+                    <script type="text/ng-template" id="subSelect-{{index}}">
+                        <a ng-click="$event.stopPropagation(); selectedItem(value, $event)" class="show-sub-select show-sub-tag-select-{{value._id}}">
+                            <i class="ti-plus toggle-child-tag" ng-if="value.children.length > 0" ng-click="showSubSelect($event, value._id)"></i>
+
+                            <div class="checkbox checkbox-inline">
+                                <input type="checkbox" ng-click="SelectedCheckbox(value, $event);" name="tag-{{value._id}}" class="tag-content-{{value._id}}" id="inlineCheckbox1">
+                                <label for="inlineCheckbox1"></label>
+                            </div>
+
+                            <span class="color" ng-if="value.parent_id == '0'" style="background-color: {{value.color}}"></span>
+                            <span class="name" class="name-select item-{{value._id}}" item-data="{{valfolder_idue._id}}" ng-class="{'item-not-sub':!value.children.length}">{{value.name}}</span>
+                        </a>
+                        <ul ng-if="value.children" class="parrent-select parrent-select-{{value._id}}">
+                            <li id="select-child-{{value._id}}" class="select-multil" ng-repeat="(key, value) in value.children" ng-include="'subSelect-{{index}}'"></li>
+                        </ul>
+                    </script>
+
+                    <ul class="select-menu-parrent">
+                        <li id="select-{{index}}" class="select-menu-item" ng-repeat="(index, value) in itemsTmp" ng-include="'subSelect-{{index}}'"></li>
+                    </ul>
+                </div>
+                <!-- End show tag lists -->
+            </div>
+            <div class="select-menu-loading-overlay"></div>
+        </div>
+    </div>
+</div>
+

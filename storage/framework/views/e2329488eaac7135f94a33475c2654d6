@@ -1,0 +1,111 @@
+<?php $__env->startSection('title'); ?>
+	<?php echo e(trans('cms_page/page-index.content_management')); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+<a id="click-asset" href="<?php echo e(URL::to('cms/asset-manager')); ?>" class="hide"></a>
+<a id="click-page" href="<?php echo e(URL::to('cms/pages')); ?>" class="hide"></a>
+<a id="click-template" href="<?php echo e(URL::to('cms/template-content-manager')); ?>" class="hide"></a>
+<a id="click-block" href="<?php echo e(URL::to('cms/block-manager')); ?>" class="hide"></a>
+<a id="click-database" href="<?php echo e(URL::to('cms/database-manager')); ?>" class="hide"></a>
+<a id="click-manager-block" href="<?php echo e(URL::to('cms/manager-block')); ?>" class="hide"></a>
+<div ng-view></div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+	<script type="text/javascript">
+        'use strict';
+        (function($) {
+            $('#page-loading').css('display','block');
+            $('#resize-right .table-responsive').css('opacity','0');
+            $('#resize-right .table-responsive').css('opacity','1');
+        })(jQuery);
+    </script>
+	<script>
+		window.hashData = <?php echo json_encode($hashData); ?>;
+		window.idOfPageSelected = <?php echo json_encode($idOfItemSelected); ?>;
+		window.status = <?php echo json_encode($status); ?>;
+		window.clickUpdate = <?php echo json_encode($clickUpdate); ?>;
+	</script>
+	<?php if(!isProduction() && !isDev()): ?>
+		<?php echo Html::script('app/shared/resizer/resizer.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/components/pages/PageService.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/components/pages/PageController.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/components/pages/CreatePageController.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/components/pages/CreatePageService.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/components/assetmanagers/AssetManagerService.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/components/assetmanagers/AssetManagerController.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/components/assetmanagers/RequestAssetService.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/components/assetmanagers/RequestAssetController.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/components/assetmanagers/UploadNewAssetDirective.js?v='.getVersionScript()); ?>
+
+
+        <?php echo Html::script('/app/components/assetmanagers/RequestNewAssetDirective.js?v='.getVersionScript()); ?>
+
+        <?php echo Html::script('app/components/template-content-manager/templateContentManagerController.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/components/template-content-manager/templateContentManagerService.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/components/template-content-manager/RequestNewTemplateDirective.js?v='.getVersionScript()); ?>
+
+		<?php /* <?php echo Html::script('app/shared/cms-config-field/ConfigFieldController.js?v='.getVersionScript()); ?> */ ?>
+		<?php echo Html::script('app/shared/cms/cms-config/CmsConfigController.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/shared/resizer/resizer.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/components/blocks/BlockManagerService.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/components/blocks/BlockManagerController.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/components/blocks/RequestBlockController.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/components/blocks/RequestBlockService.js?v='.getVersionScript()); ?>
+
+
+		<?php echo Html::script('app/components/blocks/partial/EditBlockController.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/components/blocks/RequestNewBlockDirective.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/components/blocks/BlockDirective.js?v='.getVersionScript()); ?>
+
+
+		<?php echo Html::script('app/components/database/DatabaseManagerService.js?v='.getVersionScript()); ?>
+
+		<?php echo Html::script('app/components/database/DatabaseManagerController.js?v='.getVersionScript()); ?>
+
+		
+		<?php echo Html::script('app/components/file/fileService.js?v='.getVersionScript()); ?>
+
+        <?php echo Html::script('app/shared/file-upload/fileTicketUploadDirective.js?v='.getVersionScript()); ?>
+
+        <?php echo Html::script('app/shared/tag-content-directive/tagContentDirective.js?v='.getVersionScript()); ?>
+
+        <?php echo Html::script('app/components/pages/CreatePageDirective.js?v='.getVersionScript()); ?>
+
+        <?php echo Html::script('app/shared/select-level/selectLevelDirective.js?v='.getVersionScript()); ?>
+
+        <?php echo Html::script('app/shared/cms-content/cmsContentFolderService.js?v='.getVersionScript()); ?>
+
+        <?php echo Html::script('app/shared/cms-content/CmsService.js?v='.getVersionScript()); ?>
+
+	<?php else: ?>
+		<script src="<?php echo e(elixir('app/pages/page.js')); ?>"></script>
+
+	<?php endif; ?>
+	<?php echo Html::script('app/route.js?v='.getVersionScript()); ?>
+
+
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,98 @@
+.w200{
+	width: 200px;
+}
+.w370{
+	width: 370px;
+}
+.w135{
+	width: 135px;
+}
+.p-l-14{
+	padding-left: 14px!important;
+}
+
+// .not-check{
+// 	i.fa{
+// 		font-size: 19px;
+// 		color:#95D195;
+// 	}
+// }
+.check-oke{
+	i.fa{
+		font-size: 19px;
+		color:#95D195;
+	}
+}
+
+.image-object{
+	.wrap-select{
+		width:50%;
+		float:left;
+		padding-right: 10px;
+	}
+}
+.multiple-object{
+	.wrap-select{
+		.wrap-select-left{
+			width:50%;
+			float:left;
+			padding-right: 10px;
+		}
+		.wrap-select-right{
+			width:50%;
+			float:left;
+			padding-left: 10px;
+		}
+	}
+}
+.other-multiple-object{
+	.other-wrap-select-left{
+		width:50%;
+		float:left;
+		padding-right: 10px;
+	}
+	.other-wrap-select-right{
+		width:50%;
+		float:left;
+		padding-left: 10px;
+	}
+}
+.sort{
+	.left-sort{
+		width:50%;
+		float:left;
+		padding-right: 10px;
+	}
+	.right-sort{
+		width:50%;
+		float:left;
+		padding-left: 10px;
+	}
+}
+
+.table-responsive.edit-fields{
+	table{
+		margin-bottom: 1px;
+		td select{
+	        margin:0px!important;
+	    }
+	}
+}
+.multible{
+	.checkbox label::after{
+		left: -1px;
+	}
+}
+
+// list field config
+.step-config-fields{
+	.top-step-infor{
+		text-align:right;
+		font-weight: 700;
+		padding:10px;
+		margin:0px;
+		background: #fff;
+		border-bottom: 1px solid #e3e3e3;
+		color:black;
+	}	
+}

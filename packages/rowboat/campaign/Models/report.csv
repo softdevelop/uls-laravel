@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><reportDownloadError><ApiError><type>ReportDownloadError.INVALID_REPORT_DEFINITION_XML</type><trigger>Invalid ReportDefinition Xml: cvc-complex-type.2.3: Element 'dateRange' cannot have character [children], because the type's content type is element-only.</trigger><fieldPath></fieldPath></ApiError></reportDownloadError>

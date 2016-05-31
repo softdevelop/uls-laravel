@@ -1,0 +1,32 @@
+.toggle-switch{
+	border: 1px solid #ccc;
+	min-width: 80px;
+	.switch-left{
+		border-right: 1px solid #ccc;
+	}
+	.knob{
+		border-right: none;
+		border-left: none;
+	}
+	.switch-right{
+		border-left: 1px solid #ccc;
+	}
+}
+
+.wrap-form .bootstrap-switch .bootstrap-switch-handle-on,
+.wrap-form .bootstrap-switch .bootstrap-switch-handle-off,
+.wrap-form .bootstrap-switch .bootstrap-switch-label{
+	height: auto!important;
+}
+
+// in field config template
+.modal-body .toggle-switch span{
+	height: auto;
+}
+// end
+
+// fix width default
+.wrap-form .bootstrap-switch-container{
+    width: 159px!important;
+}
+// end

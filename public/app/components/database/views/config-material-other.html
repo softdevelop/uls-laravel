@@ -1,0 +1,65 @@
+<form id="get-edit-form-list-material" style="width:100% !important">
+    <img src="images/page/icon-times.png" class="mfp-close">
+    <div class="wrap-box-material-entry">
+        <div class="main-box">
+            <div class="group-content">
+                <h3 class="large-title-modal">Name</h3>
+                <form name="configForm" novalidate>
+                    <div class="form-group" ng-class="{true: 'has-error'}[submitted && configForm.name.$invalid]">
+                        <label for="">Name<span class="text-require"> *</span></label>
+                        <input type="text" class="form-control" name="name" placeholder="Name"
+                               ng-model="config.name"
+                               ng-required="true" />
+                        <small class="help-inline" ng-show="submitted && configForm.name.$error.required">Name is a required field.</small>
+                    </div>
+                    <div class="form-group" ng-class="{true: 'has-error'}[submitted && configForm.min_thickness.$invalid]">
+                        <label for="">Cutting Thickness (Min)<span class="text-require"> *</span></label>
+                        <input type="text" class="form-control" name="min_thickness"
+                               ng-model="config.content.min_thickness"
+                               ng-required="true" />
+                        <small class="help-inline" ng-show="submitted && configForm.min_thickness.$error.required">Min Cutting Thickness is a required field.</small>
+                    </div>  
+                    <div class="form-group" ng-class="{true: 'has-error'}[submitted && configForm.max_thickness.$invalid]">
+                        <label for="">Cutting Thickness (Max)<span class="text-require"> *</span></label>
+                        <input type="text" class="form-control" name="max_thickness"
+                               ng-model="config.content.max_thickness"
+                               ng-required="true" />
+                        <small class="help-inline" ng-show="submitted && configForm.max_thickness.$error.required">Max Cutting Thickness is a required field.</small>
+                    </div> 
+                    <div class="form-group" ng-class="{true: 'has-error'}[submitted && configForm.max_thickness.$invalid]">
+                        <label for="">Cutting Thickness (Max)<span class="text-require"> *</span></label>
+                        <input type="text" class="form-control" name="max_thickness"
+                               ng-model="config.content.max_thickness"
+                               ng-required="true" />
+                        <small class="help-inline" ng-show="submitted && configForm.max_thickness.$error.required">Max Cutting Thickness is a required field.</small>
+                    </div> 
+                    <div class="form-group" ng-class="{true: 'has-error'}[submitted && configForm.width.$invalid]">
+                        <label for="">Width<span class="text-require"> *</span></label>
+                        <input type="text" class="form-control" name="width"
+                               ng-model="config.content.width"
+                               ng-required="true" />
+                        <small class="help-inline" ng-show="submitted && configForm.width.$error.required">Width is a required field.</small>
+                    </div>
+                    <div class="form-group" ng-class="{true: 'has-error'}[submitted && configForm.height.$invalid]">
+                        <label for="">Height<span class="text-require"> *</span></label>
+                        <input type="text" class="form-control" name="height"
+                               ng-model="config.content.height"
+                               ng-required="true" />
+                        <small class="help-inline" ng-show="submitted && configForm.height.$error.required">Height is a required field.</small>
+                    </div> 
+                    <div class="form-group" ng-class="{true: 'has-error'}[submitted && configForm.depth.$invalid]">
+                        <label for="">Depth<span class="text-require"> *</span></label>
+                        <input type="text" class="form-control" name="depth"
+                               ng-model="config.content.depth"
+                               ng-required="true" />
+                        <small class="help-inline" ng-show="submitted && configForm.depth.$error.required">Depth is a required field.</small>
+                    </div>
+                    <div class="space-bottom-button-group">
+                        <button class="btn btn-blue hight-light btn-x-large margin-0-10" ng-click="cancel()">Cancel</button>
+                        <button class="btn btn-blue btn-x-large margin-0-10" ng-click="submit()">Done</button>
+                    </div>   
+                </form>
+            </div>
+        </div>
+    </div>
+</form>

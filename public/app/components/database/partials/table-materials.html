@@ -1,0 +1,45 @@
+<table class="table set-padding table-min-1200" ng-init="size()" show-filter="isSearch"  ng-table="tableParams">
+	<tbody class="tbody-animate">
+		<tr class="parent-active" ng-repeat="item in $data">
+			<td data-title="'ID'" filter="{ 'id': 'text' }" sortable="'id'">{{item.id}}</td>
+			<td data-title="'CategoryID'" filter="{ 'category_id': 'text' }" sortable="'category_id'">{{item.category_id}}</td>
+			<td data-title="'Name'" filter="{ 'name': 'text' }" sortable="'name'">{{item.name}}</td>
+			<td data-title="'Engrave Mark'" filter="{ 'engrave_mark_recommended_power': 'text' }" sortable="'engrave_mark_recommended_power'">{{item.content.engrave_mark_recommended_power}}</td>
+			<td data-title="'Min Thickness'" filter="{ 'min_thickness': 'text' }" sortable="'min_thickness'" >{{item.content.min_thickness}}</td>
+			<td data-title="'Max Thickness'" filter="{ 'max_thickness': 'text' }" sortable="'max_thickness'">{{item.content.max_thickness}}</td>						
+			<td data-title="'Laser Type'" filter="{ 'laser_type': 'text' }" sortable="'laser_type'">{{item.content.laser_type}}</td>										
+				<td data-title="'Fixed Thickness'" sortable="'fixed_thickness'" >
+				<div class="checkbox checkbox-inline p-l-40">
+					<input type="checkbox" class="styled" id="fixed-thickness" value="option1" ng-checked="item.content.fixed_thickness" ng-disabled ="true">
+					<label for="fixed-thickness"></label>
+				</div>
+			</td>
+				<td data-title="'Cut'" sortable="'cut'" >
+				<div class="checkbox checkbox-inline p-l-40">
+					<input type="checkbox" class="styled" id="cutid" value="option1" ng-checked="item.content.cut" ng-disabled ="true">
+					<label for="cutid"></label>
+				</div>
+			</td>
+			<td data-title="'Can Be Rastered'" sortable="'can_be_rastered'" >
+				<div class="checkbox checkbox-inline p-l-40">
+					<input type="checkbox" class="styled" id="can-be-rastered" value="option1" ng-checked="item.content.can_be_rastered" ng-disabled ="true">
+					<label for="can-be-rastered"></label>
+				</div>
+			</td>
+			<td class="show-action text-left parent-td9" data-title="'Action'">
+		        <div class="wrap-ac-group">
+		            <i class="fa fa-ellipsis-v"></i>
+		            <a href="javascript:void(0)" ng-click="showGroup($event)" class="ac-group btn"></a>
+					<ul class="group-btn-ac fix-missing-li">
+						<a href="/cms/database-manager/edit-material/{{item.id}}?type={{currentNode}}" class="text-show-action" target="_self">
+							<li> Edit</li>
+						</a>
+						<a ng-click="deleteCategoryAndMaterial(item.id)" class="text-show-action" target="_self">
+							<li> Delete</li >
+						</a>
+					</ul>
+		        </div>
+		    </td>
+		</tr>
+	</tbody>
+</table>

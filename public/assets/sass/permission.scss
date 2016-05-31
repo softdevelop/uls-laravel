@@ -1,0 +1,14 @@
+.action-add-u a{
+	border:1px solid #6b6b6b!important;
+	color: #6B6B6B!important;
+	&:hover{
+		color:#90001b!important;
+		border: 1px solid #90001b!important;
+	}
+}
+
+.action-add-u a.active{
+	border: none!important;
+	color:#fff!important;
+	background-color:#90001b!important;
+}

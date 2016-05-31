@@ -1,0 +1,42 @@
+@import "modules/mixins-responsive.scss";
+.padding-none-1200{
+	@media screen and (max-width: $break-medium-1200){
+		padding:0px;
+	}
+}
+
+#navibar .navibar-uls .logo .btn-on-off{
+	@media only screen and (max-width: $break-small-768 - 1){
+		left: 23px;
+		top: 20px;
+	}
+}
+
+@media only screen and (max-width: $break-small-768 - 1){
+	#sidebar {
+	    left: -260px;
+	    width: 0px;
+	}	
+}
+
+.visible-480{
+    display: none;
+}
+
+@media only screen and (max-width: $break-small-480){
+	.hidden-480{
+		display: none!important;
+	}
+	.visible-480{
+		display: block!important;
+	}
+}
+
+@media only screen and (max-width: $break-small-360){
+	.position-360{
+		position:absolute;
+		top:5px;
+		right:5px;
+	}
+}
+

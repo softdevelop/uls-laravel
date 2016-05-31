@@ -1,0 +1,43 @@
+<!-- Page overview -->
+<div class="box-item">
+    <div>
+        <h5 class="title-chart">
+            <span class="action">
+                <a class="collapsed" ng-if="!userDashboardView.height" ng-click="setCollapse(userDashboardView)" href="javascipt:void(0)">
+                    <i  class="fa fa-chevron-right"></i>
+                </a>
+                <a ng-if="userDashboardView.height"  ng-click="setCollapse(userDashboardView)" href="javascipt:void(0)">
+                    <i  class="fa fa-chevron-down"></i>
+                </a>
+
+                <a href="javascript:void(0)" class="my-handle-field">
+                    <i class="fa fa-arrows"></i>
+                </a>
+                <a ng-if="!$first" href="javascript:void(0)">
+                    <i  class="fa fa-arrow-up" ng-click="moveUp($event)"></i>
+                </a>
+                <a ng-if="!$last" href="javascript:void(0)">
+                    <i  class="fa fa-arrow-down" ng-click="moveDown($event)"></i>
+                </a>
+            </span>
+            <span>
+                {{trans('dashboard/dashboard.pageOverview.title')}}
+            </span>
+        </h5>
+    </div>
+    <div class="table-responsive m-b-20 block-ds" id="page_overview" ng-style="{height:userDashboardView.height}">
+        <table class="table center-td table-wrap-chart">
+            <tr>
+                <td class="padding-none">
+                    <div class="w320" id="PageStatusChart"></div>
+                </td>
+                <td class="padding-none">
+                    <div class="w320" id="PageUpdateChart"></div>
+                </td>
+                <td class="padding-none">
+                    <div class="w320" id="PageLanguageChart"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

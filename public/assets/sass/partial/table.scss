@@ -1,0 +1,73 @@
+@import '../modules/variable.scss';
+@import '../modules/css3-mixins.scss';
+.table>tbody>tr>td, 
+.table>tbody>tr>th, 
+.table>tfoot>tr>td, 
+.table>tfoot>tr>th, 
+.table>thead>tr>td, 
+.table>thead>tr>th{
+	padding-left: 70px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.table.center-td>tbody>tr>td, 
+.table.center-td>tbody>tr>th, 
+.table.center-td>tfoot>tr>td, 
+.table.center-td>tfoot>tr>th, 
+.table.center-td>thead>tr>td, 
+.table.center-td>thead>tr>th{
+    padding-left: 12.5px;
+    text-align: center!important;
+    vertical-align: middle;
+}
+
+.table.center-td>tbody>tr>td.text-left, 
+.table.center-td>tbody>tr>th.text-left, 
+.table.center-td>tfoot>tr>td, 
+.table.center-td>tfoot>tr>th{
+	padding-left: 30px;
+    text-align: left!important;
+    vertical-align: middle;
+}
+
+
+// text-hightlight head table
+.text-hightlight-head-table{
+	color:#0d0d0d;
+	font-weight: 700;
+}
+
+.table-responsive table.table-min-1200{
+	min-width: 1200px;
+}
+
+@media screen and (max-width: 767px){
+	.table-responsive > .table-bordered {
+	    border: 1px solid #ddd;
+	}	
+}
+
+// table hover
+.table-hover >tbody>tr>td, .table-hover>tbody>tr>th {
+    @include transition('all 0.2s linear');
+    border-bottom: 1px solid #ECECEC;
+}
+.table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th {
+    background-color: #F1F1F1;
+    cursor: pointer;
+    @include transition('all 0.2s linear');
+}
+// end
+
+// font size tr table
+.table thead tr{
+    font-size: 14px;
+}
+// end
+
+// table in modal
+.modal-body table tr {
+    background: none!important;
+}
+// end

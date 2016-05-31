@@ -1,0 +1,74 @@
+.database-manager{
+	.config-form{
+		margin-right: 159px;
+	}
+}
+.table-database{
+	.parent-td1{
+		min-width: 35px;
+	}	
+}
+.table-animate table thead tr th:nth-child(2){
+
+}
+.table-animate.table-database table thead tr th:nth-child(7){
+	width: 190px!important;
+}
+// .table-animate.table-database table thead tr th:nth-child(3){
+// 	width: 170px;
+// 	min-width: 0px;
+// }
+.table-animate.table-database table thead tr th:nth-child(8){
+	width: 40px!important;
+}
+.table-animate.table-database table thead tr th:nth-child(9){
+	width: 90px;
+}
+.table-animate.table-database table thead tr th:nth-child(10){
+	width: 60px!important;
+}
+.table-animate.table-database table thead tr th:nth-child(1){
+	padding-left: 15px;
+	width: 140px;
+}
+.table-animate.table-database table thead tr th:nth-child(4){
+	width: 140px!important;
+}
+.table-animate.table-database table thead tr th:nth-child(2){
+	width: 95px!important;
+}
+.table-animate.table-database table thead tr th:nth-child(3){
+	min-width: 0px;
+	width: 80px;
+}
+.w280{
+	width: 280px;
+}
+.w100{
+	width: 100px;
+}
+.database-manager{
+	.edit-name-category{
+		margin-right: 176px;
+	}
+	.delete-category{
+		margin-right: 342px;
+	}
+	.create-new-material{
+        margin-right: 176px;
+    }
+	// .delete-material{
+	// 	margin-right: 670px;
+	// }
+}
+.infor-data{
+	cursor: pointer;
+	padding: 0 15px;
+	display: inline-block;
+	width: 30%;
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+

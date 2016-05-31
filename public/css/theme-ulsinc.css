@@ -1,0 +1,451 @@
+#pagetitle {
+    width: 100%;
+    padding: 10px 0px;
+    margin-top: 30px;
+}
+#pagetitle, .configure #next a, .configure #back a, .configure #next input, #step1-on, #step2-on, #step3-on, #step4-on, .configure #configuration #contact-form #right input:hover, .configure #configuration #contact-form #right input:focus, #column-main #right #submit input:hover, #column-main #right #submit input:focus, #search #pagination a, #contact-us #privacy-policy a, #homepage-wrap #learnmore a, #learnmore a.black, #search #support #learnmore #openhouse a {
+    background: #000000;
+    background: -moz-linear-gradient(top, #666666 0%, #000000 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#666666), color-stop(100%,#000000));
+    background: -o-linear-gradient(top, #666666 0%, #000000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#000000',GradientType=0 );
+}
+#pagetitle, .light_square img, #landingpagebanner, #landingpage-right #contact-form, #landingpage-right #contactinfo a, #progressbar {
+    -ms-box-shadow: inset 0 0 8px #000;
+    -webkit-box-shadow: inset 0 0 8px #000;
+    -moz-box-shadow: inset 0 0 8px #000;
+    -o-box-shadow: inset 0 0 8px #000;
+    box-shadow: inner 0 0 8px #000;
+}
+html, body, div, span, applet, object, iframe, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+#page-wrap {
+    width: 1000px;
+    padding: 0 0 0 0px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#pagetitle h1 {
+    color: #fff;
+    font-size: 30px;
+    margin: 10px 10px;
+    line-height: 24px;
+    float: left;
+}
+h1 {
+    text-shadow: 0 -1px 3px rgba(0,0,0, 1);
+}
+h1, h2, h3, h4 {
+    font-family: 'HelveticaLight', Helvetica, sans-serif;
+    font-weight: normal;
+}
+#pagetitle span, #pagetitle p {
+    float: left;
+    margin-right: 10px;
+}
+#subtitle {
+    color: #ccc;
+    font-size: 14px;
+}
+#pagetitle-links {
+    position: absolute;
+    margin-top: -10px;
+    margin-right: 15px;
+    margin-left: 712px;
+}
+#pagetitle-links a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 12px;
+    color: #fff;
+}
+
+#navigation li.hover span, #navigation li:hover span, #blacktop, #pagetitle-links a, #related-btm, #expert a, #related-top, #expert-btm, #homepagebanner, #features #video, #tabs-content-img, #learnmore a, .on, #market-tmb, .language, #contact-form .submit input, .configure #left #help #contact-form .submit input, .configure #page-wrap, .configure #title, .configure #bottom, #cms #login, #cms #login input, .find-representative #page-wrap, .find-representative #title, .find-representative #bottom, #search #pagination a, .configure #next a, .configure #back a, .configure #next input, .configure #big-button a, #contact-us #privacy-policy a, .configure #main #videoholder, #landingpage #video, .find-representative #video, #landingpage #image, #landingpage-right #title, #landingpage-right .submit input, #map, #contact-us #contact-form #right a img, #column-main #search input:hover, #column-main #search input:focus, #newfromuls, #wiki-main #main-image, #landingpage-right #video {
+    -ms-box-shadow: 0 0 5px rgba(0,0,0, .7);
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0, .7);
+    -moz-box-shadow: 0 0 5px rgba(0,0,0, .7);
+    -o-box-shadow: 0 0 5px rgba(0,0,0, .7);
+    box-shadow: 0 0 5px rgba(0,0,0, .7);
+}
+#pagetitle-links a, #related-btm, #expert-btm, #ticker-wrapper.has-js, #column-main #right #submit input, #pagetitle-links #search, #right .gallery #learnmore a, #newsticker {
+    -ms-border-radius: 0em 0em 1em 1em;
+    -moz-border-radius: 0em 0em 1em 1em;
+    -webkit-border-radius: 0em 0em 1em 1em;
+    -o-border-radius: 0em 0em 1em 1em;
+    border-radius: 0em 0em 1em 1em;
+}
+a {
+    color: #b00000;
+    text-decoration: none;
+    -ms-transition: color 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
+    -webkit-transition: color 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
+    -moz-transition: color 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
+    -o-transition: color 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: color 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+#page-wrap {
+    width: 1000px;
+    padding: 0 0 0 0px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#column-left {
+    padding: 10px;
+    width: 650px;
+    float: left;
+}
+#column-left, #column-right, #column-main, #column {
+    font-size: 12px;
+    line-height: 22px;
+}
+.clearfix {
+    display: block;
+}
+#line {
+    border-top: 1px solid #ccc;
+    margin: 15px 0px;
+}
+.tabs-content {
+    padding: 5px;
+    color: #666;
+    font-size: 12px;
+    line-height: 20px;
+}
+#market-left {
+    width: 300px;
+    float: left;
+}
+.box-title {
+    display: inline-block;
+}
+#market-img {
+    width: 300px;
+}
+.on, #market-tmb {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    height: 230px;
+}
+#tabs-content-img, .on, #market-tmb, .language, .configure #title #more input, .configure #bottom #more input, .configure #configuration #contact-form #right input, .configure #progress, .configure #big-button a, #map, #landingpage-right #contact-form input, #landingpage-right #contact-form textarea, #message8 a, #wiki-main #main-image, #workflow #number {
+    -ms-border-radius: 1em 1em 1em 1em;
+    -moz-border-radius: 1em 1em 1em 1em;
+    -webkit-border-radius: 1em 1em 1em 1em;
+    -o-border-radius: 1em 1em 1em 1em;
+    border-radius: 1em 1em 1em 1em;
+}
+#market-left h2, #market-right h2, #homepage-tabs h2 {
+    margin-bottom: 5px;
+}
+.tabs-content h2 {
+    color: #000;
+    font-size: 16px;
+    font-weight: normal;
+}
+#market-right {
+    width: 300px;
+    padding: 15px;
+    float: right;
+}
+#tabs-text {
+    min-height: 60px;
+}
+.clearall {
+    clear: both;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+#market-left p, #market-right p {
+    margin-bottom: 5px;
+}
+#market-tmb {
+    width: 140px;
+    height: 100px;
+    float: left;
+    margin: 4px;
+}
+
+#market-tmb img {
+    width: 180px;
+}
+img {
+    border: 0;
+}
+#column-right {
+    padding: 10px;
+    width: 300px;
+    float: right;
+}
+#expert img {
+    margin: 5px 5px 5px 0px;
+    float: left;
+    position: absolute;
+}
+
+#expert-title {
+    float: left;
+    padding: 10px 30px 10px 45px;
+    min-height: 50px;
+}
+#expert-main, #related-main {
+    line-height: 14px;
+    min-height: 200px;
+    padding: 10px 0px;
+    border: 1px solid #ccc;
+}
+#pagetitle-links a:hover, #expert a:hover, #expert-main, #related-main, #service #learnmore a.active, #learnmore a:hover, #product-listing-title, #accessories-listing-title, #web-leads-title, #contact-form input, #contact-form textarea, #contact-form select, .configure #title #more input, .configure #bottom #more input, .jspDrag, #search #pagination a:hover, #search #pagination a:focus, .print input:hover, .print input:focus, #newsticker, #landingpage-right .submit input:hover, #landingpage-right .submit input:focus, #landingpage #learnmore a:hover, #web-leads #learnmore a:hover.verify, #homepage-wrap #learnmore a:hover, #landingpage-right #contact, #message8 a, #newfromuls #learnmore a:hover {
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #eeeeee 0%, #ffffff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#ffffff));
+    background: -o-linear-gradient(top, #eeeeee 0%, #ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=0 );
+}
+.error, .success, #toplinks #search input.search, #expert-main, #related-main, #bottom-white, #ticker-wrapper.has-js, #footer, .configure #progress, .jspDrag, #newsticker, #landingpage-right #contact-form input, #landingpage-right #contact-form textarea, #landingpage-right #contact {
+    -ms-box-shadow: inset 0 0 5px #666;
+    -webkit-box-shadow: inset 0 0 5px #666;
+    -moz-box-shadow: inset 0 0 5px #666;
+    -o-box-shadow: inset 0 0 5px #666;
+    box-shadow: inner 0 0 5px #666;
+}
+#related-main p, #expert-main p {
+    padding: 5px 15px;
+    line-height: 14px;
+}
+#expert-main #contact-form {
+    width: 270px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+#contact-form {
+    padding: 0px;
+}
+div#contact-form {
+    width: 270px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+#expert-main #contact-form p {
+    padding: 0px 5px;
+    font-size: 11px;
+}
+#contact-form p {
+    margin: 0px 8px;
+}
+#contactinfo img {
+    float: left;
+    margin-top: -4px;
+    margin-right: 5px;
+    width: 30px;
+}
+#contactinfo strong {
+    font-size: 14px;
+    color: #000;
+}
+#expert-main #contact-form input {
+    width: 120px;
+    margin: 5px 5px;
+}
+#contact-form input, #contact-form textarea, #contact-form select {
+    width: 200px;
+    padding: 9px;
+    border: solid 1px #cccccc;
+    outline: 0;
+}
+#pagetitle-links a:hover, #expert a:hover, #expert-main, #related-main, #service #learnmore a.active, #learnmore a:hover, #product-listing-title, #accessories-listing-title, #web-leads-title, #contact-form input, #contact-form textarea, #contact-form select, .configure #title #more input, .configure #bottom #more input, .jspDrag, #search #pagination a:hover, #search #pagination a:focus, .print input:hover, .print input:focus, #newsticker, #landingpage-right .submit input:hover, #landingpage-right .submit input:focus, #landingpage #learnmore a:hover, #web-leads #learnmore a:hover.verify, #homepage-wrap #learnmore a:hover, #landingpage-right #contact, #message8 a, #newfromuls #learnmore a:hover {
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #eeeeee 0%, #ffffff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#ffffff));
+    background: -o-linear-gradient(top, #eeeeee 0%, #ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=0 );
+}
+
+#expert-main #contact-form textarea {
+    height: 40px;
+    padding: 6px;
+    margin: 0 5px;
+}
+#contact-form textarea {
+    max-width: 400px;
+    height: 150px;
+    line-height: 150%;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 12px;
+}
+#contact-form input, #contact-form textarea, #contact-form select {
+    width: 200px;
+    border: solid 1px #cccccc;
+    outline: 0;
+}
+#expert-main #contact-form p {
+    padding: 0px 5px;
+    font-size: 11px;
+}
+#contact-form .submit input, .configure #left #help #contact-form .submit input {
+    width: auto;
+    padding: 9px 15px;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#toplinks #search input.search, #pagetitle-links #search input.search, .error, .success, #learnmore a, #contact-form .submit input, .configure #left #help #contact-form .submit input, #contact-us #privacy-policy a, .print input, #newfromuls #image, #progressbar {
+    -ms-border-radius: .8em .8em .8em .8em;
+    -moz-border-radius: .8em .8em .8em .8em;
+    -webkit-border-radius: .8em .8em .8em .8em;
+    -o-border-radius: .8em .8em .8em .8em;
+    border-radius: .8em .8em .8em .8em;
+}
+#line {
+    border-top: 1px solid #ccc;
+    margin: 15px 0px;
+}
+#expert-main h3 {
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0px 15px;
+}
+#contactinfo a {
+    /* background-color: #fff; */
+    color: #b00000;
+    border-bottom: 1px dotted #ccc;
+    padding: 10px;
+    display: block;
+}
+#contactinfo img {
+    float: left;
+    margin-top: -4px;
+    margin-right: 5px;
+    width: 30px;
+}
+#expert-btm {
+    display: block;
+    color: #fff;
+    height: 20px;
+}
+#related-btm, .configure #bottom, .find-representative #bottom, #expert-btm, #column-main #right #submit input, #pagetitle-links #search {
+    background: #b00000;
+    background: -moz-linear-gradient(top, #500000 0%, #b00000 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#500000), color-stop(100%,#b00000));
+    background: -o-linear-gradient(top, #500000 0%, #b00000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#500000', endColorstr='#b00000',GradientType=0 );
+}
+#related-top h2 {
+    padding: 12px;
+    font-size: 18px;
+    color: #fff;
+}
+#expert-main, #related-main {
+    line-height: 14px;
+    min-height: 200px;
+    padding: 10px 0px;
+    border: 1px solid #ccc;
+}
+#relatedlinks a {
+    /* background-color: #fff; */
+    color: #333;
+    border-top: 1px dotted #ccc;
+    padding: 10px 10px;
+    display: block;
+}
+#relatedlinks img {
+    float: left;
+    margin: -3px 5px 10px 0;
+    width: 16px;
+}
+#related-btm {
+    height: 15px;
+    color: #fff;
+}
+#expert a, #related-top, #navigation li.hover span, #navigation li:hover span {
+    -ms-border-radius: 1em 1em 0em 0em;
+    -moz-border-radius: 1em 1em 0em 0em;
+    -webkit-border-radius: 1em 1em 0em 0em;
+    -o-border-radius: 1em 1em 0em 0em;
+    border-radius: 1em 1em 0em 0em;
+}
+#expert h2 {
+    font-size: 24px;
+    line-height: 24px;
+}
+#expert a, #related-top {
+    display: block;
+    color: #fff;
+}
+.want-to-learn{
+	color: #fff!important;
+}
+.want-to-learn:hover{
+	color: #b00000!important;
+}
+
+#contactinfo a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+#contactinfo a:hover strong {
+	color:#fff;
+}
+#relatedlinks a:hover{
+	background-color:#333;
+	color:#fff; 
+}
+.submit input:hover,  .submit input:focus {
+	cursor:pointer;
+	color:#333;
+}
+#pagetitle-links a:hover, #expert a:hover, #expert-main, #related-main, #service #learnmore a.active, #learnmore a:hover, #product-listing-title, #accessories-listing-title, #web-leads-title, #contact-form input, #contact-form textarea, #contact-form select, .configure #title #more input, .configure #bottom #more input, .jspDrag, /*#search input,*/ #search #pagination a:hover, #search #pagination a:focus, .print input:hover, .print input:focus, #newsticker, #landingpage-right .submit input:hover, #landingpage-right .submit input:focus, #landingpage #learnmore a:hover, #web-leads #learnmore a:hover.verify, #homepage-wrap #learnmore a:hover, #landingpage-right #contact/*, #column-main #search input*/, #message8 a, #newfromuls #learnmore a:hover {
+	background: 	#ffffff; /* old browsers */
+	background: 	-moz-linear-gradient(top, #eeeeee 0%, #ffffff 100%); /* firefox */
+	background: 	-webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#ffffff)); /* webkit */
+	background: 	-o-linear-gradient(top, #eeeeee 0%, #ffffff 100%); /* opera */
+	filter: 		progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=0 ); /* ie */
+}
+#line a:hover img, #gallery a:hover img, #logo a:hover img, #ulslogo a:hover img, #tabs-content-img a:hover img, #countries a:hover img, #product-listing a:hover img, #product-main a:hover img, #product-line a:hover img, #options-listing a:hover img, #relatedlinks a:hover img, #close a:hover img, #overview-img a:hover img, #us a:hover img, #contact-us #contact-form #right a:hover img, #features #uu-img a:hover img, #materials-image a:hover img, #wiki-main a:hover img {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+#pagetitle-links a:hover{
+	color: #b00000!important;
+}
+#contact-form input, #contact-form textarea, #contact-form select, .print input, #search input:hover, #search input:focus, #materials-image, #workflow #number {
+    -ms-box-shadow: 0 0 5px rgba(0,0,0, .3)!important;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0, .3)!important;
+    -moz-box-shadow: 0 0 5px rgba(0,0,0, .3)!important;
+    -o-box-shadow: 0 0 5px rgba(0,0,0, .3)!important;
+    box-shadow: 0 0 5px rgba(0,0,0, .3)!important;
+}
+#contact-form input:hover, #contact-form textarea:hover, #contact-form input:focus, #contact-form textarea:focus {
+    color: #fff;
+}
+#contact-form input:hover, #contact-form textarea:hover, #contact-form select:hover, #contact-form input:focus, #contact-form textarea:focus, #contact-form select:focus, .configure #big-button a:hover, #wiki-main #learnmore a:hover {
+    background: #999999;
+    background: -moz-linear-gradient(top, #666666 0%, #999999 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#666666), color-stop(100%,#999999));
+    background: -o-linear-gradient(top, #666666 0%, #999999 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#999999',GradientType=0 );
+}
+
+#pagetitle-links a, #expert a, #related-top, #homepagebanner, #learnmore a, #contact-form .submit input, .configure #left #help #contact-form .submit input, .configure #title, .find-representative #title, .configure #configuration #contact-form #right input, .configure #big-button a, #contact-us #privacy-policy a:hover, .print input, #message8 a:hover, #newfromuls #learnmore a, #progresspercent {
+    background: #b00000!important;
+    background: -moz-linear-gradient(top, #b00000 0%, #500000 100%)!important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b00000), color-stop(100%,#500000))!important;
+    background: -o-linear-gradient(top, #b00000 0%, #500000 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b00000', endColorstr='#500000',GradientType=0 )!important;
+}
+
+
+
+
+

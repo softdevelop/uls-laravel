@@ -1,0 +1,273 @@
+.label-demo #wrap-box-toggle.wrap-working-draft {
+  height: 60px;
+  background: yellow;
+  position: relative;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+.label-demo #wrap-box-toggle h2{
+  font-size:30px;
+  position: absolute;
+  top:14px;
+  left: 20px;
+  margin:0px;
+}
+
+
+.label-demo .btn-top {
+  font-size: 14px !important;
+  padding: 8px !important;
+  background: #fff !important;
+  border: 1px solid #ccc !important;
+  color: #000 !important;
+  margin-left: 5px !important;
+  border-radius: 7px;
+  line-height: 40px;
+  text-decoration: none;
+}
+
+.label-demo .btn-top:hover,.label-demo .btn-top:active,.label-demo .btn-top:focus {
+  background-color: #000 !important;
+  color: yellow !important;
+  /*padding: 9px !important;*/
+  /*border: none !important;*/
+  /*box-shadow: -2px 1px 3px rgba(0, 0, 0, 0.7) !important;*/
+  transition: all 0.3s ease 0s !important;
+}
+
+.label-demo .btn-close {
+  font-size: 14px !important;
+  position: absolute !important;
+  top: 15px !important;
+  /*width: 7px !important;*/
+  height: 25px !important;
+  border: 1px solid #ccc !important;
+  padding: 0px 7px !important;
+  cursor: pointer;
+  z-index: 9999;
+  right: 40px !important;
+}
+
+.label-demo .btn-close:hover,.label-demo .btn-close:active,.label-demo .btn-close:focus {
+  background: #000;
+  color: yellow;
+}
+
+.label-demo .list-btn {
+  margin-top: 10px;
+}
+
+.label-demo .wrap-button {
+  display: inline-block;
+  background: transparent;
+}
+
+
+.label-demo .icon-toogle:after {
+  content: "x";
+}
+
+.label-demo .toggle.expanded:after {
+  content: "o";
+}
+
+.label-demo .c-insipid {
+  color: #ADAD14;
+}
+
+
+/*start top area yellow*/
+.label-demo #wrap-box-toggle .status {
+    position: absolute;
+    top: 25px;
+    left: 240px;
+    background: transparent;
+}
+.label-demo #wrap-box-toggle .status.revision{
+    position: absolute;
+    top: 15px;
+    left: 240px;
+}
+
+.label-demo #wrap-box-toggle .status p {
+    margin:0px;
+}
+.label-demo #wrap-box-toggle .list-btn{
+  position: absolute;
+  right: 200px;
+  background: transparent;
+}
+ /*end*/
+
+@media (min-width: 768px) {
+  .label-demo .navbar-header {
+    float: left;
+  }
+}
+
+.label-demo .navbar-header:before,
+.label-demo .navbar-header:after,
+{
+  display: table;
+  content: " ";
+}
+
+.label-demo .navbar-header:after{
+  clear: both;
+}
+
+.label-demo #wrap-box-toggle .navbar-toggle {
+  position: relative;
+  float: right;
+  padding: 9px 10px;
+  margin-top: 9px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.label-demo #wrap-box-toggle .navbar-toggle  a{
+  font-size: 20px;
+}
+.label-demo #wrap-box-toggle .navbar-toggle:focus {
+  outline: 0;
+}
+.label-demo #wrap-box-toggle .navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+}
+.label-demo #wrap-box-toggle .navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+@media (min-width: 768px) {
+  .label-demo #wrap-box-toggle .navbar-toggle {
+    display: none;
+  }
+}
+
+.label-demo #wrap-box-toggle .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.label-demo #wrap-box-toggle .sr-only-focusable:active,
+.label-demo #wrap-box-toggle .sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+
+@media only screen and (max-width: 767px){
+  .label-demo .btn-close{
+    right: 20px!important;
+    top:22px!important;
+  }
+  .label-demo .wrap-toogle-button-action .list-btn{
+    position: static!important;
+    display: block;
+  }
+  .label-demo .list-btn{
+    display: none;
+    margin-top: 0px;
+  }
+  .label-demo .wrap-toogle-button-action{
+    margin: 0px auto;
+    background: yellow;
+    padding: 10px;
+  }
+  .label-demo #wrap-box-toggle h2{
+    font-size: 25px;
+  }
+  .label-demo #wrap-box-toggle .navbar-toggle{
+    margin-right: 42px;
+  }
+  .label-demo #wrap-box-toggle .status{
+    top:22px;
+    left: 206px;
+  }
+
+}
+@media screen and (max-width: 400px){
+  .label-demo .status,#wrap-box-toggle h2{
+    position: static!important;
+  }
+  .label-demo #wrap-box-toggle .navbar-toggle{
+    position: absolute!important;
+    top: 2px;
+    right: 6px;
+  }
+  .label-demo .status, #wrap-box-toggle h2{
+    padding-top: 10px;
+    padding-left:10px;
+  }
+  .label-demo #wrap-box-toggle .status{
+    padding-top:0px;
+  }
+}
+
+.label-demo{
+  font-family: sans-serif;
+}
+
+
+.label-demo .clearfix:before,
+.label-demo .clearfix:after{
+  display: table;
+  content: " ";
+}
+
+.label-demo .clearfix:after{
+  clear: both;
+}
+.label-demo .disappear{
+  display: none;
+}
+@media only screen and (min-width: 768px){
+  .label-demo .disappear{
+    display: none!important;
+  }
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333;
+    margin:0px  
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+a {
+    background-color: transparent;
+}
+.label-demo{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.label-demo .btn-close:hover .icon-toogle,
+.label-demo .btn-close:active .icon-toogle,
+.label-demo .btn-close:focus .icon-toogle{
+  color: yellow;
+}
+.label-demo #wrap-box-toggle .navbar-toggle a .fa{
+  font-size: 20px;
+  color:#333;
+}
+@media only screen and (max-width: 767px){
+  .label-demo .btn-close{
+    right: 20px!important;
+    top:16px!important;
+  }
+}

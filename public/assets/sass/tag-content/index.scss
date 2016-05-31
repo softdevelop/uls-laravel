@@ -1,0 +1,50 @@
+// fix background for tag content index
+.content.tag-content {
+    background: #fafafa;
+}
+// end
+
+// icon for action
+.tag-content{
+	.wrap-ac-group{
+		.fa-ellipsis-v{
+		 	color:#8E8E8E!important;
+		}	
+	} 	
+} 
+// end
+
+
+// gradation
+/*hierarchical table-row*/
+.show-gradation .show-animate{
+    height: auto;
+    box-shadow: inset 0 8px 8px -8px #B5B5B5, inset 0 -8px 8px -12px #696868;
+    background: #F5F5F5;
+}
+.show-gradation .show-inset{
+    height: auto;
+    box-shadow: inset 0 8px 8px -8px #B5B5B5, inset 0 -8px 8px -12px #696868;
+    background: #F5F5F5;
+}
+.show-gradation .style-ul .show-inset{
+    height: auto;
+    box-shadow: inset 0 8px 8px -8px #B5B5B5, inset 0 -8px 8px -12px #696868;
+    background: #E4E4E4;
+}
+.show-gradation .style-ul .show-inset .show-inset{
+    height: auto;
+    box-shadow: inset 0 8px 8px -8px #B5B5B5, inset 0 -8px 8px -12px #696868;
+    background: #CCCCCC;
+}
+.show-gradation .style-ul .show-inset .show-inset .show-inset{
+    height: auto;
+    box-shadow: inset 0 8px 8px -8px #B5B5B5, inset 0 -8px 8px -12px #696868;
+    background: #BBBBBB;
+}
+/*end*/
+// end
+
+.child-active.child-tag{
+    background:transparent;
+}

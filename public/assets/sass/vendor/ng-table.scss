@@ -1,0 +1,31 @@
+// panigation and count
+.ng-table-counts{
+    padding-right: 20px;
+}
+.ng-table-pager .pagination{
+    padding-left: 20px;
+}
+.ng-table-counts {
+    margin: 0px 0px 20px!important;
+}
+.ng-table-counts button{
+	background-color: #fff!important;
+	border-color:#e4e4e4!important;
+}
+
+.ng-table-counts .btn-default{
+	color:#000!important;
+}
+
+.ng-table-counts button.active{
+	border-color:#fff!important;
+	border-bottom: 2px solid #90001b!important;
+	background: #efefef!important;
+}
+
+.ng-table-counts button:hover{
+	border-color:#fff!important;
+	background: #efefef!important;
+
+}
+// end

@@ -1,0 +1,72 @@
+<div>
+  <div class="wrap-label">
+      <a href="javascript:void(0)" ng-click="toggleSelectMenu($event)" class="text-show-action"> {{text}} </a>
+
+        <div id="select-multil-level-modal-{{index}}" class="select-menu-modal off">
+          <div class="select-menu-header">
+            <a href="javascript:void(0)" ng-click="closed($event)" class="pull-right" style="color: #B1ACAC"><i class="ti-close"></i></a>
+            <span class="select-menu-title">{{title}}</span>
+          </div>
+          <div class="js-select-menu-deferred-content">
+              <div class="select-menu-filters">
+                 <div class="select-menu-text-filter">
+                    <input type="text" id="label-filter-field" class="js-filterable-field js-navigation-enable" placeholder="{{placeholder}}" data-ng-model="searchQuery.name">
+                 </div>
+              </div>
+              <div class="select-menu-list  label-select-menu" ng-repeat="(key, value) in items | filter:searchQuery">
+                <div class="select-menu-item js-navigation-item">
+                    <div class="select-menu-item-text" style="padding-left: 30px;">
+                      <div class="color-label-wrapper">
+                          <div data-name="bug">
+                              
+                              <button style="position: absolute;top:8px;left:8px; border:none; background:none;padding:0" role="button" data-toggle="collapse" data-target="#labels-{{index}}-{{key}}" aria-expanded="false" aria-controls="labels-{{index}}-{{key}}" ng-click="show=!show"  ng-if="!show" >
+
+                                <i class="ti-plus" ng-show="!show" style="color: #B1ACAC !important;"></i>
+                                <i class="ti-minus" ng-show="show" style="color: #B1ACAC !important;"></i>
+                              </button>
+
+                     <!--          <a  style="position: absolute;top:8px;left:8px;"role="button" data-toggle="collapse" href="#labels-{{index}}-{{key}}" aria-expanded="false" aria-controls="labels-{{index}}-{{key}}" ng-click="show=!show"  ng-if="show">
+                                <i class="ti-minus"></i>
+                              </a> -->
+
+                              <div ng-click="toggleSelectLabel(value._id, key, $event)" style="color:{{value.color}}">
+                                <label style="color:{{value.color}};width: 10px;"><span class="icon-{{key}} hide" ><i class="ti-check"></i></span></label>
+                                <span class="color" style="background-color: {{value.color}}"></span>
+                                <span class="name color-label-{{key}} color-label">{{value.name}}</span>
+                                <span class="pull-right icon-{{key}} hide" style="margin-top:3px;"><i class="ti-close"></i></span>
+                                <div class="clearfix"></div>
+                              </div>
+                             
+
+                          </div>
+                      </div>
+                    </div>
+                </div>
+                <div ng-if="value.children" class="collapse" id="labels-{{index}}-{{key}}" >
+                    <div class="select-menu-item js-navigation-item" ng-repeat="(index, item) in value.children">
+                      <div class="select-menu-item-text" style="padding-left: 46px;">
+                        <div class="color-label-wrapper">
+                          <div data-name="bug">
+                            <div ng-click="toggleSubLabel(item._id, key, index, $event)" style="color:{{value.color}}">
+                                <label style="color:{{value.color}};width: 10px;">
+                                  <span class="icon-sub-{{key}}-{{index}} hide"><i class="ti-check"></i></span>
+                                </label>
+                                <!-- <span class="color" style="background-color: {{value.color}}"></span> -->
+                                <span class="name color-label-sub-{{key}}-{{index}} color-label">{{item.name}}</span>
+                                <span class="icon-sub-{{key}}-{{index}} hide pull-right" ng-if="selection[item._id]"><i class="ti-close"></i></span>
+                              
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+          </div>
+          <div class="select-menu-loading-overlay"></div>
+        </div>
+
+  </div>
+</div>

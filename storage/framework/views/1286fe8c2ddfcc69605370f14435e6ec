@@ -1,0 +1,59 @@
+<?php $__env->startSection('title'); ?>
+<?php echo e(trans('dashboard/dashboard.webTitle')); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+
+<div class="wrap-branch dashboard">
+    <div class="top-content">
+        <label class="c-m"><?php echo e(trans('dashboard/dashboard.breadCrumb')); ?></label>
+    </div>
+    <div class="content dashboard st-container" ng-controller="dashboardController">
+        <div ui-sortable="sortableOptions" ng-model="userDashboardViews">
+            <div class="panel-group" ng-repeat="userDashboardView in userDashboardViews">    
+                <div ng-include="userDashboardView.file_name"></div>
+            </div>
+        </div>
+    </div>
+
+    
+
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+<?php echo Html::script('app/lib/google-chart/google-chart.js'); ?>
+
+<script type="text/ng-template" id="page-overview">
+    <?php echo $__env->make('dashboard.partials.page-overview', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</script>
+<script type="text/ng-template" id="traffic-overview">
+    <?php echo $__env->make('dashboard.partials.traffic-overview', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</script>
+<script type="text/ng-template" id="ticket-overview">
+    <?php echo $__env->make('dashboard.partials.ticket-overview', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</script>
+<script type="text/ng-template" id="task-overview">
+    <?php echo $__env->make('dashboard.partials.task-overview', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</script>
+<script>
+    window.pageOverview = <?php echo json_encode($pageOverview); ?>;
+    window.ticketTypes = <?php echo json_encode($ticketTypes); ?>;
+    
+    window.tickets_new = <?php echo json_encode($tickets_new); ?>;
+    window.tickets_allopen = <?php echo json_encode($tickets_allopen); ?>;
+    window.states = <?php echo json_encode($states); ?>;
+    window.userDashboardViews = <?php echo json_encode($userDashboardViews); ?>;
+</script>
+<?php if(!isProduction() && !isDev()): ?>
+<?php echo Html::script('app/components/dashboard/google-chart.js?v='.getVersionScript()); ?>
+
+<?php echo Html::script('app/components/dashboard/dashboardController.js?v='.getVersionScript()); ?>
+
+<?php echo Html::script('app/components/dashboard/dashboardService.js?v='.getVersionScript()); ?>
+
+<?php else: ?>
+<script src="<?php echo e(elixir('app/pages/dashboard.js')); ?>"></script>
+<?php endif; ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

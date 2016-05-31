@@ -1,0 +1,17 @@
+<?php $img = getObjectInfoAssets('img', 'asset', $_56c7ca7ed647915a4d8b456a_field_img); ?>
+<?php $imgHover = getObjectInfoAssets('imgHover', 'asset', $_56c7ca7ed647915a4d8b456a_field_imgHover); ?>
+
+<article class="col-sm-4 col-md-4 portal" i="<?php echo $_56c7ca7ed647915a4d8b456a_field_imgHover; ?>">
+	<div class="thumbnail text-center">
+		<a href="<?php echo $_56c7ca7ed647915a4d8b456a_field_link; ?>" onmouseover="this.firstChild.style.display = 'none'; this.firstChild.nextSibling.style.display = 'block';" onmouseout="this.firstChild.style.display = 'block'; this.firstChild.nextSibling.style.display = 'none';"><div class="portal-image">
+				<img src="<?php echo $img['src']; ?>" alt="<?php echo $img['alt']; ?>" border="0">
+          	</div><div class="portal-image-hover">
+				<img src="<?php echo $imgHover['src']; ?>" alt="<?php echo $imgHover['alt']; ?>" border="0">
+          	</div>          
+      		<div class="portal-caption caption">
+        		<h4><?php echo $_56c7ca7ed647915a4d8b456a_field_header; ?></h4>
+        		<p><?php echo $_56c7ca7ed647915a4d8b456a_field_subheader; ?></p>
+      		</div>
+    	</a>
+	</div>
+</article>

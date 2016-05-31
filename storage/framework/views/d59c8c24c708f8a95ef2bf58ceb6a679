@@ -1,0 +1,98 @@
+<div ng-controller="DatabaseManagerController" ng-init="initTree()" class="wrap-content-management">
+	<div class="top-content">
+	    <label class="c-m"><?php echo e(trans('cms_database/database-index.breadcrumb')); ?></label>
+
+		<?php if(\Auth::user()->can('cms_delete_database')): ?>
+	    	<a href="javascript:void(0)" ng-if="isShowBtnDelete" ng-click="deleteFolderAndDatabase()" class="btn btn-primary hidden-xs pull-right fix-btn-top-content" ng-disabled="dsbBtnDelete">
+				<i class="fa fa-times"></i> <?php echo e(trans('cms_database/database-index.delete')); ?>
+
+			</a>
+		<?php endif; ?>
+
+		<a ng-show="isShowBtnCreateCategory" ng-click="createCategory()" class="btn btn-primary hidden-xs pull-right fix-btn-top-content">
+			<i class="fa fa-upload"></i> <?php echo e(trans('cms_database/database-index.create_new_category')); ?>
+
+		</a>
+
+		<a ng-show="isShowBtnCreateLaser" ng-click="createLaser()" class="btn btn-primary hidden-xs pull-right fix-btn-top-content">
+			<i class="fa fa-upload"></i> <?php echo e(trans('cms_database/database-index.create_new_laser')); ?>
+
+		</a>
+
+		<a ng-show="isShowBtnCreateMaterial" ng-click="createNewMaterial()" class="btn btn-primary hidden-xs pull-right fix-btn-top-content">
+			<i class="fa fa-folder"></i> Create New {{currentNode == 'accessories' ? 'Accessories':'Material'}} 
+		</a>
+
+		<a ng-show="isShowBtnPlatform" href="{{baseUrl}}/cms/database-manager/platform/create" target="_self" class="btn btn-primary hidden-xs pull-right fix-btn-top-content">
+			<i class="fa fa-plus"></i> Create
+		</a>
+	</div>
+	
+	<div class="visible-xs group-action-mobile">
+		<div class="btn-show-group" data-toggle="collapse" data-target="#group-btn" aria-expanded="false">
+			<i class="fa fa-plus"></i>
+		</div>
+
+		<div class="wrap-btn-create-circle collapse" id="group-btn">
+
+			<div class="btn-create-circle" ng-if="isShowBtnDelete">
+				<a data-toggle="modal" href="javascript:void(0)" ng-click="deletePage()" ng-disabled="dsbBtnDelete">
+					<i class="fa fa-times"></i>
+				</a>
+			</div>
+
+			<div class="btn-create-circle" ng-if="isShowBtnEditNameFolder">
+				<a data-toggle="modal" href="javascript:void(0)"  ng-click="editNameFolder()">
+					<i class="fa fa-pencil"></i>
+				</a>
+			</div>
+
+			<div class="btn-create-circle">
+				<a data-toggle="modal" ng-click="getModalCreatePage()" href="javascript:void(0)">
+					<i class="fa fa-plus"></i>
+				</a>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="content margin-top-0">
+		<div id="resize-left">
+			<div data-toggle="tree" id="tree"></div>
+		</div>
+
+		<div id="resize-right" class="fix-td-tb">
+			<div class="resize-right_box-wrap-top-table">
+				<a href=""> <i class="fa fa-folder"></i> </a> {{titleItemSelected}}
+				<div class="clearfix"></div>
+			</div>
+			<div ng-show ="!isDatabase" class="table-responsive table-animate table-database">
+				<a class="fixed-search" ng-click="btnSearch()">
+                    <i class="fa fa-search"></i>
+                </a>
+				<div data-ng-include="templateTable"></div>
+			</div>
+		</div>
+
+		<div id="sidebar-resizer" resizer="vertical" resizer-width="0" resizer-left="#resize-left" resizer-right="#resize-right" resizer-max="500" resizer-position-left="300">
+  		</div>
+
+	</div>
+
+	<div class="clearfix"></div>
+
+</div>
+<script type="text/javascript">
+	window.folders =<?php echo json_encode($folders); ?>;
+	window.tagsContent = <?php echo json_encode($tagsContent); ?>;
+	window.allTags = <?php echo json_encode($allTags); ?>;
+	window.currentPage = 'database';
+</script>
+ 
+<!-- hide model loading -->
+<script type="text/javascript">
+    'use strict';
+    (function($) {
+        $('#page-loading').css('display','none');
+    })(jQuery);
+</script>

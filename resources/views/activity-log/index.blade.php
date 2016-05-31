@@ -1,0 +1,109 @@
+@extends('app')
+@section('title') Activity Logs @stop
+@section('content')
+<div class="wrap-branch" ng-controller="ActivityLogController as ActivityCtrl">
+	<div class="top-content">
+        <label class="c-m">
+            <span class="wrap-breadcrumb">
+                <span class="breadcrumb-level">
+                    <span title="Activity Logs">Activity Logs</span>
+                </span>
+            </span>
+        </label>
+
+    </div>
+
+	<div class="content activitys-logs">
+	    <form>
+            <div class="" aria-expanded="true">
+
+				<!-- search -->
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding-none space-vertical-mobile">
+					<div class="input-group">
+						<input type="text" data-ng-model="search.query" name="search" ng-change="searchQuery()" class="form-control input-sm h34" placeholder="Search..." aria-describedby="search_contacts">
+
+						<span class="input-group-btn">
+						<button data-ng-click="searchContact(searchQuery)" class="btn btn-primary" type="button">
+							<i class="fa fa-search"></i>
+						</button>
+						</span>
+					</div>
+				</div>
+
+				<!-- filter -->
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 w200 pull-right padding-none">
+					<select id="filter-data" class="form-control" ng-model="search.created_at" size=1>
+		                <option class="font-13" value="">All</option>
+		                <option class="font-13" value="today">Today</option>
+		                <option class="font-13" value="yesterday">Yesterday</option>
+		                <option class="font-13" value="past_week">Last 7 days</option>
+		                <option class="font-13" value="past_month">Last 30 days</option>
+		            </select>
+				</div>
+
+				<!-- orderby --> 
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 w200 pull-right newest-to-oldest">
+					<select id="sort" class="form-control" ng-model="search.orderBy">
+	                    <option class="selected-sort" value="desc">Newest to Oldest</option>
+	                    <option value="asc">Oldest to Newest</option>
+		            </select>
+				</div>
+				<div class="clearfix"></div>
+
+			</div>
+	    </form>
+
+		<div class="box-with-title" ng-if="items.length > 0">
+            <div class="box-with-title-top">
+                <p class="title">Logs</p>
+            </div>
+            <div class="box-with-title-body">
+                <div class="box-child" ng-repeat="value in items">
+                    <div class="box-child-top">
+                        <span>@{{value['created_at'] | clientDate : 'MM-dd-yyyy h:mma'}}</span>
+                        <span>(@{{users_map[value.user_id]['name']}} <i class="fa fa-user"></i>) 
+                            
+                        </span>
+                    </div>
+
+                    <div class="box-child-body">
+                        <div class="m-b-10">
+                            <span>Action:</span>
+                            <a href="#" class="btn btn-primary btn-xs">
+                            	<!-- <i class="fa fa-refresh"></i> -->
+                            	@{{value.actionName}}
+                            </a>    
+                        </div>
+                        
+                        <div class="message-box">
+                            <i class="fa fa-comment"></i>
+                            <span ng-bind-html='value.messages'></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center panigation">
+					<pagination total-items="totalItems" ng-model="ActivityCtrl.currentPage" max-size="maxSize" class="pagination-sm" ng-change="ActivityCtrl.pageChanged()" boundary-links="true" rotate="false" items-per-page="itemsPerPage"></pagination>
+			    </div>
+            </div>
+            
+        </div>
+	</div>
+</div>
+
+@stop
+
+@section('script')
+	
+	<script type="text/javascript">
+	    var modules = ['timer', 'ngSanitize','xeditable'];
+	    window.logs = {!!json_encode($logs)!!};
+	    window.userAffected = {!! isset($userAffected) ?  json_encode($userAffected) : json_encode([]) !!};
+	</script>
+
+    @if(!isProduction() && !isDev())
+        {!! Html::script('app/components/activity-log/activiLogController.js?v='.getVersionScript())!!}
+        {!! Html::script('app/components/activity-log/activiLogService.js?v='.getVersionScript())!!}
+    @else
+        <script src="{{ elixir('app/pages/activity-log.js') }}"></script>
+    @endif
+@stop

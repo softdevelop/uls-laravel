@@ -1,0 +1,15 @@
+<div class="directive-choose-people">
+	<div class="sidebar-block equal-padding">
+         <input type="text" class="form-control" placeholder="Search..." ng-model="search">
+    </div>
+	<div class="content" datascrollable>
+		<div class="assign-ticket" ng-repeat="user in users | filter: search | orderBy: '-last_name' | limitTo: 5 ">                   
+			<input  ng-if="checkAssign" type="radio" name="assign" ng-model="checkUserId" value="{{ user.id }}" ng-click="getUserId($event)"  required="required" />
+
+			<input ng-if="!checkAssign" type="checkbox" ng-model="checkUserId" name="invite-ticket" class="inputCheckbox" value="{{ user.id }}"  ng-click="togglepUserids(user.id)">
+			<img width="50" class="img-circle" ng-src="{{ user.avatar }}"/>
+			<span>{{ user.name }}</span>
+		</div>
+	</div>
+
+</div>

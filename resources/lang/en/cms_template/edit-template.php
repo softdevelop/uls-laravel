@@ -1,0 +1,27 @@
+<?php 
+return [
+	'title' 			  => 'Template Manager',
+	'breadcrumb_first' 	  => 'CMS Template Manager&nbsp;',
+	'breadcrumb_last' 	  => 'Edit Template',
+	'detail_tab'	 	  => 'Detail',
+	'content_tab'	 	  => 'Content',
+	'usage_tab'	   		  => 'Usage',
+	'name_label' 		  => 'Name',
+	'name_placeholder'    => 'Name',
+	'name_required' 	  => 'Name is a required field.',
+	'folder_label' 		  => 'Folder',
+	'template_file_label' => 'Template File',
+	'template_file_btn'   => 'Select File',
+	'template_file_err'   => 'File\'s type does not support.',
+	'template_thumb_btn'  => 'Choose Thumbnail',
+	'content_label'		  => 'Content',
+	'content_required' 	  => 'Content is a required field.',
+	'insert_link'		  => 'Insert Link',
+	'insert_block'		  => 'Insert Block',
+	'insert_asset'		  => 'Insert Asset',
+	'name_usage'		  => 'Name',
+	'type_usage'		  => 'Type',
+	'no_usage'		   	  => 'No Usage',
+	'cancel_btn' 		  => 'Cancel',
+	'submit_btn' 		  => 'Save'
+];

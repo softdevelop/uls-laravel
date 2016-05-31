@@ -1,0 +1,16 @@
+<?php $__env->startSection('title'); ?>
+	Page not found
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <div id="login-wrapper" class="sizer">
+             
+        <div id="box" class="sizer well p-t-100">
+
+
+          <h4>Not Found</h4>
+
+
+        </div>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('auth', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

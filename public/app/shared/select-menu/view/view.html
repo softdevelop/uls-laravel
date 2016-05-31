@@ -1,0 +1,47 @@
+<div>
+
+  <div class="select-menu">
+     <button class="discussion-sidebar-heading discussion-sidebar-toggle btn btn-primary" id="re-{{type}}" ng-click="toggleSelectMenu($event)">
+     <a href=""><i class="fa {{icon}}"></i></a>
+      {{text}}
+     </button>
+
+    <div id="select-menu-modal-{{type}}" class="select-menu-modal-holder hide">
+       
+       <div class="select-menu-modal">
+          <div class="select-menu-header">
+
+            <a href="javascript:void(0)" ng-click="closed($event)" class="pull-right"><i class="fa fa-close"></i></a>
+            <span class="select-menu-title">{{title}}</span>
+          </div>
+
+          <div class="select-menu-deferred-content">
+             <div class="select-menu-filters">
+                <div class="select-menu-text-filter">
+                   <input type="text" id="assignee-filter-field" class="filterable-field navigation-enable" placeholder="{{placeholder}}" aria-label="Type or choose a name" data-ng-model="searchQuery">
+                </div>
+             </div>
+
+             <div class="select-menu-list">
+                <!-- <input name="issue[assignee]" class="assignee-field" type="hidden" value="httsolution"> -->
+                <div>
+                   <div class="select-menu-item navigation-item" ng-click="assign(value.id, $event)" ng-repeat="(key, value) in items | filter:searchQuery">
+                      <span class="select-menu-item-icon octicon octicon-check"></span>
+                      <div class="select-menu-item-gravatar">
+                         <img alt="" class="avatar" height="20" ng-src="{{value.avatar}}" width="20">
+                      </div>
+                      <div class="select-menu-item-text">
+                         <span class="select-menu-item-heading">
+                            {{value.name}}
+                         </span>
+                      </div>
+                   </div>
+                   
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+  </div>
+
+</div>

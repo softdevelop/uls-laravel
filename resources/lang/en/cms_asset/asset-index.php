@@ -1,0 +1,32 @@
+<?php 
+return [
+	'breadcrumb' 			=> 'CMS Asset Manager',
+	'create_new_asset'		=> 'Create New Asset',
+	'request_new_asset'		=> 'Request New Asset',
+	'upload_new_asset'		=> 'Upload New Asset',
+	'create_directory' 		=> 'Create Directory',
+	'edit_name_folder' 		=> 'Edit Name Folder',
+	'delete' 				=> 'Delete',
+	'name'					=> 'Asset Name',
+	'file_name'				=> 'File Name',
+	'status'				=> 'Status',
+	'languages'				=> 'Languages',
+	'regions'				=> 'Regions',
+	'due_date'				=> 'Due Date',
+	'last_update'			=> 'Last Update',
+	'action'				=> 'Action',
+	'request_translation'	=> 'Request Translation',
+	'upload_new_version'	=> 'Upload New Version',
+	'request_region'		=> 'Request Region',
+    'n_a' 					=> 'n/a',
+    'all_status' 			=> 'All Status',
+    'requested' 			=> 'Requested',
+    'live' 					=> 'Live',
+    'edit_file'			    => 'Edit File',
+    'crop_image'			=> 'Crop Image',
+    'view_task'				=> 'View Task',
+    'view_file'				=> 'View File',
+    'default'				=> 'Default',
+    'title'					=> 'CMS Asset Manager'
+];
+// Used

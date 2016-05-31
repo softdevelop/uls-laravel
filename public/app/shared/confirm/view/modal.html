@@ -1,0 +1,18 @@
+<div class="modal-header text-center">
+    <h4 class="modal-title">Alert</h4>
+</div>
+<div class="modal-body text-center">
+    <strong>
+        {{messageConfirm}}
+    </strong>
+</div>
+<div class="modal-footer" style="border-top:1px solid #e3e3e3;">
+    <div class="text-center">
+        <button ng-click="cancel()" type="button" class="btn btn-default btn-xs"  data-dismiss="modal">
+        	<span class="glyphicon glyphicon-remove"> </span>
+            {{option.message.no || Cancel}}
+        </button>
+        
+        <button  ng-click="ok()" type="button" class="btn btn-primary btn-xs"><i class="fa fa-check"></i> {{option.message.ok || Yes}}</button>
+    </div>
+</div>

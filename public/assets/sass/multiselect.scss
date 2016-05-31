@@ -1,0 +1,66 @@
+// multi select
+.wrap-permission-user{
+	// margin: 45px 10px !important;
+	h4{
+		padding:8px;
+		margin:0px;
+		border:1px solid #efefef;
+		font-weight: 500;
+		background-color: #C82E29;
+  		color: #fff;
+	}
+	.multi-select-p{
+		border-radius: 0px;
+		border:1px solid #e3e3e3;
+		margin-bottom:20px;
+		.box-parent-select,
+		.box-child-select{
+			padding-bottom:40px;
+			height:400px;
+			select{
+				width:100%;
+				height:100%;
+				border-radius:0px !important;
+				padding:0px;
+				padding:5px;
+				overflow-x:auto !important;
+				box-shadow:none;
+				border:1px solid #e3e3e3;
+				optgroup{
+					min-width:270px;
+					background:#f7f7f7;
+					padding:10px 0px;
+					padding-bottom:0px;
+				}
+				option{
+					min-width: 270px;
+					padding:10px;
+					background:#fff;
+					border-bottom:1px solid #efefef;
+					line-height: 50px;
+				}
+			}
+		}
+		.btn-action-move {
+			height:400px;
+			display: table;
+			.box-action{
+				display: table-cell;
+				vertical-align: middle;
+				// padding-left:35%;
+			}
+		}
+		@media only screen and(max-width:767px){
+			.box-parent-select,
+			.box-child-select{
+				height:200px;
+			}
+			.btn-action-move{
+				height:70px;
+				.box-action{
+					// padding-left:40%;
+				}
+			}
+		}
+	}
+}

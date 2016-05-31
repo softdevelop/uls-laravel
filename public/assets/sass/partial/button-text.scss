@@ -1,0 +1,137 @@
+@import '../modules/variable.scss';
+.text-back{
+	color: $text-back;
+}
+
+.text-back:hover,
+.text-back:focus {
+  color: $text-back-dark;
+  transition: all 0.35s linear;
+}
+
+.text-back:active,
+.text-back.active {
+  color: $text-back-dark;
+  transition: all 0.35s linear;
+}
+
+.text-success{
+	color: $text-success;
+	transition: all 0.35s linear;
+}
+
+.text-success:hover,
+.text-success:focus {
+  color: $text-success-dark!important;
+  transition: all 0.35s linear;
+}
+
+.text-success:active,
+.text-success.active {
+  color: $text-success-dark!important;
+  transition: all 0.35s linear;
+}
+
+.btn-change{
+  border: 1px solid $primary-color;
+  background: #fff;
+  color: $primary-color;  
+}
+
+.btn-change:focus,
+.btn-change.focus{
+  background-color: $primary-color;
+  background: #fff;
+  color: $primary-color;  
+}
+
+.btn-change:hover{
+  background-color: $primary-color;
+  border-color: $primary-color;
+  color: #fff;  
+}
+
+.btn-change:active,
+.btn-change.active{
+  background-color: $primary-color;
+  border-color: $primary-color;
+  color: $primary-color;
+}
+
+.btn-change:active:hover,
+.btn-change.active:hover,
+.btn-change:active.focus,
+.btn-change.active.focus{
+  background-color: $primary-dark-color;
+  border-color: $primary-dark-color;
+  color: $primary-dark-color;;  
+}
+
+// fix button top content
+.fix-btn-top-content{
+  padding: 9.5px 12px;
+  z-index: 1006;
+}
+
+// button upload
+.btn-upload{
+  background-color: #3899ec;
+    border-color: #3899ec;
+    color: #fff;
+}
+.btn-upload:focus,
+.btn-upload.focus{
+  background-color: #1D7FD3;
+    border-color: #1D7FD3;
+    color: #fff;
+}
+
+.btn-upload:hover{
+  background-color: #1D7FD3;
+    border-color: #1D7FD3;
+    color: #fff;
+}
+
+.btn-upload:active,
+.btn-upload.active{
+  background-color: #1D7FD3;
+    border-color: #1D7FD3;
+    color: #fff;
+}
+
+.btn-upload:active:hover,
+.btn-upload.active:hover,
+.btn-upload:active.focus,
+.btn-upload.active.focus{
+  background-color: #1272C5;
+    border-color: #1272C5;
+    color: #fff;
+}
+// end
+
+// button default
+.btn-default{
+  &:hover{
+    background-color: #E4E4E4!important;
+  }
+}
+// end
+
+// add fixed mobile
+.add-fixed-mobile{
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 10px;
+    right: 3px;
+    background-color: #90001b;
+    border-radius: 50%;
+    z-index: 1015;
+    box-shadow: 1px 1px 2px;
+    cursor: pointer;
+    .fa{
+      padding: 37%;
+      color: #fff;
+    }
+}
+// end

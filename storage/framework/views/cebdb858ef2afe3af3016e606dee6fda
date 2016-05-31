@@ -1,0 +1,9 @@
+<?php $__env->startSection('content'); ?>
+
+<p>
+	<?php echo e(trans('User/email-change-email.text_email_first')); ?> <?php echo e($user['email']); ?>.<?php echo e(trans('User/email-change-email.text_email_end')); ?>
+
+</p>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('email', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

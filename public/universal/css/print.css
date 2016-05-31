@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+
+* {
+	behavior: none !important;
+}
+
+html, body, p, ul, ol, dl, li, dt, dd, h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	position: static;
+}
+
+html {
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+a {
+	color: inherit;
+	_color: #000000; /*--- IE does support inherit, best we can do here is go black  ---*/
+	*color: #000000; /*--- IE does support inherit, best we can do here is go black ---*/ 
+	text-decoration: none;
+}
+
+a img {
+	border: none;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+#blacktop {display:none;}
+
+#banner {display:none;}
+
+#header {display:none;}
+
+.title h1 {color: #000; }
+.title span {background: none;}
+
+#bottomholder {display:none;}
+
+#page-wrap {display:block; height:100%; font-size:90%;}
+

@@ -1,0 +1,258 @@
+//colors
+$color_border-background: #e3e3e3;
+$color_primary: #90001b;
+$white: #fff;
+
+//fonts
+$font_0: tahoma;
+$font_1: arial;
+$font_2: helvetica;
+// .content{
+// 	&.margin-top-0 {
+// 		position: relative;
+// 		margin-top: 0;
+// 		#resize-left {
+// 			background-color: $white;
+// 			position: absolute;
+// 			top: 0px;
+// 			bottom: 0;
+// 			left: 0;
+// 			z-index: 1003;
+// 			padding-top: 20px;
+// 			min-width: 200px;
+// 			overflow: auto;
+// 		}
+// 		#resize-right {
+// 			top: -23px;
+// 			right: 0;
+// 			overflow: auto;
+// 			background: $color_border-background;
+// 			padding: 20px;
+// 			bottom: 0;
+// 			left: 300px;
+// 			z-index: 1011;
+// 			position: absolute;
+// 			padding-top: 50px;
+// 		}
+// 		#sidebar-resizer {
+// 			background-color: $color_primary;
+// 			top: -23px;
+// 			width: 4px;
+// 			cursor: col-resize;
+// 			bottom: 0;
+// 			left: 300px;
+// 			z-index: 1012;
+// 			position: absolute;
+// 			.fa-ellipsis-v {
+// 				position: absolute;
+// 				right: 1px;
+// 				font-size: 11px;
+// 				top: 50%;
+// 				color: $white;
+// 			}
+// 		}
+// 		ul.fancytree-container {
+// 			font-family: $font_0, $font_1, $font_2;
+// 			font-size: 10pt;
+// 			white-space: nowrap;
+// 			padding: 3px;
+// 			margin: 0;
+// 			background-color: $white;
+// 			border: none !important;
+// 			overflow: auto;
+// 			min-height: 0;
+// 			position: relative;
+// 			min-width: 300px;
+// 			&:focus {
+// 				outline: none !important;
+// 				span.fancytree-title {
+// 					word-wrap: break-word;
+// 					white-space: initial;
+// 					padding: 0;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+// @media only screen and(max-width: 767px) {
+// 	.margin-top-0 {
+// 		&#sidebar-resizer{
+// 			.fa-ellipsis-v {
+// 				left: 1px;
+// 			}
+// 		} 
+// 	}
+// }
+
+// @media only screen and(max-width: 500px) {
+// 	.show-tree-500{
+// 		position: fixed;
+// 		bottom: 0px;
+// 		opacity: 0.8;
+// 		display: block;
+// 		background: #fff;
+// 		height: 35px;
+// 		text-align: center;
+// 		line-height: 36px;
+// 		width: 100%;
+// 		background: #000;
+// 		z-index: 1003;
+// 		a{
+// 			color:#fff;
+// 		}
+// 		&:hover,&:focus,&:active{
+// 			background-color: #000!important;
+// 			opacity: 1!important;
+// 			cursor: pointer;
+// 			transition: all .3s ease 0s!important;
+// 		}
+// 	}
+
+// 	.margin-top-0 {
+// 		#resize-left {
+// 			position: static !important;
+// 			height: 200px;
+// 			border-bottom: 2px solid $color_primary;
+// 			background: $color_border-background;
+// 		}
+// 		#resize-left.hidden-500{
+// 			display: none!important;
+// 		}
+
+// 		#sidebar-resizer {
+// 			display: none;
+// 		}
+// 		#resize-right {
+// 			position: static !important;
+// 			padding: 0;
+// 			background: $white;
+// 			.table-responsive{
+// 				margin-bottom: 25px!important;
+// 			}
+// 		}
+// 		// ul.fancytree-container {
+// 		// 	background: $color_border-background;
+// 		// }
+// 	}
+// 	.content.margin-top-0 {
+// 		padding: 0;
+// 	}
+// }
+
+//refesh click sync
+.opti-sync-1{
+	padding: 40px 0;
+	.fa-spinner{
+		position:absolute; 
+		top:45%; 
+		left:45%; 
+		font-size:40px;
+		z-index:999
+	}
+}
+
+// update icon fancy tree
+.content.pages{
+	// checkbox
+	// span.fancytree-checkbox{
+	// 	background-image: url(replace.gif);
+	// }
+
+	// span.fancytree-checkbox:before{
+	// 	font-family: 'themify';
+	//     content: "\e6ab";
+	//     color: #B1ACAC;
+	//     font-size: 19px;
+	//     cursor: pointer;
+	//     // position: absolute;
+	//     top: -7px;
+	//     left: 16px;
+	// }
+	.fancytree-partsel span.fancytree-checkbox{
+		background-image: none!important;
+	}
+	
+	span.fancytree-checkbox{
+		background-position: 0 -31px;
+	}
+
+	span.fancytree-selected span.fancytree-checkbox:before{
+		font-family: 'themify';
+	    content: "\e64d";
+	    color: #008896;
+	    font-size: 14px;
+	    cursor: pointer;
+	}
+
+
+	// folder
+	.fancytree-ico-ef span.fancytree-icon{
+		background-image: none!important;
+	}
+
+	.fancytree-ico-ef span.fancytree-icon:before{
+		font-family: FontAwesome;
+	    content: "\f07c";
+	    color: #07ADEC;
+	    font-size: 15px;
+	    cursor: pointer;
+	    position: absolute;
+	}
+
+	.fancytree-ico-cf span.fancytree-icon{
+		background-image: none!important;
+	}
+
+	.fancytree-ico-cf span.fancytree-icon:before{
+		font-family: FontAwesome;
+	    content: "\f07b";
+	    color: #07ADEC;
+	    font-size: 15px;
+	    cursor: pointer;
+	    position: absolute;
+	}
+
+	// folder open
+	.fancytree-has-children.fancytree-ico-cf span.fancytree-icon{
+		background-image: none;
+	}
+	.fancytree-has-children.fancytree-ico-cf span.fancytree-icon:before{
+		font-family: FontAwesome;
+	    content: "\f07b";
+	    color: #07ADEC;
+	    font-size: 15px;
+	    cursor: pointer;
+	    position: absolute;
+	    // top: -3px;
+	}
+
+	// file
+	.fancytree-ico-c span.fancytree-icon{
+		background-image: none!important;
+	}
+	.fancytree-ico-c span.fancytree-icon:before{
+		font-family: FontAwesome;
+	    content: "\f15b";
+	    color: #CACACA;
+	    font-size: 14px;
+	    cursor: pointer;
+	    position: absolute;
+	    // top: -3px;
+	    left: 42px;
+	}
+}
+
+// show-hide tree folder in mobile
+.treeview{
+	width: 250px;
+    height: 100%;
+    box-shadow: 1px 2px 2px;
+    position: fixed;
+    z-index: 1002;
+    top: 101px;
+    left: 0px;
+    background: #000;
+    opacity: 0.5;
+}
+

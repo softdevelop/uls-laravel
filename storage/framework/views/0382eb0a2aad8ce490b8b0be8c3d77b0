@@ -1,0 +1,92 @@
+<?php $__env->startSection('title'); ?>
+    <?php echo e(trans('cms_page/page-redirect.redirects')); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+<div ng-controller="RedirectController" class="wrap-content-management  wrap-edit-pages">
+    <div class="top-content">
+        <label class="c-m">
+
+            <span class="wrap-breadcrumb">
+                <span class="breadcrumb-level">
+                    <a class="c-breadcrumb" title="{{baseUrl}}/cms/pages" href="{{baseUrl}}/cms/pages"><?php echo e(trans('cms_page/page-redirect.cms_page_manager')); ?>&nbsp;</a>
+                </span>
+
+                <?php if(isset($breadcrumbData)): ?>
+                    <?php foreach($breadcrumbData as $key => $value): ?>
+                        <a class="c-breadcrumb" href="{{baseUrl}}/cms/pages/set-page-selected/<?php echo e($value['_id']); ?>" target="_self" >/&nbsp;<?php echo e($value['name']); ?>&nbsp;</a>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+
+                <span class="breadcrumb-level">
+                    <span title="<?php echo e($page->name); ?>">/ <?php echo e($page->name); ?> / <?php echo e(trans('cms_page/page-redirect.redirects')); ?></span>
+                </span>
+            </span>
+
+        </label>
+
+
+    </div>
+
+    <div class="content st-container page-manager">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs fix-normal top-tab" role="tablist">
+            <li>
+                <?php if($statusPage == 'live'): ?>
+                    <a href="<?php echo e(URL::to('/')); ?>/cms/pages/page-build/<?php echo e($page->content_id); ?>">
+                        <i class="fa fa-list-alt"></i> 
+                        <?php echo e(trans('cms_page/page-edit-draft.page_build')); ?>
+
+                    </a>
+                <?php else: ?>
+                    <a href="<?php echo e(URL::to('/')); ?>/cms/pages/edit-page/<?php echo e($page->content_id); ?>">
+                        <i class="fa fa-list-alt"></i> 
+                        <?php echo e(trans('cms_page/page-history.edit')); ?>
+
+                    </a>
+                <?php endif; ?>
+            </li>
+            <li>
+                <a href="<?php echo e(URL::to('/')); ?>/cms/pages/history/<?php echo e($page->content_id); ?>">
+                    <i class="fa fa-file-code-o"></i> <?php echo e(trans('cms_page/page-redirect.history')); ?>
+
+                </a>
+            </li>
+
+            <li class="active">
+                <a>
+                    <i class="fa fa-file-code-o"></i> <?php echo e(trans('cms_page/page-redirect.redirects')); ?>
+
+                </a>
+            </li>
+        </ul>
+
+        <div class="tab-content fix-tab">
+            <?php echo $__env->make('pages.partial.manage-redirect', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+
+    </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+    <script type="text/javascript">
+        window.baseUrl = '<?php echo e(URL::to("")); ?>'
+        window.redirects = <?php echo json_encode($redirects); ?>
+
+        window.page = <?php echo json_encode($page); ?>
+
+
+    </script>
+
+    <?php if(!isProduction() && !isDev()): ?>
+        <?php echo Html::script('/app/components/pages/RedirectService.js?v='.getVersionScript()); ?>
+
+        <?php echo Html::script('/app/components/pages/RedirectController.js?v='.getVersionScript()); ?>
+
+    <?php else: ?>
+        <script src="<?php echo e(elixir('app/pages/redirects.js')); ?>"></script>
+    <?php endif; ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

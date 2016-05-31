@@ -1,0 +1,12 @@
+{
+  "name": "users",
+  "version": "0.0.1",
+  "description": "library module users",
+  "authors": [
+    "ho toan"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.4.0"
+  }
+}

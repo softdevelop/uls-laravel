@@ -1,0 +1,5 @@
+<?php $__env->startSection('content'); ?>
+Click here to reset your password:<br><?php echo e(url('password/reset/'.$token)); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('email', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

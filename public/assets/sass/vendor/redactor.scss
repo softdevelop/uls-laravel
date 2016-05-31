@@ -1,0 +1,66 @@
+// overlay modal
+#redactor-modal-overlay{
+    z-index: 10;
+}
+// end
+
+#redactor-modal-box{
+  z-index: 1053!important;
+}
+
+// redactor in modal
+.modal-body{
+	.redactor-editor{
+		min-height: 200px!important;
+	}
+}
+// end
+
+// table
+.redactor-editor{
+	table{
+		margin-bottom: 0px!important;
+		th , td{
+			border: 1px solid #c1c1c1!important;
+			background: #efefef;
+		}
+	}
+}
+table.rb-table{
+	border-collapse: collapse;
+}
+
+table.rb-table td{
+    padding:15px 30px;
+    border:1px solid #ccc;
+}
+// end
+
+// for each tag element html
+.redactor-editor p,
+.redactor-editor ul,
+.redactor-editor ol,
+.redactor-editor dl,
+.redactor-editor blockquote,
+.redactor-editor hr,
+.redactor-editor pre,
+.redactor-editor table,
+.redactor-editor figure,
+.redactor-editor address{
+	margin:10px 0!important;
+}
+// end
+
+// for box and toolbar 
+.redactor-box{
+	border:1px solid #ccc!important;
+	.redactor-toolbar{
+		z-index: 27;
+		position: relative!important;
+		top: 0px!important;
+    	left: 0px!important;
+    	visibility: visible!important;
+    	width: auto!important;
+	}
+}
+// end

@@ -1,0 +1,173 @@
+@import "../modules/variable.scss";
+// layout include sidebar left and right in content management
+
+$color_border-background: #e3e3e3;
+$color_primary: #90001b;
+$white: #fff;
+
+//fonts
+$font_0: tahoma;
+$font_1: arial;
+$font_2: helvetica;
+.content{
+	&.margin-top-0 {
+		position: relative;
+		margin-top: 0;
+		#resize-left {
+			background-color: $white;
+			position: absolute;
+			top: 0px;
+			bottom: 0;
+			left: 0;
+			z-index: 1003;
+			padding-top: 20px;
+			min-width: 200px;
+			overflow: auto;
+		}
+		#resize-right {
+			position: absolute;
+			top: 1px;
+			right: 0;
+			left: 183px;
+			bottom: 0;
+			z-index: 1004;
+			height: auto;
+			overflow: auto;
+			background:#f5f5f5;
+			padding: 20px;
+			padding-bottom: 0px;
+			&.p-t-0{
+				padding-top: 0px!important;
+			}
+		}
+		#sidebar-resizer {
+			position: absolute;
+			top:1px!important;
+			bottom: 0;
+			left: 182px;
+			z-index: 1005!important;
+			width:2px!important;
+			background-color: #E4E4E4!important;
+			box-shadow: 1px 5px 3px #EAEAEA;
+		    border-left: 1px solid #CECECE;
+		    cursor: col-resize;
+		    /******** for icon resize if exits *********/
+
+				// .fa-ellipsis-v {
+				// 	position: absolute;
+				// 	right: 1px;
+				// 	font-size: 11px;
+				// 	top: 50%;
+				// 	color: $white;
+				// }
+		}
+
+		ul.fancytree-container {
+			font-family: $font_0, $font_1, $font_2;
+			font-size: 10pt;
+			white-space: nowrap;
+			padding: 3px 0px 3px 3px;
+			margin: 0;
+			background-color: $white;
+			border: none !important;
+			overflow: hidden;
+			min-height: 0;
+			position: relative;
+			min-width: 180px;
+			&:focus {
+				outline: none !important;
+				span.fancytree-title {
+					word-wrap: break-word;
+					white-space: initial;
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 500px){
+	.content{
+		&.margin-top-0 {
+			padding: 0px;
+			overflow: auto;
+			#resize-left {
+				position: static;
+				height: 200px;
+				max-height: 270px;
+				overflow: scroll;
+				border-bottom: 1px solid #CCCCCC;
+				padding-top: 0px;
+			}
+			#resize-right {
+				position: static !important;
+				padding: 20px;
+				background: $bg-content-managerment;
+				.table-responsive{
+					margin-bottom: 25px!important;
+				}
+			}
+			#sidebar-resizer {
+				display: none;
+			}
+		}
+	}
+}
+
+// end
+
+
+// @media only screen and(max-width: 500px) {
+// 	// .show-tree-500{
+// 	// 	position: fixed;
+// 	// 	bottom: 0px;
+// 	// 	opacity: 0.8;
+// 	// 	display: block;
+// 	// 	background: #fff;
+// 	// 	height: 35px;
+// 	// 	text-align: center;
+// 	// 	line-height: 36px;
+// 	// 	width: 100%;
+// 	// 	background: #000;
+// 	// 	z-index: 1003;
+// 	// 	a{
+// 	// 		color:#fff;
+// 	// 	}
+// 	// 	&:hover,&:focus,&:active{
+// 	// 		background-color: #000!important;
+// 	// 		opacity: 1!important;
+// 	// 		cursor: pointer;
+// 	// 		transition: all .3s ease 0s!important;
+// 	// 	}
+// 	// }
+
+// 	.margin-top-0 {
+// 		// #resize-left {
+// 		// 	position: static !important;
+// 		// 	height: 200px;
+// 		// 	border-bottom: 2px solid $color_primary;
+// 		// 	background: $color_border-background;
+// 		// }
+// 		#resize-left.hidden-500{
+// 			display: none!important;
+// 		}
+
+// 		// #sidebar-resizer {
+// 		// 	display: none;
+// 		// }
+// 		// #resize-right {
+// 		// 	position: static !important;
+// 		// 	padding: 0;
+// 		// 	background: $white;
+// 		// 	.table-responsive{
+// 		// 		margin-bottom: 25px!important;
+// 		// 	}
+// 		// }
+// 		// ul.fancytree-container {
+// 		// 	background: $color_border-background;
+// 		// }
+// 	}
+// 	// .content.margin-top-0 {
+// 	// 	padding: 0;
+// 	// }
+// }

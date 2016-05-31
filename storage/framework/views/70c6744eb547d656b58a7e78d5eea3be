@@ -1,0 +1,6 @@
+<?php $__env->startSection('content'); ?>
+
+<p> <?php echo e(trans('User/email-create-password.text_email')); ?>: <br><a href="<?php echo e(url('password/create-password/'. $token)); ?>" target="_blank"><?php echo e(url('password/create-password/'. $token)); ?></a></p>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('email', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

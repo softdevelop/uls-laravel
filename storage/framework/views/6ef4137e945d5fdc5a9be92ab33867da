@@ -1,0 +1,40 @@
+<?php $randNum = rand(9999, 9999999); ?>
+<?php $image = getObjectInfoAssets('image','asset',  $_56e33c53d64791b2728b4567_field_subImage ); ?>
+
+<section class="section-single-image">
+  <?php if($_56e33c53d64791b2728b4567_field_subHeader !== ""): ?>
+  <h5 class="header-top fullImageVideoHeader"><?php echo $_56e33c53d64791b2728b4567_field_subHeader; ?></h5>
+
+  <?php endif; ?>
+  
+  <?php if($_56e33c53d64791b2728b4567_field_subVideo !== ""): ?>
+  <a class="video<?php echo $randNum;?>" href="#video<?php echo $randNum;?>" title="<?php echo $image['title']; ?>"><img src="<?php echo $image['src']; ?>" alt="<?php echo $image['alt']; ?>" width="100%"></a>
+  <?php else: ?>
+  <div class="image">
+        <figure class="image">
+  			<a href="<?php echo $image['src']; ?>" title="<?php echo $image['title']; ?>"><img src="<?php echo $image['src']; ?>" alt="<?php echo $image['alt']; ?>" width="100%"></a>
+  			<p class="text-description fullImageVideoCaption"><?php echo $image['title']; ?></p>
+    </figure>
+  </div>
+  <?php endif; ?>
+
+</section>
+
+
+<form id="video<?php echo $randNum;?>" class="mfp-hide" style='width: 800px; margin: auto;'>
+		<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $_56e33c53d64791b2728b4567_field_subVideo; ?>?rel=0"></iframe>
+		</div>
+</form>
+
+<script>
+$(".video<?php echo $randNum;?>").magnificPopup({
+    width: 600,
+    height: 400,
+    type: "inline",
+    callbacks: {
+      beforeOpen: function() {
+      }
+    }
+  });
+</script>

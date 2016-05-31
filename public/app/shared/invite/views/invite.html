@@ -1,0 +1,44 @@
+
+ <div class="item-ticket-invite">
+<!-- ribbon -->
+    <div class="ribbon-mark ribbon-primary absolute left">
+        <span class="ribbon">
+            <span class="text"></span>
+        </span>
+    </div>
+    <h5>Ticket Invite</h5>
+    <div class="alert-invite">
+        <p>
+            <span>{{users_map[item.sender_id].first_name}} {{users_map[item.sender_id].last_name}}</span>
+            invited to participate in a
+            <span>{{types[item.type]}}</span>
+            request Submitted by
+            <span>{{users_map[item.user_id].first_name}} {{users_map[item.user_id].last_name}} </span>
+        </p>
+        <div>
+            On<span>&nbsp</span>
+            <i class="fa fa-calendar"></i><span>&nbsp</span>
+            <span>{{ convetUnixTime(item.created_at,item.created_at) | date : 'MMMM d, y'}}</span><span>&nbsp</span>
+            <i class="fa fa-clock-o"></i><span>&nbsp</span>
+            <span>{{convetUnixTime(item.created_at,item.created_at)  | date : 'h:mm a'}}</span>
+        </div>
+    </div>
+    <div class="note-user">
+        <p>
+            {{item.note.substring(0,60)}} ...
+        </p>
+        <p class="text-right">Status: <span class="t-{{item.status}}">{{item.status}}</span></p>
+    </div>
+    <a class="btn btn-sm btn-primary" ng-href="support/show/{{item.id}}">Go to support <i class="fa fa-fw fa-arrow-right"></i></a>
+    
+
+    <a class="note-ad pull-right" href="javascript:void(0)">
+        <i class="fa fa-file-text"></i>
+        <span class="tooltip-note">
+            <h3 class="popover-title">{{users_map[item.sender_id].first_name}} {{users_map[item.sender_id].last_name}} wrote:</h3>
+            <p>
+            {{item.note}}
+            </p>
+        </span>
+    </a>
+</div>

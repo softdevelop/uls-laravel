@@ -1,0 +1,124 @@
+
+<table class="table set-padding table-min-1200" ng-init="size()" show-filter="isSearch"  ng-table="tableParams">
+	<tbody class="tbody-animate">
+		<tr class="parent-active" ng-repeat="item in $data">
+		<!-- 	<td data-title="'ID'" filter="{ 'id': 'text' }" sortable="'id'">{{item.id}}</td> -->
+			<td data-title="'Name'" filter="{ 'name': 'text' }" sortable="'name'">{{item.name}}</td>
+			<td data-title="'Dependencies'" filter="{ 'dependencies': 'text' }" sortable="'dependencies'">{{item.dependencies}}</td>
+			<td data-title="'Description'" filter="{ 'description': 'text' }" sortable="'description'">{{item.description}}</td>
+			<td data-title="'Benefits'" filter="{ 'benefits': 'text' }" sortable="'benefits'" ng-bind-html="item.benefits"></td>
+			<td data-title="'Uuf'" filter="{ 'uuf': 'text' }" sortable="'uuf'">{{item.uuf}}</td>
+			<td data-title="'Category'" filter="{ 'category_name': 'text' }" sortable="'category_name'">{{item.category_name}}</td>
+			<td class="show-action text-left parent-td9" data-title="'Action'">
+		        <div class="wrap-ac-group">
+		            <i class="fa fa-ellipsis-v"></i>
+		            <a href="javascript:void(0)" ng-click="showGroup($event)" class="ac-group btn"></a>
+					<ul class="group-btn-ac fix-missing-li">
+						<a href="/cms/database-manager/edit-material/{{item.id}}?type={{currentNode}}" class="text-show-action" target="_self">
+							<li> Edit</li>
+						</a>
+						<a ng-click="deleteCategoryAndMaterial(item.id)" class="text-show-action" target="_self">
+							<li> Delete</li >
+						</a>
+					</ul>
+		        </div>
+		    </td>
+		</tr>
+	<!-- </tbody> -->
+<!-- </table> -->
+
+<!-- <table class="table set-padding table-min-1200" ng-init="size()" show-filter="isSearch"  ng-table="tableParams">
+=======
+<table class="table set-padding table-min-1200 vertical-top" ng-init="size()" show-filter="isSearch"  ng-table="tableParams">
+>>>>>>> f2846d5c754dbcbce2b9e5550f9ee328f92f49ce
+	<tbody class="tbody-animate">
+		<tr class="parent-active" ng-repeat="item in $data">
+			<td data-title="'CategoryName'" filter="{ 'category_name': 'text' }" sortable="'category_name'">{{item.category_name}}</td>
+			<td data-title="'Name'" filter="{ 'name': 'text' }" sortable="'name'">{{item.name}}</td>
+			<td data-title="'Dependencies'" filter="{ 'dependencies': 'text' }" sortable="'dependencies'">{{item.dependencies}}</td>
+			<td data-title="'Description'" filter="{ 'description': 'text' }" sortable="'description'"><pre>{{item.description}}</pre></td>
+			<td data-title="'Benefits'" filter="{ 'benefits': 'text' }" sortable="'benefits'">{{item.benefits}}</td>
+			<td data-title="'UUF'" filter="{ 'uuf': 'text' }" sortable="'uuf'">{{item.uuf}}</td>
+			<td class="show-action text-left parent-td9" data-title="'Action'">
+		        <div class="wrap-ac-group">
+		            <i class="fa fa-ellipsis-v"></i>
+		            <a href="javascript:void(0)" ng-click="showGroup($event)" class="ac-group btn"></a>
+					<ul class="group-btn-ac fix-missing-li">
+						<a href="/cms/database-manager/edit-material/{{item.id}}?type={{currentNode}}" class="text-show-action" target="_self">
+							<li> Edit</li>
+						</a>
+						<a ng-click="deleteCategoryAndMaterial(item.id)" class="text-show-action" target="_self">
+							<li> Delete</li >
+						</a>
+					</ul>
+		        </div>
+		    </td>
+		</tr>
+	</tbody>
+</table>
+ -->
+<!-- <table class="table set-padding table-min-1200 vertical-top" ng-init="size()" show-filter="isSearch" ng-table="tableParams">
+	<tbody class="tbody-animate">
+
+		<tr class="parent-active category-@{{item.id}}" ng-repeat-start="item in $data" ng-class="{highlight:item.timeout}">
+	        <td class="text-center" data-title="''" >
+	            <a class="c-000" href="javascript:void(0)" ng-if="item.openChild" ng-click="item.openChild = false"><i class="fa fa-minus"></i></a>
+	    		<a class="c-000" href="javascript:void(0)" ng-if="!item.openChild" ng-click="item.openChild = true" data-toggle="collapse" data-target="#sub-tr" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-plus"></i></a>
+	        </td>
+
+	        <td data-title="'Name'" filter="{ 'name': 'text' }" sortable="'name'">{{item.name}}</td>
+			<td data-title="'Dependencies'" filter="{ 'dependencies': 'text' }" sortable="'dependencies'">&nbsp</td>
+			<td data-title="'Description'" filter="{ 'description': 'text' }" sortable="'description'">{{item.description}}</td>
+			<td data-title="'Benefits'" filter="{ 'benefits': 'text' }" sortable="'benefits'">&nbsp</td>
+			<td data-title="'UUF'" filter="{ 'uuf': 'text' }" sortable="'uuf'">&nbsp</td>
+			<td class="show-action text-left parent-td9" data-title="'Action'">
+		        <div class="wrap-ac-group">
+		            <i class="fa fa-ellipsis-v"></i>
+		            <a href="javascript:void(0)" ng-click="showGroup($event)" class="ac-group btn"></a>
+					<ul class="group-btn-ac fix-missing-li">
+						<a ng-click="createCategory(item.id)" class="text-show-action" target="_self">
+							<li> Edit</li>
+						</a>
+						<a ng-click="deleteCategoryAndMaterial(item.id)" class="text-show-action" target="_self">
+							<li> Delete</li >
+						</a> 
+					</ul>
+		        </div>
+		    </td>
+	    </tr>-->
+
+	    <tr class="child-active" ng-show="item.openChild" ng-repeat-end="" ng-repeat="accessories in item.group_accessories">
+	    	<td colspan="9" class="padding-none">
+	    		<div class="show-animate">
+	        		<table class="full-width">
+	        			<tr class="child-active">
+	        				<td class="text-center child-td1" data-title="''" ></td>
+
+				            <td class="text-center" data-title="'Name'" filter="{ 'name': 'text' }" sortable="'name'">{{accessories.name}}</td>
+							<td class="text-center" data-title="'Dependencies'" filter="{ 'dependencies': 'text' }" sortable="'dependencies'">{{accessories.dependencies}}</td>
+							<td class="text-center" data-title="'Description'" filter="{ 'description': 'text' }" sortable="'description'"></td>
+							<td class="text-center" data-title="'Benefits'" filter="{ 'benefits': 'text' }" sortable="'benefits'">{{accessories.benefits}}</td>
+							<td class="text-center" data-title="'UUF'" filter="{ 'uuf': 'text' }" sortable="'uuf'">{{accessories.uuf}}</td>
+							<td  class="show-action text-left parent-td9" data-title="'Action'">
+						        <div class="wrap-ac-group">
+						            <i class="fa fa-ellipsis-v"></i>
+						            <a href="javascript:void(0)" ng-click="showGroup($event)" class="ac-group btn"></a>
+									<ul class="group-btn-ac fix-missing-li">
+										<a href="/cms/database-manager/edit-material/{{accessories.id}}?type={{currentNode}}" class="text-show-action" target="_self">
+											<li> Edit</li>
+										</a>
+										<a ng-click="deleteCategoryAndMaterial(accessories.id)" class="text-show-action" target="_self">
+											<li> Delete</li >
+										</a>
+									</ul>
+						        </div>
+						    </td>
+	        			</tr>
+	        		</table>
+	        	</div>
+	    	</td>
+	    </tr>
+
+	</tbody>
+
+</table>

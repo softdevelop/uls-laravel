@@ -1,0 +1,140 @@
+@import '../modules/variable.scss';
+@import '../modules/css3-mixins.scss';
+@import "../modules/mixins-responsive.scss";
+// group action button
+.action-bottom{
+    padding: 20px 0;
+    margin-bottom:20px;
+    border-top:1px solid #e2e2e2;
+    margin-top:40px;
+}
+// end
+
+// iframe for content manager 
+.review-iframe{
+    width:100%;
+    border:none;
+}
+// end
+
+// filter top in table
+table select.form-control{
+    margin-bottom: 0px;
+}
+// end
+
+// fix for wrap fancytree long over box
+// @media only screen and (max-width: 500px){
+//   .content.margin-top-0{
+//       overflow: auto;
+//   }
+// }
+// end
+
+// icon action in parent and child row
+#resize-right.fix-td-tb{
+  .show-animate .child-active{
+    max-height: 100px!important;
+    overflow: hidden;
+  }
+  .child-active{
+    .wrap-ac-group{
+      .fa-ellipsis-v{
+        color:#A8A8A8!important;
+      }
+    }
+  }
+  .wrap-ac-group{
+    .fa-ellipsis-v{
+      color:#fff!important;
+    }
+  }
+}
+// end
+
+// action in mobile
+.wrap-content-management{
+    .group-action-mobile{
+        position: fixed;
+        bottom: 10px;
+        height: 50px;
+        z-index: 1015;
+        right:3px;
+    }
+
+    .btn-show-group{
+        width: 40px;
+        height: 40px;
+        position: fixed;
+        bottom: 10px;
+        right: 3px;
+        background-color: #90001b;
+        border-radius: 50%;
+        z-index: 1015;
+        box-shadow: 1px 1px 2px;
+        cursor: pointer;
+        i{
+            padding: 37%;
+            color: #fff;
+        }
+        &:hover,&:focus,&:active{
+            background-color: #C30027;
+            transition: all 0.3s ease 0s !important;
+        }
+    }
+
+}
+// end
+
+// box wrap resize right
+// .fix-td-tb{
+//   padding-bottom:0px !important;
+// }
+// end
+
+// box wrap top table
+.resize-right_box-wrap-top-table{
+    padding-bottom: 6px;
+}
+// end
+
+// alert error
+.wrap-content-management .alert{
+  margin-top: 50px;
+}
+// end
+
+// tab in edit block ...
+.wrap-content-management .tab-content .fix-tab>.active{
+  margin-top: 0px;
+}
+
+.tab-content.fix-tab .nav-tabs{
+  text-align: left;
+}
+// end
+
+// for propose new page and propose new template
+.space-box{
+  padding: 0 15px!important;
+}
+// end
+
+// thumbnai when uplpad image
+// .item-thum-up {
+//   margin-top: -8px;
+// }
+// end
+
+// fix modal have select multi
+.modal-dialog .btn-group.box-action a{
+    display: block!important;
+    padding:0px;
+}
+// end
+
+.c-m.content-management{  
+  @media only screen and(max-width: $break-small-355){
+    padding-left: 0px!important;
+  }
+}

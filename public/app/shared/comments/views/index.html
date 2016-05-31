@@ -1,0 +1,73 @@
+<div class="comment-user">
+
+    <!-- description -->
+    <div class="ticket-item" ng-class="{'hide-box': !hideLoadMore}">
+        <div class="min-768 pull-left first-space-left-comment">
+            <div class="row-wrap-user">
+                <div class="wrap-img">
+                     <img ng-src="{{usersMap[ticket['user_id']].avatar}}" alt="alt" class="img-circle">
+                     
+                </div>
+                <div class="wrap-name">
+                    <span class="user-cmt-name">{{usersMap[ticket['user_id']].name}}  {{usersMap[ticket['user_id']].deleted_at != null ? '(Deactivated)' : ''}}</span>
+                </div>
+            </div>
+            <p class="m-t-9">
+                <span>&nbsp;{{ convetUnixTimeDescription(ticket['date_create_ticket']) | date:'MMM dd, y'}}</span><span>&nbsp</span>
+                <span>&nbsp;{{ convetUnixTimeDescription(ticket['date_create_ticket']) | date:'hh:mm a' }}</span>
+            </p>
+        </div>
+        <!-- if comment is response -->
+        <div class="desc-file-ticket pull-left col-lg-8 col-md-8 col-sm-12 col-xs-12 b-l-ccc fix-border">
+            <!-- <a href="{{ticket.url}}" target="_blank" ng-bind-html="ticket.url"></a> -->
+            <div class="m-b-10" ng-bind-html="ticket.notes | to_trusted">
+            </div>
+
+            <div class="file-ticket" ng-if="ticket['files_id'].length">
+                <div ng-repeat="file in ticket['files_id']" class="file-item">
+                    <a ng-show="checkFile(files[file]['type']) == 'image'" href="javascript:void(0)" ng-click="openPicture({id:file})" class="icon-f">
+                        <i class="fa fa-picture-o"></i>
+                        <span ng-show="files[file]['file_name'].length  <= 5">{{files[file]['file_name'] }}</span>
+                        <span ng-show="files[file]['file_name'].length  > 5">{{files[file]['file_name'] | limitTo: 5}}{{files[file]['file_name'].length > 5 ? '...' : '.'}} {{files[file]['file_name'].split('.').pop()}}</span>
+
+                    </a>
+                    <a ng-show="checkFile(files[file]['type']) != 'image'" ng-href="{{ baseUrl }}/support/file/download/{{file}}" class="icon-f">
+                        <i class="fa fa-file-o"></i>
+                        <span ng-show="files[file]['file_name'].length  <= 5">{{files[file]['file_name'] }}</span>
+                        <span ng-show="files[file]['file_name'].length  > 5">{{files[file]['file_name'] | limitTo: 5}}{{files[file]['file_name'].length > 5 ? '...' : '.'}} {{files[file]['file_name'].split('.').pop()}}</span>
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <!-- end description -->
+
+    <!-- button show more --> 
+    <div class="show-more-cmt" ng-show="!hideLoadMore" ng-click="loadMoreComments(results.length)">
+            <span class="border1"></span>
+            <span class="border2"></span>
+            <span class="border3"></span>
+            <a class="btn btn-default c-000 show-more">
+                <span>Click to view <span ng-if="items['comments'].length - 2 > 1">all </span>{{items['comments'].length - 2}} additional comment<span ng-if="items['comments'].length - 2 > 1">s</span></span>
+            </a>
+    </div>
+    <!-- End button show more -->
+    <div class="clearfix"></div>
+
+    <!-- Start comment -->
+    <!-- Only show first and last comment -->
+    <div ng-if="!hideLoadMore" ng-repeat="item in [items['comments'][0],items['comments'][items['comments'].length-1]] track by $index | orderBy:'key'">
+        <div class="ticket-item" ng-class="{'hide-box': $index == 0 , 'comment-status' : item.ticket_state != 'response'}">
+            <span ng-include="templateComment"></span>
+        </div>
+    </div>
+
+    <!-- Show all Comment -->
+    <div  ng-if="hideLoadMore" ng-repeat="item in items['comments'] | orderBy:'key'" class="ticket-item" ng-class="{'comment-status' : item.ticket_state != 'response'}">
+        <span ng-include="templateComment"></span>
+    </div>
+
+    <div id="endOfPage"></div>
+</div>

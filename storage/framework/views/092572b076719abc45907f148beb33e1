@@ -1,0 +1,6 @@
+<p>Dear <?php echo e($user['first_name']); ?>,</p>
+
+<p><?php echo $__env->yieldContent('content'); ?></p>
+
+<p><span>Regards,</span><br>
+<span>The ULS Web Team</span></p>

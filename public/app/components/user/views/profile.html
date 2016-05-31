@@ -1,0 +1,50 @@
+<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 profile_col first">
+    <div id="profile_img">
+        <div id="profile_img_wrapper">
+            <button id="fileInput" type="submit" data-toggle="modal" data-target="#change_avatar" class="glyphicon glyphicon-camera edit-image" ng-model="file"  accept="image/*" ng-file-select ng-file-drop ng-file-change="upload($files)"></button>
+            <img ng-src="{{userProfile.avatar}}" class="min-w-250">   
+        </div>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 profile_col third">
+        <h4 class="m-b-20">Personal Information</h4>
+
+        <p class="first"><strong>First Name : </strong><span><a href="" editable-text="userProfile.first_name" e-name="userProfile.first_name" onaftersave="updateUser()">{{userProfile.first_name || 'empty'}}</a> </span></p>
+
+        <p class="first"><strong>Last Name : </strong><span> <a href="#" editable-text="userProfile.last_name" e-name="userProfile.last_name" onaftersave="updateUser()">{{userProfile.last_name || 'empty'}}</a></span></p>
+
+        <p class="first"><strong>Mobile : </strong><span> <a href="" editable-text="userProfile.personal_information.work_mobile" e-name="userProfile.personal_information.work_mobile" onaftersave="mobile(userProfile.personal_information.work_mobile)">{{userProfile.personal_information.work_mobile || 'empty'}} </a></span>&nbsp&nbsp&nbsp<span class="span-error"> {{errorMobile}}</span></p>
+
+        <p class="first"><strong>Fax : </strong><span>  <a href="" editable-text="userProfile.personal_information.fax" e-name="userProfile.personal_information.fax" onaftersave="fax(userProfile.personal_information.fax)">{{userProfile.personal_information.fax || 'empty'}}</a></span>&nbsp&nbsp&nbsp<span class="span-error"> {{errorFax}}</span></p>
+
+        <p class="first"><strong>Email : </strong><span> <a href="" editable-text="userProfile.personal_information.work_email" e-name="userProfile.personal_information.work_email" onaftersave="workEmail(userProfile.personal_information.work_email)">{{userProfile.personal_information.work_email || 'empty'}}</a></span>&nbsp&nbsp&nbsp<span class="span-error">{{errorWorkEmail}}</span></p>
+
+        <p class="first"><strong>Personal Email : </strong><span> <a href="" editable-text="userProfile.personal_information.personal_email" e-name="userProfile.personal_information.personal_email" onaftersave="personalEmail(userProfile.personal_information.personal_email)">{{userProfile.personal_information.personal_email || 'empty'}}</a></span> <span class="span-error">&nbsp&nbsp&nbsp{{errorPersonalEmail}}</span></p>
+
+        <p class="first"><strong>Home Address : </strong><span> <a href="" editable-text="userProfile.personal_information.home_address" e-name="userProfile.personal_information.home_address" onaftersave="updateUser()">{{userProfile.personal_information.home_address || 'empty'}}</a></span></p>
+
+        <p class="first"><strong>Home City : </strong><span> <a href="" editable-text="userProfile.personal_information.home_city" e-name="userProfile.personal_information.home_city" onaftersave="updateUser()">{{userProfile.personal_information.home_city || 'empty'}}</a></span></p>
+
+        <p class="first"><strong>Home State : </strong><span> <a href="" editable-text="userProfile.personal_information.home_state" e-name="userProfile.personal_information.home_state" onaftersave="updateUser()">{{userProfile.personal_information.home_state || 'empty'}}</a></span></p>
+
+        <p class="first"><strong>Home Zip : </strong><span> <a href="" editable-text="userProfile.personal_information.home_zip" e-name="userProfile.personal_information.home_zip" onaftersave="homeZip(userProfile.personal_information.home_zip)">{{userProfile.personal_information.home_zip || 'empty'}}</a></span><span class="span-error">&nbsp&nbsp&nbsp{{errorHomeZip}}</span></p>
+</div>
+<div class="clearfix"></div>
+
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" ng-click="cancel()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Change Avatar</h4>
+    </div>
+    <div class="modal-body">
+        <div class="cropArea">
+            <img-crop area-type="square" image="myImage" result-image="myCroppedImage"></img-crop>
+        </div>
+        <div class="center-block">
+                <button type="button" class="btn btn-action" ng-click="changeAvatar()"><span class="glyphicon glyphicon-retweet"></span> Change Avatar</button>
+                <button type="button" class="btn btn-default" ng-click="cancel()"><span class="glyphicon glyphicon-remove"></span> Close</button>
+         </div>
+    </div>
+</script>
+
+

@@ -1,0 +1,56 @@
+<div class="modal-header">
+    <button ng-click="cancel()" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title" ng-if="dataOption._id == null">{{ trans('dataoption-index.create_dataOption') }}</h4>
+    <h4 class="modal-title" ng-if="dataOption._id != null">{{ trans('dataoption-index.edit_dataOption') }}</h4>
+    
+<div class="modal-body">
+    <form name="formData">
+        <div class="info-dropdown">
+            <div class="form-group" ng-class="{'has-error':submitted && formData.label.$invalid}" class="form-group">
+                <label>Title dropdown (*)</label>
+                <div class="col-sm-9 pull-right">
+                    <input ng-model="dataOption.label" name="label" type="text" ng class="form-control" ng-required ="true">
+                    <label class="control-label" ng-show="submitted && formData.label.$error.required" >
+                        Title dropdown is required
+                    </label>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group" ng-class="{'has-error':submitted && formData.number_option.$invalid}" class="form-group">
+                <label >Number option (*)</label>
+                <div class="col-sm-9 pull-right">
+                    <input ng-change="createOption(formData.number_option.$invalid)" type="number" ng-required ="true" ng-model="dataOption.number_option" name="number_option" class="form-control">
+                    <label class="control-label" ng-show="submitted && formData.number_option.$error.required" >
+                        Number option is required
+                    </label>
+                     <label class="control-label" ng-show="submitted && formData.number_option.$invalid && !formData.number_option.$error.required" >
+                        Number option is number
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div ng-show="dataOption.number_option" class="set-option">
+           <!--  <div class="form-group">
+                <label >{{dataOption.label}}</label>
+            </div> -->
+            <div class="form-group" ng-repeat="(key, value) in options track by $index">
+                <label >Option {{$index + 1}}</label>
+                <input type="text" ng-model="dataOption.option[$index].name" class="form-control" ng-required ="true">
+            </div>
+        </div>
+        <div class="alert alert-danger" ng-show="error">
+            {{error}}
+        </div>
+    </form>
+</div>
+
+<div class="modal-footer">
+    <div class="center-block">
+            <button ng-disabled="formData.$invalid" ng-if="!dataOption._id" type="submit" ng-click="create(formData.$invalid)" class="btn btn-primary btn-nxt"><i class="fa fa-plus"></i> Add</button>
+            <button ng-disabled="formData.$invalid" ng-if="dataOption._id" type="submit" ng-click="update(formData.$invalid)" class="btn btn-primary btn-nxt"><i class="fa fa-plus"></i> Edit</button>
+            <button ng-click="cancel()" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
+        </div>
+</div>
+
+   

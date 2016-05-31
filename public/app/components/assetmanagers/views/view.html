@@ -1,0 +1,43 @@
+<style type="text/css">
+	/*.table a {
+		margin-top: 5px;
+	}
+     .box-action, .content-ticket .box-action{
+        padding-left:0px;
+    }
+
+    .modal-dialog .btn-group.box-action a{
+        display: block!important;
+        padding:0px;
+    }*/
+ /*   select{
+        overflow: scroll;
+    }*/
+
+</style>
+<div class="col-xs-12 col-sm-4 col-md-5 col-lg-5 padding-none">
+   <!--  <h5 class="strong hightlight-lb">De-Activated</h5> -->
+    <select class="size-deactived-box" data-scrollable multiple="multiple" data-ng-model="selectedItemFrom" size="5">
+        <option class="pointer" value="{{key}}" ng-repeat="(key, value) in items">{{key}} ({{value}})</option>
+    </select>
+</div>
+
+<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 center-center text-center padding-none">
+    <div class="btn-group box-action">
+
+        <a class="text-success col-lg-12 f24" title="" href="javascript:;" ng-click="assignItem()"><i class="fa fa-arrow-circle-right"></i></a>
+
+        <a class="text-back col-lg-12 f24" title="" href="javascript:;" ng-click="undoItem()"><i class="fa fa-arrow-circle-left"></i></a>
+
+        <!-- <a class="btn btn-danger" title="" href="javascript:;" ng-click="undoItem()"><i class="fa fa-undo"></i></a> -->
+        <!-- <a class="btn btn-action" title="" href="javascript:;" ng-click="assignItem()"><i class="fa fa-share"></i></a> -->
+    </div>
+</div>
+
+<div class="col-xs-12 col-sm-4 col-md-5 col-lg-5 padding-none">
+   <!--  <h5 class="strong hightlight-lb">Selected</h5> -->
+    <select class="size-deactived-box" data-scrollable multiple="multiple"  data-ng-model="selectedItemTo"  size="5">
+        <option class="pointer" value="{{key}}" ng-repeat="(key, value) in itemsAssigned">{{key}} ({{value}})</option>
+    </select>
+</div>
+

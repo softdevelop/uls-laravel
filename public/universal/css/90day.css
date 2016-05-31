@@ -1,0 +1,237 @@
+/*tag selectors and pseudo selectors*/
+html {
+	font-family: arial;
+	font-size: 14px;
+	}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	background-color: #333;
+	}
+
+h1 {
+	font-size: 24px;
+	padding: 0;
+	margin: 0;
+	}
+
+h2 {
+	font-size: 18px;
+	padding: 0;
+	margin: 0;
+	}
+
+h3 {
+	font-size: 16px;
+	display: inline;
+	padding: 0;
+	margin: 0;
+	}
+
+p {
+	}
+
+
+li {
+	margin: 10px 20px 0 0;
+	list-style-position: inside;
+	}
+
+a {
+	color: #666;
+	}
+
+a:hover {
+	color: #666;
+	text-decoration: none;
+	}
+
+a:visited {
+	color: #666;
+	}
+
+#agree span {
+	font-size: 20px;
+	font-weight: bold;
+	}
+	
+input{
+	font-size: 10px;
+	border: 1px solid #ccc;
+	background: #ffc;
+	margin-bottom: 3px;
+	width: 115px;
+	color: #999;
+	}
+
+label{
+	display: block;
+	margin-right: 10px;
+	float: left;
+	position: relative;
+	width: 85px;
+	}
+
+/*classes*/
+
+.gradient1{
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#cccccc'); /* for IE */
+background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#ccc)); /* for webkit browsers */
+background: -moz-linear-gradient(top,  #000,  #ccc); /* for firefox 3.6+ */ 
+}
+
+.bott{
+	padding-bottom: 0px;
+	margin-bottom: 3px;
+	}
+
+.foryou{
+	background: #f0f0f0;
+	font-size: 10px;
+	overflow: visible;
+	width: 200px;
+	border: none;
+	-webkit-appearance: none;
+	}
+
+/*ids*/
+#logo {
+	margin-bottom: 20px;
+	background-color: #bebebe;
+	-moz-border-radius: 0 0 15px 15px;
+ 	-webkit-border-radius: 0 0 15px 15px;
+	border-radius: 0 0 15px 15px;
+	border: 5px ridge #ebebeb;
+	border-top: 0px;
+	}
+
+#maincontent{
+	width: 1024px;
+	height: 850px;
+	margin: 0px auto;
+	text-align: left;
+	position: relative;
+	}
+
+#headlines {
+	margin-bottom: 35px;
+	}
+
+#topheadline {
+	margin: 10px;
+	}
+
+#subheadline {
+	margin: 10px;
+	}
+
+#mainmessage {
+	background-color: #fff;
+	overflow: auto;
+	height: 600px;
+	padding: 0;
+	margin: 0;
+	-moz-border-radius: 15px 15px 15px 15px;
+ 	-webkit-border-radius: 15px 15px 15px 15px;
+	border-radius: 15px 15px 15px 15px;
+	box-shadow: 0 0 10px 5px #d22000;
+	border: 2px solid #d22000;
+	}
+
+#blurb {
+	width: 460px;
+	text-align: left;
+	margin: 0 20px 0 20px;
+	}
+
+#listone {
+	width: 460px;
+	}
+
+#dwntext {
+	width: 200px;
+	display:inline-block;
+	margin: 0;
+	margin-left: 60px;
+	margin-top: 40px;
+	padding: 0;
+	font-size: 12px;
+	color: #822e32;
+	font-style: italic;
+	}
+
+#productguide{
+	/*margin-left: 240px;*/
+	float: right;
+	}
+
+#rightcolumn {
+	float: right;
+	width: 480px;
+	height: 550px
+	padding-top: 0;
+	margin-top: 20px;
+	margin-right: 15px;
+	border-radius: 15px;
+	border: 5px solid #f0f0f0;
+	background: #f0f0f0;
+	}
+
+#agree{
+	padding-top: 0;
+	margin-top: 0;
+	}
+
+#listtwo li {
+	margin-top: 5px;
+	font-style: italic;
+	}
+
+#productform {
+	border: 1px solid #822e32;
+	border-top: 0;
+	border-radius: 0 0 50px 50px;
+	width: 400px;
+	margin: 10px;
+	padding: 20px;
+	box-shadow: inset 0 -5px 5px #ccc;
+	font-size: 10px;
+	}
+
+#feedback {
+	float: left;
+	}
+
+#getguide{
+	border: 3px inset #000;
+	background-color:#9cc794;
+	font-size: 14px;
+	border-radius: 5px;
+	height: 50px;
+	width: 150px;
+	white-space: normal;
+	text-align: center;
+	cursor: pointer;
+	color: #000;
+	}
+
+#firstconf {
+	color: #000;
+	}
+	
+#emailconf {
+	color: #000;
+	}
+
+#footer {
+	color: #666;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	}
+
+#blacklogo {
+	float: right;
+	}

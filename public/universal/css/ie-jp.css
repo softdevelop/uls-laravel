@@ -1,0 +1,129 @@
+#navigation a span {
+	
+	/* POINT TO LOCALIZED IMAGE*/
+	background: url("../images/navigation-jp.gif") no-repeat 0 -5px; 
+	
+}
+#navigation {
+	margin-top:0px;
+}
+
+#global li{ background-image:url(../images/arrow2.gif);}
+
+#step1 {background-color:#fff;}
+
+
+#productback {float:left; font-size:14px; line-height:12px;}
+
+.productback {height:580px;}
+
+.productback2 {height:580px;}
+
+.title span {background: none; position: absolute; display: block; width: 100%; height: 30px}
+
+#product-odd {background-image:none; border-bottom:1px solid #ccc;}
+
+#product-odd2 {background-image:none; border-bottom:1px solid #ccc;}
+
+#product-odd3 {background-image:none; border-bottom:1px solid #ccc;}
+
+.configbtn {background-image:url(../images/configure-over.gif);}
+.configbtn a{background-image:url(../images/configure.gif);}
+
+#config-image {background-image:none; border-left:1px solid #ccc;}
+#config-image img{bottom:0;}
+#config-platform {background-image:none; border-left:1px solid #ccc; width:82px;}
+#config-workarea {background-image:none; border-left:1px solid #ccc;}
+#config-benefits {background-image:none; border-left:1px solid #ccc;}
+#config-learnmore {background-image:none; border-left:1px solid #ccc;}
+#config-button {background-image:none; border-left:1px solid #ccc;}
+#config-laserpower {background-image:none; border-left:1px solid #ccc; width:158px;}
+#config-laserinterface {background-image:none; border-left:1px solid #ccc; width:80px;}
+#config-rapid {background-image:none; border-left:1px solid #ccc; width:108px;}
+#config-dual {background-image:none; border-left:1px solid #ccc;}
+#config-superspeed {background-image:none; border-left:1px solid #ccc;}
+#config-pass {background-image:none; border-left:1px solid #ccc;}
+
+#config-image2 {background-image:none; border-left:1px solid #ccc;}
+#config-image2 img{bottom:0;}
+#config-platform2 {background-image:none; border-left:1px solid #ccc; width:82px;}
+#config-workarea2 {background-image:none; border-left:1px solid #ccc;}
+#config-benefits2 {background-image:none; border-left:1px solid #ccc;}
+#config-learnmore2 {background-image:none; border-left:1px solid #ccc;}
+#config-learnmore3 {background-image:none; border-left:1px solid #ccc;}
+#config-button2 {background-image:none; border-left:1px solid #ccc;}
+#config-button3 {background-image:none; border-left:1px solid #ccc;}
+#config-laserpower2 {background-image:none; border-left:1px solid #ccc; width:158px;}
+#config-laserpower3 {background-image:none; border-left:1px solid #ccc; width:158px;}
+#config-laserinterface2 {background-image:none; border-left:1px solid #ccc; width:80px;}
+#config-rapid2 {background-image:none; border-left:1px solid #ccc; width:108px;}
+#config-dual2 {background-image:none; border-left:1px solid #ccc;}
+#config-superspeed2 {background-image:none; border-left:1px solid #ccc;}
+#config-pass2 {background-image:none; border-left:1px solid #ccc;}
+#config-pass3 {background-image:none; border-left:1px solid #ccc;}
+
+#feature-image {background-image:none; border-left:1px solid #ccc;}
+#feature-title {background-image:none; border-left:1px solid #ccc;}
+#feature-overview {background-image:none; border-left:1px solid #ccc;}
+#feature-learnmore {background-image:none; border-left:1px solid #ccc;}
+
+#backbutton {height:35px;}
+
+/* IE 6 & 7 */
+#navigation a, #navigation a:hover {
+	zoom: 1;
+}
+
+#navigation ul {
+	background: #282828;
+}
+
+#navigation .ui-shadow ul {
+	background: none;
+}
+
+#navigation .ui-shadow-el {
+	background-image: url("../images/ie-nav-shadow.png");
+}
+
+/* IE 6 */
+* html #navigation ul ul {
+	width: 188px;
+}
+
+*:first-child + html #navigation ul ul, *:first-child + html #navigation li .ui-shadow-content {
+	width: auto;
+	min-width: 188px;
+}
+
+#navigation li.hover li.active a {
+	display: inline-block;
+}
+
+* html #navigation .ui-shadow-el {
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../images/ie-nav-shadow.png", sizingMethod="scale");
+}
+
+/*
+Tabs - additional IE specific bug fixes
+
+*/
+.tabs-nav { /* auto clear */
+    display: inline-block;
+}
+.tabs-nav .tabs-disabled {
+    position: relative; /* fixes opacity */
+    filter: alpha(opacity=40);
+}
+.tabs-nav .tabs-disabled a span {
+    _height: 19px; /* for some reason the height is 1px to less with opacity... */
+    min-height: 19px; /* ...in both IE 6 and 7 */
+}
+
+.acc-images img {
+	overflow:auto;
+}
+
+.acc-descrip {
+	
+}

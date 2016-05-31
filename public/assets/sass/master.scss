@@ -1,0 +1,72 @@
+@import 'modules/variable.scss';
+@import 'modules/css3-mixins.scss';
+
+// top content
+.top-content{
+	background: $primary-color!important;
+    z-index: 1005;
+    height: 41px;
+    overflow: hidden;
+    @include transition(all 0.5s ease);
+    label.c-m,h3.c-m{
+    	padding-left: 10px;
+		font-size: 14px;
+		font-weight: 700;
+		color: #fff;
+	    margin: 10.5px!important;
+	    font-weight: 100!important;
+	}
+}
+
+.on-off{
+	.top-content{
+		@include transition(all 0.5s ease);
+        left: 60px;
+	}	
+} 
+
+// .top-content {
+// 	background: $primary-color;
+// 	label.c-m,h3.c-m{
+// 		padding-left: 10px;
+// 		font-size: 14px;
+// 		font-weight: 700;
+// 		color: $white;
+// 	}
+// }
+// end
+
+// nav bar
+// #navibar, .navibar-uls{
+//     z-index: 1010;
+// }
+// end
+
+// child active
+.child-active{
+	background: #fff;
+	color:#000;
+	.fa-ellipsis-v{
+		color:#333;
+	}
+}
+// end
+
+// for page 500
+.alert-error{
+    margin-top: 20px;
+    padding:20px;
+    border: 1px solid #ccc;
+    .title-alert{
+        color: $primary-color;
+        text-align: center;
+    }
+    hr{
+        border: 1px solid #81b53e !important;
+        width: 80px !important;
+    }
+    .title-end{
+        color:#7B7B7B;
+    }
+}
+// end

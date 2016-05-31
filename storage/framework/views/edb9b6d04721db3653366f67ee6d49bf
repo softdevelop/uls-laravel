@@ -1,0 +1,17 @@
+<tr i="<?php echo $_56e73070d647916e788b4584_field_boldedColumn; ?>">
+		<?php if($_56e73070d647916e788b4584_field_boldedColumn === 1): ?>
+    <td class="tg"><?php echo $_56e73070d647916e788b4584_field_col1; ?></td>
+		<?php else: ?>
+    <td><?php echo $_56e73070d647916e788b4584_field_col1; ?></td>
+		<?php endif; ?>
+		<?php if($_56e73070d647916e788b4584_field_boldedColumn === 2): ?>
+    <td class="tg"><?php echo $_56e73070d647916e788b4584_field_col2; ?></td>
+		<?php else: ?>
+    <td><?php echo $_56e73070d647916e788b4584_field_col2; ?></td>
+		<?php endif; ?>
+		<?php if($_56e73070d647916e788b4584_field_boldedColumn === 3): ?>
+    <td class="tg"><?php echo $_56e73070d647916e788b4584_field_col3; ?></td>
+		<?php else: ?>
+    <td><?php echo $_56e73070d647916e788b4584_field_col3; ?></td>
+		<?php endif; ?>		
+</tr>

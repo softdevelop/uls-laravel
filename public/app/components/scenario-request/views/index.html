@@ -1,0 +1,104 @@
+
+<div class="panel-group accordion info-internal" id="accordion1">
+<!-- Accordion Item -->
+<div >
+    <div class="panel-heading ">
+        <h5 class="panel-title pull-left">Scenario Request</h5> 
+
+        <a title="click to show/hide" class="accordion-toggle plus-minus btn" ng-click="toogleInternalOnly($event)" data-toggle="collapse" data-parent="#accordion1" href="#collapse-11" >-</a>
+        <!-- <a href=""></a> -->
+    </div>
+    <div id="collapse-11" class="panel-collapse collapse in">
+        <div class="panel-body">
+            <!-- info internal -->
+            <div class="col-lg-12 wrap-form padding-none">
+                <div class="col-lg-12">
+                    <form class="form-horizontal">
+                        <div class="form-group date-time-t">
+                            <label class="padding-none col-xs-6 col-sm-6 col-md-6 col-lg-6">Loan Types</label>
+                            <div class="col-sm-6 col-md-6 col-lg-6 input-group">
+                                <span>{{windowType.list_loan_types.option[item.loan_types]['name']}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group date-time-t">
+                            <label class="padding-none col-xs-6 col-sm-6 col-md-6 col-lg-6">Doc Types</label>
+                            <div class="col-sm-6 col-md-6 col-lg-6 input-group">
+                                <span>{{windowType.list_doc_types.option[item.doc_types]['name']}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group date-time-t">
+                            <label class="padding-none col-xs-6 col-sm-6 col-md-6 col-lg-6">Occupancy</label>
+                            <div class="col-sm-6 col-md-6 col-lg-6 input-group">
+                                <span>{{windowType.list_occupancy.option[item.occupancy]['name']}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group date-time-t">
+                            <label class="padding-none col-xs-6 col-sm-6 col-md-6 col-lg-6">Front Dti</label>
+                            <div class="col-sm-6 col-md-6 col-lg-6 input-group">
+                                <span>{{item.front_dti}} %</span>
+                            </div>
+                        </div>
+                        <div class="form-group date-time-t">
+                            <label class="padding-none col-xs-6 col-sm-6 col-md-6 col-lg-6">Back Dti</label>
+                            <div class="col-sm-6 col-md-6 col-lg-6 input-group">
+                                <span>{{item.back_dti}} %</span>
+                            </div>
+                        </div>
+                        <div class="form-group date-time-t">
+                            <label class="padding-none col-xs-6 col-sm-6 col-md-6 col-lg-6">Loan Amount</label>
+                            <div class="col-sm-6 col-md-6 col-lg-6 input-group">
+                                <span>{{item.loan_amount}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group date-time-t">
+                            <label class="padding-none col-xs-6 col-sm-6 col-md-6 col-lg-6">Property Value</label>
+                            <div class="col-sm-6 col-md-6 col-lg-6 input-group">
+                                <span>{{item.property_value}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group date-time-t">
+                            <label class="padding-none col-xs-6 col-sm-6 col-md-6 col-lg-6">LTV</label>
+                            <div class="col-sm-6 col-md-6 col-lg-6 input-group">
+                                <span>{{item.ltv}} %</span>
+                            </div>
+                        </div>
+                        <div class="form-group date-time-t">
+                            <label class="padding-none col-xs-6 col-sm-6 col-md-6 col-lg-6">Proposed Term</label>
+                            <div class="col-sm-6 col-md-6 col-lg-6 input-group">
+                                <span>{{windowType.list_proposed_term.option[item.proposed_term]['name']}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group date-time-t">
+                            <label class="padding-none col-xs-6 col-sm-6 col-md-6 col-lg-6">Zip Code</label>
+                            <div class="col-sm-6 col-md-6 col-lg-6 input-group">
+                                <span>{{item.zip_code}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group date-time-t">
+                            <label class="padding-none col-xs-6 col-sm-6 col-md-6 col-lg-6">Fico</label>
+                            <div class="col-sm-6 col-md-6 col-lg-6 input-group">
+                                <span>{{item.fico}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group date-time-t">
+                            <label class="padding-none col-xs-6 col-sm-6 col-md-6 col-lg-6">Type Scenario</label>
+                            <div class="col-sm-6 col-md-6 col-lg-6 input-group">
+                                <p ng-if="item.type_scenario.non_permenant_resident_alien">Non Permenant Resident Alien</p>
+                                <p ng-if="item.type_scenario.foreign_national">Foreign National</p>
+                                <p ng-if="item.type_scenario.first_time_homebuyer">First Time Homebuyer</p>
+                                <p ng-if="item.type_scenario.non_occupyingco_borrower">Non-Occupying Co-Borrower</p>
+                                <p ng-if="item.type_scenario.appraisal_in_hand">Appraisal in Hand</p>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- the end internal -->
+        </div>
+    </div>
+</div>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/bootstrap-datepicker.init.js"></script>
+<!-- // Accordion Item END -->
+</div>

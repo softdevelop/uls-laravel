@@ -1,0 +1,4 @@
+<tr>
+    <td class="tg"><?php echo $_56d8cda7d6479192698b4584_field_label; ?></td>
+    <td><?php echo $_56d8cda7d6479192698b4584_field_data; ?></td>
+</tr>

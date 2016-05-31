@@ -1,0 +1,105 @@
+
+@import '../modules/variable.scss';
+@import '../modules/css3-mixins.scss';
+
+// wrap content review and code
+.wrap-content-review-and-code{
+    height: auto;
+    position: relative;
+    .wrap-link-input{
+		padding: 7px;
+	    background: #1D1F20;
+	    text-align: center;
+	    margin-top: 10px;
+	    border-top: 1px solid rgba(194, 194, 194, 0.3);
+	    position: absolute;
+	    width: 100%;
+	    bottom: -35px;
+	    z-index: 10;
+	    .link-insert-code {
+		    color: #cbcbcb;
+		    margin: 5px;
+		    @include transition(all 0.35s linear);
+		    &:hover{
+		    	color:#fff;
+		    	@include transition(all 0.35s linear);
+		    }
+		    &:focus{
+		    	color:#fff;
+		    	@include transition(all 0.35s linear);
+		    }
+		    &:active{
+		    	color:#fff;
+		    	@include transition(all 0.35s linear);
+		    }
+		}
+		.insert-object{
+			color:#A9A9A9;
+			opacity:0.6;
+		}
+	}
+	.btn-lg{
+		font-size: 15px;
+	}
+	// tab for review
+	li.active .btn-review{
+		background-color: #1D7FD3;
+	    border-color: #1D7FD3;
+	    color: #fff;
+	}
+	// end
+
+	// tab for code
+	li.active .btn-code{
+		background-color: #90001B;
+	    border-color: #90001B;
+	    color: #fff;
+	}
+	// end
+}
+
+
+
+
+//  updae style for codemirror
+.CodeMirror{
+	height: 100%;
+}
+
+.set-height .CodeMirror{
+    height: 100%;
+
+}
+.set-height .CodeMirror-code{
+    margin-bottom: 35px;
+}
+
+.sidebar-serial-codemirror{
+	background: #1D1F20;
+	border-right: 1px solid rgba(194, 194, 194, 0.3)!important;
+}
+
+.cm-s-night.CodeMirror{
+	background: #1D1F20;
+	border-top: 1px solid rgba(194, 194, 194, 0.3);
+}
+
+.cm-s-night .CodeMirror-gutters,
+.cm-s-monokai.CodeMirror,
+.CodeMirror-gutters{
+	@extend .sidebar-serial-codemirror;
+}
+
+.cm-s-monokai.CodeMirror{
+	background: #1D1F20;
+}
+
+.CodeMirror-scroll{
+	width: 100%;
+}
+
+.CodeMirror-vscrollbar{
+	overflow-y:hidden;
+}
+
+// end
